@@ -31,7 +31,7 @@ def classify_target(title):
         return found_cat, list(set(matched_tags))
     return "일반", []
 
-# ----------------- [크롤러] 한국기계연구원 (KIMM) -----------------
+# ----------------- 1. [크롤러] 한국기계연구원 (KIMM) -----------------
 def scrape_kimm():
     items = []
     try:
@@ -61,7 +61,7 @@ def scrape_kimm():
         pass
     return items
 
-# ----------------- [API] 조달청(G2B) 최신 규격 연동 -----------------
+# ----------------- 2. [API] 조달청(G2B) -----------------
 def fetch_g2b_api():
     items = []
     try:
@@ -98,32 +98,25 @@ def fetch_g2b_api():
                         close_dt_str = bid.get('bidClseDt', '')
                         close_date_disp = "마감일 미정"
                         dday_label, dday_class = "진행중", "dday-safe"
-                        is_expired = False
                         
-                        # API 문서 형식 "YYYY-MM-DD HH:MM:SS" 대응
                         if close_dt_str:
                             date_part = close_dt_str.split(' ')[0]
                             try:
                                 close_date = datetime.strptime(date_part, "%Y-%m-%d").date()
-                                close_date_disp = close_date.strftime("%Y-%m-%d")
                                 diff = (close_date - now.date()).days
                                 
-                                # 마감일이 지났으면 리스트에서 제외
                                 if diff < 0:
-                                    is_expired = True
+                                    continue
                                 elif diff == 0:
                                     dday_label, dday_class = "D-Day", "dday-urgent"
                                 elif diff <= 7:
                                     dday_label, dday_class = f"D-{diff}", "dday-urgent"
                                 else:
                                     dday_label, dday_class = f"D-{diff}", "dday-normal"
+                                close_date_disp = close_date.strftime("%Y-%m-%d")
                             except Exception:
                                 close_date_disp = date_part
                         
-                        # 마감된 공고는 추가하지 않고 건너뜀
-                        if is_expired:
-                            continue
-                            
                         category, matched = classify_target(title)
                         
                         items.append({
@@ -142,8 +135,60 @@ def fetch_g2b_api():
         pass
     return items
 
+# ----------------- 3. [API] 과학기술정보통신부 사업공고 -----------------
+def fetch_msit_api():
+    items = []
+    try:
+        KST = timezone(timedelta(hours=9))
+        now = datetime.now(KST)
+        
+        # 가이드 문서 규격 엔드포인트
+        url = f"http://apis.data.go.kr/1721000/msitannouncementinfo/businessAnnouncMentList?serviceKey={API_KEY}&numOfRows=50&pageNo=1&returnType=json"
+        res = requests.get(url, verify=False, timeout=15)
+        
+        if res.status_code == 200 and not res.text.strip().startswith("<"):
+            data = res.json()
+            raw_items = data.get("response", {}).get("body", {}).get("items", {})
+            announcements = raw_items.get("item", []) if isinstance(raw_items, dict) else []
+            if isinstance(announcements, dict):
+                announcements = [announcements]
+                
+            for item in announcements:
+                title = item.get("subject", "")
+                link = item.get("viewUrl", "https://www.msit.go.kr")
+                press_dt_str = item.get("pressDt", "")
+                dept = item.get("deptName", "과기정통부")
+                
+                # 등록일 기준 최근 30일 이내 공고만 수집
+                if press_dt_str:
+                    try:
+                        press_date = datetime.strptime(press_dt_str, "%Y-%m-%d").date()
+                        if (now.date() - press_date).days > 30:
+                            continue
+                    except:
+                        pass
+                
+                category, matched = classify_target(title)
+                
+                items.append({
+                    "org": "과기정통부",
+                    "category": category if category != "일반" else "용역",
+                    "cat_class": "cat-rd" if category == "AI" else "cat-bid",
+                    "title": title,
+                    "tags": " ".join([f"#{k}" for k in matched[:3]]) if matched else f"#{dept}",
+                    "budget": "공고문 참조",
+                    "close_date": f"게시일: {press_dt_str}",
+                    "dday_text": "접수중",
+                    "dday_class": "dday-safe",
+                    "url": link
+                })
+    except Exception as e:
+        pass
+    return items
+
 def update_html():
-    bids = scrape_kimm() + fetch_g2b_api()
+    # 3개 소스 통합
+    bids = scrape_kimm() + fetch_g2b_api() + fetch_msit_api()
     
     with open("index.html", "r", encoding="utf-8") as f:
         html = f.read()
@@ -151,7 +196,7 @@ def update_html():
     KST = timezone(timedelta(hours=9))
     now_str = datetime.now(KST).strftime("%Y-%m-%d %H:%M:%S")
     
-    html = re.sub(r'(<div[^>]*id="metaSync"[^>]*>).*?(</div>)', rf'\1<strong>최근 동기화:</strong> {now_str} (통합 API 정상화)\2', html, flags=re.DOTALL)
+    html = re.sub(r'(<div[^>]*id="metaSync"[^>]*>).*?(</div>)', rf'\1<strong>최근 동기화:</strong> {now_str} (기계연+조달청+과기정통부 통합)\2', html, flags=re.DOTALL)
 
     if bids:
         rows_html = ""
