@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-26 13:30:10",
+ "generated_at": "2026-10-26 17:48:40",
  "threshold": 4,
  "sources": [
   {
@@ -11,7 +11,7 @@
   {
    "name": "NTIS",
    "ok": true,
-   "count": 60,
+   "count": 83,
    "error": ""
   },
   {
@@ -75,6 +75,8 @@
     "기계설비ㆍ가스공사업"
    ],
    "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "2/2",
    "needs_license": [
     "기계설비ㆍ가스공사업"
    ]
@@ -114,6 +116,8 @@
     "기계설비ㆍ가스공사업"
    ],
    "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "2/2",
    "needs_license": [
     "기계설비ㆍ가스공사업"
    ]
@@ -153,6 +157,8 @@
     "기계설비ㆍ가스공사업"
    ],
    "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "2/2",
    "needs_license": [
     "기계설비ㆍ가스공사업"
    ]
@@ -192,6 +198,8 @@
     "기계설비ㆍ가스공사업"
    ],
    "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "2/2",
    "needs_license": [
     "기계설비ㆍ가스공사업"
    ]
@@ -231,6 +239,8 @@
     "기계설비ㆍ가스공사업"
    ],
    "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "2/2",
    "needs_license": [
     "기계설비ㆍ가스공사업"
    ]
@@ -270,6 +280,8 @@
     "기계설비ㆍ가스공사업"
    ],
    "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "2/2",
    "needs_license": [
     "기계설비ㆍ가스공사업"
    ]
@@ -305,7 +317,9 @@
    "track": "B",
    "regions": [],
    "licenses": [],
-   "limits_checked": true
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "2/2"
   },
   {
    "source": "나라장터",
@@ -337,38 +351,9 @@
    "track": "B",
    "regions": [],
    "licenses": [],
-   "limits_checked": true
-  },
-  {
-   "source": "나라장터",
-   "kind": "bid",
-   "org": "한국항공우주연구원",
-   "title": "한국형발사체 성능 개선을 위한 소형 비행종단장치(SFTU) 개발모델(DM) 제작",
-   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01767596&bidPbancOrd=000",
-   "open_date": "2026-10-13",
-   "close_date": "2026-10-26",
-   "dday": 0,
-   "status": "입찰공고",
-   "budget": "7,172만 원",
-   "bid_no": "R26BK01767596",
-   "bid_ord": "000",
-   "bid_type": "물품",
-   "products": [
-    "복합전자장치"
-   ],
-   "product_hits": [],
-   "product_minus": [],
-   "score": 8,
-   "hits": [
-    "제작",
-    "개선",
-    "장치"
-   ],
-   "minus": [],
-   "track": "B",
-   "regions": [],
-   "licenses": [],
-   "limits_checked": true
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "4/4"
   },
   {
    "source": "나라장터",
@@ -400,38 +385,9 @@
    "track": "B",
    "regions": [],
    "licenses": [],
-   "limits_checked": true
-  },
-  {
-   "source": "나라장터",
-   "kind": "bid",
-   "org": "한국산업기술시험원",
-   "title": "정션박스 물리력 내구시험 장비 구매",
-   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01768114&bidPbancOrd=000",
-   "open_date": "2026-10-13",
-   "close_date": "2026-10-26",
-   "dday": 0,
-   "status": "입찰공고",
-   "budget": "4,454만 원",
-   "bid_no": "R26BK01768114",
-   "bid_ord": "000",
-   "bid_type": "물품",
-   "products": [
-    "인장강도시험기"
-   ],
-   "product_hits": [
-    "시험기"
-   ],
-   "product_minus": [],
-   "score": 7,
-   "hits": [
-    "장비"
-   ],
-   "minus": [],
-   "track": "B",
-   "regions": [],
-   "licenses": [],
-   "limits_checked": true
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "2/2"
   },
   {
    "source": "나라장터",
@@ -462,67 +418,9 @@
    "track": "B",
    "regions": [],
    "licenses": [],
-   "limits_checked": true
-  },
-  {
-   "source": "나라장터",
-   "kind": "bid",
-   "org": "한국항공우주연구원",
-   "title": "산화제펌프 프로토타입 시험용 볼류트케이싱 적층제조 소재 제작",
-   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01768208&bidPbancOrd=000",
-   "open_date": "2026-10-13",
-   "close_date": "2026-10-26",
-   "dday": 0,
-   "status": "입찰공고",
-   "budget": "3,118만 원",
-   "bid_no": "R26BK01768208",
-   "bid_ord": "000",
-   "bid_type": "물품",
-   "products": [
-    "금속하우징"
-   ],
-   "product_hits": [],
-   "product_minus": [],
-   "score": 6,
-   "hits": [
-    "제작",
-    "펌프"
-   ],
-   "minus": [],
-   "track": "B",
-   "regions": [],
-   "licenses": [],
-   "limits_checked": true
-  },
-  {
-   "source": "나라장터",
-   "kind": "bid",
-   "org": "한국산업기술시험원",
-   "title": "켈빈 4-단자 측정용 지그",
-   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01768655&bidPbancOrd=000",
-   "open_date": "2026-10-13",
-   "close_date": "2026-10-26",
-   "dday": 0,
-   "status": "입찰공고",
-   "budget": "2,600만 원",
-   "bid_no": "R26BK01768655",
-   "bid_ord": "000",
-   "bid_type": "물품",
-   "products": [
-    "지그"
-   ],
-   "product_hits": [],
-   "product_minus": [],
-   "score": 6,
-   "hits": [
-    "측정",
-    "지그"
-   ],
-   "minus": [],
-   "track": "B",
-   "regions": [],
-   "licenses": [],
-   "limits_checked": true
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "3/3"
   },
   {
    "source": "나라장터",
@@ -561,7 +459,9 @@
    "track": "B",
    "regions": [],
    "licenses": [],
-   "limits_checked": true
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "6/6"
   },
   {
    "source": "나라장터",
@@ -591,7 +491,9 @@
    "track": "B",
    "regions": [],
    "licenses": [],
-   "limits_checked": true
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "2/2"
   },
   {
    "source": "나라장터",
@@ -620,37 +522,9 @@
    "track": "B",
    "regions": [],
    "licenses": [],
-   "limits_checked": true
-  },
-  {
-   "source": "나라장터",
-   "kind": "bid",
-   "org": "한국산업기술시험원",
-   "title": "광학식 비접촉 3차원 형상 측정 시스템 구매",
-   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01769100&bidPbancOrd=000",
-   "open_date": "2026-10-13",
-   "close_date": "2026-10-26",
-   "dday": 0,
-   "status": "입찰공고",
-   "budget": "2,900만 원",
-   "bid_no": "R26BK01769100",
-   "bid_ord": "000",
-   "bid_type": "물품",
-   "products": [
-    "레이저측정기"
-   ],
-   "product_hits": [],
-   "product_minus": [],
-   "score": 4,
-   "hits": [
-    "시스템",
-    "측정"
-   ],
-   "minus": [],
-   "track": "B",
-   "regions": [],
-   "licenses": [],
-   "limits_checked": true
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "1/2"
   },
   {
    "source": "나라장터",
@@ -683,7 +557,9 @@
    "track": "B",
    "regions": [],
    "licenses": [],
-   "limits_checked": true
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "5/5"
   },
   {
    "source": "나라장터",
@@ -713,45 +589,9 @@
    "track": "B",
    "regions": [],
    "licenses": [],
-   "limits_checked": true
-  },
-  {
-   "source": "나라장터",
-   "kind": "bid",
-   "org": "한국항공우주연구원",
-   "title": "(재공고)추진공급계 축소형 모델 고도화용 시험설비 진공 시스템 구축",
-   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01767731&bidPbancOrd=000",
-   "open_date": "2026-10-13",
-   "close_date": "2026-10-27",
-   "dday": 1,
-   "status": "입찰공고",
-   "budget": "4,318만 원",
-   "bid_no": "R26BK01767731",
-   "bid_ord": "000",
-   "bid_type": "용역",
-   "service_class": [
-    "연구조사서비스",
-    "학술연구서비스",
-    "과학기술연구조사서비스"
-   ],
-   "score": 11,
-   "hits": [
-    "시험설비",
-    "고도화",
-    "시스템",
-    "구축",
-    "진공"
-   ],
-   "minus": [],
-   "track": "B",
-   "regions": [
-    "대전광역시",
-    "세종특별자치시",
-    "충청북도",
-    "충청남도"
-   ],
-   "licenses": [],
-   "limits_checked": true
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "4/5"
   },
   {
    "source": "나라장터",
@@ -783,7 +623,9 @@
    "track": "B",
    "regions": [],
    "licenses": [],
-   "limits_checked": true
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "3/3"
   },
   {
    "source": "나라장터",
@@ -814,7 +656,9 @@
    "track": "B",
    "regions": [],
    "licenses": [],
-   "limits_checked": true
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "2/3"
   },
   {
    "source": "나라장터",
@@ -846,7 +690,9 @@
    "track": "B",
    "regions": [],
    "licenses": [],
-   "limits_checked": true
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "2/3"
   },
   {
    "source": "나라장터",
@@ -876,67 +722,9 @@
    "track": "B",
    "regions": [],
    "licenses": [],
-   "limits_checked": true
-  },
-  {
-   "source": "나라장터",
-   "kind": "bid",
-   "org": "한국건설기술연구원",
-   "title": "수소도시 기반시설 실증을 위한 수소농도 계측기기 구매",
-   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764488&bidPbancOrd=000",
-   "open_date": "2026-10-13",
-   "close_date": "2026-10-27",
-   "dday": 1,
-   "status": "입찰공고",
-   "budget": "4,455만 원",
-   "bid_no": "R26BK01764488",
-   "bid_ord": "000",
-   "bid_type": "물품",
-   "products": [
-    "비접촉센서"
-   ],
-   "product_hits": [],
-   "product_minus": [],
-   "score": 6,
-   "hits": [
-    "실증",
-    "수소"
-   ],
-   "minus": [],
-   "track": "B",
-   "regions": [],
-   "licenses": [],
-   "limits_checked": true
-  },
-  {
-   "source": "나라장터",
-   "kind": "bid",
-   "org": "한국항공우주연구원",
-   "title": "(재공고)산화제펌프 프로토타입 시험용 볼류트케이싱 적층제조 소재 제작",
-   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01768241&bidPbancOrd=000",
-   "open_date": "2026-10-13",
-   "close_date": "2026-10-27",
-   "dday": 1,
-   "status": "입찰공고",
-   "budget": "3,118만 원",
-   "bid_no": "R26BK01768241",
-   "bid_ord": "000",
-   "bid_type": "물품",
-   "products": [
-    "금속하우징"
-   ],
-   "product_hits": [],
-   "product_minus": [],
-   "score": 6,
-   "hits": [
-    "제작",
-    "펌프"
-   ],
-   "minus": [],
-   "track": "B",
-   "regions": [],
-   "licenses": [],
-   "limits_checked": true
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "1/1"
   },
   {
    "source": "나라장터",
@@ -966,7 +754,9 @@
    "track": "B",
    "regions": [],
    "licenses": [],
-   "limits_checked": true
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "3/3"
   },
   {
    "source": "나라장터",
@@ -997,7 +787,9 @@
    "track": "B",
    "regions": [],
    "licenses": [],
-   "limits_checked": true
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "3/3"
   },
   {
    "source": "나라장터",
@@ -1028,38 +820,9 @@
    "track": "B",
    "regions": [],
    "licenses": [],
-   "limits_checked": true
-  },
-  {
-   "source": "나라장터",
-   "kind": "bid",
-   "org": "서울과학기술대학교",
-   "title": "2026년 실험실 안전환경 기반조성 사업 안전장비(냉장냉동시약장) 구매 설치",
-   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01771696&bidPbancOrd=000",
-   "open_date": "2026-10-14",
-   "close_date": "2026-10-27",
-   "dday": 1,
-   "status": "입찰공고",
-   "budget": "7,109만 원",
-   "bid_no": "R26BK01771696",
-   "bid_ord": "000",
-   "bid_type": "물품",
-   "products": [
-    "실험실용일반냉장고",
-    "실험실용일반냉동고"
-   ],
-   "product_hits": [],
-   "product_minus": [],
-   "score": 5,
-   "hits": [
-    "설치",
-    "장비"
-   ],
-   "minus": [],
-   "track": "B",
-   "regions": [],
-   "licenses": [],
-   "limits_checked": true
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "4/4"
   },
   {
    "source": "나라장터",
@@ -1089,7 +852,9 @@
    "track": "B",
    "regions": [],
    "licenses": [],
-   "limits_checked": true
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "3/3"
   },
   {
    "source": "NTIS",
@@ -1585,36 +1350,9 @@
    "track": "B",
    "regions": [],
    "licenses": [],
-   "limits_checked": true
-  },
-  {
-   "source": "나라장터",
-   "kind": "bid",
-   "org": "전남대학교 산학협력단",
-   "title": "6자유도 입력 3자유도 힘출력 햅틱 마스터 장치",
-   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01766310&bidPbancOrd=001",
-   "open_date": "2026-10-14",
-   "close_date": "2026-10-28",
-   "dday": 2,
-   "status": "입찰공고",
-   "budget": "3,000만 원",
-   "bid_no": "R26BK01766310",
-   "bid_ord": "001",
-   "bid_type": "물품",
-   "products": [
-    "복합기능마우스"
-   ],
-   "product_hits": [],
-   "product_minus": [],
-   "score": 4,
-   "hits": [
-    "장치"
-   ],
-   "minus": [],
-   "track": "B",
-   "regions": [],
-   "licenses": [],
-   "limits_checked": true
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "6/6"
   },
   {
    "source": "나라장터",
@@ -1644,7 +1382,9 @@
    "track": "B",
    "regions": [],
    "licenses": [],
-   "limits_checked": true
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "3/3"
   },
   {
    "source": "나라장터",
@@ -1673,7 +1413,9 @@
    "track": "B",
    "regions": [],
    "licenses": [],
-   "limits_checked": true
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "6/7"
   },
   {
    "source": "기계연",
@@ -1730,7 +1472,9 @@
    "track": "B",
    "regions": [],
    "licenses": [],
-   "limits_checked": true
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "3/3"
   },
   {
    "source": "IRIS",
@@ -1743,6 +1487,27 @@
    "dday": 7,
    "status": "접수중",
    "budget": "",
+   "ministry": "중소벤처기업부",
+   "elig_text": [],
+   "score": 4,
+   "hits": [
+    "스케일업",
+    "기술개발"
+   ],
+   "minus": [],
+   "track": "A"
+  },
+  {
+   "source": "NTIS",
+   "kind": "rnd",
+   "org": "중소벤처기업부",
+   "title": "2026년도 투·융자 연계 기술개발사업 지원계획 수정 공고(스케일업 팁스)_(일반형, 재평가 2차) 스케일업 팁스 RD 지원계획 공고",
+   "url": "https://www.ntis.go.kr/rndgate/eg/un/ra/view.do?roRndUid=1281272&flag=rndList",
+   "open_date": "2026-10-26",
+   "close_date": "2026-11-02",
+   "dday": 7,
+   "status": "접수중",
+   "budget": "공고금액 20억 원",
    "ministry": "중소벤처기업부",
    "elig_text": [],
    "score": 4,
@@ -1801,7 +1566,9 @@
    "track": "B",
    "regions": [],
    "licenses": [],
-   "limits_checked": true
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "4/4"
   },
   {
    "source": "나라장터",
@@ -1837,6 +1604,8 @@
     "기계설비ㆍ가스공사업"
    ],
    "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "3/3",
    "needs_license": [
     "엔지니어링사업(일반산업기계)",
     "고압가스용기제조",
@@ -1870,7 +1639,9 @@
    "track": "B",
    "regions": [],
    "licenses": [],
-   "limits_checked": true
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "3/3"
   },
   {
    "source": "나라장터",
@@ -1899,7 +1670,33 @@
    "track": "B",
    "regions": [],
    "licenses": [],
-   "limits_checked": true
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "3/3"
+  },
+  {
+   "source": "NTIS",
+   "kind": "rnd",
+   "org": "산업통상부",
+   "title": "2027년 뿌리산업혁신공정장비개발사업 기술수요조사",
+   "url": "https://www.ntis.go.kr/rndgate/eg/un/ra/view.do?roRndUid=1281164&flag=rndList",
+   "open_date": "2026-10-23",
+   "close_date": "2026-11-05",
+   "dday": 10,
+   "status": "접수중",
+   "budget": "",
+   "ministry": "산업통상부",
+   "elig_text": [],
+   "score": 5,
+   "hits": [
+    "장비",
+    "공정",
+    "산업"
+   ],
+   "minus": [
+    "수요조사"
+   ],
+   "track": "A"
   },
   {
    "source": "나라장터",
@@ -1931,7 +1728,9 @@
     "전기공사업",
     "기계설비ㆍ가스공사업"
    ],
-   "limits_checked": true
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "2/2"
   },
   {
    "source": "나라장터",
@@ -1964,7 +1763,9 @@
    "track": "B",
    "regions": [],
    "licenses": [],
-   "limits_checked": true
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "0/0"
   },
   {
    "source": "IRIS",
@@ -1976,7 +1777,7 @@
    "close_date": "2026-11-12",
    "dday": 17,
    "status": "접수예정",
-   "budget": "",
+   "budget": "공고금액 60억 7,900만 원",
    "ministry": "다부처",
    "elig_text": [],
    "score": 5,
@@ -1997,7 +1798,7 @@
       "공정",
       "AX"
      ],
-     "budget": ""
+     "budget": "공고금액 60억 7,900만 원"
     },
     {
      "label": "NRF, KEIT",
@@ -2008,7 +1809,7 @@
       "공정",
       "AX"
      ],
-     "budget": ""
+     "budget": "공고금액 121억 1,700만 원"
     }
    ]
   },
@@ -2043,7 +1844,7 @@
    "close_date": "2026-11-20",
    "dday": 25,
    "status": "접수예정",
-   "budget": "",
+   "budget": "공고금액 114억 200만 원",
    "ministry": "산업통상부",
    "elig_text": [],
    "score": 5,
@@ -2083,7 +1884,9 @@
    "track": "B",
    "regions": [],
    "licenses": [],
-   "limits_checked": true
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "3/3"
   },
   {
    "source": "나라장터",
@@ -2116,7 +1919,9 @@
     "정보통신공사업",
     "전기공사업"
    ],
-   "limits_checked": true
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "3/3"
   },
   {
    "source": "나라장터",
@@ -2147,7 +1952,9 @@
    "track": "B",
    "regions": [],
    "licenses": [],
-   "limits_checked": true
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "6/6"
   },
   {
    "source": "나라장터",
@@ -2177,7 +1984,9 @@
    "track": "B",
    "regions": [],
    "licenses": [],
-   "limits_checked": true
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "3/3"
   },
   {
    "source": "나라장터",
@@ -2210,7 +2019,9 @@
    "track": "B",
    "regions": [],
    "licenses": [],
-   "limits_checked": true
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "5/5"
   },
   {
    "source": "나라장터",
@@ -2243,7 +2054,9 @@
    "track": "B",
    "regions": [],
    "licenses": [],
-   "limits_checked": true
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "5/5"
   },
   {
    "source": "나라장터",
@@ -2273,37 +2086,9 @@
    "track": "B",
    "regions": [],
    "licenses": [],
-   "limits_checked": true
-  },
-  {
-   "source": "나라장터",
-   "kind": "bid",
-   "org": "경상북도 울진군",
-   "title": "드론 배송 실증도시 인프라 구축 용역",
-   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01766016&bidPbancOrd=000",
-   "open_date": "2026-10-12",
-   "close_date": "",
-   "dday": null,
-   "status": "입찰공고",
-   "budget": "1억 6,345만 원",
-   "bid_no": "R26BK01766016",
-   "bid_ord": "000",
-   "bid_type": "용역",
-   "service_class": [
-    "ICT 서비스",
-    "시스템 운영환경 구축",
-    "정보인프라구축서비스"
-   ],
-   "score": 5,
-   "hits": [
-    "구축",
-    "실증"
-   ],
-   "minus": [],
-   "track": "B",
-   "regions": [],
-   "licenses": [],
-   "limits_checked": true
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "4/4"
   },
   {
    "source": "나라장터",
@@ -2332,7 +2117,9 @@
    "track": "B",
    "regions": [],
    "licenses": [],
-   "limits_checked": true
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "6/6"
   },
   {
    "source": "나라장터",
@@ -2361,7 +2148,9 @@
    "track": "B",
    "regions": [],
    "licenses": [],
-   "limits_checked": true
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "7/7"
   },
   {
    "source": "나라장터",
@@ -2396,7 +2185,147 @@
    "track": "B",
    "regions": [],
    "licenses": [],
-   "limits_checked": true
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "7/7"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한국항공우주연구원",
+   "title": "한국형발사체 성능 개선을 위한 소형 비행종단장치(SFTU) 개발모델(DM) 제작",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01767596&bidPbancOrd=000",
+   "open_date": "2026-10-13",
+   "close_date": "2026-10-26",
+   "dday": 0,
+   "status": "입찰공고",
+   "budget": "7,172만 원",
+   "bid_no": "R26BK01767596",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "복합전자장치"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 8,
+   "hits": [
+    "제작",
+    "개선",
+    "장치"
+   ],
+   "minus": [],
+   "track": "",
+   "regions": [],
+   "licenses": [],
+   "limits_checked": true,
+   "sme_only": "인([소상공인기본법] 제2조)으로서, [중소 기업 범위 및 확인에 관한 규정]에 따라 발급된 소기업/소상공인확인서를 소지한 자 또는 비영리",
+   "attach_checked": "1/3",
+   "ineligible": "소기업·소상공인 전용 (공고문 참가자격)",
+   "excluded_track": "B"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한국산업기술시험원",
+   "title": "정션박스 물리력 내구시험 장비 구매",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01768114&bidPbancOrd=000",
+   "open_date": "2026-10-13",
+   "close_date": "2026-10-26",
+   "dday": 0,
+   "status": "입찰공고",
+   "budget": "4,454만 원",
+   "bid_no": "R26BK01768114",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "인장강도시험기"
+   ],
+   "product_hits": [
+    "시험기"
+   ],
+   "product_minus": [],
+   "score": 7,
+   "hits": [
+    "장비"
+   ],
+   "minus": [],
+   "track": "",
+   "regions": [],
+   "licenses": [],
+   "limits_checked": true,
+   "sme_only": "위한 특별조치법」제2조에 따른 소기업 또는 소상공인으로서 중소기업청에서 발급한 ‘소기업 또는 소상공인 확인서’를 소지한 자 * 소기",
+   "attach_checked": "1/8",
+   "ineligible": "소기업·소상공인 전용 (공고문 참가자격)",
+   "excluded_track": "B"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한국항공우주연구원",
+   "title": "산화제펌프 프로토타입 시험용 볼류트케이싱 적층제조 소재 제작",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01768208&bidPbancOrd=000",
+   "open_date": "2026-10-13",
+   "close_date": "2026-10-26",
+   "dday": 0,
+   "status": "입찰공고",
+   "budget": "3,118만 원",
+   "bid_no": "R26BK01768208",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "금속하우징"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 6,
+   "hits": [
+    "제작",
+    "펌프"
+   ],
+   "minus": [],
+   "track": "",
+   "regions": [],
+   "licenses": [],
+   "limits_checked": true,
+   "sme_only": "법률」제2조에 따른 소상공인으로서,「중소기업 범위 및 확인에 관한 규정」에 따라 발급된 소기업·소상공인 확인서를 소지한 자 ※",
+   "attach_checked": "1/3",
+   "ineligible": "소기업·소상공인 전용 (공고문 참가자격)",
+   "excluded_track": "B"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한국산업기술시험원",
+   "title": "켈빈 4-단자 측정용 지그",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01768655&bidPbancOrd=000",
+   "open_date": "2026-10-13",
+   "close_date": "2026-10-26",
+   "dday": 0,
+   "status": "입찰공고",
+   "budget": "2,600만 원",
+   "bid_no": "R26BK01768655",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "지그"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 6,
+   "hits": [
+    "측정",
+    "지그"
+   ],
+   "minus": [],
+   "track": "",
+   "regions": [],
+   "licenses": [],
+   "limits_checked": true,
+   "sme_only": "위한 특별조치법」제2조에 따른 소기업 또는 소상공인으로서 중소기업청에서 발급한 ‘소기업 또는 소상공인 확인서’를 소지한 자 * 소기",
+   "attach_checked": "1/8",
+   "ineligible": "소기업·소상공인 전용 (공고문 참가자격)",
+   "excluded_track": "B"
   },
   {
    "source": "나라장터",
@@ -2458,7 +2387,9 @@
     "학술.연구용역"
    ],
    "limits_checked": true,
-   "ineligible": "등록 업종으로 참여 불가 (필요: 학술.연구용역)",
+   "sme_only": "제 조에 따른 2」 소상공인으로 중소기업 범위 및 확인에 관한 규정 에 따라 「 」 발급된 소기업ㆍ소상공인 확인서를 소지한 자 중소기업제품",
+   "attach_checked": "1/3",
+   "ineligible": "소기업·소상공인 전용 (공고문 참가자격)",
    "excluded_track": "B"
   },
   {
@@ -2471,7 +2402,7 @@
    "close_date": "2026-10-26",
    "dday": 0,
    "status": "접수중",
-   "budget": "지원규모 85억 8,000만 원",
+   "budget": "공고금액 85억 8,000만 원",
    "ministry": "산업통상부",
    "elig_text": [
     "본 공고는 2026년 선정된 으뜸기업(6기)에만 지원되는 전용 R&D 공고입니다",
@@ -2519,6 +2450,40 @@
   {
    "source": "나라장터",
    "kind": "bid",
+   "org": "한국산업기술시험원",
+   "title": "광학식 비접촉 3차원 형상 측정 시스템 구매",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01769100&bidPbancOrd=000",
+   "open_date": "2026-10-13",
+   "close_date": "2026-10-26",
+   "dday": 0,
+   "status": "입찰공고",
+   "budget": "2,900만 원",
+   "bid_no": "R26BK01769100",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "레이저측정기"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 4,
+   "hits": [
+    "시스템",
+    "측정"
+   ],
+   "minus": [],
+   "track": "",
+   "regions": [],
+   "licenses": [],
+   "limits_checked": true,
+   "sme_only": "위한 특별조치법」제2조에 따른 소기업 또는 소상공인으로서 중소기업청에서 발급한 ‘소기업 또는 소상공인 확인서’를 소지한 자 * 소기",
+   "attach_checked": "1/5",
+   "ineligible": "소기업·소상공인 전용 (공고문 참가자격)",
+   "excluded_track": "B"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
    "org": "전북특별자치도 순창군",
    "title": "순창군 공공하수처리시설 수질관제시스템(TMS) 수질측정기기(T-N, T-P) 구입 교체",
    "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01769127&bidPbancOrd=000",
@@ -2549,6 +2514,8 @@
     "수질오염측정기기 관리대행업"
    ],
    "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "5/5",
    "ineligible": "참가 가능 지역: 전북특별자치도",
    "excluded_track": "B"
   },
@@ -3555,6 +3522,25 @@
    "source": "NTIS",
    "kind": "rnd",
    "org": "과학기술정보통신부",
+   "title": "2026년 4극3특 제주특별자치도 과학기술혁신지원사업 연구단 모집 공고(연장공고)_제주특자도 과학기술혁신지원",
+   "url": "https://www.ntis.go.kr/rndgate/eg/un/ra/view.do?roRndUid=1280242&flag=rndList",
+   "open_date": "2026-10-13",
+   "close_date": "2026-10-26",
+   "dday": 0,
+   "status": "접수중",
+   "budget": "공고금액 86억 2,400만 원",
+   "ministry": "과학기술정보통신부",
+   "elig_text": [],
+   "score": 0,
+   "hits": [],
+   "minus": [],
+   "track": "",
+   "ineligible": "지역 사업 (제주)"
+  },
+  {
+   "source": "NTIS",
+   "kind": "rnd",
+   "org": "과학기술정보통신부",
    "title": "2026년 4극3특 동남권 과학기술혁신지원사업 연구단 모집 공고(연장)",
    "url": "https://www.ntis.go.kr/rndgate/eg/un/ra/view.do?roRndUid=1280136&flag=rndList",
    "open_date": "2026-10-12",
@@ -3569,6 +3555,48 @@
    "minus": [],
    "track": "",
    "ineligible": "지역 사업 (동남권)"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한국항공우주연구원",
+   "title": "(재공고)추진공급계 축소형 모델 고도화용 시험설비 진공 시스템 구축",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01767731&bidPbancOrd=000",
+   "open_date": "2026-10-13",
+   "close_date": "2026-10-27",
+   "dday": 1,
+   "status": "입찰공고",
+   "budget": "4,318만 원",
+   "bid_no": "R26BK01767731",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "연구조사서비스",
+    "학술연구서비스",
+    "과학기술연구조사서비스"
+   ],
+   "score": 11,
+   "hits": [
+    "시험설비",
+    "고도화",
+    "시스템",
+    "구축",
+    "진공"
+   ],
+   "minus": [],
+   "track": "",
+   "regions": [
+    "대전광역시",
+    "세종특별자치시",
+    "충청북도",
+    "충청남도"
+   ],
+   "licenses": [],
+   "limits_checked": true,
+   "sme_only": "법률」 제2조에 따른 소상공인으로서,「중소기업 범위 및 확인에 관한 규정」에 따라 발급된 소기업·소상공인 확인서를 소지한 자 ※ 확",
+   "attach_checked": "1/3",
+   "ineligible": "소기업·소상공인 전용 (공고문 참가자격)",
+   "excluded_track": "B"
   },
   {
    "source": "나라장터",
@@ -3603,6 +3631,8 @@
     "정보통신공사업"
    ],
    "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "4/4",
    "ineligible": "등록 업종으로 참여 불가 (필요: 정보통신공사업)",
    "excluded_track": "B"
   },
@@ -3638,7 +3668,43 @@
     "소프트웨어사업자(컴퓨터관련서비스사업)"
    ],
    "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "4/4",
    "ineligible": "등록 업종으로 참여 불가 (필요: 소프트웨어사업자(컴퓨터관련서비스사업))",
+   "excluded_track": "B"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한국건설기술연구원",
+   "title": "수소도시 기반시설 실증을 위한 수소농도 계측기기 구매",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764488&bidPbancOrd=000",
+   "open_date": "2026-10-13",
+   "close_date": "2026-10-27",
+   "dday": 1,
+   "status": "입찰공고",
+   "budget": "4,455만 원",
+   "bid_no": "R26BK01764488",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "비접촉센서"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 6,
+   "hits": [
+    "실증",
+    "수소"
+   ],
+   "minus": [],
+   "track": "",
+   "regions": [],
+   "licenses": [],
+   "limits_checked": true,
+   "sme_only": "｣ 제2조 에 따른 소상공인으로서 ｢중소기업 범위 및 확인에 관한 규정｣에 따라 발급된 <소기업· 소상공인 확인서>를 소지한 자 바. 본",
+   "attach_checked": "1/5",
+   "ineligible": "소기업·소상공인 전용 (공고문 참가자격)",
    "excluded_track": "B"
   },
   {
@@ -3673,7 +3739,78 @@
     "소프트웨어사업자(컴퓨터관련서비스사업)"
    ],
    "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "2/2",
    "ineligible": "등록 업종으로 참여 불가 (필요: 정보통신공사업, 소프트웨어사업자(컴퓨터관련서비스사업))",
+   "excluded_track": "B"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한국항공우주연구원",
+   "title": "(재공고)산화제펌프 프로토타입 시험용 볼류트케이싱 적층제조 소재 제작",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01768241&bidPbancOrd=000",
+   "open_date": "2026-10-13",
+   "close_date": "2026-10-27",
+   "dday": 1,
+   "status": "입찰공고",
+   "budget": "3,118만 원",
+   "bid_no": "R26BK01768241",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "금속하우징"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 6,
+   "hits": [
+    "제작",
+    "펌프"
+   ],
+   "minus": [],
+   "track": "",
+   "regions": [],
+   "licenses": [],
+   "limits_checked": true,
+   "sme_only": "법률」제2조에 따른 소상공인으로서,「중소기업 범위 및 확인에 관한 규정」에 따라 발급된 소기업·소상공인 확인서를 소지한 자 ※",
+   "attach_checked": "1/3",
+   "ineligible": "소기업·소상공인 전용 (공고문 참가자격)",
+   "excluded_track": "B"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "서울과학기술대학교",
+   "title": "2026년 실험실 안전환경 기반조성 사업 안전장비(냉장냉동시약장) 구매 설치",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01771696&bidPbancOrd=000",
+   "open_date": "2026-10-14",
+   "close_date": "2026-10-27",
+   "dday": 1,
+   "status": "입찰공고",
+   "budget": "7,109만 원",
+   "bid_no": "R26BK01771696",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "실험실용일반냉장고",
+    "실험실용일반냉동고"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 5,
+   "hits": [
+    "설치",
+    "장비"
+   ],
+   "minus": [],
+   "track": "",
+   "regions": [],
+   "licenses": [],
+   "limits_checked": true,
+   "sme_only": "법률｣ 제2조에 따른 소상공인으로서「중소기업 범위 및 확인에 관한 규정｣에 따라 발급된 <소기업·소상공인 확인서>를 소지한 자 氠瑢",
+   "attach_checked": "1/3",
+   "ineligible": "소기업·소상공인 전용 (공고문 참가자격)",
    "excluded_track": "B"
   },
   {
@@ -3788,6 +3925,8 @@
     "소프트웨어사업자(컴퓨터관련서비스사업)"
    ],
    "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "3/3",
    "ineligible": "등록 업종으로 참여 불가 (필요: 정보통신공사업, 소프트웨어사업자(컴퓨터관련서비스사업))",
    "excluded_track": "B"
   },
@@ -3823,6 +3962,8 @@
     "소프트웨어사업자(컴퓨터관련서비스사업)"
    ],
    "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "3/3",
    "ineligible": "등록 업종으로 참여 불가 (필요: 정보통신공사업, 소프트웨어사업자(컴퓨터관련서비스사업))",
    "excluded_track": "B"
   },
@@ -4698,6 +4839,81 @@
    "track": ""
   },
   {
+   "source": "NTIS",
+   "kind": "rnd",
+   "org": "과학기술정보통신부",
+   "title": "2026년 4극3특 대경권 과학기술혁신지원사업 연구단 모집 공고(연장공고)_딥테크 기술발굴형",
+   "url": "https://www.ntis.go.kr/rndgate/eg/un/ra/view.do?roRndUid=1280254&flag=rndList",
+   "open_date": "2026-10-13",
+   "close_date": "2026-10-27",
+   "dday": 1,
+   "status": "접수중",
+   "budget": "공고금액 117억 5,000만 원",
+   "ministry": "과학기술정보통신부",
+   "elig_text": [],
+   "score": 0,
+   "hits": [],
+   "minus": [],
+   "track": "",
+   "ineligible": "지역 사업 (대경권)"
+  },
+  {
+   "source": "NTIS",
+   "kind": "rnd",
+   "org": "과학기술정보통신부",
+   "title": "2026년 4극3특 중부권 과학기술혁신지원사업 연구단 모집 공고(중부권)",
+   "url": "https://www.ntis.go.kr/rndgate/eg/un/ra/view.do?roRndUid=1280240&flag=rndList",
+   "open_date": "2026-09-11",
+   "close_date": "2026-10-27",
+   "dday": 1,
+   "status": "접수중",
+   "budget": "공고금액 42억 원",
+   "ministry": "과학기술정보통신부",
+   "elig_text": [
+    "법률」에 따른 사업화전문회사, 기타 「상법」 제169조에 따른 회사로서 기술사업화 및 기업 성장 지원 역량을 보유한 기관(법인) 등 ** 외국 법인 기관과의 공동 연구 구성 시, 주관연구개발기관은 국내 연구개발기관으로 한정함 ㅇ (연구책임자) 위 기관·단체에 소속된 연구자로서 「국가연구개발혁신",
+    "**연장 기간 중에는 연장 대상 RFP에 한하여 신청·재제출 가능 (그 외 RFP는 당초 마감 시점 제출본으로 선정평가 진행",
+    "관 C기관 위탁연구개발기관 D기관 D기관 C기관 A기관 B기관 사례별 신청 가능 여부 가능 불가능 불가능 불가능 불가능 ㅇ (중복신청 제한) 주관 및 공동연구개발기관 연구책임자는 본 분야 6개 RFP 중 1개의 과제만 신청할 수 있으며, 중복 신청 시 해당 과제 모두 요건 탈락함",
+    "관 C기관 위탁연구개발기관 D기관 D기관 C기관 A기관 B기관 사례별 신청 가능 여부 가능 불가능 불가능 불가능 불가능 ㅇ (중복신청 제한) 주관 및 공동연구개발기관 연구책임자는 본 분야 5개 RFP 중 1개의 과제만 신청할 수 있으며, 중복 신청 시 해당 과제 모두 요건 탈락함"
+   ],
+   "score": 0,
+   "hits": [],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "전남대학교 산학협력단",
+   "title": "6자유도 입력 3자유도 힘출력 햅틱 마스터 장치",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01766310&bidPbancOrd=001",
+   "open_date": "2026-10-14",
+   "close_date": "2026-10-28",
+   "dday": 2,
+   "status": "입찰공고",
+   "budget": "3,000만 원",
+   "bid_no": "R26BK01766310",
+   "bid_ord": "001",
+   "bid_type": "물품",
+   "products": [
+    "복합기능마우스"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 4,
+   "hits": [
+    "장치"
+   ],
+   "minus": [],
+   "track": "",
+   "regions": [],
+   "licenses": [],
+   "limits_checked": true,
+   "sme_only": "및지원에관한법률」 제2조에 따른 소상 공인으로서 「중소기업범위및확인에관한규정」에 따라 발급된 소기업ㆍ소상공인확인서(공공기관 입찰용)를 소지",
+   "attach_checked": "1/4",
+   "ineligible": "소기업·소상공인 전용 (공고문 참가자격)",
+   "excluded_track": "B"
+  },
+  {
    "source": "나라장터",
    "kind": "bid",
    "org": "한국천문연구원",
@@ -5208,6 +5424,26 @@
    "track": ""
   },
   {
+   "source": "NTIS",
+   "kind": "rnd",
+   "org": "우주항공청",
+   "title": "2026년도 임무수요기반 성층권 드론 실증 플랫폼 개발 사업 2단계 정책지정과제",
+   "url": "https://www.ntis.go.kr/rndgate/eg/un/ra/view.do?roRndUid=1281279&flag=rndList",
+   "open_date": "2026-10-16",
+   "close_date": "2026-10-30",
+   "dday": 4,
+   "status": "접수중",
+   "budget": "",
+   "ministry": "우주항공청",
+   "elig_text": [],
+   "score": 3,
+   "hits": [
+    "실증"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
    "source": "나라장터",
    "kind": "bid",
    "org": "한국농수산식품유통공사",
@@ -5358,6 +5594,29 @@
    "track": ""
   },
   {
+   "source": "NTIS",
+   "kind": "rnd",
+   "org": "중소벤처기업부",
+   "title": "2026년 중소기업 연구인력지원사업(파견) 10월 공고",
+   "url": "https://www.ntis.go.kr/rndgate/eg/un/ra/view.do?roRndUid=1281282&flag=rndList",
+   "open_date": "2026-10-01",
+   "close_date": "2026-10-31",
+   "dday": 5,
+   "status": "접수중",
+   "budget": "",
+   "ministry": "중소벤처기업부",
+   "elig_text": [],
+   "score": -5,
+   "hits": [
+    "중소기업"
+   ],
+   "minus": [
+    "연구인력",
+    "인력지원"
+   ],
+   "track": ""
+  },
+  {
    "source": "IRIS",
    "kind": "rnd",
    "org": "연구개발특구진흥재단",
@@ -5367,7 +5626,7 @@
    "close_date": "2026-11-01",
    "dday": 6,
    "status": "접수중",
-   "budget": "",
+   "budget": "공고금액 86억 2,600만 원",
    "ministry": "과학기술정보통신부",
    "elig_text": [
     "연장공고 후 단독응모한 과제는 최종 종합평점 75 점 이상인 경우에 한하여 지원가능과제로 분류함"
@@ -5412,6 +5671,8 @@
     "소프트웨어사업자(컴퓨터관련서비스사업)"
    ],
    "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "5/5",
    "ineligible": "참가 가능 지역: 전남광주통합특별시",
    "excluded_track": "B"
   },
@@ -6050,6 +6311,8 @@
     "학술.연구용역"
    ],
    "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "2/2",
    "ineligible": "등록 업종으로 참여 불가 (필요: 학술.연구용역)",
    "excluded_track": "B"
   },
@@ -6093,6 +6356,26 @@
    "hits": [
     "제조"
    ],
+   "minus": [
+    "수요조사"
+   ],
+   "track": ""
+  },
+  {
+   "source": "NTIS",
+   "kind": "rnd",
+   "org": "산업통상부",
+   "title": "2027년 제1차 국가표준기술력향상사업 수요조사 공고",
+   "url": "https://www.ntis.go.kr/rndgate/eg/un/ra/view.do?roRndUid=1280659&flag=rndList",
+   "open_date": "2026-10-19",
+   "close_date": "2026-11-06",
+   "dday": 11,
+   "status": "접수중",
+   "budget": "",
+   "ministry": "산업통상부",
+   "elig_text": [],
+   "score": -2,
+   "hits": [],
    "minus": [
     "수요조사"
    ],
@@ -6151,6 +6434,8 @@
     "소프트웨어사업자(컴퓨터관련서비스사업)"
    ],
    "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "1/1",
    "ineligible": "등록 업종으로 참여 불가 (필요: 정보통신공사업, 소프트웨어사업자(컴퓨터관련서비스사업))",
    "excluded_track": "B"
   },
@@ -6164,13 +6449,33 @@
    "close_date": "2026-11-10",
    "dday": 15,
    "status": "접수중",
-   "budget": "",
+   "budget": "공고금액 3억 2,000만 원",
    "ministry": "기후에너지환경부",
    "elig_text": [],
    "score": 3,
    "hits": [
     "에너지",
     "사업화"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "NTIS",
+   "kind": "rnd",
+   "org": "과학기술정보통신부",
+   "title": "2026년 미래개척융합과학기술개발사업(한계돌파RD) 신규과제 공모",
+   "url": "https://www.ntis.go.kr/rndgate/eg/un/ra/view.do?roRndUid=1280251&flag=rndList",
+   "open_date": "2026-10-26",
+   "close_date": "2026-11-12",
+   "dday": 17,
+   "status": "접수중",
+   "budget": "공고금액 36억 원",
+   "ministry": "과학기술정보통신부",
+   "elig_text": [],
+   "score": 1,
+   "hits": [
+    "기술개발"
    ],
    "minus": [],
    "track": ""
@@ -6266,7 +6571,7 @@
    "close_date": "2026-11-13",
    "dday": 18,
    "status": "접수중",
-   "budget": "",
+   "budget": "공고금액 36억 원",
    "ministry": "과학기술정보통신부",
    "elig_text": [],
    "score": 1,
@@ -6286,7 +6591,7 @@
    "close_date": "2026-11-13",
    "dday": 18,
    "status": "접수중",
-   "budget": "",
+   "budget": "공고금액 624억 6,000만 원",
    "ministry": "과학기술정보통신부",
    "elig_text": [],
    "score": 0,
@@ -6304,7 +6609,7 @@
    "close_date": "2026-11-16",
    "dday": 21,
    "status": "접수예정",
-   "budget": "",
+   "budget": "공고금액 6억 원",
    "ministry": "과학기술정보통신부",
    "elig_text": [],
    "score": 0,
@@ -6322,7 +6627,7 @@
    "close_date": "2026-11-17",
    "dday": 22,
    "status": "접수중",
-   "budget": "",
+   "budget": "공고금액 229억 3,800만 원",
    "ministry": "과학기술정보통신부",
    "elig_text": [],
    "score": -11,
@@ -6360,6 +6665,24 @@
    "minus": [
     "운영 용역"
    ],
+   "track": ""
+  },
+  {
+   "source": "NTIS",
+   "kind": "rnd",
+   "org": "보건복지부",
+   "title": "2027년 융합형 의사과학자 양성 사업(대학원과정) 공고 안내",
+   "url": "https://www.ntis.go.kr/rndgate/eg/un/ra/view.do?roRndUid=1281125&flag=rndList",
+   "open_date": "2026-10-22",
+   "close_date": "2026-11-18",
+   "dday": 23,
+   "status": "접수중",
+   "budget": "공고금액 1,000만 원",
+   "ministry": "보건복지부",
+   "elig_text": [],
+   "score": 0,
+   "hits": [],
+   "minus": [],
    "track": ""
   },
   {
@@ -6713,6 +7036,29 @@
   {
    "source": "NTIS",
    "kind": "rnd",
+   "org": "중소벤처기업부",
+   "title": "2026년 중소기업 연구인력지원사업(파견) 11월 공고",
+   "url": "https://www.ntis.go.kr/rndgate/eg/un/ra/view.do?roRndUid=1281283&flag=rndList",
+   "open_date": "2026-11-01",
+   "close_date": "2026-11-30",
+   "dday": 35,
+   "status": "접수예정",
+   "budget": "",
+   "ministry": "중소벤처기업부",
+   "elig_text": [],
+   "score": -5,
+   "hits": [
+    "중소기업"
+   ],
+   "minus": [
+    "연구인력",
+    "인력지원"
+   ],
+   "track": ""
+  },
+  {
+   "source": "NTIS",
+   "kind": "rnd",
    "org": "과학기술정보통신부",
    "title": "2026년도 스페이스파이오니어사업 신규과제 재공모",
    "url": "https://www.ntis.go.kr/rndgate/eg/un/ra/view.do?roRndUid=1253341&flag=rndList",
@@ -6765,6 +7111,46 @@
    "score": 0,
    "hits": [],
    "minus": [],
+   "track": ""
+  },
+  {
+   "source": "NTIS",
+   "kind": "rnd",
+   "org": "산업통상부",
+   "title": "2027년 미래모빌리티(자동차) 분야 상시 기술수요조사 공고",
+   "url": "https://www.ntis.go.kr/rndgate/eg/un/ra/view.do?roRndUid=1280555&flag=rndList",
+   "open_date": "2026-10-16",
+   "close_date": "2026-12-31",
+   "dday": 66,
+   "status": "접수중",
+   "budget": "",
+   "ministry": "산업통상부",
+   "elig_text": [],
+   "score": -2,
+   "hits": [],
+   "minus": [
+    "수요조사"
+   ],
+   "track": ""
+  },
+  {
+   "source": "NTIS",
+   "kind": "rnd",
+   "org": "산업통상부",
+   "title": "2027년 미래모빌리티(자동차) 분야 상시 기술수요조사",
+   "url": "https://www.ntis.go.kr/rndgate/eg/un/ra/view.do?roRndUid=1280452&flag=rndList",
+   "open_date": "2026-10-16",
+   "close_date": "2026-12-31",
+   "dday": 66,
+   "status": "접수중",
+   "budget": "",
+   "ministry": "산업통상부",
+   "elig_text": [],
+   "score": -2,
+   "hits": [],
+   "minus": [
+    "수요조사"
+   ],
    "track": ""
   },
   {
@@ -6879,6 +7265,40 @@
   {
    "source": "나라장터",
    "kind": "bid",
+   "org": "경상북도 울진군",
+   "title": "드론 배송 실증도시 인프라 구축 용역",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01766016&bidPbancOrd=000",
+   "open_date": "2026-10-12",
+   "close_date": "",
+   "dday": null,
+   "status": "입찰공고",
+   "budget": "1억 6,345만 원",
+   "bid_no": "R26BK01766016",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "ICT 서비스",
+    "시스템 운영환경 구축",
+    "정보인프라구축서비스"
+   ],
+   "score": 5,
+   "hits": [
+    "구축",
+    "실증"
+   ],
+   "minus": [],
+   "track": "",
+   "regions": [],
+   "licenses": [],
+   "limits_checked": true,
+   "sme_only": "에 따른 소상공인 으로서 「중소기업 범위 및 확인에 관한 규정」에 따라 발급된 소기업․소상공인 확인서를 소지한 자",
+   "attach_checked": "4/4",
+   "ineligible": "소기업·소상공인 전용 (공고문 참가자격)",
+   "excluded_track": "B"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
    "org": "신라정보기술(주)",
    "title": "AI 머신비전 기반 시료이송 통합 연계 외관·치수 검사 자동 판별 및 지능형 선행 품질예측 시스템 구축",
    "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01754394&bidPbancOrd=000",
@@ -6945,6 +7365,8 @@
     "고압가스판매업"
    ],
    "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "3/3",
    "ineligible": "참가 가능 지역: 전남광주통합특별시",
    "excluded_track": "B"
   },
