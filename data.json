@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-10-26 11:47:31",
+ "generated_at": "2026-10-26 13:21:20",
  "threshold": 4,
  "sources": [
   {
    "name": "IRIS",
    "ok": true,
-   "count": 25,
+   "count": 24,
    "error": ""
   },
   {
@@ -40,6 +40,240 @@
   }
  ],
  "items": [
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "수소에너지네트워크(주)",
+   "title": "(긴급)하이넷 김포구래 수소충전소 설비 제작 및 설치",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01767572&bidPbancOrd=000",
+   "open_date": "2026-10-13",
+   "close_date": "2026-10-26",
+   "dday": 0,
+   "status": "입찰공고",
+   "budget": "90억 원",
+   "bid_no": "R26BK01767572",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "왕복압축기"
+   ],
+   "product_hits": [
+    "압축기"
+   ],
+   "product_minus": [],
+   "score": 14,
+   "hits": [
+    "제작",
+    "설치",
+    "설비",
+    "수소"
+   ],
+   "minus": [],
+   "track": "B",
+   "regions": [],
+   "licenses": [
+    "기계설비ㆍ가스공사업"
+   ],
+   "limits_checked": true,
+   "needs_license": [
+    "기계설비ㆍ가스공사업"
+   ]
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "수소에너지네트워크(주)",
+   "title": "(긴급)하이넷 파주교하 수소충전소 설비 제작 및 설치",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01767626&bidPbancOrd=000",
+   "open_date": "2026-10-13",
+   "close_date": "2026-10-26",
+   "dday": 0,
+   "status": "입찰공고",
+   "budget": "90억 원",
+   "bid_no": "R26BK01767626",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "왕복압축기"
+   ],
+   "product_hits": [
+    "압축기"
+   ],
+   "product_minus": [],
+   "score": 14,
+   "hits": [
+    "제작",
+    "설치",
+    "설비",
+    "수소"
+   ],
+   "minus": [],
+   "track": "B",
+   "regions": [],
+   "licenses": [
+    "기계설비ㆍ가스공사업"
+   ],
+   "limits_checked": true,
+   "needs_license": [
+    "기계설비ㆍ가스공사업"
+   ]
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "수소에너지네트워크(주)",
+   "title": "(긴급)하이넷 화성우정 수소충전소 설비 제작 및 설치",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01767638&bidPbancOrd=000",
+   "open_date": "2026-10-13",
+   "close_date": "2026-10-26",
+   "dday": 0,
+   "status": "입찰공고",
+   "budget": "39억 4,000만 원",
+   "bid_no": "R26BK01767638",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "왕복압축기"
+   ],
+   "product_hits": [
+    "압축기"
+   ],
+   "product_minus": [],
+   "score": 14,
+   "hits": [
+    "제작",
+    "설치",
+    "설비",
+    "수소"
+   ],
+   "minus": [],
+   "track": "B",
+   "regions": [],
+   "licenses": [
+    "기계설비ㆍ가스공사업"
+   ],
+   "limits_checked": true,
+   "needs_license": [
+    "기계설비ㆍ가스공사업"
+   ]
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "수소에너지네트워크(주)",
+   "title": "(긴급)하이넷 평택현덕 수소충전소 설비 제작 및 설치",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01767645&bidPbancOrd=000",
+   "open_date": "2026-10-13",
+   "close_date": "2026-10-26",
+   "dday": 0,
+   "status": "입찰공고",
+   "budget": "39억 4,000만 원",
+   "bid_no": "R26BK01767645",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "왕복압축기"
+   ],
+   "product_hits": [
+    "압축기"
+   ],
+   "product_minus": [],
+   "score": 14,
+   "hits": [
+    "제작",
+    "설치",
+    "설비",
+    "수소"
+   ],
+   "minus": [],
+   "track": "B",
+   "regions": [],
+   "licenses": [
+    "기계설비ㆍ가스공사업"
+   ],
+   "limits_checked": true,
+   "needs_license": [
+    "기계설비ㆍ가스공사업"
+   ]
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "수소에너지네트워크(주)",
+   "title": "(긴급)하이넷 서천도삼 수소충전소 설비 제작 및 설치",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01767664&bidPbancOrd=000",
+   "open_date": "2026-10-13",
+   "close_date": "2026-10-26",
+   "dday": 0,
+   "status": "입찰공고",
+   "budget": "39억 4,000만 원",
+   "bid_no": "R26BK01767664",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "왕복압축기"
+   ],
+   "product_hits": [
+    "압축기"
+   ],
+   "product_minus": [],
+   "score": 14,
+   "hits": [
+    "제작",
+    "설치",
+    "설비",
+    "수소"
+   ],
+   "minus": [],
+   "track": "B",
+   "regions": [],
+   "licenses": [
+    "기계설비ㆍ가스공사업"
+   ],
+   "limits_checked": true,
+   "needs_license": [
+    "기계설비ㆍ가스공사업"
+   ]
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "수소에너지네트워크(주)",
+   "title": "(긴급)하이넷 울산야음 수소충전소 설비 제작 및 설치",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01767674&bidPbancOrd=000",
+   "open_date": "2026-10-13",
+   "close_date": "2026-10-26",
+   "dday": 0,
+   "status": "입찰공고",
+   "budget": "39억 4,000만 원",
+   "bid_no": "R26BK01767674",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "왕복압축기"
+   ],
+   "product_hits": [
+    "압축기"
+   ],
+   "product_minus": [],
+   "score": 14,
+   "hits": [
+    "제작",
+    "설치",
+    "설비",
+    "수소"
+   ],
+   "minus": [],
+   "track": "B",
+   "regions": [],
+   "licenses": [
+    "기계설비ㆍ가스공사업"
+   ],
+   "limits_checked": true,
+   "needs_license": [
+    "기계설비ㆍ가스공사업"
+   ]
+  },
   {
    "source": "나라장터",
    "kind": "bid",
@@ -1572,6 +1806,46 @@
   {
    "source": "나라장터",
    "kind": "bid",
+   "org": "한국기계연구원",
+   "title": "원전 압력방출장치 용량인증 설비 제작",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764877&bidPbancOrd=000",
+   "open_date": "2026-10-12",
+   "close_date": "2026-11-04",
+   "dday": 9,
+   "status": "입찰공고",
+   "budget": "109억 909만 원",
+   "bid_no": "R26BK01764877",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "실험실용공급기기"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 11,
+   "hits": [
+    "제작",
+    "설비",
+    "장치"
+   ],
+   "minus": [],
+   "track": "B",
+   "regions": [],
+   "licenses": [
+    "엔지니어링사업(일반산업기계)",
+    "고압가스용기제조",
+    "기계설비ㆍ가스공사업"
+   ],
+   "limits_checked": true,
+   "needs_license": [
+    "엔지니어링사업(일반산업기계)",
+    "고압가스용기제조",
+    "기계설비ㆍ가스공사업"
+   ]
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
    "org": "경상국립대학교 산학협력단",
    "title": "단백질 자동전기영동장치",
    "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764554&bidPbancOrd=000",
@@ -2127,234 +2401,6 @@
   {
    "source": "나라장터",
    "kind": "bid",
-   "org": "수소에너지네트워크(주)",
-   "title": "(긴급)하이넷 김포구래 수소충전소 설비 제작 및 설치",
-   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01767572&bidPbancOrd=000",
-   "open_date": "2026-10-13",
-   "close_date": "2026-10-26",
-   "dday": 0,
-   "status": "입찰공고",
-   "budget": "90억 원",
-   "bid_no": "R26BK01767572",
-   "bid_ord": "000",
-   "bid_type": "물품",
-   "products": [
-    "왕복압축기"
-   ],
-   "product_hits": [
-    "압축기"
-   ],
-   "product_minus": [],
-   "score": 14,
-   "hits": [
-    "제작",
-    "설치",
-    "설비",
-    "수소"
-   ],
-   "minus": [],
-   "track": "",
-   "regions": [],
-   "licenses": [
-    "기계설비ㆍ가스공사업"
-   ],
-   "limits_checked": true,
-   "ineligible": "면허 미보유: 기계설비ㆍ가스공사업",
-   "excluded_track": "B"
-  },
-  {
-   "source": "나라장터",
-   "kind": "bid",
-   "org": "수소에너지네트워크(주)",
-   "title": "(긴급)하이넷 파주교하 수소충전소 설비 제작 및 설치",
-   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01767626&bidPbancOrd=000",
-   "open_date": "2026-10-13",
-   "close_date": "2026-10-26",
-   "dday": 0,
-   "status": "입찰공고",
-   "budget": "90억 원",
-   "bid_no": "R26BK01767626",
-   "bid_ord": "000",
-   "bid_type": "물품",
-   "products": [
-    "왕복압축기"
-   ],
-   "product_hits": [
-    "압축기"
-   ],
-   "product_minus": [],
-   "score": 14,
-   "hits": [
-    "제작",
-    "설치",
-    "설비",
-    "수소"
-   ],
-   "minus": [],
-   "track": "",
-   "regions": [],
-   "licenses": [
-    "기계설비ㆍ가스공사업"
-   ],
-   "limits_checked": true,
-   "ineligible": "면허 미보유: 기계설비ㆍ가스공사업",
-   "excluded_track": "B"
-  },
-  {
-   "source": "나라장터",
-   "kind": "bid",
-   "org": "수소에너지네트워크(주)",
-   "title": "(긴급)하이넷 화성우정 수소충전소 설비 제작 및 설치",
-   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01767638&bidPbancOrd=000",
-   "open_date": "2026-10-13",
-   "close_date": "2026-10-26",
-   "dday": 0,
-   "status": "입찰공고",
-   "budget": "39억 4,000만 원",
-   "bid_no": "R26BK01767638",
-   "bid_ord": "000",
-   "bid_type": "물품",
-   "products": [
-    "왕복압축기"
-   ],
-   "product_hits": [
-    "압축기"
-   ],
-   "product_minus": [],
-   "score": 14,
-   "hits": [
-    "제작",
-    "설치",
-    "설비",
-    "수소"
-   ],
-   "minus": [],
-   "track": "",
-   "regions": [],
-   "licenses": [
-    "기계설비ㆍ가스공사업"
-   ],
-   "limits_checked": true,
-   "ineligible": "면허 미보유: 기계설비ㆍ가스공사업",
-   "excluded_track": "B"
-  },
-  {
-   "source": "나라장터",
-   "kind": "bid",
-   "org": "수소에너지네트워크(주)",
-   "title": "(긴급)하이넷 평택현덕 수소충전소 설비 제작 및 설치",
-   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01767645&bidPbancOrd=000",
-   "open_date": "2026-10-13",
-   "close_date": "2026-10-26",
-   "dday": 0,
-   "status": "입찰공고",
-   "budget": "39억 4,000만 원",
-   "bid_no": "R26BK01767645",
-   "bid_ord": "000",
-   "bid_type": "물품",
-   "products": [
-    "왕복압축기"
-   ],
-   "product_hits": [
-    "압축기"
-   ],
-   "product_minus": [],
-   "score": 14,
-   "hits": [
-    "제작",
-    "설치",
-    "설비",
-    "수소"
-   ],
-   "minus": [],
-   "track": "",
-   "regions": [],
-   "licenses": [
-    "기계설비ㆍ가스공사업"
-   ],
-   "limits_checked": true,
-   "ineligible": "면허 미보유: 기계설비ㆍ가스공사업",
-   "excluded_track": "B"
-  },
-  {
-   "source": "나라장터",
-   "kind": "bid",
-   "org": "수소에너지네트워크(주)",
-   "title": "(긴급)하이넷 서천도삼 수소충전소 설비 제작 및 설치",
-   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01767664&bidPbancOrd=000",
-   "open_date": "2026-10-13",
-   "close_date": "2026-10-26",
-   "dday": 0,
-   "status": "입찰공고",
-   "budget": "39억 4,000만 원",
-   "bid_no": "R26BK01767664",
-   "bid_ord": "000",
-   "bid_type": "물품",
-   "products": [
-    "왕복압축기"
-   ],
-   "product_hits": [
-    "압축기"
-   ],
-   "product_minus": [],
-   "score": 14,
-   "hits": [
-    "제작",
-    "설치",
-    "설비",
-    "수소"
-   ],
-   "minus": [],
-   "track": "",
-   "regions": [],
-   "licenses": [
-    "기계설비ㆍ가스공사업"
-   ],
-   "limits_checked": true,
-   "ineligible": "면허 미보유: 기계설비ㆍ가스공사업",
-   "excluded_track": "B"
-  },
-  {
-   "source": "나라장터",
-   "kind": "bid",
-   "org": "수소에너지네트워크(주)",
-   "title": "(긴급)하이넷 울산야음 수소충전소 설비 제작 및 설치",
-   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01767674&bidPbancOrd=000",
-   "open_date": "2026-10-13",
-   "close_date": "2026-10-26",
-   "dday": 0,
-   "status": "입찰공고",
-   "budget": "39억 4,000만 원",
-   "bid_no": "R26BK01767674",
-   "bid_ord": "000",
-   "bid_type": "물품",
-   "products": [
-    "왕복압축기"
-   ],
-   "product_hits": [
-    "압축기"
-   ],
-   "product_minus": [],
-   "score": 14,
-   "hits": [
-    "제작",
-    "설치",
-    "설비",
-    "수소"
-   ],
-   "minus": [],
-   "track": "",
-   "regions": [],
-   "licenses": [
-    "기계설비ㆍ가스공사업"
-   ],
-   "limits_checked": true,
-   "ineligible": "면허 미보유: 기계설비ㆍ가스공사업",
-   "excluded_track": "B"
-  },
-  {
-   "source": "나라장터",
-   "kind": "bid",
    "org": "한국수산자원공단 남해본부",
    "title": "수질 환경 모니터링 시스템 구축",
    "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01765143&bidPbancOrd=000",
@@ -2412,7 +2458,7 @@
     "학술.연구용역"
    ],
    "limits_checked": true,
-   "ineligible": "면허 미보유: 학술.연구용역",
+   "ineligible": "등록 업종으로 참여 불가 (필요: 학술.연구용역)",
    "excluded_track": "B"
   },
   {
@@ -3490,25 +3536,6 @@
    "source": "IRIS",
    "kind": "rnd",
    "org": "연구개발특구진흥재단",
-   "title": "2026년 4극3특 동남권 과학기술혁신지원사업 연구단 모집 공고(연장)",
-   "url": "https://www.iris.go.kr/contents/retrieveBsnsAncmView.do?ancmId=024177&ancmPrg=ancmIng",
-   "open_date": "2026-09-11",
-   "close_date": "2026-10-26",
-   "dday": 0,
-   "status": "접수중",
-   "budget": "공고금액 123억 3,000만 원",
-   "ministry": "과학기술정보통신부",
-   "elig_text": [],
-   "score": 0,
-   "hits": [],
-   "minus": [],
-   "track": "",
-   "ineligible": "지역 사업 (동남권)"
-  },
-  {
-   "source": "IRIS",
-   "kind": "rnd",
-   "org": "연구개발특구진흥재단",
    "title": "2026년 4극3특 제주특별자치도 과학기술혁신지원사업 연구단 모집 공고(연장공고)",
    "url": "https://www.iris.go.kr/contents/retrieveBsnsAncmView.do?ancmId=024158&ancmPrg=ancmIng",
    "open_date": "2026-09-11",
@@ -3523,6 +3550,25 @@
    "minus": [],
    "track": "",
    "ineligible": "지역 사업 (제주)"
+  },
+  {
+   "source": "NTIS",
+   "kind": "rnd",
+   "org": "과학기술정보통신부",
+   "title": "2026년 4극3특 동남권 과학기술혁신지원사업 연구단 모집 공고(연장)",
+   "url": "https://www.ntis.go.kr/rndgate/eg/un/ra/view.do?roRndUid=1280136&flag=rndList",
+   "open_date": "2026-10-12",
+   "close_date": "2026-10-26",
+   "dday": 0,
+   "status": "접수중",
+   "budget": "공고금액 123억 3,000만 원",
+   "ministry": "과학기술정보통신부",
+   "elig_text": [],
+   "score": 0,
+   "hits": [],
+   "minus": [],
+   "track": "",
+   "ineligible": "지역 사업 (동남권)"
   },
   {
    "source": "나라장터",
@@ -3557,7 +3603,7 @@
     "정보통신공사업"
    ],
    "limits_checked": true,
-   "ineligible": "면허 미보유: 정보통신공사업",
+   "ineligible": "등록 업종으로 참여 불가 (필요: 정보통신공사업)",
    "excluded_track": "B"
   },
   {
@@ -3592,7 +3638,7 @@
     "소프트웨어사업자(컴퓨터관련서비스사업)"
    ],
    "limits_checked": true,
-   "ineligible": "면허 미보유: 소프트웨어사업자(컴퓨터관련서비스사업)",
+   "ineligible": "등록 업종으로 참여 불가 (필요: 소프트웨어사업자(컴퓨터관련서비스사업))",
    "excluded_track": "B"
   },
   {
@@ -3627,7 +3673,7 @@
     "소프트웨어사업자(컴퓨터관련서비스사업)"
    ],
    "limits_checked": true,
-   "ineligible": "면허 미보유: 정보통신공사업, 소프트웨어사업자(컴퓨터관련서비스사업)",
+   "ineligible": "등록 업종으로 참여 불가 (필요: 정보통신공사업, 소프트웨어사업자(컴퓨터관련서비스사업))",
    "excluded_track": "B"
   },
   {
@@ -3742,7 +3788,7 @@
     "소프트웨어사업자(컴퓨터관련서비스사업)"
    ],
    "limits_checked": true,
-   "ineligible": "면허 미보유: 정보통신공사업, 소프트웨어사업자(컴퓨터관련서비스사업)",
+   "ineligible": "등록 업종으로 참여 불가 (필요: 정보통신공사업, 소프트웨어사업자(컴퓨터관련서비스사업))",
    "excluded_track": "B"
   },
   {
@@ -3777,7 +3823,7 @@
     "소프트웨어사업자(컴퓨터관련서비스사업)"
    ],
    "limits_checked": true,
-   "ineligible": "면허 미보유: 정보통신공사업, 소프트웨어사업자(컴퓨터관련서비스사업)",
+   "ineligible": "등록 업종으로 참여 불가 (필요: 정보통신공사업, 소프트웨어사업자(컴퓨터관련서비스사업))",
    "excluded_track": "B"
   },
   {
@@ -5606,43 +5652,6 @@
   {
    "source": "나라장터",
    "kind": "bid",
-   "org": "한국기계연구원",
-   "title": "원전 압력방출장치 용량인증 설비 제작",
-   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764877&bidPbancOrd=000",
-   "open_date": "2026-10-12",
-   "close_date": "2026-11-04",
-   "dday": 9,
-   "status": "입찰공고",
-   "budget": "109억 909만 원",
-   "bid_no": "R26BK01764877",
-   "bid_ord": "000",
-   "bid_type": "물품",
-   "products": [
-    "실험실용공급기기"
-   ],
-   "product_hits": [],
-   "product_minus": [],
-   "score": 11,
-   "hits": [
-    "제작",
-    "설비",
-    "장치"
-   ],
-   "minus": [],
-   "track": "",
-   "regions": [],
-   "licenses": [
-    "엔지니어링사업(일반산업기계)",
-    "고압가스용기제조",
-    "기계설비ㆍ가스공사업"
-   ],
-   "limits_checked": true,
-   "ineligible": "면허 미보유: 엔지니어링사업(일반산업기계), 고압가스용기제조",
-   "excluded_track": "B"
-  },
-  {
-   "source": "나라장터",
-   "kind": "bid",
    "org": "문화체육관광부 국립국악원",
    "title": "2027 국악누리 제작",
    "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01739073&bidPbancOrd=000",
@@ -6041,7 +6050,7 @@
     "학술.연구용역"
    ],
    "limits_checked": true,
-   "ineligible": "면허 미보유: 학술.연구용역",
+   "ineligible": "등록 업종으로 참여 불가 (필요: 학술.연구용역)",
    "excluded_track": "B"
   },
   {
@@ -6142,7 +6151,7 @@
     "소프트웨어사업자(컴퓨터관련서비스사업)"
    ],
    "limits_checked": true,
-   "ineligible": "면허 미보유: 정보통신공사업, 소프트웨어사업자(컴퓨터관련서비스사업)",
+   "ineligible": "등록 업종으로 참여 불가 (필요: 정보통신공사업, 소프트웨어사업자(컴퓨터관련서비스사업))",
    "excluded_track": "B"
   },
   {
