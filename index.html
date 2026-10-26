@@ -201,6 +201,50 @@
     .btn-action:hover { background: #10b981; color: #fff; border-color: #10b981; }
 
     footer { margin-top: 30px; text-align: center; font-size: 12px; color: var(--text-muted); line-height: 1.8; }
+
+    /* 수집 상태 */
+    .source-status { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 20px; font-size: 12px; }
+    .status-label { color: var(--text-muted); font-weight: 700; margin-right: 4px; }
+    .src { padding: 3px 10px; border-radius: 20px; font-weight: 600; cursor: default; }
+    .src-ok { background: #ecfdf5; color: #065f46; }
+    .src-fail { background: #fee2e2; color: #b91c1c; }
+    .unit { font-size: 14px; font-weight: normal; color: #64748b; }
+
+    /* 보기 탭 */
+    .view-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 8px; }
+    .view-tab { background: #ffffff; border: 1px solid var(--border); padding: 10px 16px; border-radius: 10px; font-size: 14px; font-weight: 700; color: #475569; cursor: pointer; }
+    .view-tab.active { background: var(--primary-dark); border-color: var(--primary-dark); color: #ffffff; }
+    .tab-count { display: inline-block; min-width: 22px; padding: 0 6px; margin-left: 4px; border-radius: 10px; background: rgba(15,23,42,0.08); font-size: 12px; }
+    .view-tab.active .tab-count { background: rgba(255,255,255,0.25); }
+    .view-desc { font-size: 13px; color: var(--text-muted); margin-bottom: 14px; }
+
+    .org-name { font-size: 12px; color: #334155; font-weight: 600; margin-top: 6px; max-width: 180px; }
+    .date-sub { font-size: 12px; color: #64748b; margin-top: 2px; }
+    .kw { display: inline-block; margin-right: 2px; }
+    .kw-minus { color: #b91c1c; }
+    .score { display: inline-block; padding: 1px 6px; border-radius: 4px; background: #f1f5f9; color: #64748b; font-weight: 700; margin-right: 4px; }
+    .score-on { background: #ede9fe; color: #6d28d9; }
+    .variants { margin-top: 6px; font-size: 12px; color: #475569; }
+    .variants summary { cursor: pointer; color: #0f766e; font-weight: 600; }
+    .variants ul { margin: 6px 0 0 16px; max-height: 220px; overflow-y: auto; }
+    .variants li { margin-bottom: 3px; }
+    .variants a { color: #334155; }
+    .empty { text-align: center; color: var(--text-muted); padding: 40px; }
+    footer code { background: #f1f5f9; padding: 1px 5px; border-radius: 4px; }
+
+    @media (max-width: 640px) {
+      body { padding: 16px; }
+      .brand-bar { flex-direction: column; align-items: flex-start; gap: 10px; }
+      .header-meta { text-align: left; }
+      .search-input { width: 100%; }
+      .view-tab { flex: 1 1 100%; text-align: left; }
+      #announcementTable thead { display: none; }
+      #announcementTable tr { display: grid; grid-template-columns: 1fr auto; gap: 6px 12px; padding: 14px 16px; border-bottom: 1px solid var(--border); }
+      #announcementTable td { display: block; padding: 0; border: none; }
+      #announcementTable td.title-cell { grid-column: 1 / -1; grid-row: 2; max-width: none; }
+      #announcementTable td.empty { grid-column: 1 / -1; padding: 30px 0; }
+      .org-name { max-width: none; }
+    }
   </style>
 </head>
 <body>
@@ -229,8 +273,8 @@
       <p>주요 연구기관 신규 입찰 공고 및 R&D 과제 실시간 모니터링</p>
     </div>
     <div class="header-meta">
-      <div id="metaWeek"><strong>기준 주차:</strong> 2026년 10월 4주차</div>
-      <div id="metaSync"><strong>최근 동기화:</strong> 2026-10-26 09:59:23 (기계연+조달청+과기정통부 통합)</div>
+      <div id="metaWeek"><strong>기준 주차:</strong> -</div>
+      <div id="metaSync"><strong>최근 동기화:</strong> -</div>
     </div>
   </header>
 
@@ -242,1818 +286,182 @@
     <a href="https://www.smtech.go.kr" target="_blank" class="portal-link">⚙️ 중기부 R&D (SMTECH) ↗</a>
   </div>
 
+  <div class="source-status" id="sourceStatus"></div>
+
   <div class="stats-grid">
     <div class="stat-card">
-      <div class="label">신규 모니터링 공고 (전체)</div>
-      <div class="value text-blue" id="statTotal">96 <span style="font-size:14px; font-weight:normal; color:#64748b;">건</span></div>
-      <div class="sub text-blue">최근 14일치 전체 공고</div>
+      <div class="label">모니터링 공고 (전체)</div>
+      <div class="value text-blue"><span id="statTotal">-</span> <span class="unit">건</span></div>
+      <div class="sub text-blue">접수중·접수예정 공고</div>
     </div>
     <div class="stat-card">
       <div class="label">마감 임박 (D-7 이내)</div>
-      <div class="value text-red" id="statUrgent">21 <span style="font-size:14px; font-weight:normal; color:#64748b;">건</span></div>
+      <div class="value text-red"><span id="statUrgent">-</span> <span class="unit">건</span></div>
       <div class="sub text-red">제안서 즉시 검토 필요</div>
     </div>
     <div class="stat-card">
-      <div class="label">총 식별 사업비 규모</div>
-      <div class="value text-green" id="statBudget">- <span style="font-size:14px; font-weight:normal; color:#64748b;"></span></div>
-      <div class="sub">수집 대상 공고 기준</div>
+      <div class="label">추천 A · R&D/지원사업</div>
+      <div class="value" style="color:var(--accent-purple);"><span id="statA">-</span> <span class="unit">건</span></div>
+      <div class="sub" style="color:var(--accent-purple);">설비·시설 구축형 과제 참여</div>
     </div>
     <div class="stat-card">
-      <div class="label">팀 타깃 매칭 우선도 (Top)</div>
-      <div class="value" style="color:var(--accent-purple);" id="statAi">96 <span style="font-size:14px; font-weight:normal; color:#64748b;">건</span></div>
-      <div class="sub" style="color:var(--accent-purple);">3개 핵심 영역 매칭 건수</div>
+      <div class="label">추천 B · 설비 제작/납품 입찰</div>
+      <div class="value text-green"><span id="statB">-</span> <span class="unit">건</span></div>
+      <div class="sub text-green">연구기관·공공기관 장비 발주</div>
     </div>
   </div>
 
+  <div class="view-tabs" role="tablist">
+    <button class="view-tab active" data-view="A" role="tab">⭐ 추천 A · R&D/지원사업 <span class="tab-count" id="tabA"></span></button>
+    <button class="view-tab" data-view="B" role="tab">🔧 추천 B · 설비 제작/납품 입찰 <span class="tab-count" id="tabB"></span></button>
+    <button class="view-tab" data-view="all" role="tab">📋 전체 공고 <span class="tab-count" id="tabAll"></span></button>
+  </div>
+  <p class="view-desc" id="viewDesc"></p>
+
   <div class="controls-bar">
-    <div class="filter-tags">
-      <button class="tag-btn active" onclick="filterTable('all', this)">전체 보기</button>
-      <button class="tag-btn" onclick="filterTable('AI', this)"># 선행개발/AI</button>
-      <button class="tag-btn" onclick="filterTable('소부장', this)"># 소부장/공정/장비</button>
-      <button class="tag-btn" onclick="filterTable('용역', this)"># 용역/R&D</button>
-    </div>
-    <input type="text" id="searchInput" class="search-input" placeholder="공고명, 기관명 검색..." onkeyup="searchTable()">
+    <div class="filter-tags" id="sourceFilters"></div>
+    <input type="text" id="searchInput" class="search-input" placeholder="공고명, 기관명, 키워드 검색...">
   </div>
 
   <div class="table-container">
     <table id="announcementTable">
       <thead>
         <tr>
-          <th>발주/관리기관</th>
-          <th>공고명 & 핵심 기술분야</th>
-          <th>총 지원/사업비</th>
+          <th>출처 / 기관</th>
+          <th>공고명 & 매칭 키워드</th>
+          <th>추정가격 / 유형</th>
           <th>접수 마감일 (D-Day)</th>
-          <th>접수처 / 원문</th>
+          <th>원문</th>
         </tr>
       </thead>
-      <tbody>
-
-        <tr data-category="AI">
-          <td>
-            <span class="badge-org">한국기계연구원</span>
-            <span class="badge-category cat-rd">AI</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.kimm.re.kr/bidding/view/id/21495" target="_blank" rel="noopener noreferrer" class="title-link">액체수소 공급시스템 핵심기자재 평가시스템 제어/모니터링 시스템 제작 및 설치</a>
-            <div class="tags-list">#제어</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-urgent">D-4</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">2026-10-30</div>
-          </td>
-          <td>
-            <a href="https://www.kimm.re.kr/bidding/view/id/21495" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="소부장">
-          <td>
-            <span class="badge-org">한국기계연구원</span>
-            <span class="badge-category cat-cons">소부장</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.kimm.re.kr/bidding/view/id/21494" target="_blank" rel="noopener noreferrer" class="title-link">유해가스 감지 시스템 설계 및 제작</a>
-            <div class="tags-list">#설계</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-urgent">D-3</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">2026-10-29</div>
-          </td>
-          <td>
-            <a href="https://www.kimm.re.kr/bidding/view/id/21494" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="용역">
-          <td>
-            <span class="badge-org">한국기계연구원</span>
-            <span class="badge-category cat-bid">용역</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.kimm.re.kr/bidding/view/id/21481" target="_blank" rel="noopener noreferrer" class="title-link">항공기 가스터빈 씰 성능시험용 압축공기 고온 가열・공급 설비 구축 용역</a>
-            <div class="tags-list">#구축 #용역 #시험</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-normal">D-24</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">2026-11-19</div>
-          </td>
-          <td>
-            <a href="https://www.kimm.re.kr/bidding/view/id/21481" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="AI">
-          <td>
-            <span class="badge-org">한국기계연구원</span>
-            <span class="badge-category cat-rd">AI</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.kimm.re.kr/bidding/view/id/21475" target="_blank" rel="noopener noreferrer" class="title-link">EV플랫폼·연계부품 시험평가 시스템 (EV platform and connected component testing and evaluation system) 구매</a>
-            <div class="tags-list">#플랫폼 #구매 #시험</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-normal">D-8</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">2026-11-03</div>
-          </td>
-          <td>
-            <a href="https://www.kimm.re.kr/bidding/view/id/21475" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="용역">
-          <td>
-            <span class="badge-org">전남광주통합특별시 목포</span>
-            <span class="badge-category cat-bid">용역</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01763882&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">수산식품 수출단지 조성사업 질량분석기 등 이화학 분석시스템 구매</a>
-            <div class="tags-list">#구매 #분석</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-urgent">D-3</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">2026-10-29</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01763882&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="용역">
-          <td>
-            <span class="badge-org">국립순천대학교</span>
-            <span class="badge-category cat-bid">용역</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01763889&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">국립순천대학교 그린스마트팜 고흥캠퍼스 근적외선근광분석기(NIR) 구매</a>
-            <div class="tags-list">#구매 #분석</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-urgent">D-3</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">2026-10-29</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01763889&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="소부장">
-          <td>
-            <span class="badge-org">재단법인 광주정보.문화</span>
-            <span class="badge-category cat-cons">소부장</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764313&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">아시아문화기술실증센터 운영기반구축 실증 지원 장비 구매</a>
-            <div class="tags-list">#구축 #실증 #구매</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-urgent">D-7</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">2026-11-02</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764313&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="소부장">
-          <td>
-            <span class="badge-org">분당서울대학교병원</span>
-            <span class="badge-category cat-bid">소부장</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764492&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">[의료기기] DEEP FREEZER 7SET</a>
-            <div class="tags-list">#조달청API</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-safe">진행중</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">마감일 미정</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764492&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="소부장">
-          <td>
-            <span class="badge-org">경기도교육청 반송고등학</span>
-            <span class="badge-category cat-cons">소부장</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764544&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">반송고등학교 소규모교육환경개선사업 방송장비 구매 및 설치 제안서 제출 공고</a>
-            <div class="tags-list">#구매 #장비</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-safe">진행중</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">마감일 미정</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764544&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="소부장">
-          <td>
-            <span class="badge-org">대구대학교</span>
-            <span class="badge-category cat-bid">소부장</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764632&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">2027학년도 신입생 입학환영식 기념품 제작</a>
-            <div class="tags-list">#조달청API</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-safe">진행중</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">마감일 미정</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764632&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="소부장">
-          <td>
-            <span class="badge-org">가천대학교 산학협력단</span>
-            <span class="badge-category cat-bid">소부장</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764733&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">워크스테이션 구입</a>
-            <div class="tags-list">#조달청API</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-safe">진행중</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">마감일 미정</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764733&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="소부장">
-          <td>
-            <span class="badge-org">한국자동차연구원</span>
-            <span class="badge-category cat-bid">소부장</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764629&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">차량 소음음향 시각화 장치</a>
-            <div class="tags-list">#조달청API</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-normal">D-8</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">2026-11-03</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764629&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="용역">
-          <td>
-            <span class="badge-org">한국건설생활환경시험연구</span>
-            <span class="badge-category cat-bid">용역</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764897&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">단양 KCL 충북센터 실험실 가구 구매 입찰공고</a>
-            <div class="tags-list">#구매</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-safe">진행중</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">마감일 미정</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764897&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="용역">
-          <td>
-            <span class="badge-org">충남대학교병원</span>
-            <span class="badge-category cat-bid">용역</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764846&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">충남대학교병원 병동간호과 3모터 전동침대 100SET 외 1건 구매</a>
-            <div class="tags-list">#구매</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-safe">진행중</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">마감일 미정</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764846&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="소부장">
-          <td>
-            <span class="badge-org">백석문화대학교 산학협력</span>
-            <span class="badge-category cat-bid">소부장</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01765157&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">학부공통 실험실습기자재 구입</a>
-            <div class="tags-list">#조달청API</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-safe">진행중</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">마감일 미정</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01765157&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="소부장">
-          <td>
-            <span class="badge-org">대법원</span>
-            <span class="badge-category cat-cons">소부장</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764795&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">2026년 등기정보시스템 전산장비 구매사업(WAS 솔루션)</a>
-            <div class="tags-list">#구매 #장비</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-urgent">D-1</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">2026-10-27</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764795&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="용역">
-          <td>
-            <span class="badge-org">한국건설생활환경시험연구</span>
-            <span class="badge-category cat-bid">용역</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01765451&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">시험기기 구매 견적 재공고(선회다짐기)</a>
-            <div class="tags-list">#구매 #시험</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-safe">진행중</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">마감일 미정</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01765451&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="AI">
-          <td>
-            <span class="badge-org">신라정보기술(주)</span>
-            <span class="badge-category cat-rd">AI</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01754394&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">AI 머신비전 기반 시료이송 통합 연계 외관·치수 검사 자동 판별 및 지능형 선행 품질예측 시스템 구축</a>
-            <div class="tags-list">#지능형 #검사 #구축</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-safe">진행중</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">마감일 미정</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01754394&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="용역">
-          <td>
-            <span class="badge-org">한국건설생활환경시험연구</span>
-            <span class="badge-category cat-bid">용역</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01765493&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">시험기기 구매 견적 재공고(아스팔트 공시체 자동 절삭기)</a>
-            <div class="tags-list">#구매 #시험</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-safe">진행중</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">마감일 미정</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01765493&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="용역">
-          <td>
-            <span class="badge-org">한국건설생활환경시험연구</span>
-            <span class="badge-category cat-bid">용역</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01765518&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">시험기기 구매 견적 재공고(혈액가스분석기)</a>
-            <div class="tags-list">#구매 #분석 #시험</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-safe">진행중</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">마감일 미정</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01765518&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="소부장">
-          <td>
-            <span class="badge-org">충청북도 제천시</span>
-            <span class="badge-category cat-cons">소부장</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01761423&bidPbancOrd=001" target="_blank" rel="noopener noreferrer" class="title-link">의림지뜰 자연치유단지 계류식 가스기구 제작·구매 및 설치(긴급)</a>
-            <div class="tags-list">#기구 #구매</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-safe">진행중</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">마감일 미정</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01761423&bidPbancOrd=001" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="소부장">
-          <td>
-            <span class="badge-org">경희대학교 국제캠퍼스</span>
-            <span class="badge-category cat-bid">소부장</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01765782&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">체육대학관 2층 종합체육관 난방기 구입</a>
-            <div class="tags-list">#조달청API</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-safe">진행중</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">마감일 미정</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01765782&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="소부장">
-          <td>
-            <span class="badge-org">강동대학교</span>
-            <span class="badge-category cat-bid">소부장</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01735805&bidPbancOrd=002" target="_blank" rel="noopener noreferrer" class="title-link">강동대학교 RISE 공동강의실 LED 스크린 설치(수정)</a>
-            <div class="tags-list">#조달청API</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-safe">진행중</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">마감일 미정</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01735805&bidPbancOrd=002" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="소부장">
-          <td>
-            <span class="badge-org">경상국립대학교 산학협력</span>
-            <span class="badge-category cat-bid">소부장</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764554&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">단백질 자동전기영동장치</a>
-            <div class="tags-list">#조달청API</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-normal">D-9</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">2026-11-04</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764554&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="소부장">
-          <td>
-            <span class="badge-org">경상국립대학교 산학협력</span>
-            <span class="badge-category cat-bid">소부장</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01765104&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">형광 레이저 공초점 현미경</a>
-            <div class="tags-list">#조달청API</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-normal">D-9</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">2026-11-04</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01765104&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="소부장">
-          <td>
-            <span class="badge-org">경상국립대학교 산학협력</span>
-            <span class="badge-category cat-bid">소부장</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01765347&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">나노플레이트 디지털 유전자증폭 장치</a>
-            <div class="tags-list">#조달청API</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-normal">D-9</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">2026-11-04</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01765347&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="소부장">
-          <td>
-            <span class="badge-org">한국기계연구원</span>
-            <span class="badge-category cat-bid">소부장</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764877&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">원전 압력방출장치 용량인증 설비 제작</a>
-            <div class="tags-list">#조달청API</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-normal">D-9</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">2026-11-04</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764877&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="AI">
-          <td>
-            <span class="badge-org">전남광주통합특별시 나주</span>
-            <span class="badge-category cat-rd">AI</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01760843&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">세지농협 멜론 AI선별 및 포장라인 제작설치(민간입찰대행)</a>
-            <div class="tags-list">#AI</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-safe">진행중</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">마감일 미정</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01760843&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="AI">
-          <td>
-            <span class="badge-org">광주과학기술원</span>
-            <span class="badge-category cat-rd">AI</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01765915&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">Imagine-AI GPU 및 패브릭 장비 세트</a>
-            <div class="tags-list">#장비 #AI</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-safe">진행중</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">마감일 미정</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01765915&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="용역">
-          <td>
-            <span class="badge-org">한국항공우주연구원</span>
-            <span class="badge-category cat-bid">용역</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01753034&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">2027~28년 사이버보안 관제 용역</a>
-            <div class="tags-list">#용역</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-normal">D-28</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">2026-11-23</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01753034&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="용역">
-          <td>
-            <span class="badge-org">고려대학교</span>
-            <span class="badge-category cat-bid">용역</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764191&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">2026학년도 ‘고려대학교 SDGs 아카데미’ 운영 용역업체 모집 공고</a>
-            <div class="tags-list">#용역</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-safe">진행중</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">마감일 미정</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764191&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="용역">
-          <td>
-            <span class="badge-org">선문대학교</span>
-            <span class="badge-category cat-bid">용역</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01749267&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">선문대학교 학생성공 META 경력개발시스템 구축 용역</a>
-            <div class="tags-list">#구축 #개발 #용역</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-safe">진행중</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">마감일 미정</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01749267&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="AI">
-          <td>
-            <span class="badge-org">한전KDN(주)</span>
-            <span class="badge-category cat-rd">AI</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764188&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">대용량로그분석시스템 SW 유지보수</a>
-            <div class="tags-list">#분석 #SW</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-normal">D-29</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">2026-11-24</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764188&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="용역">
-          <td>
-            <span class="badge-org">가천대학교 산학협력단</span>
-            <span class="badge-category cat-bid">용역</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764238&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">연구실 지정폐기물 위탁처리 용역(단가계약)</a>
-            <div class="tags-list">#연구 #폐기물 #용역</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-safe">진행중</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">마감일 미정</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764238&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="소부장">
-          <td>
-            <span class="badge-org">고려대학교 세종산학협력</span>
-            <span class="badge-category cat-bid">소부장</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764242&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">미래전략산업 전문인력 양성과정 (신중년 인재양성 아카데미)</a>
-            <div class="tags-list">#조달청API</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-safe">진행중</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">마감일 미정</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764242&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="용역">
-          <td>
-            <span class="badge-org">양산부산대학교병원</span>
-            <span class="badge-category cat-bid">용역</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764280&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">양산부산대학교병원 환자급식 위탁용역</a>
-            <div class="tags-list">#용역</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-safe">진행중</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">마감일 미정</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764280&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="용역">
-          <td>
-            <span class="badge-org">전북과학대학교 산학협력</span>
-            <span class="badge-category cat-bid">용역</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764235&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">2026 JBSC 이니셔티브 인재양성 글로벌 해외 선진지 견학 프로그램 운영 위탁 용역</a>
-            <div class="tags-list">#용역</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-urgent">D-4</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">2026-10-30</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764235&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="AI">
-          <td>
-            <span class="badge-org">한국과학기술원</span>
-            <span class="badge-category cat-rd">AI</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764308&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">2027년도 KAIST 유튜브 및 SNS 홍보 용역</a>
-            <div class="tags-list">#용역 #AI</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-safe">진행중</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">마감일 미정</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764308&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="용역">
-          <td>
-            <span class="badge-org">선문대학교</span>
-            <span class="badge-category cat-bid">용역</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01749267&bidPbancOrd=001" target="_blank" rel="noopener noreferrer" class="title-link">선문대학교 학생성공 META 경력개발시스템 구축 용역</a>
-            <div class="tags-list">#구축 #개발 #용역</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-safe">진행중</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">마감일 미정</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01749267&bidPbancOrd=001" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="용역">
-          <td>
-            <span class="badge-org">한국과학기술원</span>
-            <span class="badge-category cat-bid">용역</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764401&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">전산인프라 안정성 확보를 위한 환경 정비 용역</a>
-            <div class="tags-list">#용역</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-safe">진행중</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">마감일 미정</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764401&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="AI">
-          <td>
-            <span class="badge-org">고려대학교 산학협력단</span>
-            <span class="badge-category cat-rd">AI</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764360&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">2026년도 첨단분야 혁신융합대학 COSS/HUSS허브 (허브LMS) 교육 플랫폼 및 클라우드 유지보수 및 운영지원 사업 연구용역</a>
-            <div class="tags-list">#플랫폼 #연구 #용역</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-normal">D-28</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">2026-11-23</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764360&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="AI">
-          <td>
-            <span class="badge-org">충청북도 청주시</span>
-            <span class="badge-category cat-rd">AI</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01757449&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">2027년 교통정보센터 및 교통신호제어기 유지보수 용역</a>
-            <div class="tags-list">#제어 #용역</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-normal">D-15</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">2026-11-10</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01757449&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="용역">
-          <td>
-            <span class="badge-org">한동대학교</span>
-            <span class="badge-category cat-bid">용역</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764440&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">한동대학교 글로벌생활관 신축 기획 용역</a>
-            <div class="tags-list">#기획 #용역</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-safe">진행중</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">마감일 미정</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764440&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="소부장">
-          <td>
-            <span class="badge-org">경성대학교</span>
-            <span class="badge-category cat-bid">소부장</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764516&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">2027학년도 경성대학교 진로가이드북 제작</a>
-            <div class="tags-list">#조달청API</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-safe">진행중</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">마감일 미정</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764516&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="AI">
-          <td>
-            <span class="badge-org">한국과학기술원</span>
-            <span class="badge-category cat-rd">AI</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764308&bidPbancOrd=001" target="_blank" rel="noopener noreferrer" class="title-link">2027년도 KAIST 유튜브 및 SNS 홍보 용역</a>
-            <div class="tags-list">#용역 #AI</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-safe">진행중</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">마감일 미정</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764308&bidPbancOrd=001" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="소부장">
-          <td>
-            <span class="badge-org">가천대학교</span>
-            <span class="badge-category cat-bid">소부장</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764599&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">가천대학교 학위복 제작 및 위탁운영 관리 업체 선정</a>
-            <div class="tags-list">#조달청API</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-safe">진행중</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">마감일 미정</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764599&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="소부장">
-          <td>
-            <span class="badge-org">동남보건대학 산학협력단</span>
-            <span class="badge-category cat-bid">소부장</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764531&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">2026년 취업역량진단 취업컨설팅 및 인적성진로역량강화 프로그램 위탁 운영</a>
-            <div class="tags-list">#조달청API</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-safe">진행중</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">마감일 미정</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764531&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="용역">
-          <td>
-            <span class="badge-org">경희대학교 산학협력단 </span>
-            <span class="badge-category cat-bid">용역</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764641&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">중증천식 BALF 단일세포 전사체 분석 용역업체 선정</a>
-            <div class="tags-list">#분석 #용역</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-safe">진행중</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">마감일 미정</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764641&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="용역">
-          <td>
-            <span class="badge-org">동서울대학산학협력단</span>
-            <span class="badge-category cat-bid">용역</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764327&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">2026학년도 캡스톤디자인 발표회 통합전시 행사장 설치 위탁용역</a>
-            <div class="tags-list">#용역</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-safe">진행중</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">마감일 미정</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764327&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="AI">
-          <td>
-            <span class="badge-org">포항공과대학교</span>
-            <span class="badge-category cat-rd">AI</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764648&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">[52834]2026년 피지컬AI 취업준비형 교육과정 개발 및 운영 위탁용역</a>
-            <div class="tags-list">#개발 #용역 #AI</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-safe">진행중</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">마감일 미정</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764648&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="용역">
-          <td>
-            <span class="badge-org">포항공과대학교 산학협력</span>
-            <span class="badge-category cat-bid">용역</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764698&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">[52895]소규모 중소기업 혁신 도약 지원을 위한 단기 컨설팅 운영 용역</a>
-            <div class="tags-list">#용역</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-safe">진행중</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">마감일 미정</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764698&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="AI">
-          <td>
-            <span class="badge-org">군장대학산학협력단</span>
-            <span class="badge-category cat-rd">AI</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764437&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">군장대학교 혁신지원사업단 「데이터기반 대학 그룹웨어 고도화」용역(재공고)</a>
-            <div class="tags-list">#데이터 #용역</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-safe">진행중</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">마감일 미정</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764437&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="용역">
-          <td>
-            <span class="badge-org">국방부 합동참모본부</span>
-            <span class="badge-category cat-bid">용역</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764394&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">27년 C4ISR분석모델 유지관리 용역</a>
-            <div class="tags-list">#분석 #용역</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-urgent">D-2</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">2026-10-28</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764394&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="AI">
-          <td>
-            <span class="badge-org">영남대학교 산학협력단</span>
-            <span class="badge-category cat-rd">AI</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764943&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">[산단]2026년 AI 창업 경진대회 용역 </a>
-            <div class="tags-list">#용역 #AI</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-safe">진행중</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">마감일 미정</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764943&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="용역">
-          <td>
-            <span class="badge-org">한국지질자원연구원</span>
-            <span class="badge-category cat-bid">용역</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01765191&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">온라인시험분석시스템 운영지원 및 유지보수</a>
-            <div class="tags-list">#분석 #시험</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-urgent">D-2</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">2026-10-28</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01765191&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="소부장">
-          <td>
-            <span class="badge-org">사립학교교직원연금공단</span>
-            <span class="badge-category cat-cons">소부장</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764466&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">사학연금기금 집합투자기구 평가사 선정</a>
-            <div class="tags-list">#기구</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-normal">D-28</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">2026-11-23</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764466&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="소부장">
-          <td>
-            <span class="badge-org">한국국제협력단</span>
-            <span class="badge-category cat-cons">소부장</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01734788&bidPbancOrd=001" target="_blank" rel="noopener noreferrer" class="title-link">(장기계속) KOICA 라오스, 방글라데시 혁신적 농촌공동체 개발 프로그램 영향평가(1차) 용역</a>
-            <div class="tags-list">#개발 #용역 #기계</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-normal">D-15</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">2026-11-10</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01734788&bidPbancOrd=001" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="소부장">
-          <td>
-            <span class="badge-org">한국건설기술연구원</span>
-            <span class="badge-category cat-bid">소부장</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01765262&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">남동국가산업단지 공장 화재안전개선을 위한 스마트 피난 안내 시스템 설치 및 시범서비스</a>
-            <div class="tags-list">#조달청API</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-urgent">D-1</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">2026-10-27</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01765262&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="용역">
-          <td>
-            <span class="badge-org">한국철도기술연구원</span>
-            <span class="badge-category cat-bid">용역</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01751819&bidPbancOrd=001" target="_blank" rel="noopener noreferrer" class="title-link">철도종합시험선로 운영지원 용역</a>
-            <div class="tags-list">#용역 #시험</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-normal">D-23</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">2026-11-18</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01751819&bidPbancOrd=001" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="소부장">
-          <td>
-            <span class="badge-org">창원대학교 산학협력단</span>
-            <span class="badge-category cat-cons">소부장</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01765403&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">콜롬비아 까르타헤나지역 조선·기계 스마트산업단지 조성을 위한 역량강화(25-26)사업 2차년도 초청연수생 교육 및 체류 시설 임대용역</a>
-            <div class="tags-list">#용역 #기계</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-safe">진행중</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">마감일 미정</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01765403&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="AI">
-          <td>
-            <span class="badge-org">주식회사 알에스리햅</span>
-            <span class="badge-category cat-rd">AI</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764812&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">첨단 AI 기반 디지털의료기기 신속제품화 지원사업(AX-Sprint 300) - 식약처 허가를 위한 개발 문서 및 디지털의료기기 GMP 컨설팅 용역</a>
-            <div class="tags-list">#개발 #용역 #AI</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-normal">D-28</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">2026-11-23</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764812&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="용역">
-          <td>
-            <span class="badge-org">동서대학교산학협력단</span>
-            <span class="badge-category cat-bid">용역</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01765393&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">G-STAR 2026 체험형 전시부스 설치 용역</a>
-            <div class="tags-list">#용역</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-safe">진행중</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">마감일 미정</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01765393&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="용역">
-          <td>
-            <span class="badge-org">부경대학교</span>
-            <span class="badge-category cat-bid">용역</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764552&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">2026학년도 PKNU Navigator 해외 탐방 프로그램 수행 용역</a>
-            <div class="tags-list">#용역</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-urgent">D-1</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">2026-10-27</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764552&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="소부장">
-          <td>
-            <span class="badge-org">창원대학교 산학협력단</span>
-            <span class="badge-category cat-cons">소부장</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01765403&bidPbancOrd=001" target="_blank" rel="noopener noreferrer" class="title-link">콜롬비아 까르타헤나지역 조선·기계 스마트산업단지 조성을 위한 역량강화(25-26)사업 2차년도 초청연수생 교육 및 체류 시설 임대용역</a>
-            <div class="tags-list">#용역 #기계</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-safe">진행중</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">마감일 미정</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01765403&bidPbancOrd=001" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="소부장">
-          <td>
-            <span class="badge-org">한국대학교육협의회</span>
-            <span class="badge-category cat-bid">소부장</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01765557&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">2027년도 『대학교육』誌 인쇄</a>
-            <div class="tags-list">#조달청API</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-safe">진행중</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">마감일 미정</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01765557&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="용역">
-          <td>
-            <span class="badge-org">건국대학교 산학협력단</span>
-            <span class="badge-category cat-bid">용역</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01765661&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">[건국대 산학협력단] 2026년도 돼지혈액 유래 트롬빈 원료 스케일업 정제·생산 및 시험법 확립 연구 용역</a>
-            <div class="tags-list">#연구 #용역 #시험</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-urgent">D-Day</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">2026-10-26</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01765661&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="소부장">
-          <td>
-            <span class="badge-org">한국대학교육협의회</span>
-            <span class="badge-category cat-bid">소부장</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01765653&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">2026년 대입상담센터 정보화사업 통합 감리</a>
-            <div class="tags-list">#조달청API</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-safe">진행중</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">마감일 미정</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01765653&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="용역">
-          <td>
-            <span class="badge-org">광주과학기술원</span>
-            <span class="badge-category cat-bid">용역</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01765641&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">2026 GIST 스타트업나이트 운영 및 공간 구성 용역</a>
-            <div class="tags-list">#용역</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-safe">진행중</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">마감일 미정</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01765641&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="AI">
-          <td>
-            <span class="badge-org">한전KDN(주)</span>
-            <span class="badge-category cat-rd">AI</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01765505&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">PC보안관리 서버 SW 유지보수</a>
-            <div class="tags-list">#SW</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-normal">D-29</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">2026-11-24</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01765505&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="소부장">
-          <td>
-            <span class="badge-org">포항공과대학교</span>
-            <span class="badge-category cat-bid">소부장</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01765771&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">[52861]학습관리 시스템(PLMS) UX/UI 개편 및 기능 최적화 사업</a>
-            <div class="tags-list">#조달청API</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-safe">진행중</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">마감일 미정</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01765771&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="용역">
-          <td>
-            <span class="badge-org">사단법인 보험개발원</span>
-            <span class="badge-category cat-bid">용역</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01765754&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">상해위험분석 시스템 레포팅 툴 도입</a>
-            <div class="tags-list">#분석</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-safe">진행중</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">마감일 미정</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01765754&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="용역">
-          <td>
-            <span class="badge-org">안산대학교안산화정영어마</span>
-            <span class="badge-category cat-bid">용역</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01755939&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">2027년 안산화정영어마을 통근차량 임차용역 소액수의 견적제출 공고</a>
-            <div class="tags-list">#용역</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-urgent">D-1</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">2026-10-27</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01755939&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="용역">
-          <td>
-            <span class="badge-org">안산대학교안산화정영어마</span>
-            <span class="badge-category cat-bid">용역</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01755923&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">2027년 안산화정영어마을 셔틀버스 임차용역 입찰공고</a>
-            <div class="tags-list">#용역</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-urgent">D-1</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">2026-10-27</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01755923&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="용역">
-          <td>
-            <span class="badge-org">포항공과대학교 산학협력</span>
-            <span class="badge-category cat-bid">용역</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01765891&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">[52896]2026 중소기업 장기 정보화 전략 수립 컨설팅 운영 용역</a>
-            <div class="tags-list">#용역</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-safe">진행중</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">마감일 미정</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01765891&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="소부장">
-          <td>
-            <span class="badge-org">기상청</span>
-            <span class="badge-category cat-cons">소부장</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01765211&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">2027년 기상콜센터 네트워크 및 행정사무 장비 유지관리</a>
-            <div class="tags-list">#장비</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-urgent">D-3</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">2026-10-29</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01765211&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="용역">
-          <td>
-            <span class="badge-org">소상공인시장진흥공단</span>
-            <span class="badge-category cat-bid">용역</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01765966&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">소상공인 경영안정바우처 지원사업 성과분석 용역</a>
-            <div class="tags-list">#분석 #용역</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-urgent">D-2</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">2026-10-28</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01765966&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="AI">
-          <td>
-            <span class="badge-org">해양경찰청</span>
-            <span class="badge-category cat-rd">AI</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764817&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">AI 통합관제 데이터 연계 및 중계 환경 구축 용역</a>
-            <div class="tags-list">#데이터 #구축 #용역</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-urgent">D-1</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">2026-10-27</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764817&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="AI">
-          <td>
-            <span class="badge-org">연세대학교 미래캠퍼스</span>
-            <span class="badge-category cat-rd">AI</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01766038&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">[앵커사업] 실시간 반도체 선량계 캘리브레이션 및 데이터 분석 소프트웨어 고도화 용역</a>
-            <div class="tags-list">#데이터 #분석 #용역</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-urgent">D-Day</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">2026-10-26</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01766038&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="용역">
-          <td>
-            <span class="badge-org">영산대학교</span>
-            <span class="badge-category cat-bid">용역</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01766093&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">(재공고) 와이즈유(영산대학교) 경남앵커 평생교육 컨소시엄 공동교육과정 온라인 콘텐츠 개발 위탁 용역</a>
-            <div class="tags-list">#개발 #용역</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-safe">진행중</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">마감일 미정</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01766093&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="소부장">
-          <td>
-            <span class="badge-org">한국과학기술정보연구원</span>
-            <span class="badge-category cat-bid">소부장</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764949&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">국가 슈퍼컴퓨팅 인프라 종합상황관제 운영</a>
-            <div class="tags-list">#조달청API</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-normal">D-10</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">2026-11-05</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764949&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="소부장">
-          <td>
-            <span class="badge-org">광주과학기술원</span>
-            <span class="badge-category cat-cons">소부장</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01766081&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">가정용 휴머노이드 로봇 프로토타입 성능 고도화를 위한 정밀 부품 업그레이드 및 최적화 조립 전문 용역</a>
-            <div class="tags-list">#용역 #로봇</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-safe">진행중</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">마감일 미정</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01766081&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="용역">
-          <td>
-            <span class="badge-org">한서대학교 산학협력단</span>
-            <span class="badge-category cat-bid">용역</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01744948&bidPbancOrd=001" target="_blank" rel="noopener noreferrer" class="title-link">한서대학교 글로컬대학사업단(앵커사업부) 태안군 지산학 연계 평생학습 노인복지관 프로그램 운영 용역</a>
-            <div class="tags-list">#용역</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-safe">진행중</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">마감일 미정</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01744948&bidPbancOrd=001" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="소부장">
-          <td>
-            <span class="badge-org">한국원자력의학원</span>
-            <span class="badge-category cat-cons">소부장</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01762841&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">전산장비 및 소프트웨어 통합유지관리 용역</a>
-            <div class="tags-list">#용역 #장비</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-normal">D-8</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">2026-11-03</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01762841&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="AI">
-          <td>
-            <span class="badge-org">한국국토정보공사</span>
-            <span class="badge-category cat-rd">AI</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764148&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">2027년 LX플랫폼 유지관리</a>
-            <div class="tags-list">#플랫폼</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-normal">D-29</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">2026-11-24</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01764148&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="용역">
-          <td>
-            <span class="badge-org">농협대학교 산학협력단</span>
-            <span class="badge-category cat-bid">용역</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01766055&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">농협대학교 교육과정 개발 및 품질관리 고도화방안 연구</a>
-            <div class="tags-list">#연구 #개발</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-safe">진행중</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">마감일 미정</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01766055&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="소부장">
-          <td>
-            <span class="badge-org">창원대학교 산학협력단</span>
-            <span class="badge-category cat-cons">소부장</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01766080&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">콜롬비아 까르타헤나지역 조선·기계 스마트산업단지 조성을 위한 역량강화(25-26)사업 2차년도 초청연수생 교육 및 체류 시설 임대용역</a>
-            <div class="tags-list">#용역 #기계</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-safe">진행중</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">마감일 미정</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01766080&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="소부장">
-          <td>
-            <span class="badge-org">성균관대학교</span>
-            <span class="badge-category cat-bid">소부장</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01765660&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">성균관대학교 SKKU Online 기능 고도화(대학혁신지원사업(2026))</a>
-            <div class="tags-list">#조달청API</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-safe">진행중</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">마감일 미정</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01765660&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="용역">
-          <td>
-            <span class="badge-org">대구대학교 산학협력단</span>
-            <span class="badge-category cat-bid">용역</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01766354&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">2026학년도 글로벌 취·창업 역량 강화 프로그램 운영 용역</a>
-            <div class="tags-list">#용역</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-safe">진행중</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">마감일 미정</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01766354&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="용역">
-          <td>
-            <span class="badge-org">대구한의대학교 산학협력</span>
-            <span class="badge-category cat-bid">용역</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01766052&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">창업학기제 글로벌 시장검증 2026_태국 해외연수 용역 </a>
-            <div class="tags-list">#용역</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-safe">진행중</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">마감일 미정</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01766052&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="소부장">
-          <td>
-            <span class="badge-org">목원대학교 산학협력단</span>
-            <span class="badge-category cat-cons">소부장</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01765752&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">[RISE사업단]2027학년도 목원대학교 K-방산 신뢰성 확보를 위한 정밀 측정·교정 전문가 과정 교육 운영 용역업체 선정</a>
-            <div class="tags-list">#방산 #용역</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-safe">진행중</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">마감일 미정</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01765752&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="AI">
-          <td>
-            <span class="badge-org">대전광역시 동구</span>
-            <span class="badge-category cat-rd">AI</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01760735&bidPbancOrd=001" target="_blank" rel="noopener noreferrer" class="title-link">2026 동구 중소기업 MRO 플랫폼 운영 사업 용역</a>
-            <div class="tags-list">#플랫폼 #용역</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-safe">진행중</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">마감일 미정</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01760735&bidPbancOrd=001" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="AI">
-          <td>
-            <span class="badge-org">한국지능정보사회진흥원</span>
-            <span class="badge-category cat-rd">AI</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01736101&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">인공지능(AI) Agent 기반의 범정부 『심사·심의·검토』 업무 지원 시스템 개발 위탁감리</a>
-            <div class="tags-list">#개발 #인공지능 #AI</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-urgent">D-2</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">2026-10-28</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01736101&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="용역">
-          <td>
-            <span class="badge-org">과학기술정보통신부 우정</span>
-            <span class="badge-category cat-bid">용역</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01761982&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">우체국금융시스템 프로그램 유지·운영관리 용역</a>
-            <div class="tags-list">#용역</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-normal">D-15</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">2026-11-10</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01761982&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="AI">
-          <td>
-            <span class="badge-org">대전광역시 동구</span>
-            <span class="badge-category cat-rd">AI</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01766432&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">2026 동구 중소기업 MRO 플랫폼 운영 사업 용역</a>
-            <div class="tags-list">#플랫폼 #용역</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-safe">진행중</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">마감일 미정</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01766432&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="소부장">
-          <td>
-            <span class="badge-org">대림대학교 산학협력단</span>
-            <span class="badge-category cat-cons">소부장</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01766159&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">[대림대학교]2026년 신산업특화사업단_[SEMI-Path(진로지원)] 반도체전공트랙워크숍 용역</a>
-            <div class="tags-list">#반도체 #용역</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-urgent">D-Day</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">2026-10-26</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01766159&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
-        <tr data-category="용역">
-          <td>
-            <span class="badge-org">연세대학교</span>
-            <span class="badge-category cat-bid">용역</span>
-          </td>
-          <td class="title-cell">
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01766315&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="title-link">연세대학교 MRO(소모성자재 구매대행) 전자조달대행 사업자 선정</a>
-            <div class="tags-list">#구매</div>
-          </td>
-          <td><strong>공고문 참조</strong></td>
-          <td>
-            <span class="dday-tag dday-urgent">D-1</span>
-            <div style="font-size:12px; color:#64748b; margin-top:2px;">2026-10-27</div>
-          </td>
-          <td>
-            <a href="https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01766315&bidPbancOrd=000" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a>
-          </td>
-        </tr>
+      <tbody id="tableBody">
+        <tr><td colspan="5" class="empty">데이터를 불러오는 중입니다...</td></tr>
       </tbody>
     </table>
   </div>
 
   <footer>
-    <p>본 대시보드는 OpenAPI 및 웹 크롤링 파이프라인에 의해 매주 자동 생성됩니다.</p>
+    <p>본 대시보드는 GitHub Actions가 2시간마다 IRIS·NTIS·SMTECH·나라장터·한국기계연구원 공고를 수집해 자동 갱신합니다.</p>
+    <p>추천 점수는 <code>filter_rules.py</code>의 키워드 가중치로 계산됩니다.</p>
     <p><strong>ENGICORIX 선행장비Lab</strong> | 작성자: 최수영 연구원 | © 2026 ENGICORIX All rights reserved.</p>
   </footer>
 </div>
 
 <script>
-  function filterTable(category, btnElement) {
-    const buttons = document.querySelectorAll('.tag-btn');
-    buttons.forEach(btn => btn.classList.remove('active'));
-    if (btnElement) btnElement.classList.add('active');
+  const VIEW_DESC = {
+    A: 'IRIS·NTIS·SMTECH 등 R&D/지원사업 중, 설비·시설·공정·실증·제조 관련 키워드 점수가 높은 과제입니다. 우리 회사가 주관/참여기관으로 설비를 구축하는 과제를 찾을 때 보세요.',
+    B: '나라장터·한국기계연구원 입찰 중, 장비·설비의 설계/제작/설치 성격이 강한 공고입니다. 발주된 장비를 우리가 만들어 납품하는 기회를 찾을 때 보세요.',
+    all: '수집된 모든 공고입니다. 나라장터는 건수가 많아 설비 관련 키워드가 하나 이상 있는 공고만 포함합니다.'
+  };
+  const SOURCE_CLASS = { 'IRIS': 'cat-rd', 'NTIS': 'cat-rd', 'SMTECH': 'cat-rd', '과기정통부': 'cat-rd', '나라장터': 'cat-bid', '기계연': 'cat-cons' };
+  let DATA = { items: [], sources: [] };
+  let state = { view: 'A', source: 'all', q: '' };
+  try { state.view = localStorage.getItem('view') || 'A'; } catch (e) {}
 
-    const rows = document.querySelectorAll('#announcementTable tbody tr');
-    rows.forEach(row => {
-      const rowCat = row.getAttribute('data-category') || '';
-      if (category === 'all') {
-        row.style.display = '';
-      } else if (rowCat === category) {
-        row.style.display = '';
-      } else {
-        row.style.display = 'none';
-      }
-    });
+  const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+  function ddayCell(it) {
+    if (it.dday === null || it.dday === undefined) {
+      return `<span class="dday-tag dday-safe">${esc(it.status || '진행중')}</span>`
+        + `<div class="date-sub">${it.open_date ? '공고 ' + esc(it.open_date) : '마감일 미정'}</div>`;
+    }
+    const cls = it.dday <= 7 ? 'dday-urgent' : 'dday-normal';
+    const label = it.dday === 0 ? 'D-Day' : `D-${it.dday}`;
+    return `<span class="dday-tag ${cls}">${label}</span><div class="date-sub">${esc(it.close_date)}</div>`;
   }
 
-  function searchTable() {
-    const input = document.getElementById('searchInput').value.toLowerCase();
-    const rows = document.querySelectorAll('#announcementTable tbody tr');
-
-    rows.forEach(row => {
-      const text = row.innerText.toLowerCase();
-      row.style.display = text.includes(input) ? '' : 'none';
-    });
+  function row(it) {
+    const hits = (it.hits || []).map(k => `<span class="kw">#${esc(k)}</span>`).join(' ');
+    const minus = (it.minus || []).map(k => `<span class="kw kw-minus">-${esc(k)}</span>`).join(' ');
+    const score = `<span class="score ${it.track ? 'score-on' : ''}" title="추천 점수 (기준 ${DATA.threshold}점)">${it.score}점</span>`;
+    const typ = it.bid_type || (it.kind === 'rnd' ? 'R&D·지원사업' : '입찰');
+    return `<tr>
+      <td>
+        <span class="badge-category ${SOURCE_CLASS[it.source] || 'cat-general'}" style="margin-left:0">${esc(it.source)}</span>
+        <div class="org-name">${esc(it.org)}</div>
+      </td>
+      <td class="title-cell">
+        <a href="${esc(it.url)}" target="_blank" rel="noopener noreferrer" class="title-link">${esc(it.title)}</a>
+        <div class="tags-list">${score} ${hits} ${minus}</div>
+        ${variants(it)}
+      </td>
+      <td><strong>${esc(it.budget || '공고문 참조')}</strong><div class="date-sub">${esc(typ)}</div></td>
+      <td>${ddayCell(it)}</td>
+      <td><a href="${esc(it.url)}" target="_blank" rel="noopener noreferrer" class="btn-action">공고문 ↗</a></td>
+    </tr>`;
   }
+
+  function variants(it) {
+    if (!it.variants || !it.variants.length) return '';
+    const list = it.variants.map(v =>
+      `<li><a href="${esc(v.url)}" target="_blank" rel="noopener noreferrer">${esc(v.label)}</a> <span class="score ${v.score >= DATA.threshold ? 'score-on' : ''}">${v.score}점</span></li>`
+    ).join('');
+    return `<details class="variants"><summary>세부공고 ${it.variants.length}건 보기 (점수순)</summary><ul>${list}</ul></details>`;
+  }
+
+  function viewItems() {
+    return DATA.items.filter(it => state.view === 'all' || it.track === state.view);
+  }
+
+  function render() {
+    document.querySelectorAll('.view-tab').forEach(b => b.classList.toggle('active', b.dataset.view === state.view));
+    document.getElementById('viewDesc').textContent = VIEW_DESC[state.view];
+
+    const base = viewItems();
+    const counts = {};
+    base.forEach(it => counts[it.source] = (counts[it.source] || 0) + 1);
+    if (state.source !== 'all' && !counts[state.source]) state.source = 'all';
+    document.getElementById('sourceFilters').innerHTML =
+      [`<button class="tag-btn ${state.source === 'all' ? 'active' : ''}" data-source="all">전체 ${base.length}</button>`]
+        .concat(Object.keys(counts).map(s => `<button class="tag-btn ${state.source === s ? 'active' : ''}" data-source="${esc(s)}">${esc(s)} ${counts[s]}</button>`))
+        .join('');
+
+    const q = state.q.trim().toLowerCase();
+    let rows = base.filter(it => state.source === 'all' || it.source === state.source);
+    if (q) rows = rows.filter(it => [it.title, it.org, it.source, (it.hits || []).join(' ')].join(' ').toLowerCase().includes(q));
+    if (state.view !== 'all') rows = rows.slice().sort((a, b) => b.score - a.score || (a.dday ?? 999) - (b.dday ?? 999));
+
+    document.getElementById('tableBody').innerHTML = rows.length
+      ? rows.map(row).join('')
+      : `<tr><td colspan="5" class="empty">조건에 맞는 공고가 없습니다.</td></tr>`;
+  }
+
+  function renderSummary() {
+    const items = DATA.items;
+    document.getElementById('statTotal').textContent = items.length;
+    document.getElementById('statUrgent').textContent = items.filter(it => it.dday !== null && it.dday <= 7).length;
+    const a = items.filter(it => it.track === 'A').length, b = items.filter(it => it.track === 'B').length;
+    document.getElementById('statA').textContent = a;
+    document.getElementById('statB').textContent = b;
+    document.getElementById('tabA').textContent = a;
+    document.getElementById('tabB').textContent = b;
+    document.getElementById('tabAll').textContent = items.length;
+    document.getElementById('metaSync').innerHTML = `<strong>최근 동기화:</strong> ${esc(DATA.generated_at)}`;
+    const d = new Date(DATA.generated_at.replace(' ', 'T') + '+09:00');
+    document.getElementById('metaWeek').innerHTML = `<strong>기준 주차:</strong> ${d.getFullYear()}년 ${d.getMonth() + 1}월 ${Math.floor((d.getDate() - 1) / 7) + 1}주차`;
+    document.getElementById('sourceStatus').innerHTML = '<span class="status-label">수집 상태</span>' + DATA.sources.map(s =>
+      `<span class="src ${s.ok ? 'src-ok' : 'src-fail'}" title="${esc(s.error)}">${s.ok ? '●' : '✕'} ${esc(s.name)} ${s.ok ? s.count + '건' : '실패'}</span>`
+    ).join('');
+  }
+
+  document.querySelector('.view-tabs').addEventListener('click', e => {
+    const b = e.target.closest('.view-tab'); if (!b) return;
+    state.view = b.dataset.view; state.source = 'all';
+    try { localStorage.setItem('view', state.view); } catch (err) {}
+    render();
+  });
+  document.getElementById('sourceFilters').addEventListener('click', e => {
+    const b = e.target.closest('.tag-btn'); if (!b) return;
+    state.source = b.dataset.source; render();
+  });
+  document.getElementById('searchInput').addEventListener('input', e => { state.q = e.target.value; render(); });
+
+  fetch('data.json?t=' + Date.now())
+    .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(d => { DATA = d; renderSummary(); render(); })
+    .catch(err => {
+      document.getElementById('tableBody').innerHTML = `<tr><td colspan="5" class="empty">데이터를 불러오지 못했습니다 (${esc(err.message)}).</td></tr>`;
+    });
 </script>
 
 </body>

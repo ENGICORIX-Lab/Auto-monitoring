@@ -25,11 +25,15 @@ jobs:
           pip install requests beautifulsoup4 urllib3
 
       - name: Run Scraper Script
-        run: python update_html.py
+        run: python update_data.py
+        env:
+          G2B_API_KEY: ${{ secrets.G2B_API_KEY }}
+          MSIT_API_KEY: ${{ secrets.MSIT_API_KEY }}
+          DATA_GO_KR_API_KEY: ${{ secrets.DATA_GO_KR_API_KEY }}
 
       - name: Commit and Push changes
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add index.html
+          git add data.json
           git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update dashboard via API and Crawler" && git push)
