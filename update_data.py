@@ -5,10 +5,12 @@ import traceback
 import requests
 import urllib3
 from bs4 import BeautifulSoup
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
 from datetime import datetime, timedelta, timezone
 
 from filter_rules import (
-    RECOMMEND_THRESHOLD, TRACK_A_KEYWORDS, TRACK_A_EXCLUDE,
+    RESTRICT_MARK, check_eligibility, RECOMMEND_THRESHOLD, PRODUCT_BONUS_MAX, PRODUCT_PENALTY_MAX, IT_SERVICE_CLASSES, TRACK_A_KEYWORDS, TRACK_A_EXCLUDE,
     TRACK_B_KEYWORDS, TRACK_B_EXCLUDE, TRACK_B_CORE, score_title,
 )
 
@@ -31,6 +33,11 @@ NOTES = {}
 
 session = requests.Session()
 session.headers.update(HEADERS)
+# 기관 서버의 일시적인 접속 지연에 대비해 실패 시 최대 3번까지 다시 시도합니다.
+_retry = Retry(total=3, connect=3, read=2, backoff_factor=2, status_forcelist=[502, 503, 504],
+               allowed_methods=["GET", "POST"])
+session.mount("https://", HTTPAdapter(max_retries=_retry))
+session.mount("http://", HTTPAdapter(max_retries=_retry))
 
 
 def parse_date(text):
@@ -74,13 +81,33 @@ def parse_amount(num, unit):
 AMOUNT = r"([\d][\d,]*(?:\.\d+)?)\s*(억\s*원|천만\s*원|백만\s*원|만\s*원|천\s*원|원)"
 
 
+_TEXT_CACHE = {}
+
+
 def page_text(url):
-    res = session.get(url, verify=False, timeout=20)
-    res.raise_for_status()
-    soup = BeautifulSoup(res.text, "html.parser")
-    for tag in soup(["script", "style", "header", "nav", "footer"]):
-        tag.decompose()
-    return soup.get_text(" ", strip=True)
+    """상세 페이지 본문 텍스트 (같은 실행 안에서는 한 번만 받아옵니다)."""
+    if url not in _TEXT_CACHE:
+        res = session.get(url, verify=False, timeout=20)
+        res.raise_for_status()
+        soup = BeautifulSoup(res.text, "html.parser")
+        for tag in soup(["script", "style", "header", "nav", "footer"]):
+            tag.decompose()
+        _TEXT_CACHE[url] = soup.get_text(" ", strip=True)
+    return _TEXT_CACHE[url]
+
+
+def eligibility_snippets(text):
+    """본문에서 '…에만 지원', '…에 한함' 같은 제한 문장 주변만 잘라 둡니다."""
+    out = []
+    for m in re.finditer(RESTRICT_MARK, text):
+        # 앞 문장의 단어가 섞이지 않도록 문장 경계(. ※ ○ ■ 등)에서 자릅니다.
+        boundary = r"[.。※○■□▶●◦]|\s[가-하]\.\s|\s-\s"
+        before = re.split(boundary, text[max(0, m.start() - 120):m.start()])[-1]
+        after = re.split(boundary, text[m.end():m.end() + 40])[0]
+        snippet = (before + text[m.start():m.end()] + after).strip()
+        if snippet not in out:
+            out.append(snippet)
+    return out[:8]
 
 
 def ntis_amount(url):
@@ -276,6 +303,21 @@ def fetch_kimm():
 
 
 # ----------------- 5. [API] 조달청 나라장터 (G2B) -----------------
+def g2b_products(bid):
+    """입찰공고의 세부 품명·분류명 목록을 모읍니다 (예: '태양광발전장치', '가스미터')."""
+    names = []
+    # 구매대상물품목록: '[1^4111250801^가스미터],[2^...^...]'
+    names += re.findall(r"\^([^\^\]]+)\]", bid.get("purchsObjPrdctList") or "")
+    names.append(bid.get("dtilPrdctClsfcNoNm") or "")
+    out = []
+    for n in names:
+        n = n.strip()
+        if n and n not in out:
+            out.append(n)
+    return out
+
+
+
 def fetch_g2b():
     if not G2B_API_KEY:
         raise RuntimeError("G2B_API_KEY가 설정되지 않았습니다 (GitHub Secrets 확인)")
@@ -331,7 +373,13 @@ def fetch_g2b():
                     status="입찰공고", budget=budget,
                 )
                 if item:
+                    item["bid_no"], item["bid_ord"] = bid.get("bidNtceNo"), bid.get("bidNtceOrd")
                     item["bid_type"] = bid_type
+                    if bid_type == "물품":
+                        item["products"] = g2b_products(bid)
+                    else:
+                        # 용역은 품명 대신 'ICT 서비스' 같은 포괄 분류만 있어 IT 용역을 거르는 데만 씁니다.
+                        item["service_class"] = [v for k, v in bid.items() if k.endswith("ClsfcNm") and isinstance(v, str) and v]
                     items.append(item)
             total = int(body.get("totalCount") or 0)
             if page * 500 >= total:
@@ -440,7 +488,7 @@ def group_sub_announcements(items):
         # 가장 점수가 높은 세부과제를 대표로 사용합니다.
         if it["score"] > head["score"]:
             head.update(score=it["score"], hits=it["hits"], minus=it["minus"], track=it["track"], url=it["url"],
-                        budget=it["budget"])
+                        budget=it["budget"], elig_text=it.get("elig_text", []))
         if it["dday"] is not None and (head["dday"] is None or it["dday"] < head["dday"]):
             head.update(dday=it["dday"], close_date=it["close_date"])
     # IRIS에 묶음 공고 본문이 따로 있고 NTIS에 세부공고가 있는 경우, 세부공고가 있는 쪽만 남깁니다.
@@ -462,11 +510,25 @@ def classify(item):
         score, hits, minus = score_title(item["title"], TRACK_B_KEYWORDS, TRACK_B_EXCLUDE)
         if item.get("bid_type") == "물품" or item["source"] == "기계연":
             score += 1
+        # 나라장터 세부 품명에서 제목에 없던 키워드를 찾아 보조 점수로 더합니다.
+        product_text = " ".join(item.get("products") or [])
+        if product_text:
+            _, p_hits, p_minus = score_title(product_text, TRACK_B_KEYWORDS, TRACK_B_EXCLUDE)
+            p_hits = [k for k in p_hits if k not in hits]
+            p_minus = [k for k in p_minus if k not in minus]
+            score += min(PRODUCT_BONUS_MAX, sum(TRACK_B_KEYWORDS[k] for k in p_hits))
+            score += max(-PRODUCT_PENALTY_MAX, sum(TRACK_B_EXCLUDE[k] for k in p_minus))
+            item["product_hits"] = p_hits
+            item["product_minus"] = p_minus
+        it_class = [c for c in item.get("service_class") or [] if any(k in c for k in IT_SERVICE_CLASSES)]
+        if it_class:
+            score -= 4
+            minus = minus + [f"{it_class[0]}(분류)"]
         track = "B"
     item["score"] = score
     item["hits"] = hits
     item["minus"] = minus
-    if track == "B" and not any(k in item["title"] for k in TRACK_B_CORE):
+    if track == "B" and not any(k in item["title"] + " " + " ".join(item.get("products") or []) for k in TRACK_B_CORE):
         track = ""
     item["track"] = track if score >= RECOMMEND_THRESHOLD else ""
 
@@ -485,6 +547,69 @@ def fill_rnd_budgets(items):
                 pass
 
 
+def collect_eligibility_text(items):
+    """IRIS·NTIS 상세 본문에서 지원 자격 제한 문장을 모읍니다."""
+    for it in items:
+        if it["source"] not in ("IRIS", "NTIS"):
+            continue
+        try:
+            it["elig_text"] = eligibility_snippets(page_text(it["url"]))
+        except requests.RequestException:
+            pass
+
+
+def load_previous():
+    """직전 data.json의 나라장터 제한조건 조회 결과를 재사용해 API 호출량을 줄입니다."""
+    try:
+        with open("data.json", encoding="utf-8") as f:
+            return {it["url"]: it for it in json.load(f).get("items", []) if "limits_checked" in it}
+    except (OSError, ValueError):
+        return {}
+
+
+def g2b_limits(item, previous):
+    """나라장터 공고의 참가가능지역·면허제한을 조회합니다."""
+    prev = previous.get(item["url"])
+    if prev:
+        item["regions"], item["licenses"] = prev.get("regions", []), prev.get("licenses", [])
+        item["limits_checked"] = True
+        return
+    out = {}
+    for ep, field in [("getBidPblancListInfoPrtcptPsblRgn", "prtcptPsblRgnNm"),
+                      ("getBidPblancListInfoLicenseLimit", "lcnsLmtNm")]:
+        url = f"https://apis.data.go.kr/1230000/ad/BidPublicInfoService/{ep}"
+        params = {"numOfRows": 50, "pageNo": 1, "inqryDiv": 2, "type": "json",
+                  "bidNtceNo": item["bid_no"], "bidNtceOrd": item["bid_ord"] or "000"}
+        if "%" in G2B_API_KEY:
+            url += f"?serviceKey={G2B_API_KEY}"
+        else:
+            params["serviceKey"] = G2B_API_KEY
+        res = session.get(url, params=params, verify=False, timeout=20)
+        res.raise_for_status()
+        rows = res.json().get("response", {}).get("body", {}).get("items") or []
+        if isinstance(rows, dict):
+            rows = [rows]
+        # 면허명은 '기계설비ㆍ가스공사업/6202' 형태라 코드 부분은 뺍니다.
+        out[field] = list(dict.fromkeys(r.get(field, "").split("/")[0].strip() for r in rows if r.get(field)))
+    item["regions"], item["licenses"] = out["prtcptPsblRgnNm"], out["lcnsLmtNm"]
+    item["limits_checked"] = True
+
+
+def apply_eligibility(items):
+    previous = load_previous()
+    for it in items:
+        if it["source"] == "나라장터" and it["track"] and it.get("bid_no"):
+            try:
+                g2b_limits(it, previous)
+            except (requests.RequestException, ValueError) as e:
+                print(f"[나라장터] 제한조건 조회 실패 {it['bid_no']}: {e}")
+        reason = check_eligibility(it["title"], it.get("elig_text"), it.get("regions"), it.get("licenses"))
+        if reason:
+            it["ineligible"] = reason
+            if it["track"]:
+                it["excluded_track"], it["track"] = it["track"], ""
+
+
 def main():
     all_items, status = [], []
     for name, fn in SOURCES:
@@ -499,6 +624,7 @@ def main():
             print(f"[{name}] 실패: {e}")
 
     fill_rnd_budgets(all_items)
+    collect_eligibility_text(all_items)
 
     # NTIS 통합공고는 IRIS 공고와 겹치므로 같은 공고명은 하나만 남깁니다 (먼저 수집된 출처 우선).
     unique, seen = [], set()
@@ -511,6 +637,7 @@ def main():
         unique.append(it)
 
     unique = group_sub_announcements(unique)
+    apply_eligibility(unique)
 
     # 나라장터는 건수가 많아 점수가 1점 이상인 공고만 전체 목록에 남깁니다.
     unique = [it for it in unique if it["source"] != "나라장터" or it["score"] >= 1]
@@ -526,7 +653,8 @@ def main():
         json.dump(out, f, ensure_ascii=False, indent=1)
     rec_a = sum(1 for it in unique if it["track"] == "A")
     rec_b = sum(1 for it in unique if it["track"] == "B")
-    print(f"동기화 완료: 총 {len(unique)}건 (추천 A {rec_a}건, B {rec_b}건)")
+    excluded = sum(1 for it in unique if it.get("excluded_track"))
+    print(f"동기화 완료: 총 {len(unique)}건 (추천 A {rec_a}건, B {rec_b}건, 자격 미해당 제외 {excluded}건)")
 
 
 if __name__ == "__main__":

@@ -222,6 +222,11 @@
     .date-sub { font-size: 12px; color: #64748b; margin-top: 2px; }
     .kw { display: inline-block; margin-right: 2px; }
     .kw-minus { color: #b91c1c; }
+    .kw-product { color: #0f766e; }
+    .row-inelig td { opacity: 0.55; }
+    .row-inelig:hover td { opacity: 1; }
+    .inelig { display: inline-block; margin: 2px 0 4px; padding: 2px 8px; border-radius: 4px; background: #fee2e2; color: #b91c1c; font-size: 12px; font-weight: 700; }
+    .limits { font-size: 12px; color: #475569; margin-top: 3px; }
     .score { display: inline-block; padding: 1px 6px; border-radius: 4px; background: #f1f5f9; color: #64748b; font-weight: 700; margin-right: 4px; }
     .score-on { background: #ede9fe; color: #6d28d9; }
     .variants { margin-top: 6px; font-size: 12px; color: #475569; }
@@ -376,18 +381,29 @@
   }
 
   function row(it) {
-    const hits = (it.hits || []).map(k => `<span class="kw">#${esc(k)}</span>`).join(' ');
-    const minus = (it.minus || []).map(k => `<span class="kw kw-minus">-${esc(k)}</span>`).join(' ');
+    const hits = (it.hits || []).map(k => `<span class="kw">#${esc(k)}</span>`)
+      .concat((it.product_hits || []).map(k => `<span class="kw kw-product" title="세부 품명에서 찾은 키워드">#${esc(k)}(품명)</span>`)).join(' ');
+    const minus = (it.minus || []).concat((it.product_minus || []).map(k => k + '(품명)'))
+      .map(k => `<span class="kw kw-minus">-${esc(k)}</span>`).join(' ');
     const score = `<span class="score ${it.track ? 'score-on' : ''}" title="추천 점수 (기준 ${DATA.threshold}점)">${it.score}점</span>`;
-    const typ = it.bid_type || (it.kind === 'rnd' ? 'R&D·지원사업' : '입찰');
-    return `<tr>
+    const typ = (it.bid_type || (it.kind === 'rnd' ? 'R&D·지원사업' : '입찰'))
+      + (it.products && it.products.length ? ' · ' + it.products.slice(0, 2).join(', ') : '');
+    const limits = [
+      it.regions && it.regions.length ? '참가 가능 지역: ' + it.regions.join(', ') : '',
+      it.licenses && it.licenses.length ? '필요 면허: ' + it.licenses.join(', ') : '',
+    ].filter(Boolean).join(' · ');
+    const inelig = it.ineligible
+      ? `<div class="inelig">자격 미해당 · ${esc(it.ineligible)}${it.excluded_track ? ' (추천 ' + esc(it.excluded_track) + '에서 제외)' : ''}</div>` : '';
+    return `<tr class="${it.ineligible ? 'row-inelig' : ''}">
       <td>
         <span class="badge-category ${SOURCE_CLASS[it.source] || 'cat-general'}" style="margin-left:0">${esc(it.source)}</span>
         <div class="org-name">${esc(it.org)}</div>
       </td>
       <td class="title-cell">
         <a href="${esc(it.url)}" target="_blank" rel="noopener noreferrer" class="title-link">${esc(it.title)}</a>
+        ${inelig}
         <div class="tags-list">${score} ${hits} ${minus}</div>
+        ${limits ? `<div class="limits">${esc(limits)}</div>` : ''}
         ${variants(it)}
       </td>
       <td><strong>${esc(it.budget || '공고문 참조')}</strong><div class="date-sub">${esc(typ)}</div></td>
@@ -433,7 +449,9 @@
 
   function render() {
     document.querySelectorAll('.view-tab').forEach(b => b.classList.toggle('active', b.dataset.view === state.view));
-    document.getElementById('viewDesc').textContent = VIEW_DESC[state.view];
+    const excluded = DATA.items.filter(it => it.excluded_track === state.view).length;
+    document.getElementById('viewDesc').textContent = VIEW_DESC[state.view]
+      + (excluded ? ` 지원 자격이 맞지 않는 ${excluded}건은 제외했습니다 (전체 공고 탭에서 사유 확인).` : '');
 
     const base = viewItems();
     const counts = {};
@@ -446,7 +464,7 @@
 
     const q = state.q.trim().toLowerCase();
     let rows = base.filter(it => state.source === 'all' || it.source === state.source);
-    if (q) rows = rows.filter(it => [it.title, it.org, it.source, (it.hits || []).join(' ')].join(' ').toLowerCase().includes(q));
+    if (q) rows = rows.filter(it => [it.title, it.org, it.source, (it.hits || []).join(' '), (it.products || []).join(' ')].join(' ').toLowerCase().includes(q));
     if (state.view !== 'all') rows = rows.slice().sort((a, b) => b.score - a.score || (a.dday ?? 999) - (b.dday ?? 999));
     if (state.sortKey) rows = sortRows(rows);
     document.querySelectorAll('th.sortable').forEach(th => {
