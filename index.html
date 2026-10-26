@@ -229,6 +229,11 @@
     .variants ul { margin: 6px 0 0 16px; max-height: 220px; overflow-y: auto; }
     .variants li { margin-bottom: 3px; }
     .variants a { color: #334155; }
+    th.sortable button { all: unset; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; }
+    th.sortable button:hover, th.sortable[aria-sort="ascending"] button, th.sortable[aria-sort="descending"] button { color: var(--primary-dark); }
+    th.sortable button:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; border-radius: 4px; }
+    .sort-icon { font-size: 12px; color: #94a3b8; }
+    th.sortable[aria-sort="ascending"] .sort-icon, th.sortable[aria-sort="descending"] .sort-icon { color: var(--primary-dark); }
     .empty { text-align: center; color: var(--text-muted); padding: 40px; }
     footer code { background: #f1f5f9; padding: 1px 5px; border-radius: 4px; }
 
@@ -329,8 +334,8 @@
         <tr>
           <th>출처 / 기관</th>
           <th>공고명 & 매칭 키워드</th>
-          <th>추정가격 / 유형</th>
-          <th>접수 마감일 (D-Day)</th>
+          <th class="sortable" data-sort="budget" aria-sort="none"><button type="button">금액 / 유형 <span class="sort-icon">↕</span></button></th>
+          <th class="sortable" data-sort="dday" aria-sort="none"><button type="button">접수 마감일 (D-Day) <span class="sort-icon">↕</span></button></th>
           <th>원문</th>
         </tr>
       </thead>
@@ -355,7 +360,7 @@
   };
   const SOURCE_CLASS = { 'IRIS': 'cat-rd', 'NTIS': 'cat-rd', 'SMTECH': 'cat-rd', '과기정통부': 'cat-rd', '나라장터': 'cat-bid', '기계연': 'cat-cons' };
   let DATA = { items: [], sources: [] };
-  let state = { view: 'A', source: 'all', q: '' };
+  let state = { view: 'A', source: 'all', q: '', sortKey: null, sortDir: 1 };
   try { state.view = localStorage.getItem('view') || 'A'; } catch (e) {}
 
   const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -394,9 +399,32 @@
   function variants(it) {
     if (!it.variants || !it.variants.length) return '';
     const list = it.variants.map(v =>
-      `<li><a href="${esc(v.url)}" target="_blank" rel="noopener noreferrer">${esc(v.label)}</a> <span class="score ${v.score >= DATA.threshold ? 'score-on' : ''}">${v.score}점</span></li>`
+      `<li><a href="${esc(v.url)}" target="_blank" rel="noopener noreferrer">${esc(v.label)}</a>${v.budget ? ` · ${esc(v.budget)}` : ''} <span class="score ${v.score >= DATA.threshold ? 'score-on' : ''}">${v.score}점</span></li>`
     ).join('');
     return `<details class="variants"><summary>세부공고 ${it.variants.length}건 보기 (점수순)</summary><ul>${list}</ul></details>`;
+  }
+
+  // '85억 8,000만 원', '5,500만 원', '공고금액 50억 원' 같은 표시 금액을 원 단위 숫자로 바꿉니다.
+  function budgetValue(it) {
+    const s = String(it.budget || '').replace(/,/g, '');
+    const eok = s.match(/([\d.]+)\s*억/), man = s.match(/([\d.]+)\s*만/);
+    if (eok || man) return (eok ? parseFloat(eok[1]) * 1e8 : 0) + (man ? parseFloat(man[1]) * 1e4 : 0);
+    const won = s.match(/([\d.]+)\s*원/);
+    return won ? parseFloat(won[1]) : null;
+  }
+
+  const SORT_VALUE = { budget: budgetValue, dday: it => (it.dday ?? null) };
+
+  // 금액·마감일이 없는 공고는 정렬 방향과 관계없이 항상 맨 아래에 둡니다.
+  function sortRows(rows) {
+    const get = SORT_VALUE[state.sortKey];
+    return rows.slice().sort((a, b) => {
+      const va = get(a), vb = get(b);
+      if (va === null && vb === null) return 0;
+      if (va === null) return 1;
+      if (vb === null) return -1;
+      return (va - vb) * state.sortDir;
+    });
   }
 
   function viewItems() {
@@ -420,6 +448,12 @@
     let rows = base.filter(it => state.source === 'all' || it.source === state.source);
     if (q) rows = rows.filter(it => [it.title, it.org, it.source, (it.hits || []).join(' ')].join(' ').toLowerCase().includes(q));
     if (state.view !== 'all') rows = rows.slice().sort((a, b) => b.score - a.score || (a.dday ?? 999) - (b.dday ?? 999));
+    if (state.sortKey) rows = sortRows(rows);
+    document.querySelectorAll('th.sortable').forEach(th => {
+      const on = th.dataset.sort === state.sortKey;
+      th.setAttribute('aria-sort', on ? (state.sortDir > 0 ? 'ascending' : 'descending') : 'none');
+      th.querySelector('.sort-icon').textContent = on ? (state.sortDir > 0 ? '▲' : '▼') : '↕';
+    });
 
     document.getElementById('tableBody').innerHTML = rows.length
       ? rows.map(row).join('')
@@ -453,6 +487,12 @@
   document.getElementById('sourceFilters').addEventListener('click', e => {
     const b = e.target.closest('.tag-btn'); if (!b) return;
     state.source = b.dataset.source; render();
+  });
+  document.querySelector('#announcementTable thead').addEventListener('click', e => {
+    const th = e.target.closest('th.sortable'); if (!th) return;
+    if (state.sortKey === th.dataset.sort) state.sortDir *= -1;
+    else { state.sortKey = th.dataset.sort; state.sortDir = 1; }
+    render();
   });
   document.getElementById('searchInput').addEventListener('input', e => { state.q = e.target.value; render(); });
 

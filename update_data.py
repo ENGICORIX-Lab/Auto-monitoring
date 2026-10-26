@@ -60,6 +60,50 @@ def format_won(value):
     return f"{man:,}만 원" if man else f"{won:,}원"
 
 
+def parse_amount(num, unit):
+    """('85.8', '억원') → 8580000000. 금액을 원 단위 정수로 바꿉니다."""
+    try:
+        value = float(num.replace(",", ""))
+    except ValueError:
+        return 0
+    unit = re.sub(r"\s", "", unit)
+    scale = {"억원": 10**8, "백만원": 10**6, "천만원": 10**7, "만원": 10**4, "천원": 10**3, "원": 1}.get(unit, 0)
+    return int(value * scale)
+
+
+AMOUNT = r"([\d][\d,]*(?:\.\d+)?)\s*(억\s*원|천만\s*원|백만\s*원|만\s*원|천\s*원|원)"
+
+
+def page_text(url):
+    res = session.get(url, verify=False, timeout=20)
+    res.raise_for_status()
+    soup = BeautifulSoup(res.text, "html.parser")
+    for tag in soup(["script", "style", "header", "nav", "footer"]):
+        tag.decompose()
+    return soup.get_text(" ", strip=True)
+
+
+def ntis_amount(url):
+    """NTIS 공고 상세의 '공고금액 : 50 억원' 항목을 읽습니다."""
+    m = re.search(r"공고금액\s*:?\s*" + AMOUNT, page_text(url))
+    won = parse_amount(m.group(1), m.group(2)) if m else 0
+    return f"공고금액 {format_won(won)}" if won else ""
+
+
+def iris_amount(url):
+    """IRIS 공고 본문에 적힌 '지원규모 총 85.8억원'을 읽습니다 (본문이 첨부파일에만 있으면 빈 값)."""
+    text = page_text(url)
+    for label, pattern in [("지원규모", r"지원\s*규모\s*(?:총\s*)?(?:약\s*)?"),
+                           ("정부출연금", r"정부\s*출연금\s*(?:총\s*)?(?:약\s*)?"),
+                           ("사업비", r"총\s*사업비\s*(?:약\s*)?")]:
+        m = re.search(pattern + AMOUNT, text)
+        if m:
+            won = parse_amount(m.group(1), m.group(2))
+            if won:
+                return f"{label} {format_won(won)}"
+    return ""
+
+
 def make_item(source, kind, org, title, url, open_date=None, close_date=None, status="", budget=""):
     """모든 출처의 공고를 같은 형식으로 맞춥니다. 마감된 공고는 None을 반환합니다."""
     close = parse_date(close_date)
@@ -152,6 +196,10 @@ def fetch_ntis():
             )
             if item:
                 item["ministry"] = col("부처명")
+                try:
+                    item["budget"] = ntis_amount(item["url"])
+                except requests.RequestException:
+                    pass
                 items.append(item)
         if new_rows < 100:
             break
@@ -270,7 +318,12 @@ def fetch_g2b():
                 if bid_type == "공사" and not any(k in title for k in ["설비", "장치", "플랜트", "배관", "기계"]):
                     continue
                 budget = bid.get("presmptPrce") or bid.get("asignBdgtAmt") or ""
-                budget = format_won(budget)
+                # '1원'처럼 형식적으로 입력된 금액은 미공개로 봅니다.
+                try:
+                    budget = format_won(budget) if float(budget or 0) >= 10000 else ""
+                except ValueError:
+                    budget = ""
+                budget = budget or "금액 미공개"
                 item = make_item(
                     "나라장터", "bid", bid.get("dminsttNm") or bid.get("ntceInsttNm") or "조달청",
                     title, bid.get("bidNtceDtlUrl") or bid.get("bidNtceUrl") or "https://www.g2b.go.kr",
@@ -378,7 +431,7 @@ def group_sub_announcements(items):
         if not key or base_count.get(key, 0) < 2:
             order.append(it)
             continue
-        variant = {"label": suffix, "url": it["url"], "score": it["score"], "hits": it["hits"]}
+        variant = {"label": suffix, "url": it["url"], "score": it["score"], "hits": it["hits"], "budget": it["budget"]}
         if key not in grouped:
             grouped[key] = dict(it, title=base, variants=[])
             order.append(grouped[key])
@@ -386,7 +439,8 @@ def group_sub_announcements(items):
         head["variants"].append(variant)
         # 가장 점수가 높은 세부과제를 대표로 사용합니다.
         if it["score"] > head["score"]:
-            head.update(score=it["score"], hits=it["hits"], minus=it["minus"], track=it["track"], url=it["url"])
+            head.update(score=it["score"], hits=it["hits"], minus=it["minus"], track=it["track"], url=it["url"],
+                        budget=it["budget"])
         if it["dday"] is not None and (head["dday"] is None or it["dday"] < head["dday"]):
             head.update(dday=it["dday"], close_date=it["close_date"])
     # IRIS에 묶음 공고 본문이 따로 있고 NTIS에 세부공고가 있는 경우, 세부공고가 있는 쪽만 남깁니다.
@@ -417,6 +471,20 @@ def classify(item):
     item["track"] = track if score >= RECOMMEND_THRESHOLD else ""
 
 
+def fill_rnd_budgets(items):
+    """IRIS 공고는 목록에 금액이 없어, 같은 공고명의 NTIS 공고금액을 쓰고 없으면 IRIS 본문에서 찾습니다."""
+    ntis_budget = {norm_title(it["title"]): it["budget"] for it in items if it["source"] == "NTIS" and it["budget"]}
+    for it in items:
+        if it["source"] != "IRIS" or it["budget"]:
+            continue
+        it["budget"] = ntis_budget.get(norm_title(it["title"]), "")
+        if not it["budget"]:
+            try:
+                it["budget"] = iris_amount(it["url"])
+            except requests.RequestException:
+                pass
+
+
 def main():
     all_items, status = [], []
     for name, fn in SOURCES:
@@ -429,6 +497,8 @@ def main():
             traceback.print_exc()
             status.append({"name": name, "ok": False, "count": 0, "error": str(e)[:300]})
             print(f"[{name}] 실패: {e}")
+
+    fill_rnd_budgets(all_items)
 
     # NTIS 통합공고는 IRIS 공고와 겹치므로 같은 공고명은 하나만 남깁니다 (먼저 수집된 출처 우선).
     unique, seen = [], set()
