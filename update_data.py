@@ -10,7 +10,7 @@ from urllib3.util.retry import Retry
 from datetime import datetime, timedelta, timezone
 
 from filter_rules import (
-    RESTRICT_MARK, check_eligibility, RECOMMEND_THRESHOLD, PRODUCT_BONUS_MAX, PRODUCT_PENALTY_MAX, IT_SERVICE_CLASSES, TRACK_A_KEYWORDS, TRACK_A_EXCLUDE,
+    RESTRICT_MARK, check_eligibility, missing_licenses, license_addable, LICENSE_ADD_MIN_SCORE, RECOMMEND_THRESHOLD, PRODUCT_BONUS_MAX, PRODUCT_PENALTY_MAX, IT_SERVICE_CLASSES, TRACK_A_KEYWORDS, TRACK_A_EXCLUDE,
     TRACK_B_KEYWORDS, TRACK_B_EXCLUDE, TRACK_B_CORE, score_title,
 )
 
@@ -596,6 +596,7 @@ def g2b_limits(item, previous):
 
 
 def apply_eligibility(items):
+    """키워드 추천보다 먼저 참여 자격(지역·등록 업종·본문 제한)을 판단합니다."""
     previous = load_previous()
     for it in items:
         if it["source"] == "나라장터" and it["track"] and it.get("bid_no"):
@@ -603,7 +604,14 @@ def apply_eligibility(items):
                 g2b_limits(it, previous)
             except (requests.RequestException, ValueError) as e:
                 print(f"[나라장터] 제한조건 조회 실패 {it['bid_no']}: {e}")
-        reason = check_eligibility(it["title"], it.get("elig_text"), it.get("regions"), it.get("licenses"))
+        reason = check_eligibility(it["title"], it.get("elig_text"), it.get("regions"))
+        missing = missing_licenses(it.get("licenses"))
+        if not reason and missing:
+            # 키워드가 잘 맞고 우리 분야 면허라면 업종 추가 등록을 전제로 추천에 남깁니다.
+            if it["track"] and it["score"] >= LICENSE_ADD_MIN_SCORE and license_addable(missing):
+                it["needs_license"] = missing
+            else:
+                reason = "등록 업종으로 참여 불가 (필요: " + ", ".join(missing[:2]) + ")"
         if reason:
             it["ineligible"] = reason
             if it["track"]:

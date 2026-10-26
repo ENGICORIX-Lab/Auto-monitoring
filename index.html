@@ -225,6 +225,9 @@
     .kw-product { color: #0f766e; }
     .row-inelig td { opacity: 0.55; }
     .row-inelig:hover td { opacity: 1; }
+    .needs-license { display: inline-block; margin: 2px 0 4px; padding: 2px 8px; border-radius: 4px; background: #ffedd5; color: #c2410c; font-size: 12px; font-weight: 700; }
+    .elig-btn.active { background: #ffedd5; color: #9a3412; border-color: #fed7aa; }
+    .chip-sep { display: inline-block; width: 1px; height: 22px; background: var(--border); margin: 0 4px; align-self: center; }
     .inelig { display: inline-block; margin: 2px 0 4px; padding: 2px 8px; border-radius: 4px; background: #fee2e2; color: #b91c1c; font-size: 12px; font-weight: 700; }
     .limits { font-size: 12px; color: #475569; margin-top: 3px; }
     .score { display: inline-block; padding: 1px 6px; border-radius: 4px; background: #f1f5f9; color: #64748b; font-weight: 700; margin-right: 4px; }
@@ -317,7 +320,7 @@
     <div class="stat-card">
       <div class="label">추천 B · 설비 제작/납품 입찰</div>
       <div class="value text-green"><span id="statB">-</span> <span class="unit">건</span></div>
-      <div class="sub text-green">연구기관·공공기관 장비 발주</div>
+      <div class="sub text-green" id="statBSub">연구기관·공공기관 장비 발주</div>
     </div>
   </div>
 
@@ -360,12 +363,12 @@
 <script>
   const VIEW_DESC = {
     A: 'IRIS·NTIS·SMTECH 등 R&D/지원사업 중, 설비·시설·공정·실증·제조 관련 키워드 점수가 높은 과제입니다. 우리 회사가 주관/참여기관으로 설비를 구축하는 과제를 찾을 때 보세요.',
-    B: '나라장터·한국기계연구원 입찰 중, 장비·설비의 설계/제작/설치 성격이 강한 공고입니다. 발주된 장비를 우리가 만들어 납품하는 기회를 찾을 때 보세요.',
+    B: '나라장터·한국기계연구원 입찰 중, 먼저 사업자등록 업종·지역으로 참여 가능한지 확인한 뒤 장비·설비의 설계/제작/설치 성격이 강한 공고를 골랐습니다. 키워드가 잘 맞는데 업종 추가 등록이 필요한 공고는 주황색으로 따로 표시합니다.',
     all: '수집된 모든 공고입니다. 나라장터는 건수가 많아 설비 관련 키워드가 하나 이상 있는 공고만 포함합니다.'
   };
   const SOURCE_CLASS = { 'IRIS': 'cat-rd', 'NTIS': 'cat-rd', 'SMTECH': 'cat-rd', '과기정통부': 'cat-rd', '나라장터': 'cat-bid', '기계연': 'cat-cons' };
   let DATA = { items: [], sources: [] };
-  let state = { view: 'A', source: 'all', q: '', sortKey: null, sortDir: 1 };
+  let state = { view: 'A', source: 'all', elig: 'all', q: '', sortKey: null, sortDir: 1 };
   try { state.view = localStorage.getItem('view') || 'A'; } catch (e) {}
 
   const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -392,6 +395,8 @@
       it.regions && it.regions.length ? '참가 가능 지역: ' + it.regions.join(', ') : '',
       it.licenses && it.licenses.length ? '필요 면허: ' + it.licenses.join(', ') : '',
     ].filter(Boolean).join(' · ');
+    const needs = it.needs_license && it.needs_license.length
+      ? `<div class="needs-license">업종 추가 등록 시 참여 가능 · 필요: ${esc(it.needs_license.slice(0, 2).join(', '))}</div>` : '';
     const inelig = it.ineligible
       ? `<div class="inelig">자격 미해당 · ${esc(it.ineligible)}${it.excluded_track ? ' (추천 ' + esc(it.excluded_track) + '에서 제외)' : ''}</div>` : '';
     return `<tr class="${it.ineligible ? 'row-inelig' : ''}">
@@ -401,7 +406,7 @@
       </td>
       <td class="title-cell">
         <a href="${esc(it.url)}" target="_blank" rel="noopener noreferrer" class="title-link">${esc(it.title)}</a>
-        ${inelig}
+        ${inelig}${needs}
         <div class="tags-list">${score} ${hits} ${minus}</div>
         ${limits ? `<div class="limits">${esc(limits)}</div>` : ''}
         ${variants(it)}
@@ -453,19 +458,30 @@
     document.getElementById('viewDesc').textContent = VIEW_DESC[state.view]
       + (excluded ? ` 지원 자격이 맞지 않는 ${excluded}건은 제외했습니다 (전체 공고 탭에서 사유 확인).` : '');
 
-    const base = viewItems();
+    let base = viewItems();
+    // 추천 B는 등록 업종으로 바로 참여 가능한 공고와, 업종 추가 등록이 필요한 공고를 나눠 봅니다.
+    let eligChips = '';
+    if (state.view === 'B') {
+      const needN = base.filter(it => it.needs_license).length;
+      eligChips = [['all', `전체 ${base.length}`], ['ok', `참여 가능 ${base.length - needN}`], ['license', `업종 추가 시 가능 ${needN}`]]
+        .map(([k, label]) => `<button class="tag-btn elig-btn ${state.elig === k ? 'active' : ''}" data-elig="${k}">${label}</button>`).join('')
+        + '<span class="chip-sep"></span>';
+      if (state.elig === 'ok') base = base.filter(it => !it.needs_license);
+      if (state.elig === 'license') base = base.filter(it => it.needs_license);
+    }
     const counts = {};
     base.forEach(it => counts[it.source] = (counts[it.source] || 0) + 1);
     if (state.source !== 'all' && !counts[state.source]) state.source = 'all';
-    document.getElementById('sourceFilters').innerHTML =
-      [`<button class="tag-btn ${state.source === 'all' ? 'active' : ''}" data-source="all">전체 ${base.length}</button>`]
+    document.getElementById('sourceFilters').innerHTML = eligChips +
+      [`<button class="tag-btn ${state.source === 'all' ? 'active' : ''}" data-source="all">${state.view === 'B' ? '출처 전체' : '전체'} ${base.length}</button>`]
         .concat(Object.keys(counts).map(s => `<button class="tag-btn ${state.source === s ? 'active' : ''}" data-source="${esc(s)}">${esc(s)} ${counts[s]}</button>`))
         .join('');
 
     const q = state.q.trim().toLowerCase();
     let rows = base.filter(it => state.source === 'all' || it.source === state.source);
     if (q) rows = rows.filter(it => [it.title, it.org, it.source, (it.hits || []).join(' '), (it.products || []).join(' ')].join(' ').toLowerCase().includes(q));
-    if (state.view !== 'all') rows = rows.slice().sort((a, b) => b.score - a.score || (a.dday ?? 999) - (b.dday ?? 999));
+    if (state.view !== 'all') rows = rows.slice().sort((a, b) =>
+      (!!a.needs_license - !!b.needs_license) || b.score - a.score || (a.dday ?? 999) - (b.dday ?? 999));
     if (state.sortKey) rows = sortRows(rows);
     document.querySelectorAll('th.sortable').forEach(th => {
       const on = th.dataset.sort === state.sortKey;
@@ -485,6 +501,8 @@
     const a = items.filter(it => it.track === 'A').length, b = items.filter(it => it.track === 'B').length;
     document.getElementById('statA').textContent = a;
     document.getElementById('statB').textContent = b;
+    const needB = items.filter(it => it.track === 'B' && it.needs_license).length;
+    document.getElementById('statBSub').textContent = `참여 가능 ${b - needB} · 업종 추가 시 가능 ${needB}`;
     document.getElementById('tabA').textContent = a;
     document.getElementById('tabB').textContent = b;
     document.getElementById('tabAll').textContent = items.length;
@@ -498,13 +516,15 @@
 
   document.querySelector('.view-tabs').addEventListener('click', e => {
     const b = e.target.closest('.view-tab'); if (!b) return;
-    state.view = b.dataset.view; state.source = 'all';
+    state.view = b.dataset.view; state.source = 'all'; state.elig = 'all';
     try { localStorage.setItem('view', state.view); } catch (err) {}
     render();
   });
   document.getElementById('sourceFilters').addEventListener('click', e => {
     const b = e.target.closest('.tag-btn'); if (!b) return;
-    state.source = b.dataset.source; render();
+    if (b.dataset.elig) state.elig = b.dataset.elig;
+    else state.source = b.dataset.source;
+    render();
   });
   document.querySelector('#announcementTable thead').addEventListener('click', e => {
     const th = e.target.closest('th.sortable'); if (!th) return;

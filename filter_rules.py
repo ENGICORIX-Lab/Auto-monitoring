@@ -121,14 +121,20 @@ COMPANY_PROFILE = {
     "시군": "청주",
     # 본문에서 우리 지역으로 볼 표현 (충청권·중부권 공모 포함)
     "지역": ["충청북도", "충북", "청주", "충청권", "중부권"],
-    # 업종 등록·면허 (나라장터 '면허 제한'과 비교, 띄어쓰기·가운뎃점은 무시하고 비교합니다)
+    # 사업자등록증 업종(종목) (나라장터 '면허 제한'과 비교, 띄어쓰기·가운뎃점은 무시하고 비교합니다)
     "면허": [
         "사업시설유지관리서비스업", "사업시설유지관리",
+        "그외기타전기장비제조업", "기타전기장비제조업", "전기장비제조업",
         "토목건축공사업", "산업환경설비공사업",
         "건물용기계장비설치공사업", "승강설비설치공사업",
         "전기공사업", "기타엔지니어링서비스업",
     ],
 }
+
+# 등록 업종으로 참여할 수 없는 나라장터 공고라도, 추천 점수가 이 이상이고 필요한 면허가
+# 우리 사업 분야(아래 단어 포함)라면 '업종 추가 등록 시 참여 가능'으로 추천에 남깁니다.
+LICENSE_ADD_MIN_SCORE = 8
+LICENSE_ADDABLE = ["기계설비", "가스", "엔지니어링", "제조", "설비", "전기", "소방", "플랜트", "기계"]
 
 # 제한 문장에 이 단어가 있고 위 '보유' 항목이 없으면 자격 미해당으로 봅니다. (단어: 화면에 보일 사유)
 RESTRICTED_GROUPS = {
@@ -176,7 +182,20 @@ def license_ok(required):
     return any(_norm(mine) in req or req in _norm(mine) for mine in COMPANY_PROFILE["면허"])
 
 
-def check_eligibility(title, snippets, regions, licenses=None):
+def missing_licenses(licenses):
+    """나라장터 면허 제한 중 우리가 가진 것이 하나도 없으면 그 목록을, 참여 가능하면 빈 목록을 반환합니다.
+    (여러 면허 중 하나만 있으면 참여 가능한 것으로 봅니다)"""
+    if licenses and not any(license_ok(l) for l in licenses):
+        return licenses
+    return []
+
+
+def license_addable(licenses):
+    """필요한 면허가 우리 사업 분야라 업종 추가 등록으로 참여를 검토할 만한지."""
+    return any(_in(LICENSE_ADDABLE, l) for l in licenses)
+
+
+def check_eligibility(title, snippets, regions):
     """자격 미해당 사유를 반환합니다. 해당되거나 판단할 수 없으면 빈 문자열입니다."""
     profile_ok = COMPANY_PROFILE["보유"] + [COMPANY_PROFILE["규모"]]
     local = COMPANY_PROFILE["지역"]
@@ -185,17 +204,13 @@ def check_eligibility(title, snippets, regions, licenses=None):
     if regions and not any(region_ok(r) for r in regions):
         return "참가 가능 지역: " + ", ".join(regions[:3])
 
-    # 2) 나라장터 면허 제한 (여러 면허 중 하나만 있으면 참가 가능한 것으로 봅니다)
-    if licenses and not any(license_ok(l) for l in licenses):
-        return "면허 미보유: " + ", ".join(licenses[:2])
-
-    # 3) 4극3특 같은 권역별 사업은 제목의 권역으로 판단합니다.
+    # 2) 4극3특 같은 권역별 사업은 제목의 권역으로 판단합니다.
     if "4극3특" in title and not _in(local, title):
         other = _in(OTHER_REGIONS, title)
         if other:
             return f"지역 사업 ({other})"
 
-    # 4) 본문의 제한 문장
+    # 3) 본문의 제한 문장
     for s in snippets or []:
         # 신청·지원 자격에 관한 문장만 봅니다 (예: '연구장비 구입은 대학에 한함' 같은 세부 규정 제외)
         if not re.search(ELIGIBILITY_CONTEXT, s) or _in(profile_ok, s):
