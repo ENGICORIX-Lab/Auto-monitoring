@@ -1,0 +1,25 @@
+name: Probe sources
+on:
+  push:
+    branches: [claude/sme-probe]
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install requests pypdf olefile
+      - run: mkdir -p out && (python probe/probe.py > out/log.txt 2>&1 || true)
+        env:
+          G2B_API_KEY: ${{ secrets.G2B_API_KEY }}
+      - name: Publish probe output to a scratch branch
+        run: |
+          cd out
+          git init -q -b probe-out
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A && git commit -qm "probe output"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" probe-out:claude/probe-out
