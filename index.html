@@ -225,6 +225,10 @@
     .kw-product { color: #0f766e; }
     .row-inelig td { opacity: 0.55; }
     .row-inelig:hover td { opacity: 1; }
+    .fav-btn { all: unset; cursor: pointer; font-size: 20px; line-height: 1; color: #cbd5e1; margin-right: 6px; vertical-align: middle; }
+    .fav-btn:hover { color: #f59e0b; }
+    .fav-btn.on { color: #f59e0b; }
+    .fav-btn:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; border-radius: 4px; }
     .needs-license { display: inline-block; margin: 2px 0 4px; padding: 2px 8px; border-radius: 4px; background: #ffedd5; color: #c2410c; font-size: 12px; font-weight: 700; }
     .elig-btn.active { background: #ffedd5; color: #9a3412; border-color: #fed7aa; }
     .chip-sep { display: inline-block; width: 1px; height: 22px; background: var(--border); margin: 0 4px; align-self: center; }
@@ -371,6 +375,14 @@
   let state = { view: 'A', source: 'all', elig: 'all', q: '', sortKey: null, sortDir: 1 };
   try { state.view = localStorage.getItem('view') || 'A'; } catch (e) {}
 
+  // 즐겨찾기는 이 브라우저에만 저장됩니다 (공고 원문 주소 기준).
+  let FAVS = new Set();
+  try { FAVS = new Set(JSON.parse(localStorage.getItem('favorites') || '[]')); } catch (e) {}
+  function toggleFav(url) {
+    FAVS.has(url) ? FAVS.delete(url) : FAVS.add(url);
+    try { localStorage.setItem('favorites', JSON.stringify([...FAVS])); } catch (e) {}
+  }
+
   const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
   function ddayCell(it) {
@@ -401,6 +413,8 @@
       ? `<div class="inelig" title="${esc(it.sme_only || '')}">자격 미해당 · ${esc(it.ineligible)}${it.excluded_track ? ' (추천 ' + esc(it.excluded_track) + '에서 제외)' : ''}</div>` : '';
     return `<tr class="${it.ineligible ? 'row-inelig' : ''}">
       <td>
+        <button type="button" class="fav-btn ${FAVS.has(it.url) ? 'on' : ''}" data-fav="${esc(it.url)}"
+          aria-pressed="${FAVS.has(it.url)}" title="${FAVS.has(it.url) ? '즐겨찾기 해제' : '즐겨찾기'}">${FAVS.has(it.url) ? '★' : '☆'}</button>
         <span class="badge-category ${SOURCE_CLASS[it.source] || 'cat-general'}" style="margin-left:0">${esc(it.source)}</span>
         <div class="org-name">${esc(it.org)}</div>
       </td>
@@ -483,6 +497,8 @@
     if (state.view !== 'all') rows = rows.slice().sort((a, b) =>
       (!!a.needs_license - !!b.needs_license) || b.score - a.score || (a.dday ?? 999) - (b.dday ?? 999));
     if (state.sortKey) rows = sortRows(rows);
+    // 즐겨찾기한 공고는 정렬과 관계없이 맨 위에 둡니다.
+    rows = rows.filter(it => FAVS.has(it.url)).concat(rows.filter(it => !FAVS.has(it.url)));
     document.querySelectorAll('th.sortable').forEach(th => {
       const on = th.dataset.sort === state.sortKey;
       th.setAttribute('aria-sort', on ? (state.sortDir > 0 ? 'ascending' : 'descending') : 'none');
@@ -531,6 +547,10 @@
     if (state.sortKey === th.dataset.sort) state.sortDir *= -1;
     else { state.sortKey = th.dataset.sort; state.sortDir = 1; }
     render();
+  });
+  document.getElementById('tableBody').addEventListener('click', e => {
+    const b = e.target.closest('.fav-btn'); if (!b) return;
+    toggleFav(b.dataset.fav); render();
   });
   document.getElementById('searchInput').addEventListener('input', e => { state.q = e.target.value; render(); });
 
