@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-10-26 17:57:06",
+ "generated_at": "2026-10-26 21:32:59",
  "threshold": 4,
  "sources": [
   {
    "name": "IRIS",
    "ok": true,
-   "count": 24,
+   "count": 23,
    "error": ""
   },
   {
@@ -2393,11 +2393,11 @@
    "excluded_track": "B"
   },
   {
-   "source": "IRIS",
+   "source": "NTIS",
    "kind": "rnd",
-   "org": "한국산업기술기획평가원",
+   "org": "산업통상부",
    "title": "2026년도 소재부품기술개발사업(4차) 신규지원 대상과제 공고(연장)",
-   "url": "https://www.iris.go.kr/contents/retrieveBsnsAncmView.do?ancmId=024577&ancmPrg=ancmIng",
+   "url": "https://www.ntis.go.kr/rndgate/eg/un/ra/view.do?roRndUid=1281297&flag=rndList",
    "open_date": "2026-10-26",
    "close_date": "2026-10-26",
    "dday": 0,
@@ -8730,23 +8730,6 @@
    "title": "2026년도 공급망안정화 선도사업자 제2차 선정계획 공고",
    "url": "https://www.msit.go.kr/bbs/view.do?sCode=user&mId=311&mPid=121&bbsSeqNo=100&nttSeqNo=3186896",
    "open_date": "2026-10-15",
-   "close_date": "",
-   "dday": null,
-   "status": "게시",
-   "budget": "",
-   "ministry": "과학기술정보통신부",
-   "score": 0,
-   "hits": [],
-   "minus": [],
-   "track": ""
-  },
-  {
-   "source": "과기정통부",
-   "kind": "rnd",
-   "org": "양자혁신기술개발과",
-   "title": "2026년도 퀀텀(양자)플랫폼 KIST 양자기술활용연구거점사업단 양자공동연구실(JQL) 신규과제 공고",
-   "url": "https://www.msit.go.kr/bbs/view.do?sCode=user&mId=311&mPid=121&bbsSeqNo=100&nttSeqNo=3186889",
-   "open_date": "2026-10-06",
    "close_date": "",
    "dday": null,
    "status": "게시",
