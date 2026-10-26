@@ -398,7 +398,7 @@
     const needs = it.needs_license && it.needs_license.length
       ? `<div class="needs-license">업종 추가 등록 시 참여 가능 · 필요: ${esc(it.needs_license.slice(0, 2).join(', '))}</div>` : '';
     const inelig = it.ineligible
-      ? `<div class="inelig">자격 미해당 · ${esc(it.ineligible)}${it.excluded_track ? ' (추천 ' + esc(it.excluded_track) + '에서 제외)' : ''}</div>` : '';
+      ? `<div class="inelig" title="${esc(it.sme_only || '')}">자격 미해당 · ${esc(it.ineligible)}${it.excluded_track ? ' (추천 ' + esc(it.excluded_track) + '에서 제외)' : ''}</div>` : '';
     return `<tr class="${it.ineligible ? 'row-inelig' : ''}">
       <td>
         <span class="badge-category ${SOURCE_CLASS[it.source] || 'cat-general'}" style="margin-left:0">${esc(it.source)}</span>

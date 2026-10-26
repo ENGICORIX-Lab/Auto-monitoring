@@ -9,8 +9,9 @@ from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 from datetime import datetime, timedelta, timezone
 
+from attachments import extract_text
 from filter_rules import (
-    RESTRICT_MARK, check_eligibility, missing_licenses, license_addable, LICENSE_ADD_MIN_SCORE, RECOMMEND_THRESHOLD, PRODUCT_BONUS_MAX, PRODUCT_PENALTY_MAX, IT_SERVICE_CLASSES, TRACK_A_KEYWORDS, TRACK_A_EXCLUDE,
+    RESTRICT_MARK, SMALL_BUSINESS_ONLY, small_business_only, check_eligibility, missing_licenses, license_addable, LICENSE_ADD_MIN_SCORE, RECOMMEND_THRESHOLD, PRODUCT_BONUS_MAX, PRODUCT_PENALTY_MAX, IT_SERVICE_CLASSES, TRACK_A_KEYWORDS, TRACK_A_EXCLUDE,
     TRACK_B_KEYWORDS, TRACK_B_EXCLUDE, TRACK_B_CORE, score_title,
 )
 
@@ -374,6 +375,8 @@ def fetch_g2b():
                 )
                 if item:
                     item["bid_no"], item["bid_ord"] = bid.get("bidNtceNo"), bid.get("bidNtceOrd")
+                    item["attachments"] = [{"name": bid.get(f"ntceSpecFileNm{i}") or "", "url": bid[f"ntceSpecDocUrl{i}"]}
+                                           for i in range(1, 11) if bid.get(f"ntceSpecDocUrl{i}")]
                     item["bid_type"] = bid_type
                     if bid_type == "물품":
                         item["products"] = g2b_products(bid)
@@ -559,10 +562,10 @@ def collect_eligibility_text(items):
 
 
 def load_previous():
-    """직전 data.json의 나라장터 제한조건 조회 결과를 재사용해 API 호출량을 줄입니다."""
+    """직전 data.json의 나라장터 제한조건·첨부파일 확인 결과를 재사용해 호출량을 줄입니다."""
     try:
         with open("data.json", encoding="utf-8") as f:
-            return {it["url"]: it for it in json.load(f).get("items", []) if "limits_checked" in it}
+            return {it["url"]: it for it in json.load(f).get("items", [])}
     except (OSError, ValueError):
         return {}
 
@@ -570,7 +573,7 @@ def load_previous():
 def g2b_limits(item, previous):
     """나라장터 공고의 참가가능지역·면허제한을 조회합니다."""
     prev = previous.get(item["url"])
-    if prev:
+    if prev and "limits_checked" in prev:
         item["regions"], item["licenses"] = prev.get("regions", []), prev.get("licenses", [])
         item["limits_checked"] = True
         return
@@ -595,6 +598,34 @@ def g2b_limits(item, previous):
     item["limits_checked"] = True
 
 
+def check_attachments(item, previous):
+    """첨부 공고문을 내려받아 '소기업·소상공인 확인서' 소지가 참가 자격인지 확인합니다."""
+    prev = previous.get(item["url"])
+    if prev and "attach_checked" in prev:
+        item["sme_only"] = prev.get("sme_only", "")
+        item["attach_checked"] = prev["attach_checked"]
+        return
+    files = item.get("attachments") or []
+    # 입찰공고문을 먼저 읽고, 찾으면 나머지 파일은 받지 않습니다.
+    files = sorted(files, key=lambda f: 0 if "공고" in f["name"] else 1)
+    read = 0
+    item["sme_only"] = ""
+    for f in files:
+        try:
+            res = session.get(f["url"], verify=False, timeout=60)
+            res.raise_for_status()
+        except requests.RequestException:
+            continue
+        text = extract_text(f["name"], res.content)
+        if text.strip():
+            read += 1
+        hit = small_business_only(text)
+        if hit:
+            item["sme_only"] = hit
+            break
+    item["attach_checked"] = f"{read}/{len(files)}"
+
+
 def apply_eligibility(items):
     """키워드 추천보다 먼저 참여 자격(지역·등록 업종·본문 제한)을 판단합니다."""
     previous = load_previous()
@@ -604,7 +635,11 @@ def apply_eligibility(items):
                 g2b_limits(it, previous)
             except (requests.RequestException, ValueError) as e:
                 print(f"[나라장터] 제한조건 조회 실패 {it['bid_no']}: {e}")
+            if SMALL_BUSINESS_ONLY:
+                check_attachments(it, previous)
         reason = check_eligibility(it["title"], it.get("elig_text"), it.get("regions"))
+        if not reason and it.get("sme_only"):
+            reason = "소기업·소상공인 전용 (공고문 참가자격)"
         missing = missing_licenses(it.get("licenses"))
         if not reason and missing:
             # 키워드가 잘 맞고 우리 분야 면허라면 업종 추가 등록을 전제로 추천에 남깁니다.
@@ -646,6 +681,8 @@ def main():
 
     unique = group_sub_announcements(unique)
     apply_eligibility(unique)
+    for it in unique:
+        it.pop("attachments", None)  # 화면에는 쓰지 않으므로 data.json 크기를 줄입니다.
 
     # 나라장터는 건수가 많아 점수가 1점 이상인 공고만 전체 목록에 남깁니다.
     unique = [it for it in unique if it["source"] != "나라장터" or it["score"] >= 1]

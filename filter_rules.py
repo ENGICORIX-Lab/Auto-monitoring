@@ -222,3 +222,25 @@ def check_eligibility(title, snippets, regions):
         if other and ("소재" in s or "지역" in s) and not _in(local, s):
             return f"지역 한정 ({other})"
     return ""
+
+
+# =====================================================================
+# 소기업·소상공인 전용 입찰 (나라장터 첨부 공고문 기준)
+#   엔지코릭스는 중소기업이지만 연 매출이 소기업 기준을 넘어 '소기업·소상공인 확인서'를 받을 수 없습니다.
+#   '중·소기업·소상공인 확인서'(중소기업 포함)는 해당하지 않으므로 제외하지 않습니다.
+# =====================================================================
+SMALL_BUSINESS_ONLY = True
+
+
+def small_business_only(text):
+    """공고문이 '소기업·소상공인 확인서' 소지를 참가 자격으로 요구하면 그 문장을 반환합니다."""
+    for m in re.finditer(r"확\s*인\s*서", text):
+        # 구분 기호(·, ㆍ, 공백, 깨진 글자 등)를 빼고 한글만 남겨 확인서 이름을 봅니다.
+        before = re.sub(r"[^가-힣]", "", text[max(0, m.start() - 40):m.start()])
+        if not re.search(r"(?<!중)소기업(?:또는|및)?소상공인$", before):
+            continue
+        after = text[m.end():m.end() + 30]
+        # '확인서를 소지한 자'처럼 필수 자격일 때만 (가점 문구 제외)
+        if "소지" in after and "가점" not in after:
+            return re.sub(r"\s+", " ", text[max(0, m.start() - 60):m.end() + 15]).strip()
+    return ""
