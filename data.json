@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-10-27 13:22:09",
+ "generated_at": "2026-10-27 20:50:55",
  "threshold": 4,
  "sources": [
   {
    "name": "IRIS",
    "ok": true,
-   "count": 23,
+   "count": 20,
    "error": ""
   },
   {
@@ -3858,67 +3858,6 @@
    "track": ""
   },
   {
-   "source": "IRIS",
-   "kind": "rnd",
-   "org": "연구개발특구진흥재단",
-   "title": "2026년 4극3특 대경권 과학기술혁신지원사업 연구단 모집 공고(연장공고)",
-   "url": "https://www.iris.go.kr/contents/retrieveBsnsAncmView.do?ancmId=024199&ancmPrg=ancmIng",
-   "open_date": "2026-09-14",
-   "close_date": "2026-10-27",
-   "dday": 0,
-   "status": "접수중",
-   "budget": "",
-   "ministry": "과학기술정보통신부",
-   "elig_text": [],
-   "score": 0,
-   "hits": [],
-   "minus": [],
-   "track": "",
-   "ineligible": "지역 사업 (대경권)"
-  },
-  {
-   "source": "IRIS",
-   "kind": "rnd",
-   "org": "연구개발특구진흥재단",
-   "title": "2026년 4극3특 호남권 과학기술혁신지원사업 연구단 모집 공고(연장공고)",
-   "url": "https://www.iris.go.kr/contents/retrieveBsnsAncmView.do?ancmId=024160&ancmPrg=ancmIng",
-   "open_date": "2026-09-11",
-   "close_date": "2026-10-27",
-   "dday": 0,
-   "status": "접수중",
-   "budget": "",
-   "ministry": "과학기술정보통신부",
-   "elig_text": [],
-   "score": 0,
-   "hits": [],
-   "minus": [],
-   "track": "",
-   "ineligible": "지역 사업 (호남권)"
-  },
-  {
-   "source": "IRIS",
-   "kind": "rnd",
-   "org": "연구개발특구진흥재단",
-   "title": "2026년 4극3특 중부권 과학기술혁신지원사업 연구단 모집 공고",
-   "url": "https://www.iris.go.kr/contents/retrieveBsnsAncmView.do?ancmId=024139&ancmPrg=ancmIng",
-   "open_date": "2026-09-11",
-   "close_date": "2026-10-27",
-   "dday": 0,
-   "status": "접수중",
-   "budget": "",
-   "ministry": "과학기술정보통신부",
-   "elig_text": [
-    "법률」에 따른 사업화전문회사, 기타 「상법」 제169조에 따른 회사로서 기술사업화 및 기업 성장 지원 역량을 보유한 기관(법인) 등 ** 외국 법인 기관과의 공동 연구 구성 시, 주관연구개발기관은 국내 연구개발기관으로 한정함 ㅇ (연구책임자) 위 기관·단체에 소속된 연구자로서 「국가연구개발혁신",
-    "**연장 기간 중에는 연장 대상 RFP에 한하여 신청·재제출 가능 (그 외 RFP는 당초 마감 시점 제출본으로 선정평가 진행",
-    "관 C기관 위탁연구개발기관 D기관 D기관 C기관 A기관 B기관 사례별 신청 가능 여부 가능 불가능 불가능 불가능 불가능 ㅇ (중복신청 제한) 주관 및 공동연구개발기관 연구책임자는 본 분야 6개 RFP 중 1개의 과제만 신청할 수 있으며, 중복 신청 시 해당 과제 모두 요건 탈락함",
-    "관 C기관 위탁연구개발기관 D기관 D기관 C기관 A기관 B기관 사례별 신청 가능 여부 가능 불가능 불가능 불가능 불가능 ㅇ (중복신청 제한) 주관 및 공동연구개발기관 연구책임자는 본 분야 5개 RFP 중 1개의 과제만 신청할 수 있으며, 중복 신청 시 해당 과제 모두 요건 탈락함"
-   ],
-   "score": 0,
-   "hits": [],
-   "minus": [],
-   "track": ""
-  },
-  {
    "source": "NTIS",
    "kind": "rnd",
    "org": "과학기술정보통신부",
@@ -4067,32 +4006,6 @@
    "score": 3,
    "hits": [
     "실증"
-   ],
-   "minus": [],
-   "track": ""
-  },
-  {
-   "source": "나라장터",
-   "kind": "bid",
-   "org": "경기도 광주시",
-   "title": "쌍령동 교통약자 보행환경개선사업(쌍령동 육교승강기 교체공사)",
-   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01770590&bidPbancOrd=000",
-   "open_date": "2026-10-15",
-   "close_date": "2026-10-28",
-   "dday": 1,
-   "status": "입찰공고",
-   "budget": "2억 713만 원",
-   "bid_no": "R26BK01770590",
-   "bid_ord": "000",
-   "bid_type": "물품",
-   "products": [
-    "승객용엘리베이터"
-   ],
-   "product_hits": [],
-   "product_minus": [],
-   "score": 2,
-   "hits": [
-    "개선"
    ],
    "minus": [],
    "track": ""
@@ -4487,25 +4400,6 @@
    "track": ""
   },
   {
-   "source": "SMTECH",
-   "kind": "rnd",
-   "org": "중소벤처기업부",
-   "title": "2026년도 제2차 한국무역보험공사 연계 수출지원프로그램 시행계획 안내 (수출지원프로그램)",
-   "url": "https://www.smtech.go.kr/front/ifg/no/notice02_detail.do?buclYy=&ancmId=S02881&buclCd=S9121&dtlAncmSn=1&schdSe=MO5005&aplySn=1&searchCondition=&searchKeyword=&pageIndex=1",
-   "open_date": "2026-10-01",
-   "close_date": "2026-10-29",
-   "dday": 2,
-   "status": "",
-   "budget": "",
-   "ministry": "중소벤처기업부",
-   "score": -2,
-   "hits": [],
-   "minus": [
-    "수출지원"
-   ],
-   "track": ""
-  },
-  {
    "source": "나라장터",
    "kind": "bid",
    "org": "대법원",
@@ -4690,6 +4584,32 @@
    "hits": [
     "모니터링",
     "구축"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "경기도 광주시",
+   "title": "쌍령동 교통약자 보행환경개선사업(쌍령동 육교승강기 교체공사)",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01770590&bidPbancOrd=000",
+   "open_date": "2026-10-15",
+   "close_date": "2026-10-30",
+   "dday": 3,
+   "status": "입찰공고",
+   "budget": "2억 713만 원",
+   "bid_no": "R26BK01770590",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "승객용엘리베이터"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 2,
+   "hits": [
+    "개선"
    ],
    "minus": [],
    "track": ""
@@ -5718,6 +5638,25 @@
     "사업화"
    ],
    "minus": [],
+   "track": ""
+  },
+  {
+   "source": "SMTECH",
+   "kind": "rnd",
+   "org": "중소벤처기업부",
+   "title": "2026년도 제2차 한국무역보험공사 연계 수출지원프로그램 시행계획 안내 (수출지원프로그램)",
+   "url": "https://www.smtech.go.kr/front/ifg/no/notice02_detail.do?buclYy=&ancmId=S02881&buclCd=S9121&dtlAncmSn=1&schdSe=MO5005&aplySn=1&searchCondition=&searchKeyword=&pageIndex=1",
+   "open_date": "2026-10-01",
+   "close_date": "2026-11-10",
+   "dday": 14,
+   "status": "",
+   "budget": "",
+   "ministry": "중소벤처기업부",
+   "score": -2,
+   "hits": [],
+   "minus": [
+    "수출지원"
+   ],
    "track": ""
   },
   {
@@ -7711,6 +7650,23 @@
    "budget": "",
    "ministry": "",
    "elig_text": [],
+   "score": 0,
+   "hits": [],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "과기정통부",
+   "kind": "rnd",
+   "org": "지역과학기술진흥과",
+   "title": "2026년 과학벨트 어워드 모집 공고",
+   "url": "https://www.msit.go.kr/bbs/view.do?sCode=user&mId=311&mPid=121&bbsSeqNo=100&nttSeqNo=3186902",
+   "open_date": "2026-10-27",
+   "close_date": "",
+   "dday": null,
+   "status": "게시",
+   "budget": "",
+   "ministry": "과학기술정보통신부",
    "score": 0,
    "hits": [],
    "minus": [],
