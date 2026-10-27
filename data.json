@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-10-27 08:39:03",
+ "generated_at": "2026-10-27 13:22:09",
  "threshold": 4,
  "sources": [
   {
    "name": "IRIS",
    "ok": true,
-   "count": 22,
+   "count": 23,
    "error": ""
   },
   {
@@ -996,37 +996,6 @@
   {
    "source": "나라장터",
    "kind": "bid",
-   "org": "한국환경공단 수도권서부환경본부",
-   "title": "파주시 환경순환센터 현대화사업 관급자재(공기정화순환장치) 구매",
-   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01763443&bidPbancOrd=000",
-   "open_date": "2026-10-15",
-   "close_date": "2026-10-28",
-   "dday": 1,
-   "status": "입찰공고",
-   "budget": "2억 3,198만 원",
-   "bid_no": "R26BK01763443",
-   "bid_ord": "000",
-   "bid_type": "물품",
-   "products": [
-    "탈취기"
-   ],
-   "product_hits": [],
-   "product_minus": [],
-   "score": 4,
-   "hits": [
-    "장치"
-   ],
-   "minus": [],
-   "track": "B",
-   "regions": [],
-   "licenses": [],
-   "limits_checked": true,
-   "sme_only": "",
-   "attach_checked": "0/0"
-  },
-  {
-   "source": "나라장터",
-   "kind": "bid",
    "org": "한국전기안전공사",
    "title": "BESS 극한환경 복합시험 챔버 구매",
    "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01759992&bidPbancOrd=000",
@@ -1242,6 +1211,37 @@
    "limits_checked": true,
    "sme_only": "",
    "attach_checked": "3/3"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한국환경공단 수도권서부환경본부",
+   "title": "파주시 환경순환센터 현대화사업 관급자재(공기정화순환장치) 구매",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01763443&bidPbancOrd=000",
+   "open_date": "2026-10-15",
+   "close_date": "2026-10-30",
+   "dday": 3,
+   "status": "입찰공고",
+   "budget": "2억 3,198만 원",
+   "bid_no": "R26BK01763443",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "탈취기"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 4,
+   "hits": [
+    "장치"
+   ],
+   "minus": [],
+   "track": "B",
+   "regions": [],
+   "licenses": [],
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "0/0"
   },
   {
    "source": "IRIS",
@@ -5012,6 +5012,25 @@
    ],
    "minus": [],
    "track": ""
+  },
+  {
+   "source": "IRIS",
+   "kind": "rnd",
+   "org": "연구개발특구진흥재단",
+   "title": "2026년 4극3특 제주특별자치도 과학기술혁신지원사업 연구단 모집 공고(연장공고)",
+   "url": "https://www.iris.go.kr/contents/retrieveBsnsAncmView.do?ancmId=024158&ancmPrg=ancmIng",
+   "open_date": "2026-09-11",
+   "close_date": "2026-11-02",
+   "dday": 6,
+   "status": "접수중",
+   "budget": "",
+   "ministry": "과학기술정보통신부",
+   "elig_text": [],
+   "score": 0,
+   "hits": [],
+   "minus": [],
+   "track": "",
+   "ineligible": "지역 사업 (제주)"
   },
   {
    "source": "나라장터",
