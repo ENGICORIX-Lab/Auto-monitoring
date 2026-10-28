@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-10-28 10:09:51",
+ "generated_at": "2026-10-28 17:04:43",
  "threshold": 4,
  "sources": [
   {
    "name": "IRIS",
    "ok": true,
-   "count": 20,
+   "count": 21,
    "error": ""
   },
   {
@@ -5168,6 +5168,24 @@
    "track": ""
   },
   {
+   "source": "IRIS",
+   "kind": "rnd",
+   "org": "한국과학기술기획평가원",
+   "title": "2026년 범부처 통합연구지원시스템 운영지원사업 신규과제 공모",
+   "url": "https://www.iris.go.kr/contents/retrieveBsnsAncmView.do?ancmId=017852&ancmPrg=ancmIng",
+   "open_date": "2026-03-01",
+   "close_date": "2027-12-31",
+   "dday": 429,
+   "status": "접수중",
+   "budget": "",
+   "ministry": "과학기술정보통신부",
+   "elig_text": [],
+   "score": 0,
+   "hits": [],
+   "minus": [],
+   "track": ""
+  },
+  {
    "source": "나라장터",
    "kind": "bid",
    "org": "문경농업협동조합",
@@ -6425,8 +6443,8 @@
    "source": "IRIS",
    "kind": "rnd",
    "org": "한국연구재단",
-   "title": "2027년도 전문기술인 활용 재난재해 대응기술 현장화 지원 사업 신규과제 공모",
-   "url": "https://www.iris.go.kr/contents/retrieveBsnsAncmView.do?ancmId=024597&ancmPrg=ancmPre",
+   "title": "2027년도 전문기술인 활용 재난재해 대응기술 현장화 지원사업 신규과제 공모",
+   "url": "https://www.iris.go.kr/contents/retrieveBsnsAncmView.do?ancmId=024677&ancmPrg=ancmPre",
    "open_date": "2026-10-26",
    "close_date": "",
    "dday": null,
@@ -6434,6 +6452,23 @@
    "budget": "",
    "ministry": "",
    "elig_text": [],
+   "score": 0,
+   "hits": [],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "과기정통부",
+   "kind": "rnd",
+   "org": "과학기술안전기반팀",
+   "title": "2026 연구실 안전 콘텐츠 및 우수사례 공모전 수상작 공고",
+   "url": "https://www.msit.go.kr/bbs/view.do?sCode=user&mId=311&mPid=121&bbsSeqNo=100&nttSeqNo=3186903",
+   "open_date": "2026-10-28",
+   "close_date": "",
+   "dday": null,
+   "status": "게시",
+   "budget": "",
+   "ministry": "과학기술정보통신부",
    "score": 0,
    "hits": [],
    "minus": [],
@@ -6581,26 +6616,6 @@
    "org": "구주아프리카협력담당관",
    "title": "2026년 NCP 활동지원사업 2차 공모 선정결과 공고",
    "url": "https://www.msit.go.kr/bbs/view.do?sCode=user&mId=311&mPid=121&bbsSeqNo=100&nttSeqNo=3186894",
-   "open_date": "2026-10-14",
-   "close_date": "",
-   "dday": null,
-   "status": "게시",
-   "budget": "",
-   "ministry": "과학기술정보통신부",
-   "score": -12,
-   "hits": [],
-   "minus": [
-    "선정결과",
-    "결과 공고"
-   ],
-   "track": ""
-  },
-  {
-   "source": "과기정통부",
-   "kind": "rnd",
-   "org": "다자협력담당관",
-   "title": "2026년도 「휴먼프론티어과학프로그램(HFSP) 협력사업(사전지원)」신규과제 선정결과 공고",
-   "url": "https://www.msit.go.kr/bbs/view.do?sCode=user&mId=311&mPid=121&bbsSeqNo=100&nttSeqNo=3186893",
    "open_date": "2026-10-14",
    "close_date": "",
    "dday": null,
