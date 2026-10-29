@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-10-29 07:22:38",
+ "generated_at": "2026-10-29 14:03:22",
  "threshold": 4,
  "sources": [
   {
    "name": "IRIS",
    "ok": true,
-   "count": 21,
+   "count": 22,
    "error": ""
   },
   {
@@ -1270,11 +1270,11 @@
    "kind": "rnd",
    "org": "한국산업기술기획평가원",
    "title": "2026년도 제3차 기계장비산업기술개발사업 신규지원 대상과제 공고",
-   "url": "https://www.iris.go.kr/contents/retrieveBsnsAncmView.do?ancmId=024578&ancmPrg=ancmPre",
+   "url": "https://www.iris.go.kr/contents/retrieveBsnsAncmView.do?ancmId=024578&ancmPrg=ancmIng",
    "open_date": "2026-10-29",
    "close_date": "2026-11-20",
    "dday": 22,
-   "status": "접수예정",
+   "status": "접수중",
    "budget": "공고금액 114억 200만 원",
    "ministry": "산업통상부",
    "elig_text": [],
@@ -3737,7 +3737,7 @@
    "source": "IRIS",
    "kind": "rnd",
    "org": "연구개발특구진흥재단",
-   "title": "2026년 4극3특 제주특별자치도 과학기술혁신지원사업 연구단 모집 공고(연장공고)",
+   "title": "2026년 4극3특 제주특별자치도 과학기술혁신지원사업 연구단 모집 공고(재연장공고)",
    "url": "https://www.iris.go.kr/contents/retrieveBsnsAncmView.do?ancmId=024158&ancmPrg=ancmIng",
    "open_date": "2026-10-27",
    "close_date": "2026-11-02",
@@ -4941,6 +4941,24 @@
    "hits": [
     "시스템"
    ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "IRIS",
+   "kind": "rnd",
+   "org": "한국연구재단",
+   "title": "2026년도 국제공동연구 신속지원사업 신규과제 공모",
+   "url": "https://www.iris.go.kr/contents/retrieveBsnsAncmView.do?ancmId=024697&ancmPrg=ancmIng",
+   "open_date": "2026-10-29",
+   "close_date": "2026-11-11",
+   "dday": 13,
+   "status": "접수중",
+   "budget": "",
+   "ministry": "과학기술정보통신부",
+   "elig_text": [],
+   "score": 0,
+   "hits": [],
    "minus": [],
    "track": ""
   },
@@ -6998,26 +7016,6 @@
    "title": "2026년도 한-스페인 공동연구사업 신규과제 선정결과 공고",
    "url": "https://www.msit.go.kr/bbs/view.do?sCode=user&mId=311&mPid=121&bbsSeqNo=100&nttSeqNo=3186890",
    "open_date": "2026-10-16",
-   "close_date": "",
-   "dday": null,
-   "status": "게시",
-   "budget": "",
-   "ministry": "과학기술정보통신부",
-   "score": -12,
-   "hits": [],
-   "minus": [
-    "선정결과",
-    "결과 공고"
-   ],
-   "track": ""
-  },
-  {
-   "source": "과기정통부",
-   "kind": "rnd",
-   "org": "구주아프리카협력담당관",
-   "title": "2026년 NCP 활동지원사업 2차 공모 선정결과 공고",
-   "url": "https://www.msit.go.kr/bbs/view.do?sCode=user&mId=311&mPid=121&bbsSeqNo=100&nttSeqNo=3186894",
-   "open_date": "2026-10-14",
    "close_date": "",
    "dday": null,
    "status": "게시",
