@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-01 02:07:11",
+ "generated_at": "2026-11-01 06:13:51",
  "threshold": 4,
  "sources": [
   {
@@ -813,7 +813,7 @@
    "open_date": "2026-11-01",
    "close_date": "2026-11-30",
    "dday": 29,
-   "status": "접수예정",
+   "status": "접수중",
    "budget": "",
    "ministry": "중소벤처기업부",
    "elig_text": [],
