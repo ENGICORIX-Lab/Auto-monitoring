@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-31 13:51:03",
+ "generated_at": "2026-10-31 20:56:00",
  "threshold": 4,
  "sources": [
   {
@@ -16,9 +16,9 @@
   },
   {
    "name": "SMTECH",
-   "ok": true,
-   "count": 4,
-   "error": ""
+   "ok": false,
+   "count": 0,
+   "error": "HTTPSConnectionPool(host='www.smtech.go.kr', port=443): Max retries exceeded with url: /front/ifg/no/notice02_list.do?pageIndex=1 (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.smtech.go.kr', port=443) at 0x7f3815e9e230>, 'Connection to www.smtech.go.kr timed out. (connect timeout=20)'))"
   },
   {
    "name": "과기정통부",
@@ -236,29 +236,6 @@
    "track": "B"
   },
   {
-   "source": "SMTECH",
-   "kind": "rnd",
-   "org": "중소벤처기업부",
-   "title": "2026년 중소기업 연구인력지원사업(파견) 10월 공고 (공공연연구인력파견지원(참여기업접수용))",
-   "url": "https://www.smtech.go.kr/front/ifg/no/notice02_detail.do?buclYy=&ancmId=S02847&buclCd=S6041&dtlAncmSn=10&schdSe=MO5005&aplySn=1&searchCondition=&searchKeyword=&pageIndex=1",
-   "open_date": "2026-10-01",
-   "close_date": "2026-10-31",
-   "dday": 0,
-   "status": "",
-   "budget": "",
-   "ministry": "중소벤처기업부",
-   "score": -3,
-   "hits": [
-    "중소기업",
-    "기업"
-   ],
-   "minus": [
-    "연구인력",
-    "인력지원"
-   ],
-   "track": ""
-  },
-  {
    "source": "NTIS",
    "kind": "rnd",
    "org": "중소벤처기업부",
@@ -438,52 +415,6 @@
    "track": ""
   },
   {
-   "source": "SMTECH",
-   "kind": "rnd",
-   "org": "중소벤처기업부",
-   "title": "2026년 중소기업기술개발지원사업 모의평가 프로그램 접수 공고 (중소기업R&D 모의평가 프로그램)",
-   "url": "https://www.smtech.go.kr/front/ifg/no/notice02_detail.do?buclYy=&ancmId=S02882&buclCd=S9I01&dtlAncmSn=1&schdSe=MO5005&aplySn=1&searchCondition=&searchKeyword=&pageIndex=1",
-   "open_date": "2026-10-29",
-   "close_date": "2026-11-05",
-   "dday": 5,
-   "status": "",
-   "budget": "",
-   "ministry": "중소벤처기업부",
-   "score": 0,
-   "hits": [
-    "중소기업",
-    "기술개발"
-   ],
-   "minus": [
-    "모의평가"
-   ],
-   "track": ""
-  },
-  {
-   "source": "SMTECH",
-   "kind": "rnd",
-   "org": "중소벤처기업부",
-   "title": "2026년 제7차 중소기업 R&D 전담은행 투자지원 추천기업(기술사업화 패키지 및 TIPA ValueUP) 모집 공고 (전담은행 투자설명회(IR))",
-   "url": "https://www.smtech.go.kr/front/ifg/no/notice02_detail.do?buclYy=&ancmId=S02883&buclCd=S9171&dtlAncmSn=1&schdSe=MO5005&aplySn=1&searchCondition=&searchKeyword=&pageIndex=1",
-   "open_date": "2026-10-14",
-   "close_date": "2026-11-05",
-   "dday": 5,
-   "status": "",
-   "budget": "",
-   "ministry": "중소벤처기업부",
-   "score": -1,
-   "hits": [
-    "중소기업",
-    "사업화",
-    "기업"
-   ],
-   "minus": [
-    "설명회",
-    "투자설명회"
-   ],
-   "track": ""
-  },
-  {
    "source": "NTIS",
    "kind": "rnd",
    "org": "산업통상부",
@@ -588,25 +519,6 @@
     "사업화"
    ],
    "minus": [],
-   "track": ""
-  },
-  {
-   "source": "SMTECH",
-   "kind": "rnd",
-   "org": "중소벤처기업부",
-   "title": "2026년도 제2차 한국무역보험공사 연계 수출지원프로그램 시행계획 안내 (수출지원프로그램)",
-   "url": "https://www.smtech.go.kr/front/ifg/no/notice02_detail.do?buclYy=&ancmId=S02881&buclCd=S9121&dtlAncmSn=1&schdSe=MO5005&aplySn=1&searchCondition=&searchKeyword=&pageIndex=1",
-   "open_date": "2026-10-01",
-   "close_date": "2026-11-10",
-   "dday": 10,
-   "status": "",
-   "budget": "",
-   "ministry": "중소벤처기업부",
-   "score": -2,
-   "hits": [],
-   "minus": [
-    "수출지원"
-   ],
    "track": ""
   },
   {
