@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-01 09:49:15",
+ "generated_at": "2026-11-01 17:55:36",
  "threshold": 4,
  "sources": [
   {
@@ -28,9 +28,9 @@
   },
   {
    "name": "나라장터",
-   "ok": false,
-   "count": 0,
-   "error": "물품 API 오류 응답: <!DOCTYPE html>\r\n<html lang=\"ko\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1"
+   "ok": true,
+   "count": 1397,
+   "error": ""
   },
   {
    "name": "기계연",
@@ -40,6 +40,38 @@
   }
  ],
  "items": [
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "기성화학",
+   "title": "쓰레기종량제봉투 생산설비(압출기) 구매설치",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01783334&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "2026-11-02",
+   "dday": 1,
+   "status": "입찰공고",
+   "budget": "3억 369만 원",
+   "bid_no": "R26BK01783334",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "압출성형기"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 6,
+   "hits": [
+    "설치",
+    "설비"
+   ],
+   "minus": [],
+   "track": "B",
+   "regions": [],
+   "licenses": [],
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "1/1"
+  },
   {
    "source": "IRIS",
    "kind": "rnd",
@@ -83,6 +115,375 @@
    "track": "A"
   },
   {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "재단법인FITI시험연구원",
+   "title": "촉진 내후성 시험기 구매",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01780897&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "2026-11-02",
+   "dday": 1,
+   "status": "입찰공고",
+   "budget": "5억 원",
+   "bid_no": "R26BK01780897",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "노화환경조성실"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 4,
+   "hits": [
+    "시험기"
+   ],
+   "minus": [],
+   "track": "B",
+   "regions": [],
+   "licenses": [],
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "5/5"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "고려대학교 산학협력단",
+   "title": "연구용 사족보행 로봇 시스템 구매요청",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01783178&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "2026-11-02",
+   "dday": 1,
+   "status": "입찰공고",
+   "budget": "2,337만 원",
+   "bid_no": "R26BK01783178",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "자율주행플랫폼로봇"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 4,
+   "hits": [
+    "시스템",
+    "로봇"
+   ],
+   "minus": [],
+   "track": "B",
+   "regions": [],
+   "licenses": [],
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "2/2"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "재단법인부산테크노파크",
+   "title": "전동화 전력반도체 일괄공정 테스트베드 구축(두께측정기)",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01783027&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "2026-11-03",
+   "dday": 2,
+   "status": "입찰공고",
+   "budget": "3억 1,818만 원",
+   "bid_no": "R26BK01783027",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "두께측정기"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 14,
+   "hits": [
+    "테스트베드",
+    "반도체",
+    "구축",
+    "측정",
+    "공정"
+   ],
+   "minus": [],
+   "track": "B",
+   "regions": [],
+   "licenses": [],
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "3/3"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "부산대학교 산학협력단",
+   "title": "수소선박기술센터 수소선박용 200kW급 PEMFC 시스템 제작 및 선박 적용 기술지원· 실증 용역",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01781085&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "2026-11-03",
+   "dday": 2,
+   "status": "입찰공고",
+   "budget": "9억 909만 원",
+   "bid_no": "R26BK01781085",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "연료전지전력공급장치"
+   ],
+   "product_hits": [
+    "장치"
+   ],
+   "product_minus": [],
+   "score": 13,
+   "hits": [
+    "시스템",
+    "제작",
+    "실증",
+    "수소"
+   ],
+   "minus": [],
+   "track": "B",
+   "regions": [],
+   "licenses": [],
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "3/3"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "(재)경남로봇랜드재단",
+   "title": "서비스로봇 공통플랫폼 제작.실증 사업 신규 도입장비(3D스캐너) 내자구매",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01777507&bidPbancOrd=000",
+   "open_date": "2026-10-19",
+   "close_date": "2026-11-03",
+   "dday": 2,
+   "status": "입찰공고",
+   "budget": "2억 8,877만 원",
+   "bid_no": "R26BK01777507",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "스캐너"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 12,
+   "hits": [
+    "제작",
+    "장비",
+    "실증",
+    "로봇"
+   ],
+   "minus": [],
+   "track": "B",
+   "regions": [],
+   "licenses": [],
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "5/5"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "재단법인강원테크노파크",
+   "title": "플라즈마 화학기상증착(PECVD) 장비 구매",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01780121&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "2026-11-03",
+   "dday": 2,
+   "status": "입찰공고",
+   "budget": "27억 2,727만 원",
+   "bid_no": "R26BK01780121",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "진공증착기"
+   ],
+   "product_hits": [
+    "진공"
+   ],
+   "product_minus": [],
+   "score": 9,
+   "hits": [
+    "장비",
+    "화학"
+   ],
+   "minus": [],
+   "track": "B",
+   "regions": [],
+   "licenses": [],
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "4/4"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "서울특별시 서울대공원",
+   "title": "서울대공원 제1펌프장 급수펌프 제작구매·설치",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01777689&bidPbancOrd=000",
+   "open_date": "2026-10-19",
+   "close_date": "2026-11-03",
+   "dday": 2,
+   "status": "입찰공고",
+   "budget": "7,315만 원",
+   "bid_no": "R26BK01777689",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "다단벌류트펌프"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 7,
+   "hits": [
+    "제작",
+    "설치",
+    "펌프"
+   ],
+   "minus": [],
+   "track": "B",
+   "regions": [],
+   "licenses": [],
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "8/9"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "(재)한국원자력환경복원연구원",
+   "title": "2026년 실증분석동 가공/특성 분석 장비(핫셀용 정밀 컷팅 머신) 구매",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01782254&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "2026-11-03",
+   "dday": 2,
+   "status": "입찰공고",
+   "budget": "1억 원",
+   "bid_no": "R26BK01782254",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "고속절단기"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 7,
+   "hits": [
+    "장비",
+    "실증"
+   ],
+   "minus": [],
+   "track": "B",
+   "regions": [],
+   "licenses": [],
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "3/3"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "에코피스 주식회사",
+   "title": "2026년 상생협력 실증 프로그램_ AI 수질 관리 및 정화 로봇 연계 스마트 수질 관리 시스템 SW & 서버 HW",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01782144&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "2026-11-03",
+   "dday": 2,
+   "status": "입찰공고",
+   "budget": "3억 5,836만 원",
+   "bid_no": "R26BK01782144",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "적조및녹조방제장치"
+   ],
+   "product_hits": [
+    "장치"
+   ],
+   "product_minus": [],
+   "score": 5,
+   "hits": [
+    "시스템",
+    "실증",
+    "로봇"
+   ],
+   "minus": [
+    "서버"
+   ],
+   "track": "B",
+   "regions": [],
+   "licenses": [],
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "3/3"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "서울특별시 서울아리수본부 서울물연구원",
+   "title": "Microwave 전처리시스템 구매",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01782050&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "2026-11-03",
+   "dday": 2,
+   "status": "입찰공고",
+   "budget": "6,450만 원",
+   "bid_no": "R26BK01782050",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "마이크로웨이브시료전처리장비"
+   ],
+   "product_hits": [
+    "장비"
+   ],
+   "product_minus": [],
+   "score": 5,
+   "hits": [
+    "시스템"
+   ],
+   "minus": [],
+   "track": "B",
+   "regions": [],
+   "licenses": [],
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "7/7"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "농촌진흥청 국립원예특작과학원 원예작물부 파속채소연구센터",
+   "title": "노지형 디지털 이미지 촬영기 외 3종 구입",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01782517&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "2026-11-03",
+   "dday": 2,
+   "status": "입찰공고",
+   "budget": "1억 7,288만 원",
+   "bid_no": "R26BK01782517",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "토양수분측정장비"
+   ],
+   "product_hits": [
+    "장비",
+    "측정"
+   ],
+   "product_minus": [],
+   "score": 5,
+   "hits": [],
+   "minus": [],
+   "track": "B",
+   "regions": [],
+   "licenses": [],
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "3/3"
+  },
+  {
    "source": "기계연",
    "kind": "bid",
    "org": "한국기계연구원",
@@ -101,6 +502,478 @@
    ],
    "minus": [],
    "track": "B"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한국광기술원",
+   "title": "300 mm 대구경 스퍼터",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01777072&bidPbancOrd=000",
+   "open_date": "2026-10-19",
+   "close_date": "2026-11-03",
+   "dday": 2,
+   "status": "입찰공고",
+   "budget": "8억 5,318만 원",
+   "bid_no": "R26BK01777072",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "진공증착기"
+   ],
+   "product_hits": [
+    "진공"
+   ],
+   "product_minus": [],
+   "score": 4,
+   "hits": [],
+   "minus": [],
+   "track": "B",
+   "regions": [],
+   "licenses": [],
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "3/3"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "국립군산대학교",
+   "title": "2025년도 고가실험실습기자재(고출력 버스트모드 극초단 펄스레이저) 구입",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01778978&bidPbancOrd=000",
+   "open_date": "2026-10-19",
+   "close_date": "2026-11-03",
+   "dday": 2,
+   "status": "입찰공고",
+   "budget": "2억 6,545만 원",
+   "bid_no": "R26BK01778978",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "레이저발생장치"
+   ],
+   "product_hits": [
+    "장치"
+   ],
+   "product_minus": [],
+   "score": 4,
+   "hits": [],
+   "minus": [],
+   "track": "B",
+   "regions": [],
+   "licenses": [],
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "3/3"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "재단법인강원테크노파크",
+   "title": "반도체 소모품 실증센터 식각장비 구매",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01780076&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "2026-11-03",
+   "dday": 2,
+   "status": "입찰공고",
+   "budget": "24억 5,454만 원",
+   "bid_no": "R26BK01780076",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "웨이퍼식각기"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 4,
+   "hits": [
+    "반도체",
+    "장비",
+    "실증"
+   ],
+   "minus": [
+    "소모품"
+   ],
+   "track": "B",
+   "regions": [],
+   "licenses": [],
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "4/4"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한국농어촌공사 경남지역본부 창원지사",
+   "title": "장구산2지구 배수장 성능개선사업 지급자재(수중펌프) 구매",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01780401&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "2026-11-03",
+   "dday": 2,
+   "status": "입찰공고",
+   "budget": "4억 6,074만 원",
+   "bid_no": "R26BK01780401",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "수중펌프"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 4,
+   "hits": [
+    "개선",
+    "펌프"
+   ],
+   "minus": [],
+   "track": "B",
+   "regions": [],
+   "licenses": [],
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "3/3"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "제주대학교",
+   "title": "2026년 실험실습기자재(실험동물센터) 실험동물 사육 관리장비 구매",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01773080&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "2026-11-03",
+   "dday": 2,
+   "status": "입찰공고",
+   "budget": "3억 3,788만 원",
+   "bid_no": "R26BK01773080",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "상자세척기"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 4,
+   "hits": [
+    "장비"
+   ],
+   "minus": [],
+   "track": "B",
+   "regions": [],
+   "licenses": [],
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "3/3"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "재단법인 경북테크노파크",
+   "title": "과테말라 섬유TASK센터 조성지원사업 3차년도 제5-4차 장비(흄후드)",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01782906&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "2026-11-03",
+   "dday": 2,
+   "status": "입찰공고",
+   "budget": "3,227만 원",
+   "bid_no": "R26BK01782906",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "실험실용배기기"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 4,
+   "hits": [
+    "장비"
+   ],
+   "minus": [],
+   "track": "B",
+   "regions": [],
+   "licenses": [],
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "4/4"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한국화학융합시험연구원",
+   "title": "4족 보행 로봇 구축 용역",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01781876&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "2026-11-03",
+   "dday": 2,
+   "status": "입찰공고",
+   "budget": "1억 5,454만 원",
+   "bid_no": "R26BK01781876",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "교육 및 전문직종/기술서비스",
+    "기술시험,검사 및 분석",
+    "기술검사분석서비스"
+   ],
+   "score": 4,
+   "hits": [
+    "구축",
+    "로봇"
+   ],
+   "minus": [],
+   "track": "B",
+   "regions": [],
+   "licenses": [],
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "3/3"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한국농업기술진흥원",
+   "title": "지능형 농기계 정적상태.주행성능 분석시험장치",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01779858&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "2026-11-04",
+   "dday": 3,
+   "status": "입찰공고",
+   "budget": "13억 5,454만 원",
+   "bid_no": "R26BK01779858",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "레이저측정기"
+   ],
+   "product_hits": [
+    "측정"
+   ],
+   "product_minus": [],
+   "score": 7,
+   "hits": [
+    "시험장치"
+   ],
+   "minus": [],
+   "track": "B",
+   "regions": [],
+   "licenses": [],
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "3/3"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "(재)한국원자력환경복원연구원",
+   "title": "2026년 실증분석동 가공/특성 분석 장비(CNC 선반/밀링) 구매",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01782739&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "2026-11-04",
+   "dday": 3,
+   "status": "입찰공고",
+   "budget": "1억 8,090만 원",
+   "bid_no": "R26BK01782739",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "CNC밀링머신",
+    "CNC선반"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 7,
+   "hits": [
+    "장비",
+    "실증"
+   ],
+   "minus": [],
+   "track": "B",
+   "regions": [],
+   "licenses": [],
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "3/3"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "인천광역시 도시철도건설본부",
+   "title": "서울도시철도7호선 청라국제도시연장 기계설비 관급자재(냉동기) 제조·구매 설치",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01776086&bidPbancOrd=000",
+   "open_date": "2026-10-19",
+   "close_date": "2026-11-04",
+   "dday": 3,
+   "status": "입찰공고",
+   "budget": "20억 6,104만 원",
+   "bid_no": "R26BK01776086",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "스크루냉동기"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 6,
+   "hits": [
+    "설치",
+    "설비"
+   ],
+   "minus": [],
+   "track": "B",
+   "regions": [],
+   "licenses": [],
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "3/3"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "국립창원대학교",
+   "title": "국립창원대학교 EMC 챔버 및 전자파 적합성 시험·측정 통합 시스템 구매·설치",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01777976&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "2026-11-04",
+   "dday": 3,
+   "status": "입찰공고",
+   "budget": "60억 원",
+   "bid_no": "R26BK01777976",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "전자파무반사환경조성실"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 5,
+   "hits": [
+    "시스템",
+    "설치",
+    "측정",
+    "챔버"
+   ],
+   "minus": [
+    "학교"
+   ],
+   "track": "B",
+   "regions": [],
+   "licenses": [
+    "전기공사업",
+    "기계설비ㆍ가스공사업"
+   ],
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "3/4"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "재단법인 경북테크노파크",
+   "title": "초소형다중 자동화 동물세포 배양분석기",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01777516&bidPbancOrd=000",
+   "open_date": "2026-10-19",
+   "close_date": "2026-11-04",
+   "dday": 3,
+   "status": "입찰공고",
+   "budget": "13억 5,000만 원",
+   "bid_no": "R26BK01777516",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "세포분석기"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 4,
+   "hits": [
+    "자동화"
+   ],
+   "minus": [],
+   "track": "B",
+   "regions": [],
+   "licenses": [],
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "3/4"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "조선이공대학교 산학협력단",
+   "title": "[직업계고] 교육용 기자재(로봇시스템 및 공정제어시스템) 구입",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01783942&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "2026-11-05",
+   "dday": 4,
+   "status": "입찰공고",
+   "budget": "2억 1,272만 원",
+   "bid_no": "R26BK01783942",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "공정제어실험장치"
+   ],
+   "product_hits": [
+    "실험장치"
+   ],
+   "product_minus": [],
+   "score": 9,
+   "hits": [
+    "시스템",
+    "공정",
+    "로봇",
+    "제어"
+   ],
+   "minus": [
+    "교육"
+   ],
+   "track": "B",
+   "regions": [],
+   "licenses": [],
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "2/2"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한국자동차연구원",
+   "title": "차량모사 극저온 수소 저장 공급 및 연료제어시스템 복합성능 평가장비",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01780188&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "2026-11-05",
+   "dday": 4,
+   "status": "입찰공고",
+   "budget": "6억 3,636만 원",
+   "bid_no": "R26BK01780188",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "내압시험기"
+   ],
+   "product_hits": [
+    "시험기"
+   ],
+   "product_minus": [],
+   "score": 8,
+   "hits": [
+    "시스템",
+    "장비",
+    "제어",
+    "수소"
+   ],
+   "minus": [
+    "차량"
+   ],
+   "track": "B",
+   "regions": [],
+   "licenses": [
+    "기계설비ㆍ가스공사업"
+   ],
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "2/2",
+   "needs_license": [
+    "기계설비ㆍ가스공사업"
+   ]
   },
   {
    "source": "NTIS",
@@ -125,6 +998,104 @@
     "수요조사"
    ],
    "track": "A"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "재단법인부산테크노파크",
+   "title": "AI적용 간이측정기 자율 측정시스템",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01778834&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "2026-11-10",
+   "dday": 9,
+   "status": "입찰공고",
+   "budget": "9억 909만 원",
+   "bid_no": "R26BK01778834",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "공해환경조성실"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 4,
+   "hits": [
+    "시스템",
+    "측정"
+   ],
+   "minus": [],
+   "track": "B",
+   "regions": [],
+   "licenses": [],
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "3/3"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한국자동차연구원",
+   "title": "고부하용 연료전지시스템 성능 평가용 전자부하기",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01783669&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "2026-11-11",
+   "dday": 10,
+   "status": "입찰공고",
+   "budget": "1억 4,800만 원",
+   "bid_no": "R26BK01783669",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "발전기시험장치"
+   ],
+   "product_hits": [
+    "시험장치"
+   ],
+   "product_minus": [],
+   "score": 6,
+   "hits": [
+    "시스템"
+   ],
+   "minus": [],
+   "track": "B",
+   "regions": [],
+   "licenses": [],
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "6/6"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "(재)울산테크노파크",
+   "title": "글로벌 안전규제 대응 (2026 장비고도화) 고분해능 가스크로마토그래피 질량분석기 구매",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01784238&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "2026-11-11",
+   "dday": 10,
+   "status": "입찰공고",
+   "budget": "4억 5,000만 원",
+   "bid_no": "R26BK01784238",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "질량분석기"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 6,
+   "hits": [
+    "고도화",
+    "장비",
+    "가스"
+   ],
+   "minus": [],
+   "track": "B",
+   "regions": [],
+   "licenses": [],
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "3/3"
   },
   {
    "source": "IRIS",
@@ -173,6 +1144,39 @@
    ]
   },
   {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "(재)한국원자력환경복원연구원",
+   "title": "2026년 실증분석동 가공/특성 분석 장비(핫셀용 원격 샤르피 충격 시험기) 구매",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01777203&bidPbancOrd=000",
+   "open_date": "2026-10-19",
+   "close_date": "2026-11-17",
+   "dday": 16,
+   "status": "입찰공고",
+   "budget": "2억 7,270만 원",
+   "bid_no": "R26BK01777203",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "충격시험기"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 10,
+   "hits": [
+    "시험기",
+    "장비",
+    "실증"
+   ],
+   "minus": [],
+   "track": "B",
+   "regions": [],
+   "licenses": [],
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "3/3"
+  },
+  {
    "source": "기계연",
    "kind": "bid",
    "org": "한국기계연구원",
@@ -192,6 +1196,39 @@
    ],
    "minus": [],
    "track": "B"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "(재)한국원자력환경복원연구원",
+   "title": "2026년 실증분석동 가공/특성 분석 장비(핫셀용 동적/정적 만능 시험기) 구매",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01783979&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "2026-11-20",
+   "dday": 19,
+   "status": "입찰공고",
+   "budget": "10억 4,545만 원",
+   "bid_no": "R26BK01783979",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "피로시험기"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 10,
+   "hits": [
+    "시험기",
+    "장비",
+    "실증"
+   ],
+   "minus": [],
+   "track": "B",
+   "regions": [],
+   "licenses": [],
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "3/3"
   },
   {
    "source": "IRIS",
@@ -236,6 +1273,392 @@
    "track": "B"
   },
   {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한국항공우주연구원",
+   "title": "대면적 초점면어셈블리 구조열모델 개발",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01779681&bidPbancOrd=000",
+   "open_date": "2026-10-19",
+   "close_date": "2026-11-30",
+   "dday": 29,
+   "status": "입찰공고",
+   "budget": "23억 1,636만 원",
+   "bid_no": "R26BK01779681",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "실험및과학장비설치"
+   ],
+   "product_hits": [
+    "설치",
+    "장비"
+   ],
+   "product_minus": [],
+   "score": 5,
+   "hits": [],
+   "minus": [],
+   "track": "B",
+   "regions": [],
+   "licenses": [],
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "2/3"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한국항공우주연구원",
+   "title": "위성 지상 시스템 운영을 위한 무정전전원장치(UPS) 교체 용역",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01779770&bidPbancOrd=000",
+   "open_date": "2026-10-19",
+   "close_date": "2026-12-01",
+   "dday": 30,
+   "status": "입찰공고",
+   "budget": "7억 381만 원",
+   "bid_no": "R26BK01779770",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "연구조사서비스",
+    "학술연구서비스",
+    "과학기술연구조사서비스"
+   ],
+   "score": 4,
+   "hits": [
+    "시스템",
+    "장치"
+   ],
+   "minus": [],
+   "track": "B",
+   "regions": [],
+   "licenses": [
+    "전기공사업"
+   ],
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "3/3"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "동아대학교",
+   "title": "미래 모빌리티용 첨단 소재부품 공정장비 유지보수 및 챔버 설계·개선 용역",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01781881&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "",
+   "dday": null,
+   "status": "입찰공고",
+   "budget": "1억 3,636만 원",
+   "bid_no": "R26BK01781881",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "ICT 서비스",
+    "운영 및 유지관리",
+    "전산장비유지관리서비스"
+   ],
+   "score": 10,
+   "hits": [
+    "개선",
+    "장비",
+    "챔버",
+    "공정"
+   ],
+   "minus": [],
+   "track": "B",
+   "regions": [],
+   "licenses": [],
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "6/6"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한국건설생활환경시험연구원",
+   "title": "시험기기 구매 견적공고(온도 계측 부속장치)",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01783176&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "",
+   "dday": null,
+   "status": "입찰공고",
+   "budget": "4,011만 원",
+   "bid_no": "R26BK01783176",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "종합계측기"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 7,
+   "hits": [
+    "시험기",
+    "장치"
+   ],
+   "minus": [],
+   "track": "B",
+   "regions": [],
+   "licenses": [],
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "7/7"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "중앙대학교 산학협력단",
+   "title": "CMOS 0.5μm 2P3M 5V+15V 통합 공정 기반의 중앙대 설계도면 기반 IP Mask 제작 및 CMOS Wafer 수령 용역",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01778860&bidPbancOrd=000",
+   "open_date": "2026-10-19",
+   "close_date": "",
+   "dday": null,
+   "status": "입찰공고",
+   "budget": "4,767만 원",
+   "bid_no": "R26BK01778860",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "연구조사서비스",
+    "학술연구서비스",
+    "과학기술연구조사서비스"
+   ],
+   "score": 6,
+   "hits": [
+    "제작",
+    "공정"
+   ],
+   "minus": [],
+   "track": "B",
+   "regions": [],
+   "licenses": [],
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "4/4"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "경상북도 구미시",
+   "title": "「반도체 클러스터 지정 및 테스트베드 구축」 연구용역",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01781637&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "",
+   "dday": null,
+   "status": "입찰공고",
+   "budget": "2억 2,727만 원",
+   "bid_no": "R26BK01781637",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "연구조사서비스",
+    "학술연구서비스",
+    "기타연구조사서비스"
+   ],
+   "score": 6,
+   "hits": [
+    "테스트베드",
+    "반도체",
+    "구축"
+   ],
+   "minus": [
+    "연구용역"
+   ],
+   "track": "B",
+   "regions": [],
+   "licenses": [],
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "4/4"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "광운대학교 산학협력단",
+   "title": "전자회로실험장치(대드론 RF 스캐너 및 레이다 신호처리부 시험용 MPSoC ZCU102)",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01782841&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "",
+   "dday": null,
+   "status": "입찰공고",
+   "budget": "509만 원",
+   "bid_no": "R26BK01782841",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "전자회로실험장치"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 5,
+   "hits": [
+    "실험장치"
+   ],
+   "minus": [],
+   "track": "B",
+   "regions": [],
+   "licenses": [],
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "3/3"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "광운대학교 산학협력단",
+   "title": "전자회로실험장치(TSN 프로토콜 데이터 수집 및 연동 시험용 MPSoC ZCU102)",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01782999&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "",
+   "dday": null,
+   "status": "입찰공고",
+   "budget": "509만 원",
+   "bid_no": "R26BK01782999",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "전자회로실험장치"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 5,
+   "hits": [
+    "실험장치"
+   ],
+   "minus": [],
+   "track": "B",
+   "regions": [],
+   "licenses": [],
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "3/3"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "재단법인 국가모델동물연구소",
+   "title": "2027 대사측정장비 유지보수",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01785974&bidPbancOrd=000",
+   "open_date": "2026-10-22",
+   "close_date": "",
+   "dday": null,
+   "status": "입찰공고",
+   "budget": "2억 962만 원",
+   "bid_no": "R26BK01785974",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "임대*위탁 및 수리서비스",
+    "수리",
+    "의료및실험기기수리서비스"
+   ],
+   "score": 5,
+   "hits": [
+    "장비",
+    "측정"
+   ],
+   "minus": [],
+   "track": "B",
+   "regions": [],
+   "licenses": [],
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "3/3"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "포항공과대학교",
+   "title": "[52938]라만분광 장비용 자외선 감응 CCD 검출기",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01778141&bidPbancOrd=000",
+   "open_date": "2026-10-19",
+   "close_date": "",
+   "dday": null,
+   "status": "입찰공고",
+   "budget": "4,272만 원",
+   "bid_no": "R26BK01778141",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "적외선분광기"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 4,
+   "hits": [
+    "장비"
+   ],
+   "minus": [],
+   "track": "B",
+   "regions": [],
+   "licenses": [],
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "1/2"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "(사)한국건강관리협회 중앙검사본부",
+   "title": "검진장비 구매 입찰",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01778483&bidPbancOrd=000",
+   "open_date": "2026-10-19",
+   "close_date": "",
+   "dday": null,
+   "status": "입찰공고",
+   "budget": "금액 미공개",
+   "bid_no": "R26BK01778483",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "자동혈구계산기"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 4,
+   "hits": [
+    "장비"
+   ],
+   "minus": [],
+   "track": "B",
+   "regions": [],
+   "licenses": [],
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "2/2"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "대구대학교 산학협력단",
+   "title": "[K-U시티]실험실습장비 및 기자재(고온 엔지니어링 플라스틱 산업용 3D 프린터) 구매",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01778602&bidPbancOrd=000",
+   "open_date": "2026-10-19",
+   "close_date": "",
+   "dday": null,
+   "status": "입찰공고",
+   "budget": "5,000만 원",
+   "bid_no": "R26BK01778602",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "3차원프린터"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 4,
+   "hits": [
+    "장비"
+   ],
+   "minus": [],
+   "track": "B",
+   "regions": [],
+   "licenses": [],
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "4/4"
+  },
+  {
    "source": "IRIS",
    "kind": "rnd",
    "org": "연구개발특구진흥재단",
@@ -257,6 +1680,532 @@
    "ineligible": "지역 사업 (강원)"
   },
   {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한국산업기술시험원",
+   "title": "E-모빌리티로봇학습제어 및 검증용 고성능 워크스테이션",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01781241&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "2026-11-02",
+   "dday": 1,
+   "status": "입찰공고",
+   "budget": "2,662만 원",
+   "bid_no": "R26BK01781241",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "워크스테이션"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 5,
+   "hits": [
+    "로봇",
+    "제어"
+   ],
+   "minus": [],
+   "track": "",
+   "regions": [],
+   "licenses": [],
+   "limits_checked": true,
+   "sme_only": "위한 특별조치법」제2조에 따른 소기업 또는 소상공인으로서 중소기업청에서 발급한 ‘소기업 또는 소상공인 확인서’를 소지한 자 * 소기",
+   "attach_checked": "1/6",
+   "ineligible": "소기업·소상공인 전용 (공고문 참가자격)",
+   "excluded_track": "B"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "부산신항만(주)",
+   "title": "QC 레일 정비용 작업 플랫폼 구매 건",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01773922&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "2026-11-02",
+   "dday": 1,
+   "status": "입찰공고",
+   "budget": "7,350만 원",
+   "bid_no": "R26BK01773922",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "크레인안전장비"
+   ],
+   "product_hits": [
+    "장비"
+   ],
+   "product_minus": [],
+   "score": 4,
+   "hits": [],
+   "minus": [],
+   "track": "",
+   "regions": [
+    "경상남도"
+   ],
+   "licenses": [
+    "기계설비ㆍ가스공사업"
+   ],
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "0/1",
+   "ineligible": "참가 가능 지역: 경상남도",
+   "excluded_track": "B"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한국산업기술시험원",
+   "title": "자율주행 E-모빌리티 성능 및 안정성과 검증을 위한 RIL 시스템 환경 구축",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01781080&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "2026-11-02",
+   "dday": 1,
+   "status": "입찰공고",
+   "budget": "5,877만 원",
+   "bid_no": "R26BK01781080",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "연구조사서비스",
+    "학술연구서비스",
+    "기타연구조사서비스"
+   ],
+   "score": 3,
+   "hits": [
+    "시스템",
+    "구축"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "주식회사 픽토스튜디오",
+   "title": "[버그니아: 좀팡이의 습격] TV시리즈 3D 복셀 모델링 및 키애니메이션 제작 용역",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01781215&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "2026-11-02",
+   "dday": 1,
+   "status": "입찰공고",
+   "budget": "2억 800만 원",
+   "bid_no": "R26BK01781215",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "매체제작, 디자인, 홍보/마케팅 서비스",
+    "매체제작",
+    "동영상제작서비스"
+   ],
+   "score": 3,
+   "hits": [
+    "제작"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한국과학기술연구원",
+   "title": "휴머노이드 전장시스템 구축 및 통합 용역",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01781305&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "2026-11-02",
+   "dday": 1,
+   "status": "입찰공고",
+   "budget": "5,293만 원",
+   "bid_no": "R26BK01781305",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "연구조사서비스",
+    "학술연구서비스",
+    "기타연구조사서비스"
+   ],
+   "score": 3,
+   "hits": [
+    "시스템",
+    "구축"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "목포대학교 산학협력단",
+   "title": "조선해양 생산공정(AX) 기반구축 사업 수요조사 및 추진전략 수립 용역",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01779452&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "2026-11-02",
+   "dday": 1,
+   "status": "입찰공고",
+   "budget": "4,545만 원",
+   "bid_no": "R26BK01779452",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "연구조사서비스",
+    "학술연구서비스",
+    "과학기술연구조사서비스"
+   ],
+   "score": 3,
+   "hits": [
+    "구축",
+    "공정"
+   ],
+   "minus": [
+    "조사"
+   ],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한국과학기술연구원",
+   "title": "4D 노화 지도 제작용 단백체고해상도 질량분석",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01781501&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "2026-11-02",
+   "dday": 1,
+   "status": "입찰공고",
+   "budget": "3,177만 원",
+   "bid_no": "R26BK01781501",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "연구조사서비스",
+    "학술연구서비스",
+    "기타연구조사서비스"
+   ],
+   "score": 3,
+   "hits": [
+    "제작"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "(주)홍주일보사",
+   "title": "홍주신문 브랜드 고도화 및 미래 편집체계 구축사업",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01777923&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "2026-11-02",
+   "dday": 1,
+   "status": "입찰공고",
+   "budget": "3,750만 원",
+   "bid_no": "R26BK01777923",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "매체제작, 디자인, 홍보/마케팅 서비스",
+    " 디자인",
+    "디자인서비스"
+   ],
+   "score": 3,
+   "hits": [
+    "고도화",
+    "구축"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한국화학융합시험연구원",
+   "title": "DR 플랫폼 시험평가용 UI 개발",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01782470&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "2026-11-02",
+   "dday": 1,
+   "status": "입찰공고",
+   "budget": "2,636만 원",
+   "bid_no": "R26BK01782470",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "연구조사서비스",
+    "학술연구서비스",
+    "과학기술연구조사서비스"
+   ],
+   "score": 3,
+   "hits": [
+    "시험평가"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한국생산기술연구원",
+   "title": "시뮬레이션 AI 기반 열공정 합성데이터 생성 파이프라인 기초 설계 및 프로토타입 개발 용역",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01784712&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "2026-11-02",
+   "dday": 1,
+   "status": "입찰공고",
+   "budget": "1억 454만 원",
+   "bid_no": "R26BK01784712",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "연구조사서비스",
+    "학술연구서비스",
+    "기타연구조사서비스"
+   ],
+   "score": 3,
+   "hits": [
+    "공정"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "문화체육관광부 국립국어원",
+   "title": "2026년 언어정보나눔터 시스템 개선 및 고도화 감리",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01770485&bidPbancOrd=000",
+   "open_date": "2026-10-22",
+   "close_date": "2026-11-02",
+   "dday": 1,
+   "status": "입찰공고",
+   "budget": "5,909만 원",
+   "bid_no": "R26BK01770485",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "ICT 서비스",
+    "ICT사업 컨설팅",
+    "정보시스템감리서비스"
+   ],
+   "score": 3,
+   "hits": [
+    "고도화",
+    "시스템",
+    "개선"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "차의과학대학교산학협력단",
+   "title": "차의과학대학교 산학협력단 앵커사업단 생물배양시스템 연구장비 구매",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01784166&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "2026-11-02",
+   "dday": 1,
+   "status": "입찰공고",
+   "budget": "1억 4,545만 원",
+   "bid_no": "R26BK01784166",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "생물배양시스템"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 2,
+   "hits": [
+    "시스템",
+    "장비"
+   ],
+   "minus": [
+    "학교"
+   ],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한국정보통신기술협회",
+   "title": "AI반도체 기반 AX디바이스 사용성 평가 및 분석 용역",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01779254&bidPbancOrd=000",
+   "open_date": "2026-10-19",
+   "close_date": "2026-11-02",
+   "dday": 1,
+   "status": "입찰공고",
+   "budget": "2억 2,727만 원",
+   "bid_no": "R26BK01779254",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "연구조사서비스",
+    "학술연구서비스",
+    "정보통신연구조사서비스"
+   ],
+   "score": 2,
+   "hits": [
+    "반도체"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "경상북도 포항시",
+   "title": "2026년 포항시 디지털기반 노후위험시설 안전관리시스템 센서 추가 설치 용역",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01781743&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "2026-11-02",
+   "dday": 1,
+   "status": "입찰공고",
+   "budget": "1억 2,555만 원",
+   "bid_no": "R26BK01781743",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "행사관리 및 기타 사업 지원서비스 ",
+    "기타",
+    "기타사업지원서비스"
+   ],
+   "score": 2,
+   "hits": [
+    "시스템",
+    "설치"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "(주)첨단엔프라",
+   "title": "2026년도 첨단엔프라 스마트 생태공장 구축사업 시험분석 및 성과검증 용역",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01781909&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "2026-11-02",
+   "dday": 1,
+   "status": "입찰공고",
+   "budget": "2,030만 원",
+   "bid_no": "R26BK01781909",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "교육 및 전문직종/기술서비스",
+    "기술시험,검사 및 분석",
+    "기술검사분석서비스"
+   ],
+   "score": 2,
+   "hits": [
+    "구축"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "울산대학교 산학협력단",
+   "title": "2026 UOU 로봇OS특강+피지컬 AI 챌린지 대회(2차) 운영",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01784602&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "2026-11-02",
+   "dday": 1,
+   "status": "입찰공고",
+   "budget": "4,480만 원",
+   "bid_no": "R26BK01784602",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "행사관리 및 기타 사업 지원서비스 ",
+    "행사 기획 및 대행",
+    "기타행사기획및대행서비스"
+   ],
+   "score": 2,
+   "hits": [
+    "로봇"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한국기술교육대학교산학협력단",
+   "title": "국가인적자원개발컨소시엄 신기술 훈련 통합 정보플랫폼 구축 용역",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01784652&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "2026-11-02",
+   "dday": 1,
+   "status": "입찰공고",
+   "budget": "9,072만 원",
+   "bid_no": "R26BK01784652",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "ICT 서비스",
+    "운영 및 유지관리",
+    "소프트웨어유지및지원서비스"
+   ],
+   "score": 2,
+   "hits": [
+    "구축"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "대동대학 산학협력단",
+   "title": "데이터 기반 학사시스템 고도화",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01785023&bidPbancOrd=000",
+   "open_date": "2026-10-22",
+   "close_date": "2026-11-02",
+   "dday": 1,
+   "status": "입찰공고",
+   "budget": "1억 8,381만 원",
+   "bid_no": "R26BK01785023",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "ICT 서비스",
+    "운영 및 유지관리",
+    "소프트웨어유지및지원서비스"
+   ],
+   "score": 2,
+   "hits": [
+    "고도화",
+    "시스템"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "울산대학교 산학협력단",
+   "title": "2026학년도 이차전지 글로벌 인재양성 캠프(USB-GT캠프) 참가 위탁 용역",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01787076&bidPbancOrd=000",
+   "open_date": "2026-10-22",
+   "close_date": "2026-11-02",
+   "dday": 1,
+   "status": "입찰공고",
+   "budget": "1억 5,990만 원",
+   "bid_no": "R26BK01787076",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "여행*숙박*음식*운송 및 보험서비스",
+    "여행서비스",
+    "국외여행서비스"
+   ],
+   "score": 2,
+   "hits": [
+    "이차전지"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
    "source": "NTIS",
    "kind": "rnd",
    "org": "보건복지부",
@@ -272,6 +2221,217 @@
    "score": 1,
    "hits": [
     "기술개발"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한국항공우주연구원",
+   "title": "ISAS Lattice Core 모델링 자동화 SW 개발",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01780626&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "2026-11-02",
+   "dday": 1,
+   "status": "입찰공고",
+   "budget": "9,800만 원",
+   "bid_no": "R26BK01780626",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "분석및과학용소프트웨어"
+   ],
+   "product_hits": [],
+   "product_minus": [
+    "소프트웨어"
+   ],
+   "score": 1,
+   "hits": [
+    "자동화"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "부산대학교",
+   "title": "(재공고)부산대학교 치의학전문대학원 구강 스캐너 구매",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01780774&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "2026-11-02",
+   "dday": 1,
+   "status": "입찰공고",
+   "budget": "5,454만 원",
+   "bid_no": "R26BK01780774",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "입체광학인상채득장치"
+   ],
+   "product_hits": [
+    "장치"
+   ],
+   "product_minus": [],
+   "score": 1,
+   "hits": [],
+   "minus": [
+    "학교"
+   ],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "주식회사 나산",
+   "title": "2026년 경남 방산 중소기업 생산성향상 지원사업 수평형머시닝센터 도입",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01781383&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "2026-11-02",
+   "dday": 1,
+   "status": "입찰공고",
+   "budget": "5억 2,000만 원",
+   "bid_no": "R26BK01781383",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "수평형머시닝센터"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 1,
+   "hits": [],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "육군군수사령부",
+   "title": "26~27년 PLS세트(5차) 제조",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01781711&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "2026-11-02",
+   "dday": 1,
+   "status": "입찰공고",
+   "budget": "65억 6,834만 원",
+   "bid_no": "R26BK01781711",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "화물트럭"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 1,
+   "hits": [],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "국가유산청 국립고궁박물관",
+   "title": "국립고궁박물관 상설전시실 진열장 제작 및 설치",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01783722&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "2026-11-02",
+   "dday": 1,
+   "status": "입찰공고",
+   "budget": "9,072만 원",
+   "bid_no": "R26BK01783722",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "유리진열장"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 1,
+   "hits": [
+    "제작",
+    "설치"
+   ],
+   "minus": [
+    "전시"
+   ],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "차의과학대학교산학협력단",
+   "title": "차의과학대학교 산학협력단 앵커사업단 액체크로마토그래피 연구장비 구매",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01783915&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "2026-11-02",
+   "dday": 1,
+   "status": "입찰공고",
+   "budget": "1억 2,727만 원",
+   "bid_no": "R26BK01783915",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "액체크로마토그래피"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 1,
+   "hits": [
+    "장비"
+   ],
+   "minus": [
+    "학교"
+   ],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "(사)한국전복산업연합회",
+   "title": "26 전복 먹이 해조류(곰피) 종자 추가 구매",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01784417&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "2026-11-02",
+   "dday": 1,
+   "status": "입찰공고",
+   "budget": "1억 1,370만 원",
+   "bid_no": "R26BK01784417",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "채묘틀"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 1,
+   "hits": [],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한국산업기술기획평가원",
+   "title": "「다변화원유 정제시설 고도화 지원사업」 사업계획 적정성 검토 대응 및 공모지침 설계",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01781815&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "2026-11-02",
+   "dday": 1,
+   "status": "입찰공고",
+   "budget": "1억 7,961만 원",
+   "bid_no": "R26BK01781815",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "연구조사서비스",
+    "학술연구서비스",
+    "기타연구조사서비스"
+   ],
+   "score": 1,
+   "hits": [
+    "고도화"
    ],
    "minus": [],
    "track": ""
@@ -296,6 +2456,1438 @@
    "ineligible": "지역 사업 (제주)"
   },
   {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "재단법인강원테크노파크",
+   "title": "강원형 스마트 경로당 구축사업 건강관리 추가장비(혈압계) 구매",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01783104&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "2026-11-03",
+   "dday": 2,
+   "status": "입찰공고",
+   "budget": "1억 9,145만 원",
+   "bid_no": "R26BK01783104",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "자동전자혈압계"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 6,
+   "hits": [
+    "구축",
+    "장비"
+   ],
+   "minus": [],
+   "track": "",
+   "regions": [],
+   "licenses": [
+    "의료기기수입업",
+    "의료기기판매업"
+   ],
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "4/4",
+   "ineligible": "등록 업종으로 참여 불가 (필요: 의료기기수입업, 의료기기판매업)",
+   "excluded_track": "B"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "국방과학연구소",
+   "title": "해상시험지원정 플랫폼 제작",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01782967&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "2026-11-03",
+   "dday": 2,
+   "status": "입찰공고",
+   "budget": "3억 5,400만 원",
+   "bid_no": "R26BK01782967",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "기타물품설치서비스"
+   ],
+   "product_hits": [
+    "설치"
+   ],
+   "product_minus": [],
+   "score": 5,
+   "hits": [
+    "제작"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "국립군산대학교 산학협력단",
+   "title": "고밀도 저하중 단일섬유 물성 시험 시스템",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01782086&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "2026-11-03",
+   "dday": 2,
+   "status": "입찰공고",
+   "budget": "8,000만 원",
+   "bid_no": "R26BK01782086",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "만능재료시험기"
+   ],
+   "product_hits": [
+    "시험기"
+   ],
+   "product_minus": [],
+   "score": 5,
+   "hits": [
+    "시스템"
+   ],
+   "minus": [],
+   "track": "",
+   "regions": [],
+   "licenses": [],
+   "limits_checked": true,
+   "sme_only": "법률」 제2조에 따른 소상공인으로서 「중소기업 범위 및 확인에 관한 규정」에 따라 발급된 소기업ㆍ소상공인 확인서를 소지한 자 ◇ ‘소기",
+   "attach_checked": "1/4",
+   "ineligible": "소기업·소상공인 전용 (공고문 참가자격)",
+   "excluded_track": "B"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "(재)중소조선연구원",
+   "title": "국내외 전기어선 실증기반 구축을 위한 수용성 분석 및 타당성 검토 용역",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01781180&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "2026-11-03",
+   "dday": 2,
+   "status": "입찰공고",
+   "budget": "4,454만 원",
+   "bid_no": "R26BK01781180",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "연구조사서비스",
+    "학술연구서비스",
+    "기타연구조사서비스"
+   ],
+   "score": 5,
+   "hits": [
+    "구축",
+    "실증"
+   ],
+   "minus": [],
+   "track": "",
+   "regions": [],
+   "licenses": [
+    "학술.연구용역"
+   ],
+   "limits_checked": true,
+   "sme_only": "법률｣ 제2조에 따른 소상공인으로서 ｢중소기업 범위 및 확인에 관한 규정｣에 따라 발급된 소기업ㆍ소상공인 확인서를 소지한 업체 ※",
+   "attach_checked": "1/5",
+   "ineligible": "소기업·소상공인 전용 (공고문 참가자격)",
+   "excluded_track": "B"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "국방과학연구소",
+   "title": "(재공고)화학작용제 감응형 화합물 기반 변색제 기능화 공정 설계",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01785656&bidPbancOrd=000",
+   "open_date": "2026-10-22",
+   "close_date": "2026-11-03",
+   "dday": 2,
+   "status": "입찰공고",
+   "budget": "4억 4,363만 원",
+   "bid_no": "R26BK01785656",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "행사관리 및 기타 사업 지원서비스 ",
+    "기타",
+    "기타사업지원서비스"
+   ],
+   "score": 5,
+   "hits": [
+    "공정",
+    "화학"
+   ],
+   "minus": [],
+   "track": "",
+   "regions": [],
+   "licenses": [
+    "학술.연구용역",
+    "유해화학물질 제조업(허가)",
+    "화학물질 시험기관",
+    "기타자유업종"
+   ],
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "4/4",
+   "ineligible": "등록 업종으로 참여 불가 (필요: 학술.연구용역, 유해화학물질 제조업(허가))",
+   "excluded_track": "B"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "충청남도 논산시",
+   "title": "2026년 드론 실증도시 인프라 구축 용역(협상에 의한 계약)",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01782612&bidPbancOrd=000",
+   "open_date": "2026-10-22",
+   "close_date": "2026-11-03",
+   "dday": 2,
+   "status": "입찰공고",
+   "budget": "1억 8,181만 원",
+   "bid_no": "R26BK01782612",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "행사관리 및 기타 사업 지원서비스 ",
+    "기타",
+    "기타사업지원서비스"
+   ],
+   "score": 5,
+   "hits": [
+    "구축",
+    "실증"
+   ],
+   "minus": [],
+   "track": "",
+   "regions": [],
+   "licenses": [
+    "소프트웨어사업자(컴퓨터관련서비스사업)"
+   ],
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "4/4",
+   "ineligible": "등록 업종으로 참여 불가 (필요: 소프트웨어사업자(컴퓨터관련서비스사업))",
+   "excluded_track": "B"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "제주대학교",
+   "title": "2026년 실험실습기자재(실험동물센터) SUS장비류 구매",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01780782&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "2026-11-03",
+   "dday": 2,
+   "status": "입찰공고",
+   "budget": "1억 785만 원",
+   "bid_no": "R26BK01780782",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "수술준비용손세척대"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 4,
+   "hits": [
+    "장비"
+   ],
+   "minus": [],
+   "track": "",
+   "regions": [
+    "제주특별자치도"
+   ],
+   "licenses": [
+    "동물용의료기기판매업",
+    "동물용의료기기제조업"
+   ],
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "3/3",
+   "ineligible": "참가 가능 지역: 제주특별자치도",
+   "excluded_track": "B"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한국해양과학기술원 부설 선박해양플랜트연구소",
+   "title": "자율운항선박 해상테스트베드 시험선 종합위탁관리 용역",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01780179&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "2026-11-03",
+   "dday": 2,
+   "status": "입찰공고",
+   "budget": "6억 4,812만 원",
+   "bid_no": "R26BK01780179",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "행사관리 및 기타 사업 지원서비스 ",
+    "기타",
+    "기타사업지원서비스"
+   ],
+   "score": 4,
+   "hits": [
+    "테스트베드"
+   ],
+   "minus": [],
+   "track": "",
+   "regions": [],
+   "licenses": [
+    "선박관리업"
+   ],
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "1/1",
+   "ineligible": "등록 업종으로 참여 불가 (필요: 선박관리업)",
+   "excluded_track": "B"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "전북특별자치도 정읍시",
+   "title": "내장산콜택시 콜장비(내비게이션) 교체지원사업(민간대행, 긴급, 협상에의한계약)",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01781687&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "2026-11-03",
+   "dday": 2,
+   "status": "입찰공고",
+   "budget": "1억 7,050만 원",
+   "bid_no": "R26BK01781687",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "차량용항법장치"
+   ],
+   "product_hits": [
+    "장치"
+   ],
+   "product_minus": [
+    "차량"
+   ],
+   "score": 3,
+   "hits": [
+    "장비"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "서울대학교 공과대학",
+   "title": "원격조종 이동형 양팔로봇 구매",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01784106&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "2026-11-03",
+   "dday": 2,
+   "status": "입찰공고",
+   "budget": "1억 1,000만 원",
+   "bid_no": "R26BK01784106",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "산업용로봇"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 3,
+   "hits": [
+    "로봇"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "전남대학교 산학협력단",
+   "title": "전기화학 분석용 사중극자 질량분석기",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01782879&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "2026-11-03",
+   "dday": 2,
+   "status": "입찰공고",
+   "budget": "1억 3,000만 원",
+   "bid_no": "R26BK01782879",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "질량분석기"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 3,
+   "hits": [
+    "화학"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "국방부",
+   "title": "국방부 자율주행 물류이송 로봇 제조",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01784219&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "2026-11-03",
+   "dday": 2,
+   "status": "입찰공고",
+   "budget": "9,428만 원",
+   "bid_no": "R26BK01784219",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "서빙및배달용로봇"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 3,
+   "hits": [
+    "로봇"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한국항공우주연구원",
+   "title": "국토위성(차세대중형위성 1호 및 2호)운영개념 구성도 제작",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01781488&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "2026-11-03",
+   "dday": 2,
+   "status": "입찰공고",
+   "budget": "4,027만 원",
+   "bid_no": "R26BK01781488",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "연구조사서비스",
+    "학술연구서비스",
+    "과학기술연구조사서비스"
+   ],
+   "score": 3,
+   "hits": [
+    "제작"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "행정안전부",
+   "title": "2027년 안전한-TV 스튜디오 및 장비 유지관리",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01784746&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "2026-11-03",
+   "dday": 2,
+   "status": "입찰공고",
+   "budget": "2,363만 원",
+   "bid_no": "R26BK01784746",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "시설물관리 및 청소서비스",
+    "시설물관리, 청소 등",
+    "시설설비유지관리서비스"
+   ],
+   "score": 3,
+   "hits": [
+    "장비"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "서울대학교 연구소 암연구소",
+   "title": "서울대학교 암연구소 형광 및 화학이미지 분석시스템 구매 설치",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01777252&bidPbancOrd=000",
+   "open_date": "2026-10-19",
+   "close_date": "2026-11-03",
+   "dday": 2,
+   "status": "입찰공고",
+   "budget": "3,630만 원",
+   "bid_no": "R26BK01777252",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "겔다큐멘테이션시스템"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 2,
+   "hits": [
+    "시스템",
+    "설치",
+    "화학"
+   ],
+   "minus": [
+    "학교"
+   ],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "고등기술연구원연구조합",
+   "title": "석유계 시료 분석용 기체크로마토그래프 시스템",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01779613&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "2026-11-03",
+   "dday": 2,
+   "status": "입찰공고",
+   "budget": "1억 7,000만 원",
+   "bid_no": "R26BK01779613",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "기체크로마토그래프"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 2,
+   "hits": [
+    "시스템"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "경찰청 서울특별시경찰청",
+   "title": "방배경찰서 신축 관급자재(사격장)",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01780118&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "2026-11-03",
+   "dday": 2,
+   "status": "입찰공고",
+   "budget": "2억 7,891만 원",
+   "bid_no": "R26BK01780118",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "사격장비"
+   ],
+   "product_hits": [
+    "장비"
+   ],
+   "product_minus": [],
+   "score": 2,
+   "hits": [],
+   "minus": [
+    "신축"
+   ],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "법무부 광주지방교정청 해남교도소",
+   "title": "해남교도소 액화석유가스(LPG) 구매 단가 입찰",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01780012&bidPbancOrd=001",
+   "open_date": "2026-10-21",
+   "close_date": "2026-11-03",
+   "dday": 2,
+   "status": "입찰공고",
+   "budget": "1억 7,273만 원",
+   "bid_no": "R26BK01780012",
+   "bid_ord": "001",
+   "bid_type": "물품",
+   "products": [
+    "액화석유가스"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 2,
+   "hits": [
+    "가스"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "해양수산과학기술진흥원",
+   "title": "남부권 해양산업벨트 구축 로드맵 수립",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01779860&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "2026-11-03",
+   "dday": 2,
+   "status": "입찰공고",
+   "budget": "1억 909만 원",
+   "bid_no": "R26BK01779860",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "연구조사서비스",
+    "학술연구서비스",
+    "기타연구조사서비스"
+   ],
+   "score": 2,
+   "hits": [
+    "구축"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한국교육학술정보원",
+   "title": "2026년 AI 사이버공격 대응 플랫폼 구축(3단계)",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01780278&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "2026-11-03",
+   "dday": 2,
+   "status": "입찰공고",
+   "budget": "55억 8,272만 원",
+   "bid_no": "R26BK01780278",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "ICT 서비스",
+    "시스템 운영환경 구축",
+    "정보인프라구축서비스"
+   ],
+   "score": 2,
+   "hits": [
+    "구축"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "소방청",
+   "title": "119구급 스마트시스템 고도화 감리용역(긴급)",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01782445&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "2026-11-03",
+   "dday": 2,
+   "status": "입찰공고",
+   "budget": "3,181만 원",
+   "bid_no": "R26BK01782445",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "ICT 서비스",
+    "ICT사업 컨설팅",
+    "정보시스템감리서비스"
+   ],
+   "score": 2,
+   "hits": [
+    "고도화",
+    "시스템"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "중소기업기술정보진흥원",
+   "title": "중소기업 R&D 사업화 지원체계 구축",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01784355&bidPbancOrd=000",
+   "open_date": "2026-10-22",
+   "close_date": "2026-11-03",
+   "dday": 2,
+   "status": "입찰공고",
+   "budget": "1억 8,168만 원",
+   "bid_no": "R26BK01784355",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "연구조사서비스",
+    "학술연구서비스",
+    "경제산업연구조사서비스"
+   ],
+   "score": 2,
+   "hits": [
+    "구축"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한국교원대학교 산학협력단",
+   "title": "Anchor수업 데이터 기반 에듀테크 솔루션 분석 및 평가 통합플랫폼 구축 용역",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01778125&bidPbancOrd=000",
+   "open_date": "2026-10-22",
+   "close_date": "2026-11-03",
+   "dday": 2,
+   "status": "입찰공고",
+   "budget": "1억 909만 원",
+   "bid_no": "R26BK01778125",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "연구조사서비스",
+    "학술연구서비스",
+    "기타연구조사서비스"
+   ],
+   "score": 2,
+   "hits": [
+    "구축"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한국지능정보사회진흥원",
+   "title": "최적요금제 추천 시스템 기능개선 및 운영 위탁감리",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01781296&bidPbancOrd=000",
+   "open_date": "2026-10-22",
+   "close_date": "2026-11-03",
+   "dday": 2,
+   "status": "입찰공고",
+   "budget": "2,266만 원",
+   "bid_no": "R26BK01781296",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "ICT 서비스",
+    "ICT사업 컨설팅",
+    "정보시스템감리서비스"
+   ],
+   "score": 2,
+   "hits": [
+    "시스템",
+    "개선"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한국환경공단",
+   "title": "2027년 대기환경측정망 운영관리 용역",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01783095&bidPbancOrd=000",
+   "open_date": "2026-10-22",
+   "close_date": "2026-11-03",
+   "dday": 2,
+   "status": "입찰공고",
+   "budget": "1억 1,147만 원",
+   "bid_no": "R26BK01783095",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "연구조사서비스",
+    "학술연구서비스",
+    "환경에너지연구조사서비스"
+   ],
+   "score": 2,
+   "hits": [
+    "측정"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "전북특별자치도 군산시",
+   "title": "(선박) 군산시 어업지도선 대체 건조",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01777997&bidPbancOrd=000",
+   "open_date": "2026-10-19",
+   "close_date": "2026-11-03",
+   "dday": 2,
+   "status": "입찰공고",
+   "budget": "52억 8,013만 원",
+   "bid_no": "R26BK01777997",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "어업지도선"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 1,
+   "hits": [],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "기후에너지환경부 대구지방환경청",
+   "title": "화학사고 현장측정분석차량 구매",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01778635&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "2026-11-03",
+   "dday": 2,
+   "status": "입찰공고",
+   "budget": "8억 6,363만 원",
+   "bid_no": "R26BK01778635",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "중형승합차"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 1,
+   "hits": [
+    "측정",
+    "화학"
+   ],
+   "minus": [
+    "차량"
+   ],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한국로봇융합연구원",
+   "title": "유인잠수정용 수중 추진기 구매",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01780426&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "2026-11-03",
+   "dday": 2,
+   "status": "입찰공고",
+   "budget": "1억 874만 원",
+   "bid_no": "R26BK01780426",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "전기선외모터"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 1,
+   "hits": [],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "서울특별시 서울아리수본부 서울물연구원",
+   "title": "자외-가시광선 분광광도계 구매",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01782321&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "2026-11-03",
+   "dday": 2,
+   "status": "입찰공고",
+   "budget": "2,970만 원",
+   "bid_no": "R26BK01782321",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "자외-가시선분광광도계"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 1,
+   "hits": [],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "국립군산대학교",
+   "title": "2026년도 실험실습기자재(원소분석기_공동실험실습관) 구입",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01782632&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "2026-11-03",
+   "dday": 2,
+   "status": "입찰공고",
+   "budget": "8,636만 원",
+   "bid_no": "R26BK01782632",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "원소분석기"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 1,
+   "hits": [],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "충청남도교육청 공주고등학교",
+   "title": "2027학년도 공주고 교복(동복 및 하복) 구매 재공고",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01784096&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "2026-11-03",
+   "dday": 2,
+   "status": "입찰공고",
+   "budget": "5,011만 원",
+   "bid_no": "R26BK01784096",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "남자학생복(동)",
+    "남자학생복(하)"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 1,
+   "hits": [],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "충북대학교산학협력단",
+   "title": "무선 핸드헬드 3차원 스캐너 구매",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01784087&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "2026-11-03",
+   "dday": 2,
+   "status": "입찰공고",
+   "budget": "5,200만 원",
+   "bid_no": "R26BK01784087",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "스캐너"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 1,
+   "hits": [],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "국토안전관리원",
+   "title": "디지털 기반 육안조사 탐사장비 및 분석프로그램 설계",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01780272&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "2026-11-03",
+   "dday": 2,
+   "status": "입찰공고",
+   "budget": "4,090만 원",
+   "bid_no": "R26BK01780272",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "연구조사서비스",
+    "학술연구서비스",
+    "기타연구조사서비스"
+   ],
+   "score": 1,
+   "hits": [
+    "장비"
+   ],
+   "minus": [
+    "조사"
+   ],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한국공항공사 항공기술훈련원",
+   "title": "항공기술훈련원 ATC모의관제시스템 현대화사업 감리용역",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01780718&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "2026-11-03",
+   "dday": 2,
+   "status": "입찰공고",
+   "budget": "1억 909만 원",
+   "bid_no": "R26BK01780718",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "ICT 서비스",
+    "시스템 운영환경 구축",
+    "정보인프라구축서비스"
+   ],
+   "score": 1,
+   "hits": [
+    "시스템"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "서울특별시",
+   "title": "2027년 서울 문화유산 통합관리시스템 유지보수",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01781089&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "2026-11-03",
+   "dday": 2,
+   "status": "입찰공고",
+   "budget": "2억 1,183만 원",
+   "bid_no": "R26BK01781089",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "ICT 서비스",
+    "운영 및 유지관리",
+    "소프트웨어유지및지원서비스"
+   ],
+   "score": 1,
+   "hits": [
+    "시스템"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "중소벤처기업진흥공단",
+   "title": "중소벤처기업진흥공단 선택적복지제도 시스템 운영사 선정",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01781056&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "2026-11-03",
+   "dday": 2,
+   "status": "입찰공고",
+   "budget": "금액 미공개",
+   "bid_no": "R26BK01781056",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "행사관리 및 기타 사업 지원서비스 ",
+    "기타",
+    "기타사업지원서비스"
+   ],
+   "score": 1,
+   "hits": [
+    "시스템"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "대전관광공사",
+   "title": "(긴급) 2026 엑스포시민광장 야외스케이트장 설치·운영 대행 용역",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01781744&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "2026-11-03",
+   "dday": 2,
+   "status": "입찰공고",
+   "budget": "3억 8,635만 원",
+   "bid_no": "R26BK01781744",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "행사관리 및 기타 사업 지원서비스 ",
+    "행사 기획 및 대행",
+    "기타행사기획및대행서비스"
+   ],
+   "score": 1,
+   "hits": [
+    "설치"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한국문학번역원",
+   "title": "한국문학 번역대학원 정보화시스템 중장기전략계획(ISP) 수립",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01782586&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "2026-11-03",
+   "dday": 2,
+   "status": "입찰공고",
+   "budget": "2억 2,727만 원",
+   "bid_no": "R26BK01782586",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "ICT 서비스",
+    "ICT사업 컨설팅",
+    "정보화전략계획서비스"
+   ],
+   "score": 1,
+   "hits": [
+    "시스템"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "국방과학연구소",
+   "title": "전투기용 저피탐 통합 배기시스템 설계 용역",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01781145&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "2026-11-03",
+   "dday": 2,
+   "status": "입찰공고",
+   "budget": "8억 472만 원",
+   "bid_no": "R26BK01781145",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "행사관리 및 기타 사업 지원서비스 ",
+    "기타",
+    "기타사업지원서비스"
+   ],
+   "score": 1,
+   "hits": [
+    "시스템"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "국무조정실",
+   "title": "2027년도 스크랩 및 TV뉴스 모니터링 대행 사업",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01783111&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "2026-11-03",
+   "dday": 2,
+   "status": "입찰공고",
+   "budget": "2,636만 원",
+   "bid_no": "R26BK01783111",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "행사관리 및 기타 사업 지원서비스 ",
+    "기타",
+    "기타사업지원서비스"
+   ],
+   "score": 1,
+   "hits": [
+    "모니터링"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한국지능정보사회진흥원",
+   "title": "대규모 정보화사업 실태분석 및 개선방안",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01784781&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "2026-11-03",
+   "dday": 2,
+   "status": "입찰공고",
+   "budget": "8,139만 원",
+   "bid_no": "R26BK01784781",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "연구조사서비스",
+    "학술연구서비스",
+    "기타연구조사서비스"
+   ],
+   "score": 1,
+   "hits": [
+    "개선"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한국환경산업기술원",
+   "title": "가습기살균제 피해구제자금 운용·관리 개선방안 마련 연구",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01785289&bidPbancOrd=000",
+   "open_date": "2026-10-22",
+   "close_date": "2026-11-03",
+   "dday": 2,
+   "status": "입찰공고",
+   "budget": "5,500만 원",
+   "bid_no": "R26BK01785289",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "연구조사서비스",
+    "학술연구서비스",
+    "보건복지연구조사서비스"
+   ],
+   "score": 1,
+   "hits": [
+    "개선"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한국재정정보원",
+   "title": "2027년 재정분석시스템 운영을 위한 외부경제지표 제공 용역",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01785369&bidPbancOrd=000",
+   "open_date": "2026-10-22",
+   "close_date": "2026-11-03",
+   "dday": 2,
+   "status": "입찰공고",
+   "budget": "9,000만 원",
+   "bid_no": "R26BK01785369",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "ICT 서비스",
+    "DB구축 및 자료입력",
+    "데이터서비스"
+   ],
+   "score": 1,
+   "hits": [
+    "시스템"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "공주대학교 천안공과대학",
+   "title": "천안공과대학 산학협력관 화장실 환경개선공사(기계)",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01781411&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "2026-11-03",
+   "dday": 2,
+   "status": "입찰공고",
+   "budget": "2억 3,111만 원",
+   "bid_no": "R26BK01781411",
+   "bid_ord": "000",
+   "bid_type": "공사",
+   "service_class": [],
+   "score": 1,
+   "hits": [
+    "개선"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "서울특별시 서초구",
+   "title": "반포빗물펌프장 노후 보호계전 자동제어설비 제조설치",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01784061&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "2026-11-04",
+   "dday": 3,
+   "status": "입찰공고",
+   "budget": "3억 6,354만 원",
+   "bid_no": "R26BK01784061",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "계장제어장치"
+   ],
+   "product_hits": [
+    "장치"
+   ],
+   "product_minus": [],
+   "score": 13,
+   "hits": [
+    "설치",
+    "설비",
+    "펌프",
+    "제어"
+   ],
+   "minus": [],
+   "track": "",
+   "regions": [],
+   "licenses": [
+    "정보통신공사업"
+   ],
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "3/3",
+   "ineligible": "등록 업종으로 참여 불가 (필요: 정보통신공사업)",
+   "excluded_track": "B"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "서울특별시 구로구",
+   "title": "(지명경쟁)구로1빗물펌프장 원격감시제어시스템 제작구매 설치",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01783556&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "2026-11-04",
+   "dday": 3,
+   "status": "입찰공고",
+   "budget": "1억 6,982만 원",
+   "bid_no": "R26BK01783556",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "계장제어장치"
+   ],
+   "product_hits": [
+    "장치"
+   ],
+   "product_minus": [],
+   "score": 13,
+   "hits": [
+    "시스템",
+    "제작",
+    "설치",
+    "펌프",
+    "제어"
+   ],
+   "minus": [],
+   "track": "",
+   "regions": [],
+   "licenses": [
+    "정보통신공사업"
+   ],
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "3/3",
+   "ineligible": "등록 업종으로 참여 불가 (필요: 정보통신공사업)",
+   "excluded_track": "B"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "(주)벡스코",
+   "title": "㈜벡스코 컨벤션홀 3층 그랜드볼룸 무대조명시스템 구매설치 건",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01769827&bidPbancOrd=001",
+   "open_date": "2026-10-21",
+   "close_date": "2026-11-04",
+   "dday": 3,
+   "status": "입찰공고",
+   "budget": "1억 5,806만 원",
+   "bid_no": "R26BK01769827",
+   "bid_ord": "001",
+   "bid_type": "물품",
+   "products": [
+    "무대조명장치"
+   ],
+   "product_hits": [
+    "장치"
+   ],
+   "product_minus": [],
+   "score": 6,
+   "hits": [
+    "시스템",
+    "설치"
+   ],
+   "minus": [],
+   "track": "",
+   "regions": [
+    "부산광역시"
+   ],
+   "licenses": [
+    "전기공사업"
+   ],
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "5/5",
+   "ineligible": "참가 가능 지역: 부산광역시",
+   "excluded_track": "B"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한국천문연구원",
+   "title": "달무리 스테이션용 통합 제어 보드 및 연동시험장비 개발",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01784101&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "2026-11-04",
+   "dday": 3,
+   "status": "입찰공고",
+   "budget": "8,280만 원",
+   "bid_no": "R26BK01784101",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "정보통신방송서비스",
+    "통신서비스",
+    "무선통신서비스"
+   ],
+   "score": 5,
+   "hits": [
+    "장비",
+    "제어"
+   ],
+   "minus": [],
+   "track": "",
+   "regions": [
+    "대전광역시"
+   ],
+   "licenses": [],
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "2/2",
+   "ineligible": "참가 가능 지역: 대전광역시",
+   "excluded_track": "B"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한국기술교육대학교",
+   "title": "반도체 항온항습기시스템",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01782942&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "2026-11-04",
+   "dday": 3,
+   "status": "입찰공고",
+   "budget": "1억 2,000만 원",
+   "bid_no": "R26BK01782942",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "항온항습기"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 4,
+   "hits": [
+    "시스템",
+    "반도체"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한국천문연구원",
+   "title": "OWL-Net 모로코 관측소 돔/인클로저/자동운영장비 유지보수",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01784370&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "2026-11-04",
+   "dday": 3,
+   "status": "입찰공고",
+   "budget": "5,845만 원",
+   "bid_no": "R26BK01784370",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "연구조사서비스",
+    "학술연구서비스",
+    "과학기술연구조사서비스"
+   ],
+   "score": 3,
+   "hits": [
+    "장비"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
    "source": "NTIS",
    "kind": "rnd",
    "org": "산업통상부",
@@ -315,6 +3907,303 @@
    "score": 1,
    "hits": [
     "기술개발"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "호텔인터시티",
+   "title": "호텔인터시티 객실용품 공급계약",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01778450&bidPbancOrd=000",
+   "open_date": "2026-10-19",
+   "close_date": "2026-11-04",
+   "dday": 3,
+   "status": "입찰공고",
+   "budget": "1억 3,170만 원",
+   "bid_no": "R26BK01778450",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "샴푸"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 1,
+   "hits": [],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "축산물품질평가원",
+   "title": "소 등급판정용 안전 발판 구매",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01777721&bidPbancOrd=000",
+   "open_date": "2026-10-19",
+   "close_date": "2026-11-05",
+   "dday": 4,
+   "status": "입찰공고",
+   "budget": "6,000만 원",
+   "bid_no": "R26BK01777721",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "융복합균형장비"
+   ],
+   "product_hits": [
+    "장비"
+   ],
+   "product_minus": [],
+   "score": 4,
+   "hits": [],
+   "minus": [],
+   "track": "",
+   "regions": [],
+   "licenses": [],
+   "limits_checked": true,
+   "sme_only": "관한 법률」제2조에 따른 소상공인으로「중소기업 범위 및 확인에 관한 규정」에 따라 발급 된 소기업, 소상공인확인서 중 하나를 소지한 업체",
+   "attach_checked": "1/3",
+   "ineligible": "소기업·소상공인 전용 (공고문 참가자격)",
+   "excluded_track": "B"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "행정안전부 정부청사관리본부 서울청사관리소",
+   "title": "정부서울청사 통합방범설비 유지보수 용역",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01778782&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "2026-11-05",
+   "dday": 4,
+   "status": "입찰공고",
+   "budget": "4억 5,213만 원",
+   "bid_no": "R26BK01778782",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "임대*위탁 및 수리서비스",
+    "수리",
+    "기타수리서비스"
+   ],
+   "score": 4,
+   "hits": [
+    "설비"
+   ],
+   "minus": [],
+   "track": "",
+   "regions": [],
+   "licenses": [
+    "정보통신공사업",
+    "소프트웨어사업자(컴퓨터관련서비스사업)"
+   ],
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "2/2",
+   "ineligible": "등록 업종으로 참여 불가 (필요: 정보통신공사업, 소프트웨어사업자(컴퓨터관련서비스사업))",
+   "excluded_track": "B"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "재단법인 경남테크노파크",
+   "title": "나노소재제품 안전성평가 지원센터 구축사업 냉동기 구매",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01780633&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "2026-11-05",
+   "dday": 4,
+   "status": "입찰공고",
+   "budget": "4억 4,837만 원",
+   "bid_no": "R26BK01780633",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "스크루냉동기"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 3,
+   "hits": [
+    "구축"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한국항공우주연구원",
+   "title": "복합재 하부동체 적용 중앙동체 내추락 시험 치구 제작 및 시험 용역 II",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01784466&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "2026-11-05",
+   "dday": 4,
+   "status": "입찰공고",
+   "budget": "8,581만 원",
+   "bid_no": "R26BK01784466",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "연구조사서비스",
+    "학술연구서비스",
+    "기타연구조사서비스"
+   ],
+   "score": 3,
+   "hits": [
+    "제작"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한국토지주택공사 경기남부지역본부",
+   "title": "평택고덕국제화계획 Aa-38BL 아파트 전기공사 15공구-태양광발전장치",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01773788&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "2026-11-05",
+   "dday": 4,
+   "status": "입찰공고",
+   "budget": "19억 4,724만 원",
+   "bid_no": "R26BK01773788",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "태양광발전장치"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 2,
+   "hits": [
+    "장치"
+   ],
+   "minus": [
+    "전기공사"
+   ],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "법무부 대구지방교정청 경주교도소",
+   "title": "수용자 자비구매 안경류(안경테 등) 소액수의 견적입찰 공고",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01768990&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "2026-11-05",
+   "dday": 4,
+   "status": "입찰공고",
+   "budget": "648만 원",
+   "bid_no": "R26BK01768990",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "안경테"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 1,
+   "hits": [],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "(재)울산테크노파크",
+   "title": "보행자 충돌시험분석을 위한 고속카메라 구매의 건",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01783376&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "2026-11-05",
+   "dday": 4,
+   "status": "입찰공고",
+   "budget": "2억 9,600만 원",
+   "bid_no": "R26BK01783376",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "착순판정카메라"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 1,
+   "hits": [],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "육군군수사령부",
+   "title": "26년~28년 육군 고속버스 제조",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01780869&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "2026-11-05",
+   "dday": 4,
+   "status": "입찰공고",
+   "budget": "69억 8,916만 원",
+   "bid_no": "R26BK01780869",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "대형승합차"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 1,
+   "hits": [],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "기후에너지환경부",
+   "title": "새만금유역 제3단계 수질개선대책 중장기대책 중간평가 및 개선방안 마련",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01785370&bidPbancOrd=000",
+   "open_date": "2026-10-22",
+   "close_date": "2026-11-05",
+   "dday": 4,
+   "status": "입찰공고",
+   "budget": "1억 3,636만 원",
+   "bid_no": "R26BK01785370",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "연구조사서비스",
+    "학술연구서비스",
+    "환경에너지연구조사서비스"
+   ],
+   "score": 1,
+   "hits": [
+    "개선"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한강수계관리위원회",
+   "title": "2027년도 한강수계 소유역 하천 모니터링",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01783933&bidPbancOrd=000",
+   "open_date": "2026-10-22",
+   "close_date": "2026-11-05",
+   "dday": 4,
+   "status": "입찰공고",
+   "budget": "17억 3,526만 원",
+   "bid_no": "R26BK01783933",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "연구조사서비스",
+    "학술연구서비스",
+    "수자원연구조사서비스"
+   ],
+   "score": 1,
+   "hits": [
+    "모니터링"
    ],
    "minus": [],
    "track": ""
@@ -461,6 +4350,32 @@
    "track": ""
   },
   {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "보호치료시설효광원",
+   "title": "생활관 천정형 에어콘 구매 및 설치",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01782286&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "2026-11-06",
+   "dday": 5,
+   "status": "입찰공고",
+   "budget": "1억 5,577만 원",
+   "bid_no": "R26BK01782286",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "냉방기"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 2,
+   "hits": [
+    "설치"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
    "source": "NTIS",
    "kind": "rnd",
    "org": "산업통상부",
@@ -524,6 +4439,32 @@
    "track": ""
   },
   {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "경상북도 영주시",
+   "title": "[협상에 의한 계약] 영주시 역세권 도시재생뉴딜사업 역전여관 서비스개선사업 용역",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01779653&bidPbancOrd=000",
+   "open_date": "2026-10-19",
+   "close_date": "2026-11-09",
+   "dday": 8,
+   "status": "입찰공고",
+   "budget": "1억 7,735만 원",
+   "bid_no": "R26BK01779653",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "연구조사서비스",
+    "학술연구서비스",
+    "기타연구조사서비스"
+   ],
+   "score": 1,
+   "hits": [
+    "개선"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
    "source": "IRIS",
    "kind": "rnd",
    "org": "한국에너지기술평가원",
@@ -541,6 +4482,132 @@
     "에너지",
     "사업화"
    ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "기상청",
+   "title": "2027년도 공중음파 관측장비 유지관리 용역",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01777427&bidPbancOrd=000",
+   "open_date": "2026-10-19",
+   "close_date": "2026-11-10",
+   "dday": 9,
+   "status": "입찰공고",
+   "budget": "3억 원",
+   "bid_no": "R26BK01777427",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "임대*위탁 및 수리서비스",
+    "수리",
+    "기타수리서비스"
+   ],
+   "score": 3,
+   "hits": [
+    "장비"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "강원특별자치도",
+   "title": "강원특별자치도 정보자원 통합시스템 메모리 증설",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01781355&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "2026-11-10",
+   "dday": 9,
+   "status": "입찰공고",
+   "budget": "1억 909만 원",
+   "bid_no": "R26BK01781355",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "기억유닛"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 2,
+   "hits": [
+    "시스템"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한국인터넷진흥원",
+   "title": "지능형 포렌식센터 프라이빗 클라우드 도입 및 구축",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01773319&bidPbancOrd=000",
+   "open_date": "2026-10-19",
+   "close_date": "2026-11-10",
+   "dday": 9,
+   "status": "입찰공고",
+   "budget": "27억 2,727만 원",
+   "bid_no": "R26BK01773319",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "ICT 서비스",
+    "시스템 운영환경 구축",
+    "정보인프라구축서비스"
+   ],
+   "score": 2,
+   "hits": [
+    "구축"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "경찰청",
+   "title": "2026년 대화경찰 동점퍼 구매",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01778217&bidPbancOrd=000",
+   "open_date": "2026-10-19",
+   "close_date": "2026-11-10",
+   "dday": 9,
+   "status": "입찰공고",
+   "budget": "1억 5,900만 원",
+   "bid_no": "R26BK01778217",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "남성용외투"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 1,
+   "hits": [],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "국방부 국군재정관리단",
+   "title": "(266112-D) 탄약정비용 목상자 4종 제조",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01781037&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "2026-11-10",
+   "dday": 9,
+   "status": "입찰공고",
+   "budget": "1억 8,931만 원",
+   "bid_no": "R26BK01781037",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "나무상자"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 1,
+   "hits": [],
    "minus": [],
    "track": ""
   },
@@ -564,6 +4631,198 @@
    "track": ""
   },
   {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한국항공우주연구원",
+   "title": "고바이패스 팬/부스터 성능시험 리그 설계 및 제작",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01785000&bidPbancOrd=000",
+   "open_date": "2026-10-22",
+   "close_date": "2026-11-11",
+   "dday": 10,
+   "status": "입찰공고",
+   "budget": "11억 4,536만 원",
+   "bid_no": "R26BK01785000",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "연구조사서비스",
+    "학술연구서비스",
+    "기타연구조사서비스"
+   ],
+   "score": 5,
+   "hits": [
+    "설계 및 제작"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "재단법인 경북바이오산업연구원",
+   "title": "분석검사팀 신규 장비 구매",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01784471&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "2026-11-11",
+   "dday": 10,
+   "status": "입찰공고",
+   "budget": "1억 8,363만 원",
+   "bid_no": "R26BK01784471",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "마이크로웨이브시료전처리장비",
+    "유전자증폭기"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 4,
+   "hits": [
+    "장비"
+   ],
+   "minus": [],
+   "track": "",
+   "regions": [
+    "경상북도"
+   ],
+   "licenses": [],
+   "limits_checked": true,
+   "sme_only": "소기업, 소상공인으로서「중ㆍ소기업ㆍ소상 공인 및 장애인기업 확인요령」에 따라 발급된 소기업 또는 소상공인 확인서 (입찰서 제출 마감일 전일",
+   "attach_checked": "1/4",
+   "ineligible": "참가 가능 지역: 경상북도",
+   "excluded_track": "B"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "기후에너지환경부 국립환경과학원",
+   "title": "자동 고상추출전처리 시스템 구매",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01779546&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "2026-11-11",
+   "dday": 10,
+   "status": "입찰공고",
+   "budget": "1억 2,500만 원",
+   "bid_no": "R26BK01779546",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "추출기"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 2,
+   "hits": [
+    "시스템"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "재단법인 경북테크노파크",
+   "title": "우즈베키스탄 현지 맞춤형 디지털 전환(DX) 구축지원 서비스 및 관리 플랫폼 구축",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01784123&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "2026-11-11",
+   "dday": 10,
+   "status": "입찰공고",
+   "budget": "4억 5,454만 원",
+   "bid_no": "R26BK01784123",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "행사관리 및 기타 사업 지원서비스 ",
+    "기타",
+    "기타사업지원서비스"
+   ],
+   "score": 2,
+   "hits": [
+    "구축"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한국인터넷진흥원",
+   "title": "27년 신규 취약점 검증 및 개선 조치 기술지원",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01779902&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "2026-11-11",
+   "dday": 10,
+   "status": "입찰공고",
+   "budget": "8억 1,818만 원",
+   "bid_no": "R26BK01779902",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "행사관리 및 기타 사업 지원서비스 ",
+    "기타",
+    "기타사업지원서비스"
+   ],
+   "score": 1,
+   "hits": [
+    "개선"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "관세청",
+   "title": "2026년 사이버위협 대응 보안관제 고도화 사업",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01782354&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "2026-11-11",
+   "dday": 10,
+   "status": "입찰공고",
+   "budget": "1억 9,214만 원",
+   "bid_no": "R26BK01782354",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "ICT 서비스",
+    "시스템 운영환경 구축",
+    "정보인프라구축서비스"
+   ],
+   "score": 1,
+   "hits": [
+    "고도화"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "재단법인 경기도평생교육진흥원",
+   "title": "2027년 클라우드 및 정보시스템 운영 · 유지보수 용역",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01779371&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "2026-11-11",
+   "dday": 10,
+   "status": "입찰공고",
+   "budget": "5억 2,518만 원",
+   "bid_no": "R26BK01779371",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "ICT 서비스",
+    "운영 및 유지관리",
+    "소프트웨어유지및지원서비스"
+   ],
+   "score": 1,
+   "hits": [
+    "시스템"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
    "source": "IRIS",
    "kind": "rnd",
    "org": "한국연구재단",
@@ -578,6 +4837,33 @@
    "elig_text": [],
    "score": 0,
    "hits": [],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한국환경공단",
+   "title": "모잠비크 마푸토 매립장 정비 및 매립가스 처리시설 설치사업 PMC 용역",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01786847&bidPbancOrd=000",
+   "open_date": "2026-10-22",
+   "close_date": "2026-11-12",
+   "dday": 11,
+   "status": "입찰공고",
+   "budget": "151억 3,800만 원",
+   "bid_no": "R26BK01786847",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "행사관리 및 기타 사업 지원서비스 ",
+    "기타",
+    "기타사업지원서비스"
+   ],
+   "score": 2,
+   "hits": [
+    "설치",
+    "가스"
+   ],
    "minus": [],
    "track": ""
   },
@@ -602,6 +4888,93 @@
    "track": ""
   },
   {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "서울특별시",
+   "title": "2027년 참여예산관리시스템 운영 및 유지관리 용역",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01783143&bidPbancOrd=000",
+   "open_date": "2026-10-22",
+   "close_date": "2026-11-12",
+   "dday": 11,
+   "status": "입찰공고",
+   "budget": "1억 952만 원",
+   "bid_no": "R26BK01783143",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "ICT 서비스",
+    "운영 및 유지관리",
+    "소프트웨어유지및지원서비스"
+   ],
+   "score": 1,
+   "hits": [
+    "시스템"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "(주)코스콤",
+   "title": "코스콤 전사 사무환경 개선 용역(설계및시공)",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01785984&bidPbancOrd=000",
+   "open_date": "2026-10-22",
+   "close_date": "2026-11-12",
+   "dday": 11,
+   "status": "입찰공고",
+   "budget": "30억 6,040만 원",
+   "bid_no": "R26BK01785984",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "시설물관리 및 청소서비스",
+    "시설물관리, 청소 등",
+    "시설설비유지관리서비스"
+   ],
+   "score": 1,
+   "hits": [
+    "개선"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "과학기술정보통신부 우정사업본부 우정사업조달센터",
+   "title": "국제우편물류센터 도착장 물류장비 재배치",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01774016&bidPbancOrd=000",
+   "open_date": "2026-10-19",
+   "close_date": "2026-11-13",
+   "dday": 12,
+   "status": "입찰공고",
+   "budget": "35억 4,545만 원",
+   "bid_no": "R26BK01774016",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "화물선별기"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 4,
+   "hits": [
+    "장비"
+   ],
+   "minus": [],
+   "track": "",
+   "regions": [],
+   "licenses": [
+    "기계설비ㆍ가스공사업"
+   ],
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "3/3",
+   "ineligible": "등록 업종으로 참여 불가 (필요: 기계설비ㆍ가스공사업)",
+   "excluded_track": "B"
+  },
+  {
    "source": "IRIS",
    "kind": "rnd",
    "org": "한국연구재단",
@@ -617,6 +4990,32 @@
    "score": 1,
    "hits": [
     "기술개발"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한국인터넷진흥원",
+   "title": "27년 24시간 종합상황관제 및 대응시스템 운영",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01779854&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "2026-11-13",
+   "dday": 12,
+   "status": "입찰공고",
+   "budget": "18억 1,818만 원",
+   "bid_no": "R26BK01779854",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "행사관리 및 기타 사업 지원서비스 ",
+    "기타",
+    "기타사업지원서비스"
+   ],
+   "score": 1,
+   "hits": [
+    "시스템"
    ],
    "minus": [],
    "track": ""
@@ -658,6 +5057,58 @@
    "track": ""
   },
   {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한국원자력연구원",
+   "title": "금속 핵종 생산 GMP 핫셀 제작",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01781210&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "2026-11-17",
+   "dday": 16,
+   "status": "입찰공고",
+   "budget": "55억 7,000만 원",
+   "bid_no": "R26BK01781210",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "실험실용공급기기"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 4,
+   "hits": [
+    "제작"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "국토교통부",
+   "title": "자율주행 데이터 플랫폼 구축 ISP 수립",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01778209&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "2026-11-17",
+   "dday": 16,
+   "status": "입찰공고",
+   "budget": "2억 7,272만 원",
+   "bid_no": "R26BK01778209",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "ICT 서비스",
+    "ICT사업 컨설팅",
+    "정보화전략계획서비스"
+   ],
+   "score": 2,
+   "hits": [
+    "구축"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
    "source": "IRIS",
    "kind": "rnd",
    "org": "한국연구재단",
@@ -695,6 +5146,43 @@
    "hits": [],
    "minus": [],
    "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "대한체육회 진천선수촌",
+   "title": "국가대표선수촌 기계설비 자동제어 유지보수 용역",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01763602&bidPbancOrd=001",
+   "open_date": "2026-10-20",
+   "close_date": "2026-11-23",
+   "dday": 22,
+   "status": "입찰공고",
+   "budget": "3억 1,153만 원",
+   "bid_no": "R26BK01763602",
+   "bid_ord": "001",
+   "bid_type": "용역",
+   "service_class": [
+    "시설물관리 및 청소서비스",
+    "시설물관리, 청소 등",
+    "시설설비유지관리서비스"
+   ],
+   "score": 6,
+   "hits": [
+    "설비",
+    "제어"
+   ],
+   "minus": [],
+   "track": "",
+   "regions": [],
+   "licenses": [
+    "정보통신공사업",
+    "소프트웨어사업자(컴퓨터관련서비스사업)"
+   ],
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "4/4",
+   "ineligible": "등록 업종으로 참여 불가 (필요: 정보통신공사업, 소프트웨어사업자(컴퓨터관련서비스사업))",
+   "excluded_track": "B"
   },
   {
    "source": "NTIS",
@@ -764,6 +5252,61 @@
    ]
   },
   {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "의료기관평가인증원",
+   "title": "환자안전 보고학습시스템 정보기반 유지관리 사업",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01783777&bidPbancOrd=000",
+   "open_date": "2026-10-22",
+   "close_date": "2026-11-24",
+   "dday": 23,
+   "status": "입찰공고",
+   "budget": "15억 1,272만 원",
+   "bid_no": "R26BK01783777",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "ICT 서비스",
+    "운영 및 유지관리",
+    "전산장비유지관리서비스"
+   ],
+   "score": 1,
+   "hits": [
+    "시스템"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한국국제협력단",
+   "title": "방글라데시 플랫폼 기반의 통계 서비스 역량강화 사업 통계 데이터웨어 하우스 플랫폼 구축 기자재 공급 및 설치",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01776830&bidPbancOrd=000",
+   "open_date": "2026-10-19",
+   "close_date": "2026-11-27",
+   "dday": 26,
+   "status": "입찰공고",
+   "budget": "40억 5,134만 원",
+   "bid_no": "R26BK01776830",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "데이터베이스관리소프트웨어"
+   ],
+   "product_hits": [],
+   "product_minus": [
+    "소프트웨어"
+   ],
+   "score": 1,
+   "hits": [
+    "구축",
+    "설치"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
    "source": "IRIS",
    "kind": "rnd",
    "org": "한국연구재단",
@@ -825,6 +5368,495 @@
     "연구인력",
     "인력지원"
    ],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한전KDN(주)",
+   "title": "[경쟁입찰]대전DR센터 SDN 네트워크설비 유지보수",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01782421&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "2026-12-01",
+   "dday": 30,
+   "status": "입찰공고",
+   "budget": "2억 9,907만 원",
+   "bid_no": "R26BK01782421",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "정보통신방송서비스",
+    "통신서비스",
+    "유선통신서비스"
+   ],
+   "score": 4,
+   "hits": [
+    "설비"
+   ],
+   "minus": [],
+   "track": "",
+   "regions": [],
+   "licenses": [
+    "정보통신공사업"
+   ],
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "7/7",
+   "ineligible": "등록 업종으로 참여 불가 (필요: 정보통신공사업)",
+   "excluded_track": "B"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한국항공우주연구원",
+   "title": "정지궤도 항법위성용 중앙실린더 구조물 검증모델 국산화 제작",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01780521&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "2026-12-01",
+   "dday": 30,
+   "status": "입찰공고",
+   "budget": "47억 7,363만 원",
+   "bid_no": "R26BK01780521",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "연구조사서비스",
+    "학술연구서비스",
+    "과학기술연구조사서비스"
+   ],
+   "score": 3,
+   "hits": [
+    "제작"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한전KDN(주)",
+   "title": "[경쟁입찰]통합모니터링시스템 K-IMS SW 유지관리",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01782373&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "2026-12-01",
+   "dday": 30,
+   "status": "입찰공고",
+   "budget": "2억 4,082만 원",
+   "bid_no": "R26BK01782373",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "ICT 서비스",
+    "운영 및 유지관리",
+    "소프트웨어유지및지원서비스"
+   ],
+   "score": 2,
+   "hits": [
+    "모니터링",
+    "시스템"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한국수자원조사기술원",
+   "title": "멀티라인 전자파 표면유속계 제조",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01783870&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "2026-12-01",
+   "dday": 30,
+   "status": "입찰공고",
+   "budget": "11억 6,540만 원",
+   "bid_no": "R26BK01783870",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "도플러유속계"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 1,
+   "hits": [],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한전KDN(주)",
+   "title": "[경쟁입찰]네트워크 접근관리시스템(NAC) 유지보수",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01782452&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "2026-12-01",
+   "dday": 30,
+   "status": "입찰공고",
+   "budget": "3억 2,933만 원",
+   "bid_no": "R26BK01782452",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "정보통신방송서비스",
+    "통신서비스",
+    "유선통신서비스"
+   ],
+   "score": 1,
+   "hits": [
+    "시스템"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한전KDN(주)",
+   "title": "[경쟁입찰]IP기반 지하전력구 비상통신시스템 유지보수",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01782467&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "2026-12-01",
+   "dday": 30,
+   "status": "입찰공고",
+   "budget": "4억 2,543만 원",
+   "bid_no": "R26BK01782467",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "정보통신방송서비스",
+    "통신서비스",
+    "무선통신서비스"
+   ],
+   "score": 1,
+   "hits": [
+    "시스템"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한전KDN(주)",
+   "title": "[경쟁입찰]CTI시스템 상용SW 유지보수",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01782482&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "2026-12-01",
+   "dday": 30,
+   "status": "입찰공고",
+   "budget": "4억 7,577만 원",
+   "bid_no": "R26BK01782482",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "ICT 서비스",
+    "운영 및 유지관리",
+    "소프트웨어유지및지원서비스"
+   ],
+   "score": 1,
+   "hits": [
+    "시스템"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "인천국제공항보안 주식회사",
+   "title": "2026년 정보시스템 통합유지관리 용역",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01784719&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "2026-12-01",
+   "dday": 30,
+   "status": "입찰공고",
+   "budget": "1억 1,586만 원",
+   "bid_no": "R26BK01784719",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "ICT 서비스",
+    "운영 및 유지관리",
+    "전산장비유지관리서비스"
+   ],
+   "score": 1,
+   "hits": [
+    "시스템"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "경기주택도시공사",
+   "title": "2027년 정보시스템 유지보수 용역",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01784766&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "2026-12-01",
+   "dday": 30,
+   "status": "입찰공고",
+   "budget": "10억 9,738만 원",
+   "bid_no": "R26BK01784766",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "행사관리 및 기타 사업 지원서비스 ",
+    "기타",
+    "기타사업지원서비스"
+   ],
+   "score": 1,
+   "hits": [
+    "시스템"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한국항공우주연구원",
+   "title": "중소형급 가스터빈용 섹터 및 환형 연소기 성능시험 리그 설계/제작",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01781397&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "2026-12-02",
+   "dday": 31,
+   "status": "입찰공고",
+   "budget": "4억 3,563만 원",
+   "bid_no": "R26BK01781397",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "연구조사서비스",
+    "학술연구서비스",
+    "과학기술연구조사서비스"
+   ],
+   "score": 4,
+   "hits": [
+    "제작",
+    "가스"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한전KDN(주)",
+   "title": "[경쟁입찰]한전본사 구내통신설비 유지보수",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01784912&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "2026-12-02",
+   "dday": 31,
+   "status": "입찰공고",
+   "budget": "15억 5,545만 원",
+   "bid_no": "R26BK01784912",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "정보통신방송서비스",
+    "통신서비스",
+    "무선통신서비스"
+   ],
+   "score": 4,
+   "hits": [
+    "설비"
+   ],
+   "minus": [],
+   "track": "",
+   "regions": [],
+   "licenses": [
+    "정보통신공사업"
+   ],
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "7/7",
+   "ineligible": "등록 업종으로 참여 불가 (필요: 정보통신공사업)",
+   "excluded_track": "B"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한국환경공단",
+   "title": "2027년도 소음진동 측정망 운영관리 용역",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01780803&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "2026-12-02",
+   "dday": 31,
+   "status": "입찰공고",
+   "budget": "12억 2,411만 원",
+   "bid_no": "R26BK01780803",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "행사관리 및 기타 사업 지원서비스 ",
+    "기타",
+    "기타사업지원서비스"
+   ],
+   "score": 2,
+   "hits": [
+    "측정"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한전KDN(주)",
+   "title": "[경쟁입찰]디지털 주파수공용통신시스템 유지보수",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01783851&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "2026-12-02",
+   "dday": 31,
+   "status": "입찰공고",
+   "budget": "18억 9,206만 원",
+   "bid_no": "R26BK01783851",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "정보통신방송서비스",
+    "통신서비스",
+    "무선통신서비스"
+   ],
+   "score": 1,
+   "hits": [
+    "시스템"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한국항공우주연구원",
+   "title": "2027년 심우주 지상 안테나 시스템 운영관리 용역",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01785469&bidPbancOrd=000",
+   "open_date": "2026-10-22",
+   "close_date": "2026-12-02",
+   "dday": 31,
+   "status": "입찰공고",
+   "budget": "2억 9,927만 원",
+   "bid_no": "R26BK01785469",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "ICT 서비스",
+    "운영 및 유지관리",
+    "소프트웨어유지및지원서비스"
+   ],
+   "score": 1,
+   "hits": [
+    "시스템"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "재단법인 서울관광재단",
+   "title": "2027 계류식 가스기구 서울달 운영 및 관리",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01785312&bidPbancOrd=000",
+   "open_date": "2026-10-22",
+   "close_date": "2026-12-02",
+   "dday": 31,
+   "status": "입찰공고",
+   "budget": "14억 4,700만 원",
+   "bid_no": "R26BK01785312",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "임대*위탁 및 수리서비스",
+    "사업장 위탁 ",
+    "사업장위탁운영서비스"
+   ],
+   "score": 1,
+   "hits": [
+    "가스"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "가축위생방역지원본부",
+   "title": "2026년 정보시스템 교체 및 보강 사업 계약",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01786067&bidPbancOrd=000",
+   "open_date": "2026-10-22",
+   "close_date": "2026-12-02",
+   "dday": 31,
+   "status": "입찰공고",
+   "budget": "2억 7,381만 원",
+   "bid_no": "R26BK01786067",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "ICT 서비스",
+    "시스템 운영환경 구축",
+    "정보인프라구축서비스"
+   ],
+   "score": 1,
+   "hits": [
+    "시스템"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "경운대학교 산학협력단",
+   "title": "경운대학교 앵커사업 반달형 지지 시스템 제작 용역",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01786017&bidPbancOrd=000",
+   "open_date": "2026-10-22",
+   "close_date": "2026-12-03",
+   "dday": 32,
+   "status": "입찰공고",
+   "budget": "2억 7,000만 원",
+   "bid_no": "R26BK01786017",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "교육 및 전문직종/기술서비스",
+    "기술시험,검사 및 분석",
+    "기술검사분석서비스"
+   ],
+   "score": 1,
+   "hits": [
+    "시스템",
+    "제작"
+   ],
+   "minus": [
+    "학교"
+   ],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "국방과학연구소",
+   "title": "네트워크 공격 대응을 위한 침입감내 기술",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01783970&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "2026-12-07",
+   "dday": 36,
+   "status": "입찰공고",
+   "budget": "34억 5,454만 원",
+   "bid_no": "R26BK01783970",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "기타물품설치서비스"
+   ],
+   "product_hits": [
+    "설치"
+   ],
+   "product_minus": [],
+   "score": 2,
+   "hits": [],
+   "minus": [],
    "track": ""
   },
   {
@@ -943,6 +5975,100 @@
    "track": ""
   },
   {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "충청북도 제천시",
+   "title": "의림지뜰 자연치유단지 계류식 가스기구 제작·구매 및 설치",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01779241&bidPbancOrd=000",
+   "open_date": "2026-10-19",
+   "close_date": "",
+   "dday": null,
+   "status": "입찰공고",
+   "budget": "34억 7,545만 원",
+   "bid_no": "R26BK01779241",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "열기구"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 6,
+   "hits": [
+    "제작",
+    "설치",
+    "가스"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "경상남도 창녕군",
+   "title": "도시 방재형 배수펌프장 스마트 시스템 구축사업",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01780471&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "",
+   "dday": null,
+   "status": "입찰공고",
+   "budget": "1억 7,727만 원",
+   "bid_no": "R26BK01780471",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "시설물관리 및 청소서비스",
+    "시설물관리, 청소 등",
+    "시설설비유지관리서비스"
+   ],
+   "score": 5,
+   "hits": [
+    "시스템",
+    "구축",
+    "펌프"
+   ],
+   "minus": [],
+   "track": "",
+   "regions": [
+    "경상남도"
+   ],
+   "licenses": [
+    "정보통신공사업",
+    "소프트웨어사업자(컴퓨터관련서비스사업)"
+   ],
+   "limits_checked": true,
+   "sme_only": "",
+   "attach_checked": "3/3",
+   "ineligible": "참가 가능 지역: 경상남도",
+   "excluded_track": "B"
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "사단법인 한국포도협회",
+   "title": "5년 영농일지 제작 배부(재공고)",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01777378&bidPbancOrd=000",
+   "open_date": "2026-10-19",
+   "close_date": "",
+   "dday": null,
+   "status": "입찰공고",
+   "budget": "6,363만 원",
+   "bid_no": "R26BK01777378",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "공책"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 4,
+   "hits": [
+    "제작"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
    "source": "IRIS",
    "kind": "rnd",
    "org": "우주항공청",
@@ -960,6 +6086,1215 @@
     "실증"
    ],
    "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "강원특별자치도 삼척시",
+   "title": "2026년 삼척시 일반농산어촌개발사업(농산물 탈피기 시설 구축) 물품구입",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01779131&bidPbancOrd=000",
+   "open_date": "2026-10-19",
+   "close_date": "",
+   "dday": null,
+   "status": "입찰공고",
+   "budget": "1억 909만 원",
+   "bid_no": "R26BK01779131",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "탈피기"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 3,
+   "hits": [
+    "구축"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "광운대학교 산학협력단",
+   "title": "휴머노이드로봇(Unitree G1 Edu Ultimate(B) 및 VR 모션모방학습 패키지)",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01782610&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "",
+   "dday": null,
+   "status": "입찰공고",
+   "budget": "2억 6,727만 원",
+   "bid_no": "R26BK01782610",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "휴머노이드로봇"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 3,
+   "hits": [
+    "로봇"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "신라대학교",
+   "title": "(앵커)2026학년도 응급구조학과 실습장비 62종 납품 및 설치",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01780013&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "",
+   "dday": null,
+   "status": "입찰공고",
+   "budget": "3억 8,878만 원",
+   "bid_no": "R26BK01780013",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "응급구조장비세트",
+    "교육훈련장비",
+    "심폐소생술훈련마네킹",
+    "교육용심장충격기",
+    "심전계",
+    "의학교육용마네킹",
+    "인공호흡기",
+    "호기가스분석기",
+    "기관용튜브·카테터",
+    "전동식의료용흡인기",
+    "부목",
+    "응급구조용들것",
+    "펄스옥시미터",
+    "개인용혈당측정기",
+    "분만용흡인기",
+    "전동식의료용침대",
+    "코인두용카테터",
+    "환자감시장치",
+    "인체모형",
+    "환자운반기",
+    "의료용가스공급장치",
+    "남성용조끼",
+    "왕진가방",
+    "근력측정기"
+   ],
+   "product_hits": [
+    "장치",
+    "측정",
+    "가스"
+   ],
+   "product_minus": [
+    "교육",
+    "학교",
+    "의료"
+   ],
+   "score": 3,
+   "hits": [
+    "설치",
+    "장비"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "영남대학교",
+   "title": "[로봇특성화] 로봇공학과 딥러닝 실습용 워크스테이션 구매 재공고",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01783300&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "",
+   "dday": null,
+   "status": "입찰공고",
+   "budget": "1억 860만 원",
+   "bid_no": "R26BK01783300",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "워크스테이션"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 3,
+   "hits": [
+    "로봇"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "상명대학교",
+   "title": "고압가스 안전공급 및 배기정화 시스템(KGS 인증 가스 캐비닛 및 스크러버) 구매",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01784337&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "",
+   "dday": null,
+   "status": "입찰공고",
+   "budget": "금액 미공개",
+   "bid_no": "R26BK01784337",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "실험실용가스캐비닛"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 3,
+   "hits": [
+    "시스템",
+    "가스"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "재단법인 한국엘피지사업관리원",
+   "title": "영천시 양평2리마을 LPG배관망 구축사업 공급사업자 선정",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01784598&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "",
+   "dday": null,
+   "status": "입찰공고",
+   "budget": "금액 미공개",
+   "bid_no": "R26BK01784598",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "프로판가스"
+   ],
+   "product_hits": [
+    "가스"
+   ],
+   "product_minus": [],
+   "score": 3,
+   "hits": [
+    "구축",
+    "배관"
+   ],
+   "minus": [
+    "공급사업자"
+   ],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "재단법인 한국엘피지사업관리원",
+   "title": "청송군 진보면 읍면단위 LPG배관망 구축사업 공급사업자 선정",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01784615&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "",
+   "dday": null,
+   "status": "입찰공고",
+   "budget": "금액 미공개",
+   "bid_no": "R26BK01784615",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "프로판가스"
+   ],
+   "product_hits": [
+    "가스"
+   ],
+   "product_minus": [],
+   "score": 3,
+   "hits": [
+    "구축",
+    "배관"
+   ],
+   "minus": [
+    "공급사업자"
+   ],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "재단법인 한국엘피지사업관리원",
+   "title": "청송군 이촌2리마을 LPG배관망 구축사업 공급사업자 선정",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01784664&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "",
+   "dday": null,
+   "status": "입찰공고",
+   "budget": "금액 미공개",
+   "bid_no": "R26BK01784664",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "프로판가스"
+   ],
+   "product_hits": [
+    "가스"
+   ],
+   "product_minus": [],
+   "score": 3,
+   "hits": [
+    "구축",
+    "배관"
+   ],
+   "minus": [
+    "공급사업자"
+   ],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "재단법인 한국엘피지사업관리원",
+   "title": "청도군 풍각면 읍면단위 LPG배관망 구축사업 공급사업자 선정",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01784710&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "",
+   "dday": null,
+   "status": "입찰공고",
+   "budget": "금액 미공개",
+   "bid_no": "R26BK01784710",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "프로판가스"
+   ],
+   "product_hits": [
+    "가스"
+   ],
+   "product_minus": [],
+   "score": 3,
+   "hits": [
+    "구축",
+    "배관"
+   ],
+   "minus": [
+    "공급사업자"
+   ],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "인하대학교",
+   "title": "협동 로봇암 구매",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01784714&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "",
+   "dday": null,
+   "status": "입찰공고",
+   "budget": "4,090만 원",
+   "bid_no": "R26BK01784714",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "산업용로봇"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 3,
+   "hits": [
+    "로봇"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한국기계산업진흥회",
+   "title": "계간 KOAMI Insight 제작(장기계속계약)",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01777025&bidPbancOrd=000",
+   "open_date": "2026-10-19",
+   "close_date": "",
+   "dday": null,
+   "status": "입찰공고",
+   "budget": "1억 4,363만 원",
+   "bid_no": "R26BK01777025",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "매체제작, 디자인, 홍보/마케팅 서비스",
+    "매체제작",
+    "종이인쇄물제작서비스"
+   ],
+   "score": 3,
+   "hits": [
+    "제작"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "중소기업은행",
+   "title": "[보안 취약점 통합관리 시스템 구축] 사업 외주 감리",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01777744&bidPbancOrd=000",
+   "open_date": "2026-10-19",
+   "close_date": "",
+   "dday": null,
+   "status": "입찰공고",
+   "budget": "1억 1,481만 원",
+   "bid_no": "R26BK01777744",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "ICT 서비스",
+    "ICT사업 컨설팅",
+    "정보시스템감리서비스"
+   ],
+   "score": 3,
+   "hits": [
+    "시스템",
+    "구축"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "사단법인 한국정보통신진흥협회",
+   "title": "AI컴퓨팅 실증인프라 시험검증",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01778399&bidPbancOrd=000",
+   "open_date": "2026-10-19",
+   "close_date": "",
+   "dday": null,
+   "status": "입찰공고",
+   "budget": "9,000만 원",
+   "bid_no": "R26BK01778399",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "행사관리 및 기타 사업 지원서비스 ",
+    "기타",
+    "기타사업지원서비스"
+   ],
+   "score": 3,
+   "hits": [
+    "실증"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "(사)한국블루베리연합회",
+   "title": "블루베리 쿨링스프레이 제작",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01781650&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "",
+   "dday": null,
+   "status": "입찰공고",
+   "budget": "2,727만 원",
+   "bid_no": "R26BK01781650",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "매체제작, 디자인, 홍보/마케팅 서비스",
+    "홍보 및 마케팅",
+    "홍보및마케팅서비스"
+   ],
+   "score": 3,
+   "hits": [
+    "제작"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "가천대학교",
+   "title": "2028학년도 모집요강(입학안내, 수시, 정시) 제작",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01782004&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "",
+   "dday": null,
+   "status": "입찰공고",
+   "budget": "3억 1,509만 원",
+   "bid_no": "R26BK01782004",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "매체제작, 디자인, 홍보/마케팅 서비스",
+    "매체제작",
+    "종이인쇄물제작서비스"
+   ],
+   "score": 3,
+   "hits": [
+    "제작"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "재단법인 인제군 문화재단",
+   "title": "박인환 문학 굿즈 개발 제작 및 유통 활성화 용역",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01784163&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "",
+   "dday": null,
+   "status": "입찰공고",
+   "budget": "1억 909만 원",
+   "bid_no": "R26BK01784163",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "매체제작, 디자인, 홍보/마케팅 서비스",
+    " 디자인",
+    "디자인서비스"
+   ],
+   "score": 3,
+   "hits": [
+    "제작"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "대구한의대학교 산학협력단",
+   "title": "앵커사업단 공초점 레이저 스캐닝 현미경 시스템 구입",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01779568&bidPbancOrd=000",
+   "open_date": "2026-10-19",
+   "close_date": "",
+   "dday": null,
+   "status": "입찰공고",
+   "budget": "3억 900만 원",
+   "bid_no": "R26BK01779568",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "레이저현미경"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 2,
+   "hits": [
+    "시스템"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "서울대학교병원",
+   "title": "서울대학교병원 [시설비(건설가)] 직교류형 냉각탑 1호기-교체포함(서비스빌딩 흡수식 냉동기 1호용) 외 1건",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01781958&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "",
+   "dday": null,
+   "status": "입찰공고",
+   "budget": "금액 미공개",
+   "bid_no": "R26BK01781958",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "냉각탑"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 2,
+   "hits": [
+    "설비",
+    "냉각"
+   ],
+   "minus": [
+    "학교",
+    "병원"
+   ],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "대구가톨릭대학교",
+   "title": "[재공고][1차년도 앵커(K-BIC)사업] 대구가톨릭대학교 경북전략산업앵커대학사업단 제약공학과 실험실 기자재(냉동냉장고 외 19종) 구입",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01783075&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "",
+   "dday": null,
+   "status": "입찰공고",
+   "budget": "금액 미공개",
+   "bid_no": "R26BK01783075",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "냉장고",
+    "실체현미경",
+    "진공건조기",
+    "기계식진공펌프",
+    "소용돌이식진탕기",
+    "실험실용배기기",
+    "약품장",
+    "인터랙티브화이트보드",
+    "실험대",
+    "실험실용싱크대",
+    "스툴의자",
+    "책상",
+    "이동형파일서랍",
+    "작업용의자"
+   ],
+   "product_hits": [
+    "건조기",
+    "펌프",
+    "진공"
+   ],
+   "product_minus": [],
+   "score": 2,
+   "hits": [],
+   "minus": [
+    "학교"
+   ],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "분당서울대학교병원",
+   "title": "교수동 롤스크린, 우드 블라인드 설치 계약",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01784393&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "",
+   "dday": null,
+   "status": "입찰공고",
+   "budget": "금액 미공개",
+   "bid_no": "R26BK01784393",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "롤업셰이드"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 2,
+   "hits": [
+    "설치"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "분당서울대학교병원",
+   "title": "교수동 단열필름 설치 계약",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01784406&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "",
+   "dday": null,
+   "status": "입찰공고",
+   "budget": "금액 미공개",
+   "bid_no": "R26BK01784406",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "롤업셰이드"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 2,
+   "hits": [
+    "설치"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "전북특별자치도 부안군",
+   "title": "부안군 스마트경로당 구축사업[협상에 의한 계약]",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01778830&bidPbancOrd=000",
+   "open_date": "2026-10-19",
+   "close_date": "",
+   "dday": null,
+   "status": "입찰공고",
+   "budget": "5억 2,454만 원",
+   "bid_no": "R26BK01778830",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "ICT 서비스",
+    "시스템 운영환경 구축",
+    "정보인프라구축서비스"
+   ],
+   "score": 2,
+   "hits": [
+    "구축"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "경상북도 김천시",
+   "title": "김천시 로봇산업 육성 및 지역산업 연계전략 수립 용역(협상에 의한 계약)",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01780139&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "",
+   "dday": null,
+   "status": "입찰공고",
+   "budget": "9,090만 원",
+   "bid_no": "R26BK01780139",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "연구조사서비스",
+    "학술연구서비스",
+    "기타연구조사서비스"
+   ],
+   "score": 2,
+   "hits": [
+    "로봇"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "동의과학대학교 산학협력단",
+   "title": "2026년 DIT ANCHOR사업 거점구축 과제 초광역형 전문대 특화 해외 공동 입학박람회",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01783371&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "",
+   "dday": null,
+   "status": "입찰공고",
+   "budget": "7,000만 원",
+   "bid_no": "R26BK01783371",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "교육 및 전문직종/기술서비스",
+    "교육서비스 ",
+    "기타교육서비스"
+   ],
+   "score": 2,
+   "hits": [
+    "구축"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "주식회사 브레인데크",
+   "title": "Blings(Revocal) Access 감정 데이터셋 구축 및 감정 라벨링 용역",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01784890&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "",
+   "dday": null,
+   "status": "입찰공고",
+   "budget": "4,000만 원",
+   "bid_no": "R26BK01784890",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "ICT 서비스",
+    "DB구축 및 자료입력",
+    "데이터서비스"
+   ],
+   "score": 2,
+   "hits": [
+    "구축"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "광운대학교 산학협력단",
+   "title": "오실로스코프(Tektronix MSO22 2-BW-100 Mixed Signal Oscilloscope)",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01777729&bidPbancOrd=000",
+   "open_date": "2026-10-19",
+   "close_date": "",
+   "dday": null,
+   "status": "입찰공고",
+   "budget": "339만 원",
+   "bid_no": "R26BK01777729",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "오실로스코프"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 1,
+   "hits": [],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "포항공과대학교",
+   "title": "[52810][글로컬대학]Cytop",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01779264&bidPbancOrd=000",
+   "open_date": "2026-10-19",
+   "close_date": "",
+   "dday": null,
+   "status": "입찰공고",
+   "budget": "2,724만 원",
+   "bid_no": "R26BK01779264",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "기타시약및지시약"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 1,
+   "hits": [],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "가톨릭대학교 산학협력단",
+   "title": "전자동 대량 단일세포 분획 및 라벨링 라이브러리 시약 구매",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01779889&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "",
+   "dday": null,
+   "status": "입찰공고",
+   "budget": "2,500만 원",
+   "bid_no": "R26BK01779889",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "기타시약및지시약"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 1,
+   "hits": [],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "전남대학교병원",
+   "title": "소아용 인공호흡기 1대 구입",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01781046&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "",
+   "dday": null,
+   "status": "입찰공고",
+   "budget": "금액 미공개",
+   "bid_no": "R26BK01781046",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "영유아인공호흡기"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 1,
+   "hits": [],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "수원대학교",
+   "title": "[앵커사업]수원대학교 기자재(열기계분석기) 구입",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01781660&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "",
+   "dday": null,
+   "status": "입찰공고",
+   "budget": "1억 2,000만 원",
+   "bid_no": "R26BK01781660",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "열분석장치"
+   ],
+   "product_hits": [
+    "장치"
+   ],
+   "product_minus": [],
+   "score": 1,
+   "hits": [],
+   "minus": [
+    "학교"
+   ],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "상명대학교",
+   "title": "HUSS 사업단 3단 접이식 이동형 관람석 구매",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01782629&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "",
+   "dday": null,
+   "status": "입찰공고",
+   "budget": "금액 미공개",
+   "bid_no": "R26BK01782629",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "접이식의자"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 1,
+   "hits": [],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "인제대학교 산학협력단",
+   "title": "씬터 본더 구매",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01782707&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "",
+   "dday": null,
+   "status": "입찰공고",
+   "budget": "1억 5,400만 원",
+   "bid_no": "R26BK01782707",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "웨이퍼다이본딩기"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 1,
+   "hits": [],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "인제대학교 산학협력단",
+   "title": "감광제 에셔 구매",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01782948&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "",
+   "dday": null,
+   "status": "입찰공고",
+   "budget": "8,000만 원",
+   "bid_no": "R26BK01782948",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "웨이퍼식각기"
+   ],
+   "product_hits": [],
+   "product_minus": [],
+   "score": 1,
+   "hits": [],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "재단법인 한국엘피지사업관리원",
+   "title": "옹진군 진1리마을 LPG시설 구축사업 공급사업자 선정",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01784578&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "",
+   "dday": null,
+   "status": "입찰공고",
+   "budget": "금액 미공개",
+   "bid_no": "R26BK01784578",
+   "bid_ord": "000",
+   "bid_type": "물품",
+   "products": [
+    "프로판가스"
+   ],
+   "product_hits": [
+    "가스"
+   ],
+   "product_minus": [],
+   "score": 1,
+   "hits": [
+    "구축"
+   ],
+   "minus": [
+    "공급사업자"
+   ],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한국산업은행",
+   "title": "미래 경기전망 및 위기상황 반영을 위한 부도율 추정 모형 개선",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01777242&bidPbancOrd=000",
+   "open_date": "2026-10-19",
+   "close_date": "",
+   "dday": null,
+   "status": "입찰공고",
+   "budget": "3억 4,363만 원",
+   "bid_no": "R26BK01777242",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "행사관리 및 기타 사업 지원서비스 ",
+    "기타",
+    "기타사업지원서비스"
+   ],
+   "score": 1,
+   "hits": [
+    "개선"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "경상북도 경주시",
+   "title": "마을호텔 고객 체류 프로그램 고도화 용역",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01779544&bidPbancOrd=000",
+   "open_date": "2026-10-19",
+   "close_date": "",
+   "dday": null,
+   "status": "입찰공고",
+   "budget": "3,636만 원",
+   "bid_no": "R26BK01779544",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "연구조사서비스",
+    "학술연구서비스",
+    "기타연구조사서비스"
+   ],
+   "score": 1,
+   "hits": [
+    "고도화"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "전북특별자치도 장수군",
+   "title": "장수군 하수도 시스템 유지관리 용역(협상에 의한 계약)",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01776929&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "",
+   "dday": null,
+   "status": "입찰공고",
+   "budget": "35억 8,636만 원",
+   "bid_no": "R26BK01776929",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "ICT 서비스",
+    "운영 및 유지관리",
+    "소프트웨어유지및지원서비스"
+   ],
+   "score": 1,
+   "hits": [
+    "시스템"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "경상북도 경주시",
+   "title": "사회연대경제 조직화 및 수익환원 시스템 설계 용역",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01781853&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "",
+   "dday": null,
+   "status": "입찰공고",
+   "budget": "3,636만 원",
+   "bid_no": "R26BK01781853",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "ICT 서비스",
+    "운영 및 유지관리",
+    "소프트웨어유지및지원서비스"
+   ],
+   "score": 1,
+   "hits": [
+    "시스템"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "사단법인 한국정보통신진흥협회",
+   "title": "2027년도 통신시장 모니터링(유선분야)",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01781933&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "",
+   "dday": null,
+   "status": "입찰공고",
+   "budget": "2억 3,000만 원",
+   "bid_no": "R26BK01781933",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "행사관리 및 기타 사업 지원서비스 ",
+    "기타",
+    "기타사업지원서비스"
+   ],
+   "score": 1,
+   "hits": [
+    "모니터링"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한국과학기술원",
+   "title": "정보보안 모니터링 및 관리 용역(재)",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01782430&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "",
+   "dday": null,
+   "status": "입찰공고",
+   "budget": "3억 6,381만 원",
+   "bid_no": "R26BK01782430",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "ICT 서비스",
+    "운영 및 유지관리",
+    "소프트웨어유지및지원서비스"
+   ],
+   "score": 1,
+   "hits": [
+    "모니터링"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "한국과학기술원",
+   "title": "2026년 KAIST 안전관리통합시스템 유지관리 사업",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01783445&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "",
+   "dday": null,
+   "status": "입찰공고",
+   "budget": "8,636만 원",
+   "bid_no": "R26BK01783445",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "ICT 서비스",
+    "운영 및 유지관리",
+    "소프트웨어유지및지원서비스"
+   ],
+   "score": 1,
+   "hits": [
+    "시스템"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "서울주택도시개발공사",
+   "title": "IT인프라 및 AI시스템 운영‧유지관리 용역",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01784122&bidPbancOrd=000",
+   "open_date": "2026-10-21",
+   "close_date": "",
+   "dday": null,
+   "status": "입찰공고",
+   "budget": "146억 8,323만 원",
+   "bid_no": "R26BK01784122",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "행사관리 및 기타 사업 지원서비스 ",
+    "기타",
+    "기타사업지원서비스"
+   ],
+   "score": 1,
+   "hits": [
+    "시스템"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "전북특별자치도 장수군",
+   "title": "장수군 하수도 시스템 유지관리 용역(협상에 의한계약)(수정공고)",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01785247&bidPbancOrd=000",
+   "open_date": "2026-10-22",
+   "close_date": "",
+   "dday": null,
+   "status": "입찰공고",
+   "budget": "35억 8,636만 원",
+   "bid_no": "R26BK01785247",
+   "bid_ord": "000",
+   "bid_type": "용역",
+   "service_class": [
+    "ICT 서비스",
+    "운영 및 유지관리",
+    "소프트웨어유지및지원서비스"
+   ],
+   "score": 1,
+   "hits": [
+    "시스템"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "나라장터",
+   "kind": "bid",
+   "org": "조선대학교병원",
+   "title": "2관 지하 2,3층 수전실 외 대수선 공사 - 건축/기계설비",
+   "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01779992&bidPbancOrd=000",
+   "open_date": "2026-10-20",
+   "close_date": "",
+   "dday": null,
+   "status": "입찰공고",
+   "budget": "금액 미공개",
+   "bid_no": "R26BK01779992",
+   "bid_ord": "000",
+   "bid_type": "공사",
+   "service_class": [],
+   "score": 1,
+   "hits": [
+    "설비"
+   ],
+   "minus": [
+    "건축"
+   ],
    "track": ""
   },
   {
