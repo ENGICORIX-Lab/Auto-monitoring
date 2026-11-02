@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-11-02 06:51:23",
+ "generated_at": "2026-11-02 10:22:07",
  "threshold": 4,
  "sources": [
   {
    "name": "IRIS",
    "ok": true,
-   "count": 25,
+   "count": 26,
    "error": ""
   },
   {
@@ -29,7 +29,7 @@
   {
    "name": "나라장터",
    "ok": true,
-   "count": 1399,
+   "count": 1400,
    "error": ""
   },
   {
@@ -71,6 +71,27 @@
    "limits_checked": true,
    "sme_only": "",
    "attach_checked": "1/1"
+  },
+  {
+   "source": "IRIS",
+   "kind": "rnd",
+   "org": "정보통신산업진흥원",
+   "title": "2026년 「AX실증밸리조성(R&D)」 사업 신규지원대상 과제 통합 재공고",
+   "url": "https://www.iris.go.kr/contents/retrieveBsnsAncmView.do?ancmId=024717&ancmPrg=ancmIng",
+   "open_date": "2026-11-02",
+   "close_date": "2026-11-02",
+   "dday": 0,
+   "status": "접수중",
+   "budget": "",
+   "ministry": "다부처",
+   "elig_text": [],
+   "score": 4,
+   "hits": [
+    "실증",
+    "AX"
+   ],
+   "minus": [],
+   "track": "A"
   },
   {
    "source": "IRIS",
