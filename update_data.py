@@ -553,7 +553,7 @@ def fill_rnd_budgets(items):
 def collect_eligibility_text(items):
     """IRIS·NTIS 상세 본문에서 지원 자격 제한 문장을 모읍니다."""
     for it in items:
-        if it["source"] not in ("IRIS", "NTIS"):
+        if it["source"] not in ("IRIS", "NTIS") or it.get("stale"):
             continue
         try:
             it["elig_text"] = eligibility_snippets(page_text(it["url"]))
@@ -653,18 +653,46 @@ def apply_eligibility(items):
                 it["excluded_track"], it["track"] = it["track"], ""
 
 
+# 이전 실행에서 계산된 값 (다시 분류·판단하기 위해 지웁니다)
+DERIVED_FIELDS = ["score", "hits", "minus", "track", "excluded_track", "ineligible", "needs_license",
+                  "product_hits", "product_minus"]
+
+
+def carry_over(name, previous):
+    """수집에 실패한 출처는 직전 data.json의 공고를 그대로 이어서 보여줍니다 (마감된 공고는 제외)."""
+    kept = []
+    for prev in previous.values():
+        if prev.get("source") != name:
+            continue
+        it = {k: v for k, v in prev.items() if k not in DERIVED_FIELDS}
+        close = parse_date(it.get("close_date"))
+        if close and close < TODAY:
+            continue
+        it["dday"] = (close - TODAY).days if close else None
+        it["stale"] = True
+        kept.append(it)
+    return kept
+
+
 def main():
     all_items, status = [], []
+    previous = load_previous()
     for name, fn in SOURCES:
         try:
             got = fn()
+            for it in got:
+                it["collected_at"] = NOW.strftime("%Y-%m-%d %H:%M")
             status.append({"name": name, "ok": True, "count": len(got), "error": NOTES.get(name, "")})
             all_items.extend(got)
             print(f"[{name}] {len(got)}건")
         except Exception as e:
             traceback.print_exc()
-            status.append({"name": name, "ok": False, "count": 0, "error": str(e)[:300]})
-            print(f"[{name}] 실패: {e}")
+            kept = carry_over(name, previous)
+            since = min((it.get("collected_at", "") for it in kept), default="")
+            status.append({"name": name, "ok": False, "count": len(kept), "error": str(e)[:300],
+                           "stale": bool(kept), "stale_since": since})
+            all_items.extend(kept)
+            print(f"[{name}] 실패: {e} → 직전 결과 {len(kept)}건 유지")
 
     fill_rnd_budgets(all_items)
     collect_eligibility_text(all_items)

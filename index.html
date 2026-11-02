@@ -208,6 +208,7 @@
     .src { padding: 3px 10px; border-radius: 20px; font-weight: 600; cursor: default; }
     .src-ok { background: #ecfdf5; color: #065f46; }
     .src-fail { background: #fee2e2; color: #b91c1c; }
+    .src-stale { background: #fef3c7; color: #92400e; }
     .unit { font-size: 14px; font-weight: normal; color: #64748b; }
 
     /* 보기 탭 */
@@ -526,7 +527,9 @@
     const d = new Date(DATA.generated_at.replace(' ', 'T') + '+09:00');
     document.getElementById('metaWeek').innerHTML = `<strong>기준 주차:</strong> ${d.getFullYear()}년 ${d.getMonth() + 1}월 ${Math.floor((d.getDate() - 1) / 7) + 1}주차`;
     document.getElementById('sourceStatus').innerHTML = '<span class="status-label">수집 상태</span>' + DATA.sources.map(s =>
-      `<span class="src ${s.ok ? 'src-ok' : 'src-fail'}" title="${esc(s.error)}">${s.ok ? '●' : '✕'} ${esc(s.name)} ${s.ok ? s.count + '건' : '실패'}</span>`
+      s.ok ? `<span class="src src-ok">● ${esc(s.name)} ${s.count}건</span>`
+      : s.stale ? `<span class="src src-stale" title="이번 수집 실패: ${esc(s.error)}">⚠ ${esc(s.name)} ${s.count}건 (${s.stale_since ? esc(s.stale_since.slice(5)) + ' ' : '이전 '}수집분 유지)</span>`
+      : `<span class="src src-fail" title="${esc(s.error)}">✕ ${esc(s.name)} 실패</span>`
     ).join('');
   }
 
