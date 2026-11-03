@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-03 12:22:35",
+ "generated_at": "2026-11-03 20:44:30",
  "threshold": 4,
  "sources": [
   {
@@ -16,11 +16,9 @@
   },
   {
    "name": "SMTECH",
-   "ok": false,
+   "ok": true,
    "count": 4,
-   "error": "HTTPSConnectionPool(host='www.smtech.go.kr', port=443): Max retries exceeded with url: /front/ifg/no/notice02_list.do?pageIndex=1 (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.smtech.go.kr', port=443) at 0x7f7048b7b040>, 'Connection to www.smtech.go.kr timed out. (connect timeout=20)'))",
-   "stale": true,
-   "stale_since": "2026-11-03 05:06"
+   "error": ""
   },
   {
    "name": "과기정통부",
@@ -59,7 +57,7 @@
    "products": [
     "두께측정기"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 14,
@@ -95,7 +93,7 @@
    "products": [
     "연료전지전력공급장치"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [
     "장치"
    ],
@@ -132,7 +130,7 @@
    "products": [
     "진공증착기"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [
     "진공"
    ],
@@ -167,7 +165,7 @@
    "products": [
     "다단벌류트펌프"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 7,
@@ -201,7 +199,7 @@
    "products": [
     "고속절단기"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 7,
@@ -234,7 +232,7 @@
    "products": [
     "적조및녹조방제장치"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [
     "장치"
    ],
@@ -272,7 +270,7 @@
    "products": [
     "마이크로웨이브시료전처리장비"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [
     "장비"
    ],
@@ -306,7 +304,7 @@
    "products": [
     "토양수분측정장비"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [
     "장비",
     "측정"
@@ -339,7 +337,7 @@
    "products": [
     "회전압축기"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [
     "압축기"
    ],
@@ -373,7 +371,7 @@
    "products": [
     "보일러및열교환기용합금강강관"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [
     "열교환기"
    ],
@@ -405,7 +403,7 @@
    "products": [
     "웨이퍼식각기"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 4,
@@ -441,7 +439,7 @@
    "products": [
     "수중펌프"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 4,
@@ -474,7 +472,7 @@
    "products": [
     "상자세척기"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 4,
@@ -506,7 +504,7 @@
    "products": [
     "실험실용배기기"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 4,
@@ -540,7 +538,7 @@
     "기술시험,검사 및 분석",
     "기술검사분석서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 4,
    "hits": [
     "구축",
@@ -571,7 +569,7 @@
    "products": [
     "데이터전송장치"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [
     "장치"
    ],
@@ -608,7 +606,7 @@
    "products": [
     "기타물품설치서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [
     "설치"
    ],
@@ -644,7 +642,7 @@
    "products": [
     "레이저측정기"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [
     "측정"
    ],
@@ -679,7 +677,7 @@
     "CNC밀링머신",
     "CNC선반"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 7,
@@ -712,7 +710,7 @@
    "products": [
     "전자파무반사환경조성실"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 5,
@@ -752,7 +750,7 @@
    "products": [
     "조난신호기"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 4,
@@ -784,7 +782,7 @@
    "products": [
     "공정제어실험장치"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [
     "실험장치"
    ],
@@ -823,7 +821,7 @@
    "products": [
     "내압시험기"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [
     "시험기"
    ],
@@ -862,7 +860,7 @@
    "status": "접수중",
    "budget": "",
    "ministry": "산업통상부",
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "elig_text": [],
    "score": 5,
    "hits": [
@@ -892,7 +890,7 @@
    "products": [
     "위성접속장비"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [
     "장비"
    ],
@@ -924,7 +922,7 @@
    "products": [
     "공해환경조성실"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 4,
@@ -957,7 +955,7 @@
    "products": [
     "수경재배장치"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [
     "장치"
    ],
@@ -992,7 +990,7 @@
    "products": [
     "제어기시험장치"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [
     "시험장치",
     "제어"
@@ -1027,7 +1025,7 @@
    "products": [
     "발전기시험장치"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [
     "시험장치"
    ],
@@ -1061,7 +1059,7 @@
    "products": [
     "질량분석기"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 6,
@@ -1090,7 +1088,7 @@
    "status": "접수중",
    "budget": "공고금액 60억 7,900만 원",
    "ministry": "다부처",
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "elig_text": [],
    "score": 5,
    "hits": [
@@ -1142,7 +1140,7 @@
    "products": [
     "훈증챔버"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 11,
@@ -1172,7 +1170,7 @@
    "status": "진행중",
    "budget": "",
    "bid_type": "내자구매",
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 11,
    "hits": [
     "제작",
@@ -1194,7 +1192,7 @@
    "status": "접수중",
    "budget": "",
    "ministry": "다부처",
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "elig_text": [],
    "score": 4,
    "hits": [
@@ -1216,7 +1214,7 @@
    "status": "진행중",
    "budget": "",
    "bid_type": "용역",
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 8,
    "hits": [
     "구축",
@@ -1243,7 +1241,7 @@
    "products": [
     "피로시험기"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 10,
@@ -1272,7 +1270,7 @@
    "status": "접수중",
    "budget": "공고금액 114억 200만 원",
    "ministry": "산업통상부",
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "elig_text": [],
    "score": 5,
    "hits": [
@@ -1289,13 +1287,13 @@
    "org": "한국산업기술진흥원",
    "title": "2027년도 소재부품장비 양산성능평가지원사업 총괄주관연구개발기관 모집 공고",
    "url": "https://www.iris.go.kr/contents/retrieveBsnsAncmView.do?ancmId=024657&ancmPrg=ancmPre",
-   "open_date": "2026-11-05",
+   "open_date": "2026-11-16",
    "close_date": "2026-11-23",
    "dday": 20,
    "status": "접수예정",
    "budget": "",
    "ministry": "산업통상부",
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "elig_text": [],
    "score": 9,
    "hits": [
@@ -1319,7 +1317,7 @@
    "status": "진행중",
    "budget": "",
    "bid_type": "외자구매",
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 5,
    "hits": [
     "펌프",
@@ -1345,7 +1343,7 @@
    "products": [
     "실험및과학장비설치"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [
     "설치",
     "장비"
@@ -1378,7 +1376,7 @@
    "products": [
     "실험및과학장비설치"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [
     "설치"
    ],
@@ -1414,7 +1412,7 @@
     "운영 및 유지관리",
     "전산장비유지관리서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 10,
    "hits": [
     "개선",
@@ -1447,7 +1445,7 @@
    "products": [
     "종합계측기"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 7,
@@ -1480,7 +1478,7 @@
    "products": [
     "홀효과실험장치"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [
     "실험장치"
    ],
@@ -1514,7 +1512,7 @@
    "products": [
     "진공증착기"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [
     "진공"
    ],
@@ -1550,7 +1548,7 @@
     "학술연구서비스",
     "기타연구조사서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 6,
    "hits": [
     "테스트베드",
@@ -1584,7 +1582,7 @@
    "products": [
     "전자회로실험장치"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 5,
@@ -1616,7 +1614,7 @@
    "products": [
     "전자회로실험장치"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 5,
@@ -1648,7 +1646,7 @@
    "products": [
     "가스마취기"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 5,
@@ -1683,7 +1681,7 @@
     "수리",
     "의료및실험기기수리서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 5,
    "hits": [
     "장비",
@@ -1714,7 +1712,7 @@
    "products": [
     "3차원프린터"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 4,
@@ -1746,7 +1744,7 @@
    "products": [
     "자료수집장치"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 4,
@@ -1778,7 +1776,7 @@
    "products": [
     "절임제조기"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 9,
@@ -1814,7 +1812,7 @@
    "products": [
     "음향분석기"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 8,
@@ -1853,7 +1851,7 @@
     "학술연구서비스",
     "기타연구조사서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 7,
    "hits": [
     "탱크",
@@ -1892,7 +1890,7 @@
     "기술시험,검사 및 분석",
     "기술검사분석서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 7,
    "hits": [
     "설비",
@@ -1932,7 +1930,7 @@
    "products": [
     "자동전자혈압계"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 6,
@@ -1970,7 +1968,7 @@
    "products": [
     "기타물품설치서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [
     "설치"
    ],
@@ -1999,7 +1997,7 @@
    "products": [
     "만능재료시험기"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [
     "시험기"
    ],
@@ -2035,7 +2033,7 @@
    "products": [
     "융복합가스조절기"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [
     "가스"
    ],
@@ -2067,7 +2065,7 @@
     "학술연구서비스",
     "기타연구조사서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 5,
    "hits": [
     "구축",
@@ -2104,7 +2102,7 @@
     "기타",
     "기타사업지원서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 5,
    "hits": [
     "공정",
@@ -2144,7 +2142,7 @@
     "기타",
     "기타사업지원서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 5,
    "hits": [
     "구축",
@@ -2181,7 +2179,7 @@
     "ICT사업 컨설팅",
     "정보시스템감리서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 5,
    "hits": [
     "고도화",
@@ -2209,7 +2207,7 @@
    "products": [
     "수술준비용손세척대"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 4,
@@ -2248,7 +2246,7 @@
    "products": [
     "실시간유전자증폭장치"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 4,
@@ -2288,7 +2286,7 @@
     "기타",
     "기타사업지원서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 4,
    "hits": [
     "테스트베드"
@@ -2324,7 +2322,7 @@
     "시스템 운영환경 구축",
     "정보인프라구축서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 4,
    "hits": [
     "시스템",
@@ -2362,7 +2360,7 @@
     "운영 및 유지관리",
     "전산장비유지관리서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 4,
    "hits": [
     "설비"
@@ -2400,7 +2398,7 @@
     "운영 및 유지관리",
     "전산장비유지관리서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 4,
    "hits": [
     "설비"
@@ -2434,7 +2432,7 @@
    "bid_ord": "000",
    "bid_type": "공사",
    "service_class": [],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 4,
    "hits": [
     "설비"
@@ -2470,7 +2468,7 @@
    "products": [
     "차량용항법장치"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [
     "장치"
    ],
@@ -2501,7 +2499,7 @@
    "products": [
     "산업용로봇"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 3,
@@ -2528,7 +2526,7 @@
    "products": [
     "질량분석기"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 3,
@@ -2555,7 +2553,7 @@
    "products": [
     "서빙및배달용로봇"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 3,
@@ -2582,7 +2580,7 @@
    "products": [
     "차량속도측정기"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [
     "측정"
    ],
@@ -2615,7 +2613,7 @@
     "학술연구서비스",
     "과학기술연구조사서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 3,
    "hits": [
     "제작"
@@ -2642,7 +2640,7 @@
     "시설물관리, 청소 등",
     "시설설비유지관리서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 3,
    "hits": [
     "장비"
@@ -2669,7 +2667,7 @@
     "시설물관리, 청소 등",
     "시설설비유지관리서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 3,
    "hits": [
     "실증"
@@ -2696,7 +2694,7 @@
     "기타",
     "기타사업지원서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 3,
    "hits": [
     "평가시스템"
@@ -2723,7 +2721,7 @@
     "매체제작",
     "종이인쇄물제작서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 3,
    "hits": [
     "제작"
@@ -2748,7 +2746,7 @@
    "products": [
     "기체크로마토그래프"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 2,
@@ -2775,7 +2773,7 @@
    "products": [
     "사격장비"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [
     "장비"
    ],
@@ -2804,7 +2802,7 @@
    "products": [
     "액화석유가스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 2,
@@ -2831,7 +2829,7 @@
    "products": [
     "연마기"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 2,
@@ -2858,7 +2856,7 @@
    "products": [
     "로터리인덱스테이블"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 2,
@@ -2887,7 +2885,7 @@
     "학술연구서비스",
     "기타연구조사서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 2,
    "hits": [
     "구축"
@@ -2914,7 +2912,7 @@
     "시스템 운영환경 구축",
     "정보인프라구축서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 2,
    "hits": [
     "구축"
@@ -2941,7 +2939,7 @@
     "ICT사업 컨설팅",
     "정보시스템감리서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 2,
    "hits": [
     "고도화",
@@ -2969,7 +2967,7 @@
     "학술연구서비스",
     "경제산업연구조사서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 2,
    "hits": [
     "구축"
@@ -2996,7 +2994,7 @@
     "학술연구서비스",
     "기타연구조사서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 2,
    "hits": [
     "구축"
@@ -3023,7 +3021,7 @@
     "ICT사업 컨설팅",
     "정보시스템감리서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 2,
    "hits": [
     "시스템",
@@ -3051,7 +3049,7 @@
     "학술연구서비스",
     "환경에너지연구조사서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 2,
    "hits": [
     "측정"
@@ -3078,7 +3076,7 @@
     "기타",
     "기타사업지원서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 2,
    "hits": [
     "구축"
@@ -3105,7 +3103,7 @@
     "학술연구서비스",
     "보건복지연구조사서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 2,
    "hits": [
     "구축"
@@ -3132,7 +3130,7 @@
     "운영 및 유지관리",
     "소프트웨어유지및지원서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 2,
    "hits": [
     "제어"
@@ -3159,7 +3157,7 @@
     "임대",
     "기타물품임대서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 2,
    "hits": [
     "구축"
@@ -3186,7 +3184,7 @@
     "전시관 및 홍보관 설치",
     "전시장치설치및디자인서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 2,
    "hits": [
     "구축"
@@ -3211,7 +3209,7 @@
    "products": [
     "중형승합차"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 1,
@@ -3241,7 +3239,7 @@
    "products": [
     "전기선외모터"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 1,
@@ -3266,7 +3264,7 @@
    "products": [
     "자외-가시선분광광도계"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 1,
@@ -3291,7 +3289,7 @@
    "products": [
     "원소분석기"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 1,
@@ -3317,7 +3315,7 @@
     "남자학생복(동)",
     "남자학생복(하)"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 1,
@@ -3342,7 +3340,7 @@
    "products": [
     "스캐너"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 1,
@@ -3367,7 +3365,7 @@
    "products": [
     "잡석"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 1,
@@ -3392,7 +3390,7 @@
    "products": [
     "분석및과학용소프트웨어"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [
     "소프트웨어"
@@ -3421,7 +3419,7 @@
    "products": [
     "청정실"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 1,
@@ -3446,7 +3444,7 @@
    "products": [
     "레미콘"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 1,
@@ -3471,7 +3469,7 @@
    "products": [
     "과일류"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 1,
@@ -3496,7 +3494,7 @@
    "products": [
     "제진기"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 1,
@@ -3523,7 +3521,7 @@
     "학술연구서비스",
     "기타연구조사서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 1,
    "hits": [
     "장비"
@@ -3552,7 +3550,7 @@
     "시스템 운영환경 구축",
     "정보인프라구축서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 1,
    "hits": [
     "시스템"
@@ -3579,7 +3577,7 @@
     "운영 및 유지관리",
     "소프트웨어유지및지원서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 1,
    "hits": [
     "시스템"
@@ -3606,7 +3604,7 @@
     "기타",
     "기타사업지원서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 1,
    "hits": [
     "시스템"
@@ -3633,7 +3631,7 @@
     "행사 기획 및 대행",
     "기타행사기획및대행서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 1,
    "hits": [
     "설치"
@@ -3660,7 +3658,7 @@
     "ICT사업 컨설팅",
     "정보화전략계획서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 1,
    "hits": [
     "시스템"
@@ -3687,7 +3685,7 @@
     "기타",
     "기타사업지원서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 1,
    "hits": [
     "시스템"
@@ -3714,7 +3712,7 @@
     "기타",
     "기타사업지원서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 1,
    "hits": [
     "모니터링"
@@ -3741,7 +3739,7 @@
     "학술연구서비스",
     "기타연구조사서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 1,
    "hits": [
     "개선"
@@ -3768,7 +3766,7 @@
     "학술연구서비스",
     "보건복지연구조사서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 1,
    "hits": [
     "개선"
@@ -3795,7 +3793,7 @@
     "DB구축 및 자료입력",
     "데이터서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 1,
    "hits": [
     "시스템"
@@ -3822,7 +3820,7 @@
     "기타",
     "기타사업지원서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 1,
    "hits": [
     "시스템"
@@ -3849,7 +3847,7 @@
     "운영 및 유지관리",
     "전산장비유지관리서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 1,
    "hits": [
     "시스템"
@@ -3872,7 +3870,7 @@
    "bid_ord": "000",
    "bid_type": "공사",
    "service_class": [],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 1,
    "hits": [
     "개선"
@@ -3897,7 +3895,7 @@
    "products": [
     "계장제어장치"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [
     "장치"
    ],
@@ -3938,7 +3936,7 @@
    "products": [
     "계장제어장치"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [
     "장치"
    ],
@@ -3975,7 +3973,7 @@
    "status": "진행중",
    "budget": "",
    "bid_type": "내자구매",
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 8,
    "hits": [
     "설계 및 제작",
@@ -4002,7 +4000,7 @@
    "products": [
     "무대조명장치"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [
     "장치"
    ],
@@ -4045,7 +4043,7 @@
     "통신서비스",
     "무선통신서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 5,
    "hits": [
     "장비",
@@ -4080,7 +4078,7 @@
    "products": [
     "항온항습기"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 4,
@@ -4110,7 +4108,7 @@
     "학술연구서비스",
     "과학기술연구조사서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 3,
    "hits": [
     "장비"
@@ -4135,7 +4133,7 @@
    "products": [
     "비디오프로젝터"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 2,
@@ -4164,7 +4162,7 @@
     "기술시험,검사 및 분석",
     "기술검사분석서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 2,
    "hits": [
     "측정"
@@ -4184,7 +4182,7 @@
    "status": "접수중",
    "budget": "공고금액 15억 원",
    "ministry": "산업통상부",
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "elig_text": [
     "국내기관은 한국 정부에, 해외기관은 해외 정부에 동시에 과제를 신청하여야 접수가 인정되며, 한쪽 정부에만 신청할 경우 사전 제외 <양자공동펀딩형 r&d(정부간 합의국가) 추진",
     "위임한 사항과 그 시행에 관하여 필요한 사항을 규정하기 위해 산업통상자원부에서 고시한 “지역 산업위기대응 제도의 지정기준 등에 관한 고시”에 따라 지정된 산업위기대응특별지역의 주된 산업에 종사하는 기업임(지정 기간에 한함)",
@@ -4214,7 +4212,7 @@
    "products": [
     "정기간행물"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 1,
@@ -4239,7 +4237,7 @@
    "products": [
     "원자방출분광기"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 1,
@@ -4264,7 +4262,7 @@
    "products": [
     "질량분석기"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 1,
@@ -4289,7 +4287,7 @@
    "products": [
     "질량분석기"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 1,
@@ -4312,7 +4310,7 @@
    "bid_ord": "000",
    "bid_type": "공사",
    "service_class": [],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 1,
    "hits": [
     "설치"
@@ -4339,7 +4337,7 @@
     "수리",
     "기타수리서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 4,
    "hits": [
     "설비"
@@ -4376,7 +4374,7 @@
     "회계서비스",
     "회계서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 4,
    "hits": [
     "플랜트"
@@ -4410,7 +4408,7 @@
    "products": [
     "스크루냉동기"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 3,
@@ -4439,7 +4437,7 @@
     "학술연구서비스",
     "기타연구조사서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 3,
    "hits": [
     "제작"
@@ -4464,7 +4462,7 @@
    "products": [
     "태양광발전장치"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 2,
@@ -4493,7 +4491,7 @@
    "products": [
     "특수목적컴퓨터"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [
     "컴퓨터"
@@ -4525,7 +4523,7 @@
     "ICT사업 컨설팅",
     "정보시스템감리서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 2,
    "hits": [
     "구축"
@@ -4550,7 +4548,7 @@
    "products": [
     "안경테"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 1,
@@ -4575,7 +4573,7 @@
    "products": [
     "착순판정카메라"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 1,
@@ -4600,7 +4598,7 @@
    "products": [
     "대형승합차"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 1,
@@ -4625,7 +4623,7 @@
    "products": [
     "수직형머시닝센터"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 1,
@@ -4650,7 +4648,7 @@
    "products": [
     "상품권"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 1,
@@ -4677,7 +4675,7 @@
     "학술연구서비스",
     "환경에너지연구조사서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 1,
    "hits": [
     "개선"
@@ -4704,7 +4702,7 @@
     "학술연구서비스",
     "수자원연구조사서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 1,
    "hits": [
     "모니터링"
@@ -4731,7 +4729,7 @@
     "SW 및 시스템 개발",
     "정보시스템개발서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 1,
    "hits": [
     "고도화",
@@ -4756,7 +4754,7 @@
    "status": "접수중",
    "budget": "공고금액 2억 7,000만 원",
    "ministry": "과학기술정보통신부",
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "elig_text": [],
    "score": 0,
    "hits": [],
@@ -4775,7 +4773,7 @@
    "status": "접수중",
    "budget": "공고금액 18억 599만 원",
    "ministry": "과학기술정보통신부",
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "elig_text": [],
    "score": 0,
    "hits": [],
@@ -4794,7 +4792,7 @@
    "status": "접수중",
    "budget": "공고금액 2억 7,000만 원",
    "ministry": "과학기술정보통신부",
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "elig_text": [],
    "score": 0,
    "hits": [],
@@ -4813,7 +4811,7 @@
    "status": "접수중",
    "budget": "공고금액 9억 299만 원",
    "ministry": "과학기술정보통신부",
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "elig_text": [],
    "score": 0,
    "hits": [],
@@ -4832,8 +4830,7 @@
    "status": "",
    "budget": "",
    "ministry": "중소벤처기업부",
-   "collected_at": "2026-11-03 05:06",
-   "stale": true,
+   "collected_at": "2026-11-03 20:44",
    "score": 0,
    "hits": [
     "중소기업",
@@ -4856,8 +4853,7 @@
    "status": "",
    "budget": "",
    "ministry": "중소벤처기업부",
-   "collected_at": "2026-11-03 05:06",
-   "stale": true,
+   "collected_at": "2026-11-03 20:44",
    "score": -1,
    "hits": [
     "중소기업",
@@ -4882,7 +4878,7 @@
    "status": "접수중",
    "budget": "",
    "ministry": "산업통상부",
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "elig_text": [],
    "score": 2,
    "hits": [
@@ -4911,7 +4907,7 @@
    "products": [
     "냉방기"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 2,
@@ -4940,7 +4936,7 @@
     "학술연구서비스",
     "기타연구조사서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 2,
    "hits": [
     "구축"
@@ -4960,7 +4956,7 @@
    "status": "접수중",
    "budget": "",
    "ministry": "산업통상부",
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "elig_text": [],
    "score": 1,
    "hits": [
@@ -4988,7 +4984,7 @@
    "products": [
     "모듈러공동거주시설"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 1,
@@ -5019,7 +5015,7 @@
    "products": [
     "폐쇄형배전반"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 1,
@@ -5044,7 +5040,7 @@
    "products": [
     "식사대용식품"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 1,
@@ -5071,7 +5067,7 @@
     "ICT사업 컨설팅",
     "정보시스템감리서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 1,
    "hits": [
     "시스템"
@@ -5091,7 +5087,7 @@
    "status": "접수중",
    "budget": "",
    "ministry": "산업통상부",
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "elig_text": [],
    "score": -2,
    "hits": [],
@@ -5112,7 +5108,7 @@
    "status": "접수중",
    "budget": "공고금액 2,286억 원",
    "ministry": "다부처",
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "elig_text": [],
    "score": 2,
    "hits": [
@@ -5139,7 +5135,7 @@
    "products": [
     "응급구조장비세트"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [
     "장비"
    ],
@@ -5170,7 +5166,7 @@
     "학술연구서비스",
     "기타연구조사서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 1,
    "hits": [
     "개선"
@@ -5197,7 +5193,7 @@
     " 디자인",
     "디자인서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 1,
    "hits": [
     "고도화"
@@ -5217,7 +5213,7 @@
    "status": "접수중",
    "budget": "공고금액 3억 2,000만 원",
    "ministry": "기후에너지환경부",
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "elig_text": [],
    "score": 3,
    "hits": [
@@ -5244,7 +5240,7 @@
    "products": [
     "기억유닛"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 2,
@@ -5273,7 +5269,7 @@
     "시스템 운영환경 구축",
     "정보인프라구축서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 2,
    "hits": [
     "구축"
@@ -5298,7 +5294,7 @@
    "products": [
     "나무상자"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 1,
@@ -5325,7 +5321,7 @@
     "환경관리 서비스",
     "수질오염조사측정서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 1,
    "hits": [
     "시스템"
@@ -5352,7 +5348,7 @@
     "ICT사업 컨설팅",
     "정보시스템감리서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 1,
    "hits": [
     "시스템"
@@ -5372,7 +5368,7 @@
    "status": "접수중",
    "budget": "공고금액 1,500만 원",
    "ministry": "과학기술정보통신부",
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "elig_text": [],
    "score": 0,
    "hits": [],
@@ -5391,8 +5387,7 @@
    "status": "",
    "budget": "",
    "ministry": "중소벤처기업부",
-   "collected_at": "2026-11-03 05:06",
-   "stale": true,
+   "collected_at": "2026-11-03 20:44",
    "score": -2,
    "hits": [],
    "minus": [
@@ -5419,7 +5414,7 @@
     "학술연구서비스",
     "기타연구조사서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 5,
    "hits": [
     "설계 및 제작"
@@ -5445,7 +5440,7 @@
     "마이크로웨이브시료전처리장비",
     "유전자증폭기"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 4,
@@ -5481,7 +5476,7 @@
    "products": [
     "추출기"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 2,
@@ -5508,7 +5503,7 @@
    "products": [
     "엑스선탐상기"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [
     "엑스선"
@@ -5540,7 +5535,7 @@
     "기타",
     "기타사업지원서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 2,
    "hits": [
     "구축"
@@ -5567,7 +5562,7 @@
     "기타",
     "기타사업지원서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 1,
    "hits": [
     "개선"
@@ -5594,7 +5589,7 @@
     "시스템 운영환경 구축",
     "정보인프라구축서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 1,
    "hits": [
     "고도화"
@@ -5621,7 +5616,7 @@
     "운영 및 유지관리",
     "소프트웨어유지및지원서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 1,
    "hits": [
     "시스템"
@@ -5641,7 +5636,7 @@
    "status": "접수중",
    "budget": "",
    "ministry": "과학기술정보통신부",
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "elig_text": [],
    "score": 0,
    "hits": [],
@@ -5667,7 +5662,7 @@
     "레이드저장장치",
     "네트워크스위치"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [
     "장치"
    ],
@@ -5700,7 +5695,7 @@
    "products": [
     "의료용광원장치"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [
     "장치"
    ],
@@ -5731,7 +5726,7 @@
    "products": [
     "유발반응측정장치"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [
     "측정"
    ],
@@ -5764,7 +5759,7 @@
    "products": [
     "3차원프린터"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 2,
@@ -5793,7 +5788,7 @@
     "기타",
     "기타사업지원서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 2,
    "hits": [
     "설치",
@@ -5814,7 +5809,7 @@
    "status": "접수중",
    "budget": "공고금액 36억 원",
    "ministry": "과학기술정보통신부",
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "elig_text": [],
    "score": 1,
    "hits": [
@@ -5840,7 +5835,7 @@
    "products": [
     "화장실용화장지"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 1,
@@ -5867,7 +5862,7 @@
     "운영 및 유지관리",
     "소프트웨어유지및지원서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 1,
    "hits": [
     "시스템"
@@ -5894,7 +5889,7 @@
     "시설물관리, 청소 등",
     "시설설비유지관리서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 1,
    "hits": [
     "개선"
@@ -5921,7 +5916,7 @@
     "사업장 위탁 ",
     "사업장위탁운영서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 2,
    "hits": [
     "측정"
@@ -5941,7 +5936,7 @@
    "status": "접수중",
    "budget": "공고금액 36억 원",
    "ministry": "과학기술정보통신부",
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "elig_text": [],
    "score": 1,
    "hits": [
@@ -5967,7 +5962,7 @@
    "products": [
     "웨이퍼다이본딩기"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 1,
@@ -5994,7 +5989,7 @@
     "기타",
     "기타사업지원서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 1,
    "hits": [
     "시스템"
@@ -6021,7 +6016,7 @@
     "운영 및 유지관리",
     "소프트웨어유지및지원서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 1,
    "hits": [
     "시스템"
@@ -6041,7 +6036,7 @@
    "status": "접수중",
    "budget": "공고금액 624억 6,000만 원",
    "ministry": "과학기술정보통신부",
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "elig_text": [],
    "score": 0,
    "hits": [],
@@ -6060,7 +6055,7 @@
    "status": "접수중",
    "budget": "공고금액 2억 7,500만 원",
    "ministry": "과학기술정보통신부",
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "elig_text": [],
    "score": 1,
    "hits": [
@@ -6081,7 +6076,7 @@
    "status": "접수중",
    "budget": "공고금액 6억 원",
    "ministry": "과학기술정보통신부",
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "elig_text": [],
    "score": 0,
    "hits": [],
@@ -6105,7 +6100,7 @@
    "products": [
     "실험실용공급기기"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 4,
@@ -6134,7 +6129,7 @@
     "ICT사업 컨설팅",
     "정보화전략계획서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 2,
    "hits": [
     "구축"
@@ -6154,7 +6149,7 @@
    "status": "접수중",
    "budget": "공고금액 229억 3,800만 원",
    "ministry": "과학기술정보통신부",
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "elig_text": [],
    "score": -11,
    "hits": [],
@@ -6176,7 +6171,7 @@
    "status": "접수중",
    "budget": "공고금액 1,000만 원",
    "ministry": "보건복지부",
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "elig_text": [],
    "score": 0,
    "hits": [],
@@ -6202,7 +6197,7 @@
     "시설물관리, 청소 등",
     "시설설비유지관리서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 6,
    "hits": [
     "설비",
@@ -6233,7 +6228,7 @@
    "status": "접수중",
    "budget": "공고금액 50억 원",
    "ministry": "중소벤처기업부",
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "elig_text": [],
    "score": 1,
    "hits": [
@@ -6308,7 +6303,7 @@
     "운영 및 유지관리",
     "전산장비유지관리서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 1,
    "hits": [
     "시스템"
@@ -6333,7 +6328,7 @@
    "products": [
     "데이터베이스관리소프트웨어"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [
     "소프트웨어"
@@ -6363,7 +6358,7 @@
    "products": [
     "여성생리대"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 1,
@@ -6383,7 +6378,7 @@
    "status": "접수예정",
    "budget": "",
    "ministry": "과학기술정보통신부",
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "elig_text": [],
    "score": 0,
    "hits": [],
@@ -6402,8 +6397,7 @@
    "status": "",
    "budget": "",
    "ministry": "중소벤처기업부",
-   "collected_at": "2026-11-03 05:06",
-   "stale": true,
+   "collected_at": "2026-11-03 20:44",
    "score": -3,
    "hits": [
     "중소기업",
@@ -6427,7 +6421,7 @@
    "status": "접수중",
    "budget": "",
    "ministry": "중소벤처기업부",
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "elig_text": [],
    "score": -5,
    "hits": [
@@ -6458,7 +6452,7 @@
     "통신서비스",
     "유선통신서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 4,
    "hits": [
     "설비"
@@ -6494,7 +6488,7 @@
     "학술연구서비스",
     "과학기술연구조사서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 3,
    "hits": [
     "제작"
@@ -6521,7 +6515,7 @@
     "운영 및 유지관리",
     "소프트웨어유지및지원서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 2,
    "hits": [
     "모니터링",
@@ -6547,7 +6541,7 @@
    "products": [
     "도플러유속계"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 1,
@@ -6574,7 +6568,7 @@
     "통신서비스",
     "유선통신서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 1,
    "hits": [
     "시스템"
@@ -6601,7 +6595,7 @@
     "통신서비스",
     "무선통신서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 1,
    "hits": [
     "시스템"
@@ -6628,7 +6622,7 @@
     "운영 및 유지관리",
     "소프트웨어유지및지원서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 1,
    "hits": [
     "시스템"
@@ -6655,7 +6649,7 @@
     "운영 및 유지관리",
     "전산장비유지관리서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 1,
    "hits": [
     "시스템"
@@ -6682,7 +6676,7 @@
     "기타",
     "기타사업지원서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 1,
    "hits": [
     "시스템"
@@ -6709,7 +6703,7 @@
     "학술연구서비스",
     "과학기술연구조사서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 4,
    "hits": [
     "제작",
@@ -6737,7 +6731,7 @@
     "통신서비스",
     "무선통신서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 4,
    "hits": [
     "설비"
@@ -6771,7 +6765,7 @@
    "products": [
     "기타물품설치서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [
     "설치"
    ],
@@ -6802,7 +6796,7 @@
     "기타",
     "기타사업지원서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 2,
    "hits": [
     "측정"
@@ -6829,7 +6823,7 @@
     "통신서비스",
     "무선통신서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 1,
    "hits": [
     "시스템"
@@ -6856,7 +6850,7 @@
     "운영 및 유지관리",
     "소프트웨어유지및지원서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 1,
    "hits": [
     "시스템"
@@ -6883,7 +6877,7 @@
     "사업장 위탁 ",
     "사업장위탁운영서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 1,
    "hits": [
     "가스"
@@ -6910,7 +6904,7 @@
     "시스템 운영환경 구축",
     "정보인프라구축서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 1,
    "hits": [
     "시스템"
@@ -6937,7 +6931,7 @@
     "운영 및 유지관리",
     "전산장비유지관리서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 4,
    "hits": [
     "설비"
@@ -6975,7 +6969,7 @@
     "운영 및 유지관리",
     "전산장비유지관리서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 4,
    "hits": [
     "설비"
@@ -7013,7 +7007,7 @@
     "시스템 운영환경 구축",
     "정보인프라구축서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 3,
    "hits": [
     "시스템",
@@ -7041,7 +7035,7 @@
     "기술시험,검사 및 분석",
     "기술검사분석서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 1,
    "hits": [
     "시스템",
@@ -7071,7 +7065,7 @@
     "기타",
     "기타사업지원서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 1,
    "hits": [
     "개선"
@@ -7098,7 +7092,7 @@
     "시스템 운영환경 구축",
     "정보인프라구축서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 1,
    "hits": [
     "고도화"
@@ -7123,7 +7117,7 @@
    "products": [
     "기타물품설치서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [
     "설치"
    ],
@@ -7152,7 +7146,7 @@
    "products": [
     "기타물품설치서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [
     "설치"
    ],
@@ -7181,7 +7175,7 @@
     "학술연구서비스",
     "과학기술연구조사서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 3,
    "hits": [
     "장치"
@@ -7201,7 +7195,7 @@
    "status": "접수중",
    "budget": "공고금액 220억 2,000만 원",
    "ministry": "과학기술정보통신부",
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "elig_text": [],
    "score": 0,
    "hits": [],
@@ -7220,7 +7214,7 @@
    "status": "접수중",
    "budget": "공고금액 781억 6,700만 원",
    "ministry": "보건복지부",
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "elig_text": [],
    "score": 2,
    "hits": [
@@ -7242,7 +7236,7 @@
    "status": "접수중",
    "budget": "공고금액 4억 8,499만 원",
    "ministry": "과학기술정보통신부",
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "elig_text": [],
    "score": 0,
    "hits": [],
@@ -7261,7 +7255,7 @@
    "status": "접수중",
    "budget": "",
    "ministry": "산업통상부",
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "elig_text": [],
    "score": -2,
    "hits": [],
@@ -7282,7 +7276,7 @@
    "status": "접수중",
    "budget": "",
    "ministry": "산업통상부",
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "elig_text": [],
    "score": -2,
    "hits": [],
@@ -7303,7 +7297,7 @@
    "status": "접수중",
    "budget": "",
    "ministry": "과학기술정보통신부",
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "elig_text": [],
    "score": 0,
    "hits": [],
@@ -7327,7 +7321,7 @@
    "products": [
     "조합놀이대"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 5,
@@ -7355,7 +7349,7 @@
    "products": [
     "대형냉장고"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 5,
@@ -7398,7 +7392,7 @@
     "시설물관리, 청소 등",
     "시설설비유지관리서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 5,
    "hits": [
     "시스템",
@@ -7432,7 +7426,7 @@
    "status": "접수예정",
    "budget": "",
    "ministry": "",
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "elig_text": [],
    "score": 3,
    "hits": [
@@ -7458,7 +7452,7 @@
    "products": [
     "휴머노이드로봇"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 3,
@@ -7508,7 +7502,7 @@
     "왕진가방",
     "근력측정기"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [
     "장치",
     "측정",
@@ -7544,7 +7538,7 @@
    "products": [
     "워크스테이션"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 3,
@@ -7571,7 +7565,7 @@
    "products": [
     "실험실용가스캐비닛"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 3,
@@ -7599,7 +7593,7 @@
    "products": [
     "프로판가스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [
     "가스"
    ],
@@ -7631,7 +7625,7 @@
    "products": [
     "프로판가스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [
     "가스"
    ],
@@ -7663,7 +7657,7 @@
    "products": [
     "프로판가스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [
     "가스"
    ],
@@ -7695,7 +7689,7 @@
    "products": [
     "프로판가스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [
     "가스"
    ],
@@ -7727,7 +7721,7 @@
    "products": [
     "산업용로봇"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 3,
@@ -7754,7 +7748,7 @@
    "products": [
     "입도분포측정기"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [
     "측정"
    ],
@@ -7781,7 +7775,7 @@
    "products": [
     "프로판가스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [
     "가스"
    ],
@@ -7813,7 +7807,7 @@
    "products": [
     "프로판가스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [
     "가스"
    ],
@@ -7847,7 +7841,7 @@
     "홍보 및 마케팅",
     "홍보및마케팅서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 3,
    "hits": [
     "제작"
@@ -7874,7 +7868,7 @@
     "매체제작",
     "종이인쇄물제작서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 3,
    "hits": [
     "제작"
@@ -7901,7 +7895,7 @@
     " 디자인",
     "디자인서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 3,
    "hits": [
     "제작"
@@ -7928,7 +7922,7 @@
     "교육서비스 ",
     "교육지원서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 3,
    "hits": [
     "시스템",
@@ -7956,7 +7950,7 @@
     "기타",
     "기타사업지원서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 3,
    "hits": [
     "고도화",
@@ -7982,7 +7976,7 @@
    "products": [
     "냉각탑"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 2,
@@ -8026,7 +8020,7 @@
     "이동형파일서랍",
     "작업용의자"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [
     "건조기",
     "펌프",
@@ -8057,7 +8051,7 @@
    "products": [
     "롤업셰이드"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 2,
@@ -8084,7 +8078,7 @@
    "products": [
     "롤업셰이드"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 2,
@@ -8111,7 +8105,7 @@
    "products": [
     "기타가스분석기"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [
     "가스"
    ],
@@ -8138,7 +8132,7 @@
    "products": [
     "액체크로마토그래피"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 2,
@@ -8165,7 +8159,7 @@
    "products": [
     "화상분석시스템"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [
     "시스템"
    ],
@@ -8194,7 +8188,7 @@
     "학술연구서비스",
     "기타연구조사서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 2,
    "hits": [
     "로봇"
@@ -8221,7 +8215,7 @@
     "교육서비스 ",
     "기타교육서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 2,
    "hits": [
     "구축"
@@ -8248,7 +8242,7 @@
     "DB구축 및 자료입력",
     "데이터서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 2,
    "hits": [
     "구축"
@@ -8273,7 +8267,7 @@
    "products": [
     "기타시약및지시약"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 1,
@@ -8298,7 +8292,7 @@
    "products": [
     "영유아인공호흡기"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 1,
@@ -8323,7 +8317,7 @@
    "products": [
     "열분석장치"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [
     "장치"
    ],
@@ -8352,7 +8346,7 @@
    "products": [
     "접이식의자"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 1,
@@ -8377,7 +8371,7 @@
    "products": [
     "웨이퍼다이본딩기"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 1,
@@ -8402,7 +8396,7 @@
    "products": [
     "웨이퍼식각기"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 1,
@@ -8427,7 +8421,7 @@
    "products": [
     "프로판가스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [
     "가스"
    ],
@@ -8458,7 +8452,7 @@
    "products": [
     "원심분리기"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 1,
@@ -8483,7 +8477,7 @@
    "products": [
     "혈액응고저지제"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 1,
@@ -8508,7 +8502,7 @@
    "products": [
     "조형물"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 1,
@@ -8538,7 +8532,7 @@
    "products": [
     "복막투석장치"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [
     "장치"
    ],
@@ -8567,7 +8561,7 @@
    "products": [
     "휴대전화기"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 1,
@@ -8592,7 +8586,7 @@
    "products": [
     "유개트럭"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 1,
@@ -8617,7 +8611,7 @@
    "products": [
     "그래픽용어댑터"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "product_hits": [],
    "product_minus": [],
    "score": 1,
@@ -8644,7 +8638,7 @@
     "운영 및 유지관리",
     "소프트웨어유지및지원서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 1,
    "hits": [
     "시스템"
@@ -8671,7 +8665,7 @@
     "운영 및 유지관리",
     "소프트웨어유지및지원서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 1,
    "hits": [
     "시스템"
@@ -8698,7 +8692,7 @@
     "기타",
     "기타사업지원서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 1,
    "hits": [
     "모니터링"
@@ -8725,7 +8719,7 @@
     "운영 및 유지관리",
     "소프트웨어유지및지원서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 1,
    "hits": [
     "모니터링"
@@ -8752,7 +8746,7 @@
     "운영 및 유지관리",
     "소프트웨어유지및지원서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 1,
    "hits": [
     "시스템"
@@ -8779,7 +8773,7 @@
     "기타",
     "기타사업지원서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 1,
    "hits": [
     "시스템"
@@ -8806,7 +8800,7 @@
     "운영 및 유지관리",
     "소프트웨어유지및지원서비스"
    ],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 1,
    "hits": [
     "시스템"
@@ -8829,7 +8823,7 @@
    "bid_ord": "000",
    "bid_type": "공사",
    "service_class": [],
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 1,
    "hits": [
     "설비"
@@ -8851,7 +8845,7 @@
    "status": "게시",
    "budget": "",
    "ministry": "과학기술정보통신부",
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 0,
    "hits": [],
    "minus": [],
@@ -8869,7 +8863,7 @@
    "status": "게시",
    "budget": "",
    "ministry": "과학기술정보통신부",
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 0,
    "hits": [],
    "minus": [],
@@ -8887,7 +8881,7 @@
    "status": "게시",
    "budget": "",
    "ministry": "과학기술정보통신부",
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 0,
    "hits": [],
    "minus": [],
@@ -8905,7 +8899,7 @@
    "status": "게시",
    "budget": "",
    "ministry": "과학기술정보통신부",
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": 0,
    "hits": [],
    "minus": [],
@@ -8923,7 +8917,7 @@
    "status": "게시",
    "budget": "",
    "ministry": "과학기술정보통신부",
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": -6,
    "hits": [],
    "minus": [
@@ -8943,7 +8937,7 @@
    "status": "게시",
    "budget": "",
    "ministry": "과학기술정보통신부",
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": -11,
    "hits": [
     "기술개발"
@@ -8966,7 +8960,7 @@
    "status": "게시",
    "budget": "",
    "ministry": "과학기술정보통신부",
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": -11,
    "hits": [
     "기술개발"
@@ -8989,7 +8983,7 @@
    "status": "게시",
    "budget": "",
    "ministry": "과학기술정보통신부",
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": -12,
    "hits": [],
    "minus": [
@@ -9010,7 +9004,7 @@
    "status": "게시",
    "budget": "",
    "ministry": "과학기술정보통신부",
-   "collected_at": "2026-11-03 12:22",
+   "collected_at": "2026-11-03 20:44",
    "score": -12,
    "hits": [],
    "minus": [
