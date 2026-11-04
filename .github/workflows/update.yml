@@ -8,6 +8,11 @@ on:
 permissions:
   contents: write
 
+# 수동 실행과 정기 실행이 겹치면 앞 실행이 끝날 때까지 기다렸다가 차례로 실행합니다.
+concurrency:
+  group: update-dashboard
+  cancel-in-progress: false
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -36,4 +41,11 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update dashboard via API and Crawler" && git push)
+          git diff --quiet && git diff --staged --quiet && exit 0
+          git commit -m "Auto-update dashboard via API and Crawler"
+          # 그 사이 다른 커밋이 올라왔으면 위에 다시 얹고(data.json은 이번 결과 우선) 올립니다.
+          for i in 1 2 3; do
+            git push && exit 0
+            git pull --rebase -X theirs origin "${GITHUB_REF_NAME}"
+          done
+          exit 1
