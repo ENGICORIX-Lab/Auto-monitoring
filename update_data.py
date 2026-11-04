@@ -304,6 +304,32 @@ def fetch_kimm():
 
 
 # ----------------- 5. [API] 조달청 나라장터 (G2B) -----------------
+# 조달청 입찰공고정보서비스 02 버전 (2026-11 변경 공지: 기존 주소는 90일 뒤 중단, 오퍼레이션 이름 끝에 '02')
+G2B_BASE = "https://apis.data.go.kr/1230000/ad/BidPublicInfoService02"
+
+
+def g2b_items(op, params):
+    """조달청 입찰공고정보서비스 오퍼레이션을 호출해 items 목록을 반환합니다."""
+    url = f"{G2B_BASE}/{op}"
+    params = dict(params, type="json")
+    # 이미 URL 인코딩된 키(%2B 등)는 그대로, 디코딩된 키는 requests가 인코딩하도록 합니다.
+    if "%" in G2B_API_KEY:
+        url += f"?serviceKey={G2B_API_KEY}"
+    else:
+        params["serviceKey"] = G2B_API_KEY
+    res = session.get(url, params=params, verify=False, timeout=30)
+    res.raise_for_status()
+    if res.text.strip().startswith("<") or "OpenAPI_ServiceResponse" in res.text[:200]:
+        raise RuntimeError(f"{op} 오류 응답: {res.text[:200]}")
+    body = res.json().get("response", {}).get("body", {})
+    rows = body.get("items") or []
+    if isinstance(rows, dict):
+        rows = rows.get("item", [rows])
+    if isinstance(rows, dict):
+        rows = [rows]
+    return rows, int(body.get("totalCount") or 0)
+
+
 def g2b_products(bid):
     """입찰공고의 세부 품명·분류명 목록을 모읍니다 (예: '태양광발전장치', '가스미터')."""
     names = []
@@ -325,32 +351,15 @@ def fetch_g2b():
     items, seen = [], set()
     bgn_dt = (NOW - timedelta(days=14)).strftime("%Y%m%d0000")
     end_dt = NOW.strftime("%Y%m%d2359")
-    # 이미 URL 인코딩된 키(%2B 등)는 그대로, 디코딩된 키는 requests가 인코딩하도록 합니다.
-    key_q = f"serviceKey={G2B_API_KEY}" if "%" in G2B_API_KEY else None
     endpoints = {
-        "getBidPblancListInfoThngPPSSrch": "물품",
-        "getBidPblancListInfoServcPPSSrch": "용역",
-        "getBidPblancListInfoCnstwkPPSSrch": "공사",
+        "getBidPblancListInfoThngPPSSrch02": "물품",
+        "getBidPblancListInfoServcPPSSrch02": "용역",
+        "getBidPblancListInfoCnstwkPPSSrch02": "공사",
     }
     for ep, bid_type in endpoints.items():
         for page in range(1, 5):
-            params = {"numOfRows": 500, "pageNo": page, "inqryDiv": 1,
-                      "inqryBgnDt": bgn_dt, "inqryEndDt": end_dt, "type": "json"}
-            url = f"https://apis.data.go.kr/1230000/ad/BidPublicInfoService/{ep}"
-            if key_q:
-                url += "?" + key_q
-            else:
-                params["serviceKey"] = G2B_API_KEY
-            res = session.get(url, params=params, verify=False, timeout=30)
-            res.raise_for_status()
-            if res.text.strip().startswith("<"):
-                raise RuntimeError(f"{bid_type} API 오류 응답: {res.text[:200]}")
-            body = res.json().get("response", {}).get("body", {})
-            bids = body.get("items") or []
-            if isinstance(bids, dict):
-                bids = bids.get("item", [bids])
-            if isinstance(bids, dict):
-                bids = [bids]
+            bids, total = g2b_items(ep, {"numOfRows": 500, "pageNo": page, "inqryDiv": 1,
+                                         "inqryBgnDt": bgn_dt, "inqryEndDt": end_dt})
             for bid in bids:
                 key = (bid.get("bidNtceNo"), bid.get("bidNtceOrd"))
                 if key in seen:
@@ -375,6 +384,8 @@ def fetch_g2b():
                 )
                 if item:
                     item["bid_no"], item["bid_ord"] = bid.get("bidNtceNo"), bid.get("bidNtceOrd")
+                    # 목록 응답의 첨부파일 항목은 02 버전에서 별도 오퍼레이션으로 분리될 예정이라,
+                    # 없으면 check_attachments에서 첨부파일정보조회로 받아 옵니다.
                     item["attachments"] = [{"name": bid.get(f"ntceSpecFileNm{i}") or "", "url": bid[f"ntceSpecDocUrl{i}"]}
                                            for i in range(1, 11) if bid.get(f"ntceSpecDocUrl{i}")]
                     item["bid_type"] = bid_type
@@ -384,7 +395,6 @@ def fetch_g2b():
                         # 용역은 품명 대신 'ICT 서비스' 같은 포괄 분류만 있어 IT 용역을 거르는 데만 씁니다.
                         item["service_class"] = [v for k, v in bid.items() if k.endswith("ClsfcNm") and isinstance(v, str) and v]
                     items.append(item)
-            total = int(body.get("totalCount") or 0)
             if page * 500 >= total:
                 break
     return items
@@ -578,20 +588,10 @@ def g2b_limits(item, previous):
         item["limits_checked"] = True
         return
     out = {}
-    for ep, field in [("getBidPblancListInfoPrtcptPsblRgn", "prtcptPsblRgnNm"),
-                      ("getBidPblancListInfoLicenseLimit", "lcnsLmtNm")]:
-        url = f"https://apis.data.go.kr/1230000/ad/BidPublicInfoService/{ep}"
-        params = {"numOfRows": 50, "pageNo": 1, "inqryDiv": 2, "type": "json",
-                  "bidNtceNo": item["bid_no"], "bidNtceOrd": item["bid_ord"] or "000"}
-        if "%" in G2B_API_KEY:
-            url += f"?serviceKey={G2B_API_KEY}"
-        else:
-            params["serviceKey"] = G2B_API_KEY
-        res = session.get(url, params=params, verify=False, timeout=20)
-        res.raise_for_status()
-        rows = res.json().get("response", {}).get("body", {}).get("items") or []
-        if isinstance(rows, dict):
-            rows = [rows]
+    for ep, field in [("getBidPblancListInfoPrtcptPsblRgn02", "prtcptPsblRgnNm"),
+                      ("getBidPblancListInfoLicenseLimit02", "lcnsLmtNm")]:
+        rows, _ = g2b_items(ep, {"numOfRows": 50, "pageNo": 1, "inqryDiv": 2,
+                                 "bidNtceNo": item["bid_no"], "bidNtceOrd": item["bid_ord"] or "000"})
         # 면허명은 '기계설비ㆍ가스공사업/6202' 형태라 코드 부분은 뺍니다.
         out[field] = list(dict.fromkeys(r.get(field, "").split("/")[0].strip() for r in rows if r.get(field)))
     item["regions"], item["licenses"] = out["prtcptPsblRgnNm"], out["lcnsLmtNm"]
@@ -606,6 +606,14 @@ def check_attachments(item, previous):
         item["attach_checked"] = prev["attach_checked"]
         return
     files = item.get("attachments") or []
+    if not files and item.get("bid_no"):
+        try:
+            rows, _ = g2b_items("getBidPblancListInfoAtchFileInfo02", {
+                "numOfRows": 30, "pageNo": 1, "inqryDiv": 2,
+                "bidNtceNo": item["bid_no"], "bidNtceOrd": item["bid_ord"] or "000"})
+            files = [{"name": r.get("atchFileNm") or "", "url": r["atchFileUrl"]} for r in rows if r.get("atchFileUrl")]
+        except (requests.RequestException, RuntimeError, ValueError) as e:
+            print(f"[나라장터] 첨부파일 목록 조회 실패 {item['bid_no']}: {e}")
     # 입찰공고문을 먼저 읽고, 찾으면 나머지 파일은 받지 않습니다.
     files = sorted(files, key=lambda f: 0 if "공고" in f["name"] else 1)
     read = 0
