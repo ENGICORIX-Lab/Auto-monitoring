@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-14 04:32:40",
+ "generated_at": "2026-11-14 09:47:19",
  "threshold": 4,
  "sources": [
   {
@@ -11,7 +11,7 @@
   {
    "name": "NTIS",
    "ok": true,
-   "count": 29,
+   "count": 50,
    "error": ""
   },
   {
@@ -52,7 +52,7 @@
    "status": "접수중",
    "budget": "공고금액 13억 5,700만 원",
    "ministry": "과학기술정보통신부",
-   "collected_at": "2026-11-14 04:32",
+   "collected_at": "2026-11-14 09:47",
    "elig_text": [],
    "score": 6,
    "hits": [
@@ -75,12 +75,34 @@
    "status": "접수중",
    "budget": "",
    "ministry": "다부처",
-   "collected_at": "2026-11-14 04:32",
+   "collected_at": "2026-11-14 09:47",
    "elig_text": [],
    "score": 4,
    "hits": [
     "실증",
     "AX"
+   ],
+   "minus": [],
+   "track": "A"
+  },
+  {
+   "source": "NTIS",
+   "kind": "rnd",
+   "org": "기후에너지환경부",
+   "title": "2026년 에너지국제공동연구사업 한-미 에너지협력센터 구축확산",
+   "url": "https://www.ntis.go.kr/rndgate/eg/un/ra/view.do?roRndUid=1282913&flag=rndList",
+   "open_date": "2026-11-10",
+   "close_date": "2026-11-16",
+   "dday": 2,
+   "status": "접수중",
+   "budget": "공고금액 229억 4,400만 원",
+   "ministry": "기후에너지환경부",
+   "collected_at": "2026-11-14 09:47",
+   "elig_text": [],
+   "score": 4,
+   "hits": [
+    "에너지",
+    "구축"
    ],
    "minus": [],
    "track": "A"
@@ -97,10 +119,33 @@
    "status": "접수중",
    "budget": "공고금액 12억 6,000만 원",
    "ministry": "과학기술정보통신부",
-   "collected_at": "2026-11-14 04:32",
+   "collected_at": "2026-11-14 09:47",
    "elig_text": [],
    "score": 4,
    "hits": [
+    "실증",
+    "AX"
+   ],
+   "minus": [],
+   "track": "A"
+  },
+  {
+   "source": "NTIS",
+   "kind": "rnd",
+   "org": "과학기술정보통신부",
+   "title": "2026년 「AX실증밸리조성(RD)」사업 AX촉진거점구축 과제(정책지정) 공고",
+   "url": "https://www.ntis.go.kr/rndgate/eg/un/ra/view.do?roRndUid=1281018&flag=rndList",
+   "open_date": "2026-10-21",
+   "close_date": "2026-11-17",
+   "dday": 3,
+   "status": "접수중",
+   "budget": "",
+   "ministry": "과학기술정보통신부",
+   "collected_at": "2026-11-14 09:47",
+   "elig_text": [],
+   "score": 6,
+   "hits": [
+    "구축",
     "실증",
     "AX"
    ],
@@ -119,7 +164,7 @@
    "status": "진행중",
    "budget": "",
    "bid_type": "내자구매",
-   "collected_at": "2026-11-14 04:32",
+   "collected_at": "2026-11-14 09:47",
    "score": 9,
    "hits": [
     "시스템",
@@ -142,7 +187,7 @@
    "status": "진행중",
    "budget": "",
    "bid_type": "내자구매",
-   "collected_at": "2026-11-14 04:32",
+   "collected_at": "2026-11-14 09:47",
    "score": 9,
    "hits": [
     "시스템",
@@ -165,7 +210,7 @@
    "status": "진행중",
    "budget": "",
    "bid_type": "내자구매",
-   "collected_at": "2026-11-14 04:32",
+   "collected_at": "2026-11-14 09:47",
    "score": 5,
    "hits": [
     "모니터링",
@@ -186,13 +231,84 @@
    "status": "접수중",
    "budget": "공고금액 114억 200만 원",
    "ministry": "산업통상부",
-   "collected_at": "2026-11-14 04:32",
+   "collected_at": "2026-11-14 09:47",
    "elig_text": [],
    "score": 5,
    "hits": [
     "기술개발",
     "기계장비",
     "산업"
+   ],
+   "minus": [],
+   "track": "A"
+  },
+  {
+   "source": "NTIS",
+   "kind": "rnd",
+   "org": "산업통상부",
+   "title": "2027년도 소재부품기술개발사업 소부장 특화단지 RD 기술수요조사 공고",
+   "url": "https://www.ntis.go.kr/rndgate/eg/un/ra/view.do?roRndUid=1282515&flag=rndList",
+   "open_date": "2026-11-09",
+   "close_date": "2026-11-20",
+   "dday": 6,
+   "status": "접수중",
+   "budget": "",
+   "ministry": "산업통상부",
+   "collected_at": "2026-11-14 09:47",
+   "elig_text": [],
+   "score": 5,
+   "hits": [
+    "기술개발",
+    "소부장",
+    "소재",
+    "부품"
+   ],
+   "minus": [
+    "수요조사"
+   ],
+   "track": "A"
+  },
+  {
+   "source": "NTIS",
+   "kind": "rnd",
+   "org": "과학기술정보통신부",
+   "title": "「초고효율 다중접합 태양전지 실증센터 구축사업 기획연구」 정책연구과제 공고",
+   "url": "https://www.ntis.go.kr/rndgate/eg/un/ra/view.do?roRndUid=1282958&flag=rndList",
+   "open_date": "2026-11-13",
+   "close_date": "2026-11-23",
+   "dday": 9,
+   "status": "접수중",
+   "budget": "공고금액 1억 원",
+   "ministry": "과학기술정보통신부",
+   "collected_at": "2026-11-14 09:47",
+   "elig_text": [],
+   "score": 6,
+   "hits": [
+    "구축",
+    "실증",
+    "효율"
+   ],
+   "minus": [],
+   "track": "A"
+  },
+  {
+   "source": "NTIS",
+   "kind": "rnd",
+   "org": "과학기술정보통신부",
+   "title": "「AI 과학자 독립 검증·재현 인프라 구축사업 기획 연구」 정책연구과제 공고",
+   "url": "https://www.ntis.go.kr/rndgate/eg/un/ra/view.do?roRndUid=1282916&flag=rndList",
+   "open_date": "2026-11-12",
+   "close_date": "2026-11-23",
+   "dday": 9,
+   "status": "접수중",
+   "budget": "공고금액 6,000만 원",
+   "ministry": "과학기술정보통신부",
+   "collected_at": "2026-11-14 09:47",
+   "elig_text": [],
+   "score": 4,
+   "hits": [
+    "인프라",
+    "구축"
    ],
    "minus": [],
    "track": "A"
@@ -209,7 +325,7 @@
    "status": "진행중",
    "budget": "",
    "bid_type": "외자구매",
-   "collected_at": "2026-11-14 04:32",
+   "collected_at": "2026-11-14 09:47",
    "score": 5,
    "hits": [
     "펌프",
@@ -228,9 +344,9 @@
    "close_date": "2026-11-30",
    "dday": 16,
    "status": "접수중",
-   "budget": "",
+   "budget": "공고금액 21억 원",
    "ministry": "산업통상부",
-   "collected_at": "2026-11-14 04:32",
+   "collected_at": "2026-11-14 09:47",
    "elig_text": [
     "비영리법인으로서 주무부처에 등록된 협회 또는 단체에 한함 연구기관 ▪ 국공립연구기관, ｢특정연구기관육성법｣의 적용을 받는 연구기"
    ],
@@ -256,7 +372,7 @@
    "status": "접수중",
    "budget": "공고금액 8,000만 원",
    "ministry": "과학기술정보통신부",
-   "collected_at": "2026-11-14 04:32",
+   "collected_at": "2026-11-14 09:47",
    "elig_text": [],
    "score": 2,
    "hits": [
@@ -277,7 +393,7 @@
    "status": "접수중",
    "budget": "공고금액 2억 7,500만 원",
    "ministry": "과학기술정보통신부",
-   "collected_at": "2026-11-14 04:32",
+   "collected_at": "2026-11-14 09:47",
    "elig_text": [],
    "score": 1,
    "hits": [
@@ -298,7 +414,7 @@
    "status": "접수중",
    "budget": "공고금액 6억 원",
    "ministry": "과학기술정보통신부",
-   "collected_at": "2026-11-14 04:32",
+   "collected_at": "2026-11-14 09:47",
    "elig_text": [],
    "score": 0,
    "hits": [],
@@ -317,7 +433,7 @@
    "status": "접수중",
    "budget": "공고금액 9,000만 원",
    "ministry": "과학기술정보통신부",
-   "collected_at": "2026-11-14 04:32",
+   "collected_at": "2026-11-14 09:47",
    "elig_text": [],
    "score": 0,
    "hits": [],
@@ -334,9 +450,9 @@
    "close_date": "2026-11-17",
    "dday": 3,
    "status": "접수중",
-   "budget": "",
+   "budget": "공고금액 200억 원",
    "ministry": "중소벤처기업부",
-   "collected_at": "2026-11-14 04:32",
+   "collected_at": "2026-11-14 09:47",
    "elig_text": [],
    "score": 0,
    "hits": [],
@@ -355,7 +471,7 @@
    "status": "접수중",
    "budget": "공고금액 229억 3,800만 원",
    "ministry": "과학기술정보통신부",
-   "collected_at": "2026-11-14 04:32",
+   "collected_at": "2026-11-14 09:47",
    "elig_text": [],
    "score": -11,
    "hits": [],
@@ -377,11 +493,35 @@
    "status": "접수중",
    "budget": "공고금액 1,000만 원",
    "ministry": "보건복지부",
-   "collected_at": "2026-11-14 04:32",
+   "collected_at": "2026-11-14 09:47",
    "elig_text": [],
    "score": 0,
    "hits": [],
    "minus": [],
+   "track": ""
+  },
+  {
+   "source": "NTIS",
+   "kind": "rnd",
+   "org": "농림축산식품부",
+   "title": "2027년도 농림축산검역검사기술개발사업 신규 산업체공동연구과제 참여기관 공모",
+   "url": "https://www.ntis.go.kr/rndgate/eg/un/ra/view.do?roRndUid=1282512&flag=rndList",
+   "open_date": "2026-10-19",
+   "close_date": "2026-11-18",
+   "dday": 4,
+   "status": "접수중",
+   "budget": "공고금액 8억 원",
+   "ministry": "농림축산식품부",
+   "collected_at": "2026-11-14 09:47",
+   "elig_text": [],
+   "score": -2,
+   "hits": [
+    "기술개발",
+    "산업"
+   ],
+   "minus": [
+    "축산"
+   ],
    "track": ""
   },
   {
@@ -396,7 +536,7 @@
    "status": "진행중",
    "budget": "",
    "bid_type": "내자구매",
-   "collected_at": "2026-11-14 04:32",
+   "collected_at": "2026-11-14 09:47",
    "score": 2,
    "hits": [
     "모니터링",
@@ -421,7 +561,7 @@
    "status": "진행중",
    "budget": "",
    "bid_type": "용역",
-   "collected_at": "2026-11-14 04:32",
+   "collected_at": "2026-11-14 09:47",
    "score": 1,
    "hits": [],
    "minus": [],
@@ -439,11 +579,34 @@
    "status": "접수중",
    "budget": "",
    "ministry": "과학기술정보통신부",
-   "collected_at": "2026-11-14 04:32",
+   "collected_at": "2026-11-14 09:47",
    "elig_text": [],
    "score": 0,
    "hits": [],
    "minus": [],
+   "track": ""
+  },
+  {
+   "source": "NTIS",
+   "kind": "rnd",
+   "org": "산업통상부",
+   "title": "수출형 방산체계 고도화를 위한AI 방산 RD 품목발굴을 위한 기술수요조사",
+   "url": "https://www.ntis.go.kr/rndgate/eg/un/ra/view.do?roRndUid=1282682&flag=rndList",
+   "open_date": "2026-11-10",
+   "close_date": "2026-11-20",
+   "dday": 6,
+   "status": "접수중",
+   "budget": "",
+   "ministry": "산업통상부",
+   "collected_at": "2026-11-14 09:47",
+   "elig_text": [],
+   "score": -1,
+   "hits": [
+    "고도화"
+   ],
+   "minus": [
+    "수요조사"
+   ],
    "track": ""
   },
   {
@@ -458,12 +621,54 @@
    "status": "진행중",
    "budget": "",
    "bid_type": "내자구매",
-   "collected_at": "2026-11-14 04:32",
+   "collected_at": "2026-11-14 09:47",
    "score": 7,
    "hits": [
     "시스템",
     "제작",
     "수소"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "NTIS",
+   "kind": "rnd",
+   "org": "과학기술정보통신부",
+   "title": "「K-문샷 BCI미션 신규사업 기획을 위한 영장류 기능 뇌지도 구축 기획 연구」 정책연구과제 공고",
+   "url": "https://www.ntis.go.kr/rndgate/eg/un/ra/view.do?roRndUid=1283030&flag=rndList",
+   "open_date": "2026-11-13",
+   "close_date": "2026-11-23",
+   "dday": 9,
+   "status": "접수중",
+   "budget": "공고금액 9,900만 원",
+   "ministry": "과학기술정보통신부",
+   "collected_at": "2026-11-14 09:47",
+   "elig_text": [],
+   "score": 2,
+   "hits": [
+    "구축"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "NTIS",
+   "kind": "rnd",
+   "org": "과학기술정보통신부",
+   "title": "「신약개발 AI-ready 학습과 벤치마크 데이터 구축사업 기획 연구」 정책연구과제 공고",
+   "url": "https://www.ntis.go.kr/rndgate/eg/un/ra/view.do?roRndUid=1282957&flag=rndList",
+   "open_date": "2026-11-13",
+   "close_date": "2026-11-23",
+   "dday": 9,
+   "status": "접수중",
+   "budget": "공고금액 1억 원",
+   "ministry": "과학기술정보통신부",
+   "collected_at": "2026-11-14 09:47",
+   "elig_text": [],
+   "score": 2,
+   "hits": [
+    "구축"
    ],
    "minus": [],
    "track": ""
@@ -480,7 +685,7 @@
    "status": "접수중",
    "budget": "공고금액 50억 원",
    "ministry": "중소벤처기업부",
-   "collected_at": "2026-11-14 04:32",
+   "collected_at": "2026-11-14 09:47",
    "elig_text": [],
    "score": 1,
    "hits": [
@@ -539,6 +744,82 @@
   {
    "source": "NTIS",
    "kind": "rnd",
+   "org": "과학기술정보통신부",
+   "title": "「K-문샷 휴머노이드 미션 달성을 위한 신규 RD 사업 기획 연구」 정책연구과제 공고",
+   "url": "https://www.ntis.go.kr/rndgate/eg/un/ra/view.do?roRndUid=1282959&flag=rndList",
+   "open_date": "2026-11-13",
+   "close_date": "2026-11-23",
+   "dday": 9,
+   "status": "접수중",
+   "budget": "공고금액 1억 2,000만 원",
+   "ministry": "과학기술정보통신부",
+   "collected_at": "2026-11-14 09:47",
+   "elig_text": [],
+   "score": 0,
+   "hits": [],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "NTIS",
+   "kind": "rnd",
+   "org": "과학기술정보통신부",
+   "title": "「K-문샷 미션 지향형 연구개발성과의 활용·확산 등 후속연계 기획 지원방안 연구」 정책연구과제 공고",
+   "url": "https://www.ntis.go.kr/rndgate/eg/un/ra/view.do?roRndUid=1282955&flag=rndList",
+   "open_date": "2026-11-13",
+   "close_date": "2026-11-23",
+   "dday": 9,
+   "status": "접수중",
+   "budget": "공고금액 2억 8,000만 원",
+   "ministry": "과학기술정보통신부",
+   "collected_at": "2026-11-14 09:47",
+   "elig_text": [],
+   "score": 0,
+   "hits": [],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "NTIS",
+   "kind": "rnd",
+   "org": "과학기술정보통신부",
+   "title": "「K-문샷 우주데이터센터 비즈니스 모델·민관협력 체계 도출 및 경제성 분석 연구」 정책연구과제 공고",
+   "url": "https://www.ntis.go.kr/rndgate/eg/un/ra/view.do?roRndUid=1282912&flag=rndList",
+   "open_date": "2026-11-12",
+   "close_date": "2026-11-23",
+   "dday": 9,
+   "status": "접수중",
+   "budget": "공고금액 8,000만 원",
+   "ministry": "과학기술정보통신부",
+   "collected_at": "2026-11-14 09:47",
+   "elig_text": [],
+   "score": 0,
+   "hits": [],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "NTIS",
+   "kind": "rnd",
+   "org": "과학기술정보통신부",
+   "title": "「PD 중심 국가 미션형 RD 추진을 위한 법·제도 개선방안 연구」정책연구과제 공고",
+   "url": "https://www.ntis.go.kr/rndgate/eg/un/ra/view.do?roRndUid=1282915&flag=rndList",
+   "open_date": "2026-11-13",
+   "close_date": "2026-11-23",
+   "dday": 9,
+   "status": "접수중",
+   "budget": "공고금액 1억 원",
+   "ministry": "과학기술정보통신부",
+   "collected_at": "2026-11-14 09:47",
+   "elig_text": [],
+   "score": 0,
+   "hits": [],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "NTIS",
+   "kind": "rnd",
    "org": "보건복지부",
    "title": "「바이오헬스 핵심인재 글로벌 브릿지 연수 프로그램 (KHIDI-Stanford Biodesign) 연수생 모집 공고」 안내",
    "url": "https://www.ntis.go.kr/rndgate/eg/un/ra/view.do?roRndUid=1282393&flag=rndList",
@@ -548,7 +829,7 @@
    "status": "접수중",
    "budget": "",
    "ministry": "보건복지부",
-   "collected_at": "2026-11-14 04:32",
+   "collected_at": "2026-11-14 09:47",
    "elig_text": [],
    "score": -3,
    "hits": [],
@@ -569,7 +850,7 @@
    "status": "접수중",
    "budget": "공고금액 5억 8,000만 원",
    "ministry": "과학기술정보통신부",
-   "collected_at": "2026-11-14 04:32",
+   "collected_at": "2026-11-14 09:47",
    "elig_text": [],
    "score": 3,
    "hits": [
@@ -590,7 +871,7 @@
    "status": "접수중",
    "budget": "",
    "ministry": "과학기술정보통신부",
-   "collected_at": "2026-11-14 04:32",
+   "collected_at": "2026-11-14 09:47",
    "elig_text": [],
    "score": 0,
    "hits": [],
@@ -609,7 +890,7 @@
    "status": "접수중",
    "budget": "",
    "ministry": "산업통상부",
-   "collected_at": "2026-11-14 04:32",
+   "collected_at": "2026-11-14 09:47",
    "elig_text": [],
    "score": -1,
    "hits": [
@@ -618,6 +899,69 @@
    "minus": [
     "수요조사"
    ],
+   "track": ""
+  },
+  {
+   "source": "NTIS",
+   "kind": "rnd",
+   "org": "과학기술정보통신부",
+   "title": "2027년도 전문기술인 활용 재난재해 대응기술 현장화 지원사업 신규과제 공모_(2027)AI 기반 재난-기술 매칭 플랫폼 구축",
+   "url": "https://www.ntis.go.kr/rndgate/eg/un/ra/view.do?roRndUid=1282526&flag=rndList",
+   "open_date": "2026-11-10",
+   "close_date": "2026-11-27",
+   "dday": 13,
+   "status": "접수중",
+   "budget": "공고금액 4억 원",
+   "ministry": "과학기술정보통신부",
+   "collected_at": "2026-11-14 09:47",
+   "elig_text": [],
+   "score": 2,
+   "hits": [
+    "구축"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "NTIS",
+   "kind": "rnd",
+   "org": "과학기술정보통신부",
+   "title": "2027년도 전문기술인 활용 재난재해 대응기술 현장화 지원사업 신규과제 공모_(2027)신기술적용형 기술개발사업 공모",
+   "url": "https://www.ntis.go.kr/rndgate/eg/un/ra/view.do?roRndUid=1282525&flag=rndList",
+   "open_date": "2026-11-10",
+   "close_date": "2026-11-27",
+   "dday": 13,
+   "status": "접수중",
+   "budget": "공고금액 15억 원",
+   "ministry": "과학기술정보통신부",
+   "collected_at": "2026-11-14 09:47",
+   "elig_text": [],
+   "score": 1,
+   "hits": [
+    "기술개발"
+   ],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "NTIS",
+   "kind": "rnd",
+   "org": "과학기술정보통신부",
+   "title": "2027년도 전문기술인 활용 재난재해 대응기술 현장화 지원사업 신규과제 공모_(2027)기술연계형 기술개발사업 공모",
+   "url": "https://www.ntis.go.kr/rndgate/eg/un/ra/view.do?roRndUid=1282524&flag=rndList",
+   "open_date": "2026-11-10",
+   "close_date": "2026-11-27",
+   "dday": 13,
+   "status": "접수중",
+   "budget": "공고금액 12억 원",
+   "ministry": "과학기술정보통신부",
+   "collected_at": "2026-11-14 09:47",
+   "elig_text": [],
+   "score": 1,
+   "hits": [
+    "기술개발"
+   ],
+   "minus": [],
    "track": ""
   },
   {
@@ -632,7 +976,7 @@
    "status": "접수중",
    "budget": "",
    "ministry": "과학기술정보통신부",
-   "collected_at": "2026-11-14 04:32",
+   "collected_at": "2026-11-14 09:47",
    "elig_text": [],
    "score": 0,
    "hits": [],
@@ -651,11 +995,34 @@
    "status": "접수중",
    "budget": "",
    "ministry": "다부처",
-   "collected_at": "2026-11-14 04:32",
+   "collected_at": "2026-11-14 09:47",
    "elig_text": [],
    "score": 0,
    "hits": [],
    "minus": [],
+   "track": ""
+  },
+  {
+   "source": "NTIS",
+   "kind": "rnd",
+   "org": "농림축산식품부",
+   "title": "2027년도 농림축산검역검사기술개발사업 신규 연구용역과제 시행계획 공고",
+   "url": "https://www.ntis.go.kr/rndgate/eg/un/ra/view.do?roRndUid=1282514&flag=rndList",
+   "open_date": "2026-11-09",
+   "close_date": "2026-11-30",
+   "dday": 16,
+   "status": "접수중",
+   "budget": "공고금액 12억 7,000만 원",
+   "ministry": "농림축산식품부",
+   "collected_at": "2026-11-14 09:47",
+   "elig_text": [],
+   "score": -3,
+   "hits": [
+    "기술개발"
+   ],
+   "minus": [
+    "축산"
+   ],
    "track": ""
   },
   {
@@ -670,7 +1037,7 @@
    "status": "",
    "budget": "",
    "ministry": "중소벤처기업부",
-   "collected_at": "2026-11-14 04:32",
+   "collected_at": "2026-11-14 09:47",
    "score": -3,
    "hits": [
     "중소기업",
@@ -694,7 +1061,7 @@
    "status": "접수중",
    "budget": "",
    "ministry": "중소벤처기업부",
-   "collected_at": "2026-11-14 04:32",
+   "collected_at": "2026-11-14 09:47",
    "elig_text": [],
    "score": -5,
    "hits": [
@@ -709,6 +1076,44 @@
   {
    "source": "NTIS",
    "kind": "rnd",
+   "org": "식품의약품안전처",
+   "title": "2027년 제1차 용역연구개발과제 주관연구기관 공모 공고(정정)",
+   "url": "https://www.ntis.go.kr/rndgate/eg/un/ra/view.do?roRndUid=1282282&flag=rndList",
+   "open_date": "2026-11-06",
+   "close_date": "2026-12-07",
+   "dday": 23,
+   "status": "접수중",
+   "budget": "공고금액 158억 700만 원",
+   "ministry": "식품의약품안전처",
+   "collected_at": "2026-11-14 09:47",
+   "elig_text": [],
+   "score": 0,
+   "hits": [],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "NTIS",
+   "kind": "rnd",
+   "org": "식품의약품안전처",
+   "title": "2027년 제2차 용역연구개발과제 주관연구기관 공모 공고",
+   "url": "https://www.ntis.go.kr/rndgate/eg/un/ra/view.do?roRndUid=1282732&flag=rndList",
+   "open_date": "2026-11-10",
+   "close_date": "2026-12-10",
+   "dday": 26,
+   "status": "접수중",
+   "budget": "",
+   "ministry": "식품의약품안전처",
+   "collected_at": "2026-11-14 09:47",
+   "elig_text": [],
+   "score": 0,
+   "hits": [],
+   "minus": [],
+   "track": ""
+  },
+  {
+   "source": "NTIS",
+   "kind": "rnd",
    "org": "질병관리청",
    "title": "[조달청 본공고](RFP1-1-2 ⑤) 국내 연구자주도 감염병 임상시험 기획 및 네트워크 구축(호흡기 바이러스 감염증 항바이러스제 임상시험)",
    "url": "https://www.ntis.go.kr/rndgate/eg/un/ra/view.do?roRndUid=1281944&flag=rndList",
@@ -718,7 +1123,7 @@
    "status": "접수중",
    "budget": "공고금액 7,500만 원",
    "ministry": "질병관리청",
-   "collected_at": "2026-11-14 04:32",
+   "collected_at": "2026-11-14 09:47",
    "elig_text": [],
    "score": -2,
    "hits": [
@@ -741,7 +1146,7 @@
    "status": "접수중",
    "budget": "공고금액 7,500만 원",
    "ministry": "질병관리청",
-   "collected_at": "2026-11-14 04:32",
+   "collected_at": "2026-11-14 09:47",
    "elig_text": [],
    "score": -2,
    "hits": [
@@ -764,7 +1169,7 @@
    "status": "접수중",
    "budget": "공고금액 13억 5,000만 원",
    "ministry": "질병관리청",
-   "collected_at": "2026-11-14 04:32",
+   "collected_at": "2026-11-14 09:47",
    "elig_text": [],
    "score": -4,
    "hits": [],
@@ -785,7 +1190,7 @@
    "status": "접수중",
    "budget": "공고금액 13억 5,000만 원",
    "ministry": "질병관리청",
-   "collected_at": "2026-11-14 04:32",
+   "collected_at": "2026-11-14 09:47",
    "elig_text": [],
    "score": -4,
    "hits": [],
@@ -806,7 +1211,7 @@
    "status": "접수중",
    "budget": "공고금액 12억 원",
    "ministry": "질병관리청",
-   "collected_at": "2026-11-14 04:32",
+   "collected_at": "2026-11-14 09:47",
    "elig_text": [],
    "score": -4,
    "hits": [],
@@ -827,7 +1232,7 @@
    "status": "진행중",
    "budget": "",
    "bid_type": "유지보수",
-   "collected_at": "2026-11-14 04:32",
+   "collected_at": "2026-11-14 09:47",
    "score": 2,
    "hits": [
     "시스템"
@@ -847,7 +1252,7 @@
    "status": "접수중",
    "budget": "공고금액 220억 2,000만 원",
    "ministry": "과학기술정보통신부",
-   "collected_at": "2026-11-14 04:32",
+   "collected_at": "2026-11-14 09:47",
    "elig_text": [],
    "score": 0,
    "hits": [],
@@ -866,7 +1271,7 @@
    "status": "접수중",
    "budget": "공고금액 781억 6,700만 원",
    "ministry": "보건복지부",
-   "collected_at": "2026-11-14 04:32",
+   "collected_at": "2026-11-14 09:47",
    "elig_text": [],
    "score": 2,
    "hits": [
@@ -888,7 +1293,7 @@
    "status": "접수중",
    "budget": "공고금액 4억 8,499만 원",
    "ministry": "과학기술정보통신부",
-   "collected_at": "2026-11-14 04:32",
+   "collected_at": "2026-11-14 09:47",
    "elig_text": [],
    "score": 0,
    "hits": [],
@@ -907,7 +1312,7 @@
    "status": "접수중",
    "budget": "",
    "ministry": "산업통상부",
-   "collected_at": "2026-11-14 04:32",
+   "collected_at": "2026-11-14 09:47",
    "elig_text": [],
    "score": -2,
    "hits": [],
@@ -928,7 +1333,7 @@
    "status": "접수중",
    "budget": "",
    "ministry": "산업통상부",
-   "collected_at": "2026-11-14 04:32",
+   "collected_at": "2026-11-14 09:47",
    "elig_text": [],
    "score": -2,
    "hits": [],
@@ -949,7 +1354,7 @@
    "status": "접수중",
    "budget": "",
    "ministry": "과학기술정보통신부",
-   "collected_at": "2026-11-14 04:32",
+   "collected_at": "2026-11-14 09:47",
    "elig_text": [],
    "score": 0,
    "hits": [],
@@ -968,7 +1373,7 @@
    "status": "게시",
    "budget": "",
    "ministry": "과학기술정보통신부",
-   "collected_at": "2026-11-14 04:32",
+   "collected_at": "2026-11-14 09:47",
    "score": 0,
    "hits": [],
    "minus": [],
@@ -986,7 +1391,7 @@
    "status": "게시",
    "budget": "",
    "ministry": "과학기술정보통신부",
-   "collected_at": "2026-11-14 04:32",
+   "collected_at": "2026-11-14 09:47",
    "score": -6,
    "hits": [],
    "minus": [
@@ -1006,7 +1411,7 @@
    "status": "게시",
    "budget": "",
    "ministry": "과학기술정보통신부",
-   "collected_at": "2026-11-14 04:32",
+   "collected_at": "2026-11-14 09:47",
    "score": -6,
    "hits": [],
    "minus": [
@@ -1026,7 +1431,7 @@
    "status": "게시",
    "budget": "",
    "ministry": "과학기술정보통신부",
-   "collected_at": "2026-11-14 04:32",
+   "collected_at": "2026-11-14 09:47",
    "score": -10,
    "hits": [],
    "minus": [
@@ -1047,7 +1452,7 @@
    "status": "게시",
    "budget": "",
    "ministry": "과학기술정보통신부",
-   "collected_at": "2026-11-14 04:32",
+   "collected_at": "2026-11-14 09:47",
    "score": -11,
    "hits": [
     "기술개발"
@@ -1070,7 +1475,7 @@
    "status": "게시",
    "budget": "",
    "ministry": "과학기술정보통신부",
-   "collected_at": "2026-11-14 04:32",
+   "collected_at": "2026-11-14 09:47",
    "score": -12,
    "hits": [],
    "minus": [
@@ -1091,7 +1496,7 @@
    "status": "게시",
    "budget": "",
    "ministry": "과학기술정보통신부",
-   "collected_at": "2026-11-14 04:32",
+   "collected_at": "2026-11-14 09:47",
    "score": -12,
    "hits": [],
    "minus": [
@@ -1112,7 +1517,7 @@
    "status": "게시",
    "budget": "",
    "ministry": "과학기술정보통신부",
-   "collected_at": "2026-11-14 04:32",
+   "collected_at": "2026-11-14 09:47",
    "score": -12,
    "hits": [],
    "minus": [
@@ -1133,7 +1538,7 @@
    "status": "게시",
    "budget": "",
    "ministry": "과학기술정보통신부",
-   "collected_at": "2026-11-14 04:32",
+   "collected_at": "2026-11-14 09:47",
    "score": -15,
    "hits": [],
    "minus": [
