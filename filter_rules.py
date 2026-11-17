@@ -44,7 +44,9 @@ TRACK_A_EXCLUDE = {
 #   대상 출처: 나라장터, 한국기계연구원
 TRACK_B_KEYWORDS = {
     # 제작·구축 행위
-    "제작": 3, "설계 및 제작": 5, "구축": 2, "설치": 1, "개조": 3, "개선": 1, "고도화": 1,
+    "제작": 3, "설계 및 제작": 5, "구축": 2, "설치": 1,
+    # 설비 유지·보수 (사업시설 유지관리 업종과 연관)
+    "유지보수": 2, "유지관리": 2, "유지 보수": 2, "유지 관리": 2, "정비": 1, "오버홀": 2, "개조": 3, "개선": 1, "고도화": 1,
     # 설비·장비
     "설비": 4, "장비": 3, "장치": 3, "시스템": 1, "평가시스템": 3, "시험기": 3, "시험장치": 4,
     "시험설비": 4, "실험장치": 4, "시험평가": 3, "검사장비": 4, "측정": 2, "챔버": 3, "반응기": 4,
@@ -188,6 +190,16 @@ def missing_licenses(licenses):
     if licenses and not any(license_ok(l) for l in licenses):
         return licenses
     return []
+
+
+# 설비 유지·보수·정비 계열 면허는 우리 사업(사업시설 유지관리, 설비기술)과 가까워
+# 점수와 관계없이 '업종 추가 등록 시 참여 가능'으로 추천에 남깁니다.
+MAINTENANCE_LICENSE = ["유지", "보수", "정비", "수리"]
+MAINTENANCE_LICENSE_EXCLUDE = ["정보시스템", "소프트웨어", "정보통신", "전산", "의료", "승강기", "자동차", "항공", "선박", "소방", "문화재"]
+
+
+def maintenance_license(licenses):
+    return any(_in(MAINTENANCE_LICENSE, l) and not _in(MAINTENANCE_LICENSE_EXCLUDE, l) for l in licenses)
 
 
 def license_addable(licenses):
