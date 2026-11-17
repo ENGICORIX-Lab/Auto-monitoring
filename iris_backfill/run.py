@@ -39,8 +39,9 @@ for prg in ("ancmIng", "ancmEnd"):
 print("2026 공고", len(rows), "목록 페이지", LOG["pages"], flush=True)
 
 # 업종·면허·등록 관련 자격 문장
-INDUSTRY = re.compile(r"업종|표준산업분류|산업분류|KSIC|면허|사업자\s*등록|등록(?:을)?\s*(?:한|된|필)\s*(?:자|기업|업체)|신고(?:를)?\s*(?:한|된)\s*(?:자|기업|업체)|전문기업|확인서|인증")
-CONTEXT = re.compile(r"신청\s*자격|지원\s*자격|참여\s*자격|지원\s*대상|신청\s*대상|자격\s*요건|참여\s*제한|지원\s*제외|주관\s*(?:연구개발)?기관|신청\s*가능|에\s*한함|한하여|이어야|하여야")
+INDUSTRY = re.compile(r"업종|표준산업분류|산업분류|KSIC|면허|공장\s*등록|직접\s*생산|전문기업|뿌리기업|뿌리산업|사업자\s*등록증\s*(?:상|의|기준)")
+CONTEXT = re.compile(r"신청\s*자격|지원\s*자격|참여\s*자격|지원\s*대상|신청\s*대상|자격\s*요건|참여\s*제한|지원\s*제외|주관\s*(?:연구개발)?기관|신청\s*가능|에\s*한함|한하여|이어야|하여야|해당하는\s*(?:기업|자)|영위")
+NOISE = re.compile(r"서식|별첨|별지|첨부\d|제출\s*서류|직인|날인|동의서|가점|감점|우대")
 
 
 def sentences(text):
@@ -50,9 +51,9 @@ def sentences(text):
 def industry_snips(text):
     out = []
     for s in sentences(text):
-        if INDUSTRY.search(s) and CONTEXT.search(s) and s not in out:
+        if INDUSTRY.search(s) and CONTEXT.search(s) and not NOISE.search(s) and s not in out:
             out.append(re.sub(r"\s+", " ", s)[:300])
-    return out[:8]
+    return out[:12]
 
 
 def process(r):
@@ -78,6 +79,7 @@ def process(r):
     text = soup.get_text(" ", strip=True)
     files = re.findall(r"f_bsnsAncm_downloadAtchFile\(\s*'([^']*)'\s*,\s*'([^']*)'\s*,\s*'([^']*)'", page)
     files = [(d_, f_, html.unescape(n)) for d_, f_, n in files]
+    text = html.unescape(text)
     item["files"] = [n for _, _, n in files]
     # 기준 점수에 가까운 공고만 첨부 공고문까지 읽습니다 (공고문 → 그 밖의 문서 순, 최대 3개).
     if score >= 2:
@@ -97,6 +99,8 @@ def process(r):
     item["chars"] = len(text)
     item["elig"] = u.eligibility_snippets(text)
     item["reason"] = check_eligibility(title, item["elig"], None)
+    # 판정 근거가 된 문장을 함께 남깁니다.
+    item["reason_text"] = next((e for e in item["elig"] if check_eligibility(title, [e], None)), "") if item["reason"] else ""
     item["industry"] = industry_snips(text)
     return item
 
