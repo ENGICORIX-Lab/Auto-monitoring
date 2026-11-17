@@ -256,3 +256,71 @@ def small_business_only(text):
         if "소지" in after and "가점" not in after:
             return re.sub(r"\s+", " ", text[max(0, m.start() - 60):m.end() + 15]).strip()
     return ""
+
+
+# =====================================================================
+# 공고문 참가자격의 추가 조건 (나라장터 첨부 공고문 기준)
+#   면허 외에 공고문에만 적혀 있는 조건을 찾아 표시합니다.
+#   회사 현황: 직접생산확인증명서 없음, 나라장터 제조물품 등록 없음 (바뀌면 아래 값을 수정)
+# =====================================================================
+DIRECT_PRODUCTION_ITEMS = []   # 보유한 직접생산확인증명서 품목명
+MANUFACTURE_ITEMS = []         # 나라장터에 제조물품으로 등록한 품목명
+EXCLUDE_ON_PERFORMANCE = False  # 실적 제한 공고를 추천에서 뺄지 (False: 표시만)
+
+_REQ = r"(?:소지|보유|제출|등록|발급|필한|갖춘|있는)"
+_SOFT = re.compile(r"가점|우대|가산|해당\s*시|해당하는\s*경우|경우에\s*한|면제")
+
+
+def _item_names(s):
+    """문장에서 '벨트컨베이어(세부품명번호 : 2410171201)' 형태의 품목명을 뽑습니다."""
+    names = re.findall(r"((?:[가-힣A-Za-z0-9·ㆍ/\-]{1,15} ?){1,3})\s*[\(\[（]\s*세부\s*품명\s*번호", s)
+    out = []
+    for n in names:
+        # '마감일시까지 지그'처럼 앞에 붙은 조사·서술어 단어는 뺍니다.
+        words = [w for w in n.split() if w.strip("-·ㆍ/") and not re.search(r"(까지|부터|에서|으로|하여|하는|한|및|또는|를|을|의|에|등록|마감일시|기준)$", w)]
+        if words and " ".join(words) not in out:
+            out.append(" ".join(words))
+    return out[:3]
+
+
+def bid_conditions(text):
+    """공고문에서 참가자격 추가 조건을 찾습니다. [{'t': 종류, 'd': 상세, 'block': 참여 불가 여부}]"""
+    found = {}
+    flat = re.sub(r"[ \t\r\f\v]+", " ", text)
+    # PDF는 문장 중간에서 줄이 바뀌므로, 항목 기호로 시작하는 줄만 새 문장으로 보고 나머지 줄은 이어 붙입니다.
+    flat = re.sub(r"\n\s*(?=(?:[가-하]\.|\d{1,2}[\.\)]|[①-⑳]|[○●■□▶◦※\-•ㅇ]|\(\d|\[))", "\x00", flat)
+    flat = re.sub(r"\s*\n\s*", "", flat)
+    parts = [p.strip() for p in re.split(r"\x00|(?<=[다함음임자체])\s*[.。]\s|[○●■□▶◦※]|\s[가-하]\.\s", flat) if 8 <= len(p.strip()) <= 500]
+    def soft(compact, m, after=40):
+        """매칭 위치 주변에 가점·우대 같은 표현이 있으면 필수 조건이 아닙니다."""
+        return bool(_SOFT.search(compact[max(0, m.start() - 50):m.end() + after]))
+
+    for s in parts:
+        compact = re.sub(r"\s", "", s)
+        # 1) 직접생산확인증명서
+        m = re.search(r"직접생산확인(?:증명)?서", compact)
+        if m and re.search(_REQ, compact[m.end():m.end() + 40]) and not soft(compact, m):
+            items = _item_names(s)
+            ok = any(any(mine in n or n in mine for mine in DIRECT_PRODUCTION_ITEMS) for n in items)
+            found.setdefault("직접생산확인증명서 필요", {"d": ", ".join(items), "block": not ok})
+        # 2) 제조물품 등록 / 공급물품 등록
+        m = re.search(r"(제조또는공급|제조\(?또는공급\)?|제조·공급|제조,공급|공급또는제조|제조|공급)(?:하는)?물품으로(?:입찰참가)?(?:자격)?(?:을)?등록", compact)
+        if m and not soft(compact, m, after=8):
+            items = _item_names(s)
+            if m.group(1) == "제조":
+                ok = any(any(mine in n or n in mine for mine in MANUFACTURE_ITEMS) for n in items)
+                found.setdefault("제조물품 등록 필요", {"d": ", ".join(items), "block": not ok})
+            else:
+                found.setdefault("물품 등록 필요(제조 또는 공급)", {"d": ", ".join(items), "block": False})
+        # 3) 실적 제한
+        m = re.search(r"(납품|시공|설치|수행|이행|공급|제작|용역|준공|계약)실적", compact)
+        if m and "실적 제한 있음" not in found and not soft(compact, m):
+            around = compact[max(0, m.start() - 60):m.end() + 80]
+            if re.search(r"보유|제출|있는", around) and re.search(r"최근\d+년|이내|\d배|이상", around) \
+                    and not re.search(r"평가|심사|배점", around):
+                found["실적 제한 있음"] = {"d": re.sub(r"\s+", " ", s)[:140], "block": EXCLUDE_ON_PERFORMANCE}
+        # 4) 면허의 주력분야
+        m = re.search(r"주력\s*분야\s*[:：]?\s*([가-힣A-Za-z·ㆍ ]{2,20})", s)
+        if m and "주력분야 지정" not in found:
+            found["주력분야 지정"] = {"d": m.group(1).strip(), "block": False}
+    return [{"t": t, **v} for t, v in found.items()]

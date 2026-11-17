@@ -12,7 +12,7 @@ from concurrent.futures import ThreadPoolExecutor
 
 from attachments import extract_text
 from filter_rules import (
-    RESTRICT_MARK, SMALL_BUSINESS_ONLY, small_business_only, check_eligibility, missing_licenses, license_addable, maintenance_license, LICENSE_ADD_MIN_SCORE, RECOMMEND_THRESHOLD, PRODUCT_BONUS_MAX, PRODUCT_PENALTY_MAX, IT_SERVICE_CLASSES, TRACK_A_KEYWORDS, TRACK_A_EXCLUDE,
+    RESTRICT_MARK, SMALL_BUSINESS_ONLY, small_business_only, bid_conditions, check_eligibility, missing_licenses, license_addable, maintenance_license, LICENSE_ADD_MIN_SCORE, RECOMMEND_THRESHOLD, PRODUCT_BONUS_MAX, PRODUCT_PENALTY_MAX, IT_SERVICE_CLASSES, TRACK_A_KEYWORDS, TRACK_A_EXCLUDE,
     TRACK_B_KEYWORDS, TRACK_B_EXCLUDE, TRACK_B_CORE, score_title,
 )
 
@@ -644,8 +644,9 @@ def g2b_limits(item, previous, bulk=None):
 def check_attachments(item, previous):
     """첨부 공고문을 내려받아 '소기업·소상공인 확인서' 소지가 참가 자격인지 확인합니다."""
     prev = previous.get(item["url"])
-    if prev and "attach_checked" in prev:
+    if prev and "attach_checked" in prev and "conditions" in prev:
         item["sme_only"] = prev.get("sme_only", "")
+        item["conditions"] = prev["conditions"]
         item["attach_checked"] = prev["attach_checked"]
         return
     files = item.get("attachments") or []
@@ -661,6 +662,7 @@ def check_attachments(item, previous):
     files = sorted(files, key=lambda f: 0 if "공고" in f["name"] else 1)
     read = 0
     item["sme_only"] = ""
+    conditions = {}
     for f in files:
         try:
             res = session.get(f["url"], verify=False, timeout=60)
@@ -670,10 +672,16 @@ def check_attachments(item, previous):
         text = extract_text(f["name"], res.content)
         if text.strip():
             read += 1
+        for c in bid_conditions(text):
+            conditions.setdefault(c["t"], c)
         hit = small_business_only(text)
         if hit:
             item["sme_only"] = hit
             break
+        # 공고문에서 조건을 찾았으면 규격서·서식 파일까지 받지 않습니다.
+        if conditions and "공고" in f["name"]:
+            break
+    item["conditions"] = list(conditions.values())
     item["attach_checked"] = f"{read}/{len(files)}"
 
 
@@ -708,6 +716,10 @@ def apply_eligibility(items):
         reason = check_eligibility(it["title"], it.get("elig_text"), it.get("regions"))
         if not reason and it.get("sme_only"):
             reason = "소기업·소상공인 전용 (공고문 참가자격)"
+        blocking = [c for c in it.get("conditions") or [] if c.get("block")]
+        if not reason and blocking:
+            reason = "공고문 조건 미충족: " + ", ".join(
+                c["t"] + (f"({c['d']})" if c["d"] and len(c["d"]) <= 30 else "") for c in blocking[:2])
         missing = missing_licenses(it.get("licenses"))
         if not reason and missing:
             # 키워드가 잘 맞고 우리 분야 면허라면 업종 추가 등록을 전제로 추천에 남깁니다.

@@ -230,6 +230,9 @@
     .fav-btn:hover { color: #f59e0b; }
     .fav-btn.on { color: #f59e0b; }
     .fav-btn:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; border-radius: 4px; }
+    .conds { font-size: 12px; color: #475569; margin-top: 4px; }
+    .cond { display: inline-block; padding: 1px 7px; margin: 1px 2px 1px 0; border-radius: 10px; background: #f1f5f9; color: #334155; }
+    .cond-block { background: #fee2e2; color: #b91c1c; font-weight: 700; }
     .needs-license { display: inline-block; margin: 2px 0 4px; padding: 2px 8px; border-radius: 4px; background: #ffedd5; color: #c2410c; font-size: 12px; font-weight: 700; }
     .elig-btn.active { background: #ffedd5; color: #9a3412; border-color: #fed7aa; }
     .chip-sep { display: inline-block; width: 1px; height: 22px; background: var(--border); margin: 0 4px; align-self: center; }
@@ -410,6 +413,9 @@
     ].filter(Boolean).join(' · ');
     const needs = it.needs_license && it.needs_license.length
       ? `<div class="needs-license">업종 추가 등록 시 참여 가능 · 필요: ${esc(it.needs_license.slice(0, 2).join(', '))}</div>` : '';
+    const conds = (it.conditions || []).length
+      ? `<div class="conds">공고문 조건: ` + it.conditions.map(c =>
+          `<span class="cond ${c.block ? 'cond-block' : ''}" title="${esc(c.d || '')}">${esc(c.t)}${c.d && c.d.length <= 20 ? ' · ' + esc(c.d) : ''}</span>`).join(' ') + `</div>` : '';
     const inelig = it.ineligible
       ? `<div class="inelig" title="${esc(it.sme_only || '')}">자격 미해당 · ${esc(it.ineligible)}${it.excluded_track ? ' (추천 ' + esc(it.excluded_track) + '에서 제외)' : ''}</div>` : '';
     return `<tr class="${it.ineligible ? 'row-inelig' : ''}">
@@ -424,6 +430,7 @@
         ${inelig}${needs}
         <div class="tags-list">${score} ${hits} ${minus}</div>
         ${limits ? `<div class="limits">${esc(limits)}</div>` : ''}
+        ${conds}
         ${variants(it)}
       </td>
       <td><strong>${esc(it.budget || '공고문 참조')}</strong><div class="date-sub">${esc(typ)}</div></td>
