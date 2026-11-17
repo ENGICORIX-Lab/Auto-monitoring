@@ -1,0 +1,32 @@
+name: Backfill 2026 H2
+on:
+  push:
+    branches: [claude/backfill-2026h2]
+    paths: [backfill/**, .github/workflows/backfill.yml]
+permissions:
+  contents: write
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install requests beautifulsoup4 urllib3 pypdf olefile
+      - run: mkdir -p out && (python backfill/backfill.py > out/log.txt 2>&1 || true)
+        env:
+          G2B_API_KEY: ${{ secrets.G2B_API_KEY }}
+      - name: Encrypt results and publish to a scratch branch
+        run: |
+          cd out
+          tar czf data.tgz backfill.json log.txt 2>/dev/null || tar czf data.tgz log.txt
+          openssl rand -hex 32 > k
+          openssl enc -aes-256-cbc -pbkdf2 -salt -in data.tgz -out data.enc -pass file:k
+          openssl pkeyutl -encrypt -pubin -inkey ../backfill/pub.pem -in k -out k.enc
+          rm -f k data.tgz backfill.json log.txt
+          git init -q -b out
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A && git commit -qm "encrypted backfill output"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" out:claude/backfill-out
