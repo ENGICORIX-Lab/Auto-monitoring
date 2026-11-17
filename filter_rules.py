@@ -123,14 +123,18 @@ COMPANY_PROFILE = {
     "시군": "청주",
     # 본문에서 우리 지역으로 볼 표현 (충청권·중부권 공모 포함)
     "지역": ["충청북도", "충북", "청주", "충청권", "중부권"],
-    # 사업자등록증 업종(종목) (나라장터 '면허 제한'과 비교, 띄어쓰기·가운뎃점은 무시하고 비교합니다)
+    # 나라장터에 등록된 공사·용역·기타 업종 (나라장터 '면허 제한'과 비교, 띄어쓰기·가운뎃점은 무시하고 비교합니다)
     "면허": [
-        "사업시설유지관리서비스업", "사업시설유지관리",
-        "그외기타전기장비제조업", "기타전기장비제조업", "전기장비제조업",
-        "토목건축공사업", "산업환경설비공사업",
-        "건물용기계장비설치공사업", "승강설비설치공사업",
-        "전기공사업", "기타엔지니어링서비스업",
+        "토목건축공사업",      # 0003
+        "토목공사업", "건축공사업",  # 토목건축공사업 보유자는 토목·건축 공사 모두 가능
+        "전기공사업",          # 0037
+        "산업·환경설비공사업",  # 1449
+        "기계설비ㆍ가스공사업",  # 6202
     ],
+    # 나라장터 업종 등록일 (이 날짜 전에 게시된 공고에는 이 업종으로 참여할 수 없었음)
+    "면허_등록일": "2026-06-02",
+    # 기계설비ㆍ가스공사업의 주력분야
+    "주력분야": ["기계설비공사"],
 }
 
 # 등록 업종으로 참여할 수 없는 나라장터 공고라도, 추천 점수가 이 이상이고 필요한 면허가
@@ -179,9 +183,10 @@ def region_ok(region):
 
 
 def license_ok(required):
-    """나라장터 면허 제한 하나를 우리가 보유했는지 (이름 일부만 같아도 인정)."""
+    """나라장터 면허 제한 하나를 우리가 보유했는지 (띄어쓰기·가운뎃점만 무시하고 이름이 같아야 인정).
+    '실내건축공사업'이 '건축공사업'으로 잘못 인정되지 않도록 부분 일치는 쓰지 않습니다."""
     req = _norm(required)
-    return any(_norm(mine) in req or req in _norm(mine) for mine in COMPANY_PROFILE["면허"])
+    return any(_norm(mine) == req for mine in COMPANY_PROFILE["면허"])
 
 
 def missing_licenses(licenses):
@@ -283,6 +288,12 @@ def _item_names(s):
     return out[:3]
 
 
+def specialty_ok(detail):
+    """공고문이 요구한 주력분야를 우리가 보유했는지 (이름 일부만 같아도 인정)."""
+    d = _norm(detail or "")
+    return not d or any(_norm(mine) in d or d in _norm(mine) for mine in COMPANY_PROFILE["주력분야"])
+
+
 def bid_conditions(text):
     """공고문에서 참가자격 추가 조건을 찾습니다. [{'t': 종류, 'd': 상세, 'block': 참여 불가 여부}]"""
     found = {}
@@ -323,4 +334,6 @@ def bid_conditions(text):
         m = re.search(r"주력\s*분야\s*[:：]?\s*([가-힣A-Za-z·ㆍ ]{2,20})", s)
         if m and "주력분야 지정" not in found:
             found["주력분야 지정"] = {"d": m.group(1).strip(), "block": False}
+    if "주력분야 지정" in found:
+        found["주력분야 지정"]["block"] = not specialty_ok(found["주력분야 지정"]["d"])
     return [{"t": t, **v} for t, v in found.items()]

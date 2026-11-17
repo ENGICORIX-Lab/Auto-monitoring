@@ -12,7 +12,7 @@ from concurrent.futures import ThreadPoolExecutor
 
 from attachments import extract_text
 from filter_rules import (
-    RESTRICT_MARK, SMALL_BUSINESS_ONLY, small_business_only, bid_conditions, check_eligibility, missing_licenses, license_addable, maintenance_license, LICENSE_ADD_MIN_SCORE, RECOMMEND_THRESHOLD, PRODUCT_BONUS_MAX, PRODUCT_PENALTY_MAX, IT_SERVICE_CLASSES, TRACK_A_KEYWORDS, TRACK_A_EXCLUDE,
+    RESTRICT_MARK, SMALL_BUSINESS_ONLY, small_business_only, bid_conditions, specialty_ok, check_eligibility, missing_licenses, license_addable, maintenance_license, LICENSE_ADD_MIN_SCORE, RECOMMEND_THRESHOLD, PRODUCT_BONUS_MAX, PRODUCT_PENALTY_MAX, IT_SERVICE_CLASSES, TRACK_A_KEYWORDS, TRACK_A_EXCLUDE,
     TRACK_B_KEYWORDS, TRACK_B_EXCLUDE, TRACK_B_CORE, score_title,
 )
 
@@ -716,6 +716,10 @@ def apply_eligibility(items):
         reason = check_eligibility(it["title"], it.get("elig_text"), it.get("regions"))
         if not reason and it.get("sme_only"):
             reason = "소기업·소상공인 전용 (공고문 참가자격)"
+        # 주력분야는 회사 정보가 바뀌면 다시 판단해야 하므로, 저장된 값 대신 매번 계산합니다.
+        for c in it.get("conditions") or []:
+            if c["t"] == "주력분야 지정":
+                c["block"] = not specialty_ok(c.get("d"))
         blocking = [c for c in it.get("conditions") or [] if c.get("block")]
         if not reason and blocking:
             reason = "공고문 조건 미충족: " + ", ".join(
