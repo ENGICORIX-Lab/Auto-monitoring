@@ -277,7 +277,7 @@ def _item_names(s):
     out = []
     for n in names:
         # '마감일시까지 지그'처럼 앞에 붙은 조사·서술어 단어는 뺍니다.
-        words = [w for w in n.split() if w.strip("-·ㆍ/") and not re.search(r"(까지|부터|에서|으로|하여|하는|한|및|또는|를|을|의|에|등록|마감일시|기준)$", w)]
+        words = [w for w in n.split() if w.strip("-·ㆍ/") and not re.search(r"(까지|부터|에서|으로|하여|하는|한|및|또는|를|을|의|에|등록|마감일시|기준|따라|의한|관한|위한|대한)$", w)]
         if words and " ".join(words) not in out:
             out.append(" ".join(words))
     return out[:3]

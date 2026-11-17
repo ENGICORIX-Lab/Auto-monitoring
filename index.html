@@ -233,6 +233,8 @@
     .conds { font-size: 12px; color: #475569; margin-top: 4px; }
     .cond { display: inline-block; padding: 1px 7px; margin: 1px 2px 1px 0; border-radius: 10px; background: #f1f5f9; color: #334155; }
     .cond-block { background: #fee2e2; color: #b91c1c; font-weight: 700; }
+    .more-btn { border: 1px solid var(--border); background: #ffffff; color: var(--primary-dark); font-weight: 700; font-size: 13px; padding: 8px 18px; border-radius: 8px; cursor: pointer; }
+    .more-btn:hover { background: var(--primary-light); }
     .needs-license { display: inline-block; margin: 2px 0 4px; padding: 2px 8px; border-radius: 4px; background: #ffedd5; color: #c2410c; font-size: 12px; font-weight: 700; }
     .elig-btn.active { background: #ffedd5; color: #9a3412; border-color: #fed7aa; }
     .chip-sep { display: inline-block; width: 1px; height: 22px; background: var(--border); margin: 0 4px; align-self: center; }
@@ -376,7 +378,8 @@
   };
   const SOURCE_CLASS = { 'IRIS': 'cat-rd', 'NTIS': 'cat-rd', 'SMTECH': 'cat-rd', '과기정통부': 'cat-rd', '나라장터': 'cat-bid', '기계연': 'cat-cons' };
   let DATA = { items: [], sources: [] };
-  let state = { view: 'A', source: 'all', elig: 'all', q: '', sortKey: null, sortDir: 1 };
+  const PAGE = 300;
+  let state = { view: 'A', source: 'all', elig: 'all', q: '', sortKey: null, sortDir: 1, limit: PAGE };
   try { state.view = localStorage.getItem('view') || 'A'; } catch (e) {}
 
   // 즐겨찾기는 이 브라우저에만 저장됩니다 (공고 원문 주소 기준).
@@ -501,7 +504,9 @@
 
     const q = state.q.trim().toLowerCase();
     let rows = base.filter(it => state.source === 'all' || it.source === state.source);
-    if (q) rows = rows.filter(it => [it.title, it.org, it.source, (it.hits || []).join(' '), (it.products || []).join(' ')].join(' ').toLowerCase().includes(q));
+    if (q) rows = rows.filter(it => [it.title, it.org, it.source, (it.hits || []).join(' '), (it.products || []).join(' '),
+      (it.conditions || []).map(c => c.t + ' ' + (c.d || '')).join(' '), it.ineligible || '',
+      (it.licenses || []).join(' ')].join(' ').toLowerCase().includes(q));
     if (state.view !== 'all') rows = rows.slice().sort((a, b) =>
       (!!a.needs_license - !!b.needs_license) || b.score - a.score || (a.dday ?? 999) - (b.dday ?? 999));
     if (state.sortKey) rows = sortRows(rows);
@@ -513,8 +518,12 @@
       th.querySelector('.sort-icon').textContent = on ? (state.sortDir > 0 ? '▲' : '▼') : '↕';
     });
 
+    // 한 번에 너무 많이 그리면 느려지므로 PAGE건씩 보여주고 '더 보기'로 늘립니다.
+    const shown = rows.slice(0, state.limit);
+    const more = rows.length - shown.length;
     document.getElementById('tableBody').innerHTML = rows.length
-      ? rows.map(row).join('')
+      ? shown.map(row).join('') + (more > 0
+        ? `<tr><td colspan="5" class="empty"><button type="button" class="more-btn" id="moreBtn">더 보기 (${Math.min(more, PAGE)}건 더 · 남은 ${more}건)</button></td></tr>` : '')
       : `<tr><td colspan="5" class="empty">조건에 맞는 공고가 없습니다.</td></tr>`;
   }
 
@@ -542,7 +551,7 @@
 
   document.querySelector('.view-tabs').addEventListener('click', e => {
     const b = e.target.closest('.view-tab'); if (!b) return;
-    state.view = b.dataset.view; state.source = 'all'; state.elig = 'all';
+    state.view = b.dataset.view; state.source = 'all'; state.elig = 'all'; state.limit = PAGE;
     try { localStorage.setItem('view', state.view); } catch (err) {}
     render();
   });
@@ -550,19 +559,22 @@
     const b = e.target.closest('.tag-btn'); if (!b) return;
     if (b.dataset.elig) state.elig = b.dataset.elig;
     else state.source = b.dataset.source;
+    state.limit = PAGE;
     render();
   });
   document.querySelector('#announcementTable thead').addEventListener('click', e => {
     const th = e.target.closest('th.sortable'); if (!th) return;
     if (state.sortKey === th.dataset.sort) state.sortDir *= -1;
     else { state.sortKey = th.dataset.sort; state.sortDir = 1; }
+    state.limit = PAGE;
     render();
   });
   document.getElementById('tableBody').addEventListener('click', e => {
+    if (e.target.closest('#moreBtn')) { state.limit += PAGE; render(); return; }
     const b = e.target.closest('.fav-btn'); if (!b) return;
     toggleFav(b.dataset.fav); render();
   });
-  document.getElementById('searchInput').addEventListener('input', e => { state.q = e.target.value; render(); });
+  document.getElementById('searchInput').addEventListener('input', e => { state.q = e.target.value; state.limit = PAGE; render(); });
 
   fetch('data.json?t=' + Date.now())
     .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
