@@ -131,8 +131,13 @@ COMPANY_PROFILE = {
         "산업·환경설비공사업",  # 1449
         "기계설비ㆍ가스공사업",  # 6202
     ],
-    # 나라장터 업종 등록일 (이 날짜 전에 게시된 공고에는 이 업종으로 참여할 수 없었음)
-    "면허_등록일": "2026-06-02",
+    # 업종별로 입찰에 참여할 수 있게 된 날 (이 날짜 전에 게시된 공고에는 그 업종으로 참여할 수 없었음)
+    "면허_등록일": {
+        "토목건축공사업": "2026-03-26", "토목공사업": "2026-03-26", "건축공사업": "2026-03-26",
+        "전기공사업": "2026-03-20",
+        "산업·환경설비공사업": "2026-03-26",
+        "기계설비ㆍ가스공사업": "2026-03-24",
+    },
     # 기계설비ㆍ가스공사업의 주력분야
     "주력분야": ["기계설비공사"],
 }
@@ -187,6 +192,15 @@ def license_ok(required):
     '실내건축공사업'이 '건축공사업'으로 잘못 인정되지 않도록 부분 일치는 쓰지 않습니다."""
     req = _norm(required)
     return any(_norm(mine) == req for mine in COMPANY_PROFILE["면허"])
+
+
+def license_since(required):
+    """보유한 면허라면 입찰에 참여할 수 있게 된 날짜를, 아니면 None을 반환합니다."""
+    req = _norm(required)
+    for mine, since in COMPANY_PROFILE["면허_등록일"].items():
+        if _norm(mine) == req:
+            return since
+    return None
 
 
 def missing_licenses(licenses):
