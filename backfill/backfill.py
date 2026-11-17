@@ -8,8 +8,9 @@ import update_data as u
 from attachments import extract_text
 from filter_rules import small_business_only
 
-START = datetime(2026, 7, 1)
-END = datetime.utcnow() + timedelta(hours=9)
+NOW_KST = datetime.utcnow() + timedelta(hours=9)
+START = datetime.strptime(os.environ.get("BACKFILL_START", "2026-07-01"), "%Y-%m-%d")
+END = min(datetime.strptime(os.environ.get("BACKFILL_END", "2099-01-01"), "%Y-%m-%d"), NOW_KST)
 T0 = time.time()
 LOG = {"calls": 0, "errors": [], "windows": []}
 
