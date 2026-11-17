@@ -8,10 +8,11 @@ from bs4 import BeautifulSoup
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 from datetime import datetime, timedelta, timezone
+from concurrent.futures import ThreadPoolExecutor
 
 from attachments import extract_text
 from filter_rules import (
-    RESTRICT_MARK, SMALL_BUSINESS_ONLY, small_business_only, check_eligibility, missing_licenses, license_addable, LICENSE_ADD_MIN_SCORE, RECOMMEND_THRESHOLD, PRODUCT_BONUS_MAX, PRODUCT_PENALTY_MAX, IT_SERVICE_CLASSES, TRACK_A_KEYWORDS, TRACK_A_EXCLUDE,
+    RESTRICT_MARK, SMALL_BUSINESS_ONLY, small_business_only, bid_conditions, check_eligibility, missing_licenses, license_addable, maintenance_license, LICENSE_ADD_MIN_SCORE, RECOMMEND_THRESHOLD, PRODUCT_BONUS_MAX, PRODUCT_PENALTY_MAX, IT_SERVICE_CLASSES, TRACK_A_KEYWORDS, TRACK_A_EXCLUDE,
     TRACK_B_KEYWORDS, TRACK_B_EXCLUDE, TRACK_B_CORE, score_title,
 )
 
@@ -306,6 +307,10 @@ def fetch_kimm():
 # ----------------- 5. [API] 조달청 나라장터 (G2B) -----------------
 # 조달청 입찰공고정보서비스 02 버전 (2026-11 변경 공지: 기존 주소는 90일 뒤 중단, 오퍼레이션 이름 끝에 '02')
 G2B_BASE = "https://apis.data.go.kr/1230000/ad/BidPublicInfoService02"
+G2B_WINDOW_DAYS = 14   # 최근 며칠 동안 게시된 공고를 조회할지
+G2B_CHUNK_DAYS = 5     # 한 번에 조회하는 기간 (API가 7일을 넘는 기간에는 오류 없이 0건을 돌려줌)
+G2B_PAGE_ROWS = 999
+G2B_MAX_PAGES = 40
 
 
 def g2b_items(op, params):
@@ -330,6 +335,25 @@ def g2b_items(op, params):
     return rows, int(body.get("totalCount") or 0)
 
 
+def g2b_range_rows(op):
+    """조회 기간을 며칠 단위로 나눠 한 오퍼레이션의 모든 행을 읽습니다 (오래된 공고부터 끝 페이지까지)."""
+    start = NOW.replace(hour=0, minute=0, second=0, microsecond=0) - timedelta(days=G2B_WINDOW_DAYS)
+    end = NOW.replace(hour=23, minute=59, second=0, microsecond=0)
+    cur = start
+    while cur < end:
+        nxt = min(cur + timedelta(days=G2B_CHUNK_DAYS), end + timedelta(minutes=1))
+        for page in range(1, G2B_MAX_PAGES + 1):
+            rows, total = g2b_items(op, {"numOfRows": G2B_PAGE_ROWS, "pageNo": page, "inqryDiv": 1,
+                                         "inqryBgnDt": cur.strftime("%Y%m%d%H%M"),
+                                         "inqryEndDt": (nxt - timedelta(minutes=1)).strftime("%Y%m%d%H%M")})
+            yield from rows
+            if page * G2B_PAGE_ROWS >= total or not rows:
+                break
+        else:
+            NOTES["나라장터"] = f"{op} 공고가 {G2B_MAX_PAGES}페이지를 넘어 일부만 수집됨"
+        cur = nxt
+
+
 def g2b_products(bid):
     """입찰공고의 세부 품명·분류명 목록을 모읍니다 (예: '태양광발전장치', '가스미터')."""
     names = []
@@ -349,54 +373,54 @@ def fetch_g2b():
     if not G2B_API_KEY:
         raise RuntimeError("G2B_API_KEY가 설정되지 않았습니다 (GitHub Secrets 확인)")
     items, seen = [], set()
-    bgn_dt = (NOW - timedelta(days=14)).strftime("%Y%m%d0000")
-    end_dt = NOW.strftime("%Y%m%d2359")
     endpoints = {
         "getBidPblancListInfoThngPPSSrch02": "물품",
         "getBidPblancListInfoServcPPSSrch02": "용역",
         "getBidPblancListInfoCnstwkPPSSrch02": "공사",
     }
     for ep, bid_type in endpoints.items():
-        for page in range(1, 5):
-            bids, total = g2b_items(ep, {"numOfRows": 500, "pageNo": page, "inqryDiv": 1,
-                                         "inqryBgnDt": bgn_dt, "inqryEndDt": end_dt})
-            for bid in bids:
-                key = (bid.get("bidNtceNo"), bid.get("bidNtceOrd"))
-                if key in seen:
-                    continue
-                seen.add(key)
-                title = bid.get("bidNtceNm", "")
-                # 공사는 설비 관련 공고만 남깁니다.
-                if bid_type == "공사" and not any(k in title for k in ["설비", "장치", "플랜트", "배관", "기계"]):
-                    continue
-                budget = bid.get("presmptPrce") or bid.get("asignBdgtAmt") or ""
-                # '1원'처럼 형식적으로 입력된 금액은 미공개로 봅니다.
-                try:
-                    budget = format_won(budget) if float(budget or 0) >= 10000 else ""
-                except ValueError:
-                    budget = ""
-                budget = budget or "금액 미공개"
-                item = make_item(
-                    "나라장터", "bid", bid.get("dminsttNm") or bid.get("ntceInsttNm") or "조달청",
-                    title, bid.get("bidNtceDtlUrl") or bid.get("bidNtceUrl") or "https://www.g2b.go.kr",
-                    open_date=bid.get("bidNtceDt"), close_date=bid.get("bidClseDt"),
-                    status="입찰공고", budget=budget,
-                )
-                if item:
-                    item["bid_no"], item["bid_ord"] = bid.get("bidNtceNo"), bid.get("bidNtceOrd")
-                    # 목록 응답의 첨부파일 항목은 02 버전에서 별도 오퍼레이션으로 분리될 예정이라,
-                    # 없으면 check_attachments에서 첨부파일정보조회로 받아 옵니다.
-                    item["attachments"] = [{"name": bid.get(f"ntceSpecFileNm{i}") or "", "url": bid[f"ntceSpecDocUrl{i}"]}
-                                           for i in range(1, 11) if bid.get(f"ntceSpecDocUrl{i}")]
-                    item["bid_type"] = bid_type
-                    if bid_type == "물품":
-                        item["products"] = g2b_products(bid)
-                    else:
-                        # 용역은 품명 대신 'ICT 서비스' 같은 포괄 분류만 있어 IT 용역을 거르는 데만 씁니다.
-                        item["service_class"] = [v for k, v in bid.items() if k.endswith("ClsfcNm") and isinstance(v, str) and v]
-                    items.append(item)
-            if page * 500 >= total:
-                break
+        # 2주 치 공고는 종류별로 수천 건이라 끝 페이지까지 모두 읽습니다 (오래된 공고부터 나오므로
+        # 앞쪽 몇 페이지만 읽으면 최근 공고가 빠집니다).
+        raw = 0
+        for bid in g2b_range_rows(ep):
+            raw += 1
+            key = (bid.get("bidNtceNo"), bid.get("bidNtceOrd"))
+            if key in seen:
+                continue
+            seen.add(key)
+            title = bid.get("bidNtceNm", "")
+            # 공사는 설비 관련 공고만 남깁니다.
+            if bid_type == "공사" and not any(k in title for k in ["설비", "장치", "플랜트", "배관", "기계"]):
+                continue
+            budget = bid.get("presmptPrce") or bid.get("asignBdgtAmt") or ""
+            # '1원'처럼 형식적으로 입력된 금액은 미공개로 봅니다.
+            try:
+                budget = format_won(budget) if float(budget or 0) >= 10000 else ""
+            except ValueError:
+                budget = ""
+            budget = budget or "금액 미공개"
+            item = make_item(
+                "나라장터", "bid", bid.get("dminsttNm") or bid.get("ntceInsttNm") or "조달청",
+                title, bid.get("bidNtceDtlUrl") or bid.get("bidNtceUrl") or "https://www.g2b.go.kr",
+                open_date=bid.get("bidNtceDt"), close_date=bid.get("bidClseDt"),
+                status="입찰공고", budget=budget,
+            )
+            if item:
+                item["bid_no"], item["bid_ord"] = bid.get("bidNtceNo"), bid.get("bidNtceOrd")
+                # 목록 응답의 첨부파일 항목은 02 버전에서 별도 오퍼레이션으로 분리될 예정이라,
+                # 없으면 check_attachments에서 첨부파일정보조회로 받아 옵니다.
+                item["attachments"] = [{"name": bid.get(f"ntceSpecFileNm{i}") or "", "url": bid[f"ntceSpecDocUrl{i}"]}
+                                       for i in range(1, 11) if bid.get(f"ntceSpecDocUrl{i}")]
+                item["bid_type"] = bid_type
+                if bid_type == "물품":
+                    item["products"] = g2b_products(bid)
+                else:
+                    # 용역은 품명 대신 'ICT 서비스' 같은 포괄 분류만 있어 IT 용역을 거르는 데만 씁니다.
+                    item["service_class"] = [v for k, v in bid.items() if k.endswith("ClsfcNm") and isinstance(v, str) and v]
+                items.append(item)
+        # 2주 동안 공고가 한 건도 없을 수는 없으므로, 0건이면 조용히 넘기지 않고 실패로 처리합니다.
+        if raw == 0 and bid_type != "공사":
+            raise RuntimeError(f"{bid_type} 공고 조회 결과가 0건입니다 (API 조회 조건 변경 여부 확인 필요)")
     return items
 
 
@@ -580,11 +604,30 @@ def load_previous():
         return {}
 
 
-def g2b_limits(item, previous):
+def g2b_bulk_limits():
+    """조회 기간의 참가가능지역·면허제한을 한꺼번에 받아 둡니다 (새 후보가 많을 때 공고별 조회보다 호출이 적음)."""
+    bulk = {}
+    for ep, field in [("getBidPblancListInfoPrtcptPsblRgn02", "prtcptPsblRgnNm"),
+                      ("getBidPblancListInfoLicenseLimit02", "lcnsLmtNm")]:
+        store = bulk[field] = {}
+        for r in g2b_range_rows(ep):
+            if r.get(field):
+                store.setdefault((r.get("bidNtceNo"), r.get("bidNtceOrd") or "000"), []).append(
+                    r[field].split("/")[0].strip())
+    return bulk
+
+
+def g2b_limits(item, previous, bulk=None):
     """나라장터 공고의 참가가능지역·면허제한을 조회합니다."""
     prev = previous.get(item["url"])
     if prev and "limits_checked" in prev:
         item["regions"], item["licenses"] = prev.get("regions", []), prev.get("licenses", [])
+        item["limits_checked"] = True
+        return
+    if bulk is not None:
+        key = (item["bid_no"], item["bid_ord"] or "000")
+        item["regions"] = list(dict.fromkeys(bulk["prtcptPsblRgnNm"].get(key, [])))
+        item["licenses"] = list(dict.fromkeys(bulk["lcnsLmtNm"].get(key, [])))
         item["limits_checked"] = True
         return
     out = {}
@@ -601,8 +644,9 @@ def g2b_limits(item, previous):
 def check_attachments(item, previous):
     """첨부 공고문을 내려받아 '소기업·소상공인 확인서' 소지가 참가 자격인지 확인합니다."""
     prev = previous.get(item["url"])
-    if prev and "attach_checked" in prev:
+    if prev and "attach_checked" in prev and "conditions" in prev:
         item["sme_only"] = prev.get("sme_only", "")
+        item["conditions"] = prev["conditions"]
         item["attach_checked"] = prev["attach_checked"]
         return
     files = item.get("attachments") or []
@@ -618,6 +662,7 @@ def check_attachments(item, previous):
     files = sorted(files, key=lambda f: 0 if "공고" in f["name"] else 1)
     read = 0
     item["sme_only"] = ""
+    conditions = {}
     for f in files:
         try:
             res = session.get(f["url"], verify=False, timeout=60)
@@ -627,31 +672,59 @@ def check_attachments(item, previous):
         text = extract_text(f["name"], res.content)
         if text.strip():
             read += 1
+        for c in bid_conditions(text):
+            conditions.setdefault(c["t"], c)
         hit = small_business_only(text)
         if hit:
             item["sme_only"] = hit
             break
+        # 공고문에서 조건을 찾았으면 규격서·서식 파일까지 받지 않습니다.
+        if conditions and "공고" in f["name"]:
+            break
+    item["conditions"] = list(conditions.values())
     item["attach_checked"] = f"{read}/{len(files)}"
 
 
 def apply_eligibility(items):
     """키워드 추천보다 먼저 참여 자격(지역·등록 업종·본문 제한)을 판단합니다."""
     previous = load_previous()
+    cands = [it for it in items if it["source"] == "나라장터" and it["track"] and it.get("bid_no") and not it.get("stale")]
+    new = [it for it in cands if "limits_checked" not in previous.get(it["url"], {})]
+    bulk = None
+    if len(new) > 60:
+        try:
+            bulk = g2b_bulk_limits()
+        except (requests.RequestException, RuntimeError, ValueError) as e:
+            print(f"[나라장터] 제한조건 일괄 조회 실패, 공고별로 조회합니다: {e}")
+    for it in cands:
+        try:
+            g2b_limits(it, previous, bulk)
+        except (requests.RequestException, RuntimeError, ValueError) as e:
+            print(f"[나라장터] 제한조건 조회 실패 {it['bid_no']}: {e}")
+    if SMALL_BUSINESS_ONLY:
+        # 지역 제한으로 이미 참여할 수 없는 공고는 공고문을 받지 않습니다.
+        todo = [it for it in cands if not check_eligibility(it["title"], None, it.get("regions"))]
+        with ThreadPoolExecutor(6) as pool:
+            def safe_check(it):
+                try:
+                    check_attachments(it, previous)
+                except Exception as e:  # 한 공고의 실패가 전체 수집을 멈추지 않게 합니다.
+                    print(f"[나라장터] 공고문 확인 실패 {it['bid_no']}: {e}")
+            list(pool.map(safe_check, todo))
+    print(f"[나라장터] 추천 후보 {len(cands)}건 (새 후보 {len(new)}건, 일괄 조회 {'사용' if bulk else '미사용'})")
     for it in items:
-        if it["source"] == "나라장터" and it["track"] and it.get("bid_no"):
-            try:
-                g2b_limits(it, previous)
-            except (requests.RequestException, ValueError) as e:
-                print(f"[나라장터] 제한조건 조회 실패 {it['bid_no']}: {e}")
-            if SMALL_BUSINESS_ONLY:
-                check_attachments(it, previous)
         reason = check_eligibility(it["title"], it.get("elig_text"), it.get("regions"))
         if not reason and it.get("sme_only"):
             reason = "소기업·소상공인 전용 (공고문 참가자격)"
+        blocking = [c for c in it.get("conditions") or [] if c.get("block")]
+        if not reason and blocking:
+            reason = "공고문 조건 미충족: " + ", ".join(
+                c["t"] + (f"({c['d']})" if c["d"] and len(c["d"]) <= 30 else "") for c in blocking[:2])
         missing = missing_licenses(it.get("licenses"))
         if not reason and missing:
             # 키워드가 잘 맞고 우리 분야 면허라면 업종 추가 등록을 전제로 추천에 남깁니다.
-            if it["track"] and it["score"] >= LICENSE_ADD_MIN_SCORE and license_addable(missing):
+            if it["track"] and (maintenance_license(missing)
+                                or (it["score"] >= LICENSE_ADD_MIN_SCORE and license_addable(missing))):
                 it["needs_license"] = missing
             else:
                 reason = "등록 업종으로 참여 불가 (필요: " + ", ".join(missing[:2]) + ")"
@@ -690,6 +763,14 @@ def main():
             got = fn()
             for it in got:
                 it["collected_at"] = NOW.strftime("%Y-%m-%d %H:%M")
+            if name == "나라장터":
+                # 조회 기간보다 먼저 게시됐지만 아직 마감 전인 공고는 직전 결과에서 이어 옵니다.
+                fresh = {it["url"] for it in got}
+                older = [it for it in carry_over(name, previous) if it["url"] not in fresh
+                         and it.get("open_date", "9") < (TODAY - timedelta(days=G2B_WINDOW_DAYS)).isoformat()]
+                for it in older:
+                    it.pop("stale", None)
+                got += older
             status.append({"name": name, "ok": True, "count": len(got), "error": NOTES.get(name, "")})
             all_items.extend(got)
             print(f"[{name}] {len(got)}건")
