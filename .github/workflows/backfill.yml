@@ -14,7 +14,7 @@ jobs:
       - uses: actions/setup-python@v5
         with: { python-version: '3.11' }
       - run: pip install requests beautifulsoup4 urllib3 pypdf olefile
-      - run: mkdir -p out && (python backfill/backfill.py > out/log.txt 2>&1 || true)
+      - run: mkdir -p out && (python backfill/recheck.py > out/log.txt 2>&1 || true)
         env:
           G2B_API_KEY: ${{ secrets.G2B_API_KEY }}
           BACKFILL_START: "2026-01-01"
