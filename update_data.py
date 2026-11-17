@@ -12,7 +12,7 @@ from concurrent.futures import ThreadPoolExecutor
 
 from attachments import extract_text
 from filter_rules import (
-    RESTRICT_MARK, SMALL_BUSINESS_ONLY, small_business_only, bid_conditions, specialty_ok, check_eligibility, missing_licenses, license_addable, maintenance_license, LICENSE_ADD_MIN_SCORE, RECOMMEND_THRESHOLD, PRODUCT_BONUS_MAX, PRODUCT_PENALTY_MAX, IT_SERVICE_CLASSES, TRACK_A_KEYWORDS, TRACK_A_EXCLUDE,
+    RND_SERVICE_MARK, RESTRICT_MARK, SMALL_BUSINESS_ONLY, small_business_only, bid_conditions, specialty_ok, check_eligibility, missing_licenses, license_addable, maintenance_license, LICENSE_ADD_MIN_SCORE, RECOMMEND_THRESHOLD, PRODUCT_BONUS_MAX, PRODUCT_PENALTY_MAX, IT_SERVICE_CLASSES, TRACK_A_KEYWORDS, TRACK_A_EXCLUDE,
     TRACK_B_KEYWORDS, TRACK_B_EXCLUDE, TRACK_B_CORE, score_title,
 )
 
@@ -569,6 +569,12 @@ def classify(item):
         track = ""
     item["track"] = track if score >= RECOMMEND_THRESHOLD else ""
 
+    # 나라장터의 연구개발 성격 용역은 트랙 A 기준으로도 채점해 더 잘 맞는 쪽으로 분류합니다.
+    if item["kind"] == "bid" and item.get("bid_type") == "용역" and any(k.upper() in item["title"].upper() for k in RND_SERVICE_MARK):
+        a_score, a_hits, a_minus = score_title(item["title"], TRACK_A_KEYWORDS, TRACK_A_EXCLUDE)
+        if a_score >= RECOMMEND_THRESHOLD and (not item["track"] or a_score > item["score"]):
+            item.update(score=a_score, hits=a_hits, minus=a_minus, track="A", rnd_bid=True)
+
 
 def fill_rnd_budgets(items):
     """IRIS 공고는 목록에 금액이 없어, 같은 공고명의 NTIS 공고금액을 쓰고 없으면 IRIS 본문에서 찾습니다."""
@@ -740,7 +746,7 @@ def apply_eligibility(items):
 
 # 이전 실행에서 계산된 값 (다시 분류·판단하기 위해 지웁니다)
 DERIVED_FIELDS = ["score", "hits", "minus", "track", "excluded_track", "ineligible", "needs_license",
-                  "product_hits", "product_minus"]
+                  "product_hits", "product_minus", "rnd_bid"]
 
 
 def carry_over(name, previous):

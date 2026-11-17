@@ -372,7 +372,7 @@
 
 <script>
   const VIEW_DESC = {
-    A: 'IRIS·NTIS·SMTECH 등 R&D/지원사업 중, 설비·시설·공정·실증·제조 관련 키워드 점수가 높은 과제입니다. 우리 회사가 주관/참여기관으로 설비를 구축하는 과제를 찾을 때 보세요.',
+    A: 'IRIS·NTIS·SMTECH 등 R&D/지원사업 중, 설비·시설·공정·실증·제조 관련 키워드 점수가 높은 과제입니다. 우리 회사가 주관/참여기관으로 설비를 구축하는 과제를 찾을 때 보세요. 나라장터의 연구개발 성격 용역(기술개발·실증 등)도 함께 보여줍니다.',
     B: '나라장터·한국기계연구원 입찰 중, 먼저 사업자등록 업종·지역으로 참여 가능한지 확인한 뒤 장비·설비의 설계/제작/설치 성격이 강한 공고를 골랐습니다. 키워드가 잘 맞는데 업종 추가 등록이 필요한 공고는 주황색으로 따로 표시합니다.',
     all: '수집된 모든 공고입니다. 나라장터는 건수가 많아 설비 관련 키워드가 하나 이상 있는 공고만 포함합니다.'
   };
@@ -408,7 +408,7 @@
     const minus = (it.minus || []).concat((it.product_minus || []).map(k => k + '(품명)'))
       .map(k => `<span class="kw kw-minus">-${esc(k)}</span>`).join(' ');
     const score = `<span class="score ${it.track ? 'score-on' : ''}" title="추천 점수 (기준 ${DATA.threshold}점)">${it.score}점</span>`;
-    const typ = (it.bid_type || (it.kind === 'rnd' ? 'R&D·지원사업' : '입찰'))
+    const typ = (it.rnd_bid ? 'R&D 용역 입찰' : it.bid_type || (it.kind === 'rnd' ? 'R&D·지원사업' : '입찰'))
       + (it.products && it.products.length ? ' · ' + it.products.slice(0, 2).join(', ') : '');
     const limits = [
       it.regions && it.regions.length ? '참가 가능 지역: ' + it.regions.join(', ') : '',
