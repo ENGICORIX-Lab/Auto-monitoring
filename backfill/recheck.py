@@ -5,7 +5,7 @@ from concurrent.futures import ThreadPoolExecutor
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import update_data as u
 from attachments import extract_text
-from filter_rules import small_business_only
+from filter_rules import small_business_only, bid_conditions
 
 T0 = time.time()
 targets = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "recheck_targets.json")))
@@ -13,7 +13,8 @@ targets = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__))
 
 def check(t):
     no, ord_ = t
-    out = {"files": 0, "read": 0, "sme_only": "", "error": ""}
+    out = {"files": 0, "read": 0, "sme_only": "", "error": "", "conditions": []}
+    conds = {}
     try:
         rows = []
         for i in range(3):
@@ -36,16 +37,21 @@ def check(t):
                 continue
             if text.strip():
                 out["read"] += 1
+            for c in bid_conditions(text):
+                conds.setdefault(c["t"], c)
             hit = small_business_only(text)
             if hit:
                 out["sme_only"] = hit
                 break
+            if conds and "공고" in name:
+                break
     except Exception as e:
         out["error"] = str(e)[:120]
+    out["conditions"] = list(conds.values())
     return no, out
 
 
-with ThreadPoolExecutor(6) as pool:
+with ThreadPoolExecutor(8) as pool:
     result = dict(pool.map(check, targets))
 os.makedirs("out", exist_ok=True)
 json.dump(result, open("out/backfill.json", "w", encoding="utf-8"), ensure_ascii=False)
