@@ -7,13 +7,18 @@ import update_data as u
 from attachments import extract_text
 from filter_rules import small_business_only, bid_conditions
 
+import threading
 T0 = time.time()
+STOP = threading.Event()  # 호출 한도 초과(429)를 받으면 더 부르지 않고 멈춥니다.
 targets = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "recheck_targets.json")))
 
 
 def check(t):
     no, ord_ = t
     out = {"files": 0, "read": 0, "sme_only": "", "error": "", "conditions": []}
+    if STOP.is_set():
+        out["error"] = "skipped: quota"
+        return no, out
     conds = {}
     try:
         rows = []
@@ -24,7 +29,11 @@ def check(t):
                 break
             except Exception as e:
                 out["error"] = str(e)[:120]
+                if "429" in out["error"]:
+                    STOP.set()
+                    return no, out
                 time.sleep(3 * (i + 1))
+        out["error"] = ""
         files = [(r.get("atchFileNm") or "", r["atchFileUrl"]) for r in rows if r.get("atchFileUrl")]
         files.sort(key=lambda f: 0 if "공고" in f[0] else 1)
         out["files"] = len(files)
