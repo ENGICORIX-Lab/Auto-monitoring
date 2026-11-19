@@ -422,7 +422,7 @@
       ? `<div class="conds"><span class="cond cond-unread" title="첨부 공고문이 없거나 읽을 수 없어 소기업 전용·직접생산 등 조건을 확인하지 못했습니다">공고문 미확인 · 원문에서 참가자격 확인 필요</span></div>` : '';
     const conds = (it.conditions || []).length
       ? `<div class="conds">공고문 조건: ` + it.conditions.map(c =>
-          `<span class="cond ${c.block ? 'cond-block' : ''}" title="${esc(c.d || '')}">${esc(c.t)}${c.d && c.d.length <= 20 ? ' · ' + esc(c.d) : ''}</span>`).join(' ') + `</div>` : '';
+          `<span class="cond ${c.block ? 'cond-block' : ''}" title="${esc(c.s || c.d || '')}">${esc(c.t)}${c.d && c.d.length <= 20 ? ' · ' + esc(c.d) : ''}</span>`).join(' ') + `</div>` : '';
     const inelig = it.ineligible
       ? `<div class="inelig" title="${esc(it.sme_only || '')}">자격 미해당 · ${esc(it.ineligible)}${it.excluded_track ? ' (추천 ' + esc(it.excluded_track) + '에서 제외)' : ''}</div>` : '';
     return `<tr class="${it.ineligible ? 'row-inelig' : ''}">
