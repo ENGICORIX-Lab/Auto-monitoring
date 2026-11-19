@@ -378,6 +378,7 @@ def fetch_g2b():
         "getBidPblancListInfoServcPPSSrch02": "용역",
         "getBidPblancListInfoCnstwkPPSSrch02": "공사",
     }
+    skipped_negotiated = 0
     for ep, bid_type in endpoints.items():
         # 2주 치 공고는 종류별로 수천 건이라 끝 페이지까지 모두 읽습니다 (오래된 공고부터 나오므로
         # 앞쪽 몇 페이지만 읽으면 최근 공고가 빠집니다).
@@ -389,6 +390,11 @@ def fetch_g2b():
                 continue
             seen.add(key)
             title = bid.get("bidNtceNm", "")
+            # 수의시담은 발주기관이 미리 정한 업체와만 협상하는 공고라 다른 업체는 참여할 수 없어 수집하지 않습니다.
+            # (소액수의견적은 누구나 견적을 낼 수 있으므로 남깁니다.)
+            if (bid.get("sucsfbidMthdNm") or "").startswith("수의시담"):
+                skipped_negotiated += 1
+                continue
             # 공사는 설비 관련 공고만 남깁니다.
             if bid_type == "공사" and not any(k in title for k in ["설비", "장치", "플랜트", "배관", "기계"]):
                 continue
@@ -421,6 +427,8 @@ def fetch_g2b():
         # 2주 동안 공고가 한 건도 없을 수는 없으므로, 0건이면 조용히 넘기지 않고 실패로 처리합니다.
         if raw == 0 and bid_type != "공사":
             raise RuntimeError(f"{bid_type} 공고 조회 결과가 0건입니다 (API 조회 조건 변경 여부 확인 필요)")
+    if skipped_negotiated:
+        NOTES["나라장터"] = (NOTES.get("나라장터", "") + " " if NOTES.get("나라장터") else "") + f"수의시담 공고 {skipped_negotiated}건 제외"
     return items
 
 
