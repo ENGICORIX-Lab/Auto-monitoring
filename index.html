@@ -232,6 +232,7 @@
     .fav-btn:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; border-radius: 4px; }
     .conds { font-size: 12px; color: #475569; margin-top: 4px; }
     .cond { display: inline-block; padding: 1px 7px; margin: 1px 2px 1px 0; border-radius: 10px; background: #f1f5f9; color: #334155; }
+    .cond-unread { background: #fef3c7; color: #92400e; }
     .cond-block { background: #fee2e2; color: #b91c1c; font-weight: 700; }
     .more-btn { border: 1px solid var(--border); background: #ffffff; color: var(--primary-dark); font-weight: 700; font-size: 13px; padding: 8px 18px; border-radius: 8px; cursor: pointer; }
     .more-btn:hover { background: var(--primary-light); }
@@ -416,6 +417,9 @@
     ].filter(Boolean).join(' · ');
     const needs = it.needs_license && it.needs_license.length
       ? `<div class="needs-license">업종 추가 등록 시 참여 가능 · 필요: ${esc(it.needs_license.slice(0, 2).join(', '))}</div>` : '';
+    // 나라장터 추천 후보인데 공고문을 읽지 못했으면 조건 확인이 안 됐다는 표시를 붙입니다.
+    const unread = it.source === '나라장터' && (it.attach_checked || '').startsWith('0/')
+      ? `<div class="conds"><span class="cond cond-unread" title="첨부 공고문이 없거나 읽을 수 없어 소기업 전용·직접생산 등 조건을 확인하지 못했습니다">공고문 미확인 · 원문에서 참가자격 확인 필요</span></div>` : '';
     const conds = (it.conditions || []).length
       ? `<div class="conds">공고문 조건: ` + it.conditions.map(c =>
           `<span class="cond ${c.block ? 'cond-block' : ''}" title="${esc(c.d || '')}">${esc(c.t)}${c.d && c.d.length <= 20 ? ' · ' + esc(c.d) : ''}</span>`).join(' ') + `</div>` : '';
@@ -433,7 +437,7 @@
         ${inelig}${needs}
         <div class="tags-list">${score} ${hits} ${minus}</div>
         ${limits ? `<div class="limits">${esc(limits)}</div>` : ''}
-        ${conds}
+        ${conds}${unread}
         ${variants(it)}
       </td>
       <td><strong>${esc(it.budget || '공고문 참조')}</strong><div class="date-sub">${esc(typ)}</div></td>

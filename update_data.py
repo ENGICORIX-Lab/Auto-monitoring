@@ -12,7 +12,7 @@ from concurrent.futures import ThreadPoolExecutor
 
 from attachments import extract_text
 from filter_rules import (
-    RND_SERVICE_MARK, RESTRICT_MARK, SMALL_BUSINESS_ONLY, small_business_only, bid_conditions, specialty_ok, check_eligibility, missing_licenses, license_addable, maintenance_license, LICENSE_ADD_MIN_SCORE, RECOMMEND_THRESHOLD, PRODUCT_BONUS_MAX, PRODUCT_PENALTY_MAX, IT_SERVICE_CLASSES, TRACK_A_KEYWORDS, TRACK_A_EXCLUDE,
+    CONDITION_VERSION, RND_SERVICE_MARK, RESTRICT_MARK, SMALL_BUSINESS_ONLY, small_business_only, bid_conditions, specialty_ok, check_eligibility, missing_licenses, license_addable, maintenance_license, LICENSE_ADD_MIN_SCORE, RECOMMEND_THRESHOLD, PRODUCT_BONUS_MAX, PRODUCT_PENALTY_MAX, IT_SERVICE_CLASSES, TRACK_A_KEYWORDS, TRACK_A_EXCLUDE,
     TRACK_B_KEYWORDS, TRACK_B_EXCLUDE, TRACK_B_CORE, score_title,
 )
 
@@ -658,10 +658,11 @@ def g2b_limits(item, previous, bulk=None):
 def check_attachments(item, previous):
     """첨부 공고문을 내려받아 '소기업·소상공인 확인서' 소지가 참가 자격인지 확인합니다."""
     prev = previous.get(item["url"])
-    if prev and "attach_checked" in prev and "conditions" in prev:
+    if prev and "attach_checked" in prev and prev.get("cond_ver") == CONDITION_VERSION:
         item["sme_only"] = prev.get("sme_only", "")
         item["conditions"] = prev["conditions"]
         item["attach_checked"] = prev["attach_checked"]
+        item["cond_ver"] = CONDITION_VERSION
         return
     files = item.get("attachments") or []
     if not files and item.get("bid_no"):
@@ -697,6 +698,7 @@ def check_attachments(item, previous):
             break
     item["conditions"] = list(conditions.values())
     item["attach_checked"] = f"{read}/{len(files)}"
+    item["cond_ver"] = CONDITION_VERSION
 
 
 def apply_eligibility(items):

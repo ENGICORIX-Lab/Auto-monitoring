@@ -291,6 +291,16 @@ MANUFACTURE_ITEMS = []         # 나라장터에 제조물품으로 등록한 �
 EXCLUDE_ON_PERFORMANCE = False  # 실적 제한 공고를 추천에서 뺄지 (False: 표시만)
 
 _REQ = r"(?:소지|보유|제출|등록|발급|필한|갖춘|있는)"
+# 특정 기업만 참여할 수 있는 제한경쟁 (공고문 참가자격). 엔지코릭스는 어느 것에도 해당하지 않습니다.
+GROUP_ONLY = {
+    "여성기업": "여성기업 전용", "장애인기업": "장애인기업 전용", "장애인표준사업장": "장애인표준사업장 전용",
+    "중증장애인생산품": "중증장애인생산품 생산시설 전용", "사회적기업": "사회적기업 전용",
+    "사회적협동조합": "사회적협동조합 전용", "협동조합": "협동조합 전용", "자활기업": "자활기업 전용",
+    "마을기업": "마을기업 전용", "중견기업": "중견기업 전용", "창업기업": "창업기업 전용",
+}
+_GROUP_CUE = re.compile(r"제한\s*경쟁|만\s*(?:참가|입찰|응찰|신청)|에\s*한함|에\s*한하여|으로\s*한정|확인서를?\s*(?:소지|보유|제출)|간\s*경쟁")
+CONDITION_VERSION = 2  # 공고문 조건 규칙을 바꾸면 올려서 저장된 결과를 다시 확인하게 합니다.
+
 _SOFT = re.compile(r"가점|우대|가산|해당\s*시|해당하는\s*경우|경우에\s*한|면제")
 
 
@@ -348,7 +358,14 @@ def bid_conditions(text):
             if re.search(r"보유|제출|있는", around) and re.search(r"최근\d+년|이내|\d배|이상", around) \
                     and not re.search(r"평가|심사|배점", around):
                 found["실적 제한 있음"] = {"d": re.sub(r"\s+", " ", s)[:140], "block": EXCLUDE_ON_PERFORMANCE}
-        # 4) 면허의 주력분야
+        # 4) 특정 기업 전용 제한경쟁 (여성기업·장애인기업·사회적기업 등)
+        if "기업 전용 입찰" not in found and _GROUP_CUE.search(s) and not _SOFT.search(s):
+            for word, label in GROUP_ONLY.items():
+                # '중소기업 또는 중견기업'처럼 우리가 해당하는 대상이 함께 적힌 문장은 제외합니다.
+                if word in compact.replace(" ", "") and not re.search(r"중소기업|중·소기업|중ㆍ소기업|소상공인", s):
+                    found["기업 전용 입찰"] = {"d": label, "block": True}
+                    break
+        # 5) 면허의 주력분야
         m = re.search(r"주력\s*분야\s*[:：]?\s*([가-힣A-Za-z·ㆍ ]{2,20})", s)
         if m and "주력분야 지정" not in found:
             found["주력분야 지정"] = {"d": m.group(1).strip(), "block": False}
